@@ -15,6 +15,8 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
 
+
+zmk
 ``` bash
 $ hexo server
 ```
