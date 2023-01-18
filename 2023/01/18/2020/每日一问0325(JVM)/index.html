@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0325(JVM) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JVM介绍下 Java 内存区域	运行时数据区）Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。这些组成部分一些是线程私有的，其他的则是线程共享的。线程私有的：  程序计数器 本地方法栈 虚拟机栈  线程共享的：  堆 方法区 直接内存  程序计数器 执行分支，循环，跳转，异常处理，线程恢复，线程切换后能恢复到正确的执行位置；程序计数器是不会内存溢出的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0325(JVM)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0325(JVM)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JVM介绍下 Java 内存区域	运行时数据区）Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。这些组成部分一些是线程私有的，其他的则是线程共享的。线程私有的：  程序计数器 本地方法栈 虚拟机栈  线程共享的：  堆 方法区 直接内存  程序计数器 执行分支，循环，跳转，异常处理，线程恢复，线程切换后能恢复到正确的执行位置；程序计数器是不会内存溢出的。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190129145342903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvbGZfbG92ZTY2Ng==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190129145342903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvbGZfbG92ZTY2Ng==,size_16,color_FFFFFF,t_70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问0325(JVM)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0325(JVM)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0325(JVM)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h3 id="介绍下-Java-内存区域运行时数据区）"><a href="#介绍下-Java-内存区域运行时数据区）" class="headerlink" title="介绍下 Java 内存区域	运行时数据区）"></a>介绍下 Java 内存区域	运行时数据区）</h3><p>Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。这些组成部分一些是线程私有的，其他的则是线程共享的。<br><img src="https://img-blog.csdnimg.cn/20190129145342903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvbGZfbG92ZTY2Ng==,size_16,color_FFFFFF,t_70" alt="avatar"><br>线程私有的：</p>
+<ul>
+<li>程序计数器</li>
+<li>本地方法栈</li>
+<li>虚拟机栈</li>
+</ul>
+<p>线程共享的：</p>
+<ul>
+<li>堆</li>
+<li>方法区</li>
+<li>直接内存</li>
+</ul>
+<h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p> 执行分支，循环，跳转，异常处理，线程恢复，线程切换后能恢复到正确的执行位置；程序计数器是不会内存溢出的。</p>
+<h4 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h4><p> 生命周期和线程相同 ，描述的事Java 的方法执行的内存模型,Java虚拟机栈是由一个个栈帧组成，而每个栈帧中都拥有：局部变量表、操作数栈、动态链接、方法出口信息。</p>
+<p> Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。</p>
+<ul>
+<li>StackOverFlowError： 若Java虚拟机栈的内存大小不允许动态扩展，那么当线程请求栈的深度超过当前Java虚拟机栈的最大深度的时候，就抛出StackOverFlowError异常。</li>
+<li>OutOfMemoryError： 若 Java 虚拟机栈的内存大小允许动态扩展，且当线程请求栈时内存用完了，无法再动态扩展了，此时抛出OutOfMemoryError异常。</li>
+</ul>
+<h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><p> 所有线程共享； 此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例以及数组都在这里分配内存。</p>
+<p> Eden-s1-s2 (新生代) oldGeneration （老年代） perm (永久代)</p>
+<p> JDK1.8 已经去除 永久代 而用 元空间代替，元空间存储在物理内存，受到本机物理内存限制</p>
+<h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>  共享 </p>
+<h4 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h4><p> NIO 流  堆外内存， 避免 Java堆和NATIVE堆 复制数据。</p>
+<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><p> 1） 类加载检查</p>
+<p> 2）内存分配 两种方式 ：</p>
+<ul>
+<li>指针碰撞</li>
+<li>空闲列表</li>
+</ul>
+<p> 3）初始化零值 java代码中就可以不赋值直接使用</p>
+<p> 4）设置对象头</p>
+<ol start="5">
+<li>执行 init 方法  执行前只是虚拟机新的对象产生了 ，执行完 Java代码才认</li>
+</ol>
+<h3 id="对象内存布局"><a href="#对象内存布局" class="headerlink" title="对象内存布局"></a>对象内存布局</h3><p> 对象头，实例数据和对齐填充</p>
+<p> 对象头 有两部分数据:</p>
+<ul>
+<li>哈希码、GC分代年龄、锁状态标志等等</li>
+<li>类型指针，即对象指向它的类元数据的指针</li>
+</ul>
+<p> 实例数据是 对象真正存储的有效信息</p>
+<p> 对齐填充非必然存在。</p>
+<h3 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h3><p> 两种方式 </p>
+<ul>
+<li>使用句柄</li>
+<li>直接指针</li>
+</ul>
+<p> 这两种对象访问方式各有优势。使用句柄来访问的最大好处是 reference 中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而 reference 本身不需要修改。使用直接指针访问方式最大的好处就是速度快，它节省了一次指针定位的时间开销。</p>
+<h2 id="String-类和常量池"><a href="#String-类和常量池" class="headerlink" title="String 类和常量池"></a>String 类和常量池</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;abcd&quot;;</span><br><span class="line">String str2 = new String(&quot;abcd&quot;);</span><br><span class="line">System.out.println(str1==str2);//false</span><br></pre></td></tr></table></figure>
+<p> 这两种不同的创建方法是有差别的，第一种方式是在常量池中拿对象，第二种方式是直接在堆内存空间创建一个新的对象。</p>
+<p> String 类型的常量池比较特殊。它的主要使用方法有两种：</p>
+<ul>
+<li>直接使用双引号声明出来的 String 对象会直接存储在常量池中。</li>
+<li>如果不是用双引号声明的 String 对象，可以使用 String 提供的 intern 方法。String.intern() 是一个 Native 方法，它的作用是：如果运行时常量池中已经包含一个等于此 String 对象内容的字符串，则返回常量池中该字符串的引用；如果没有，则在常量池中创建与此 String 内容相同的字符串，并返回常量池中创建的字符串的引用。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  String s1 = new String(&quot;计算机&quot;);</span><br><span class="line">String s2 = s1.intern();</span><br><span class="line">String s3 = &quot;计算机&quot;;</span><br><span class="line">System.out.println(s2);//计算机</span><br><span class="line">System.out.println(s1 == s2);//false，因为一个是堆内存中的String对象一个是常量池中的String对象，</span><br><span class="line">System.out.println(s3 == s2);//true，因为两个都是常量池中的String对象</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p> 3 String 字符串拼接</p>
+<pre><code>       String str1 = &quot;str&quot;;
+       String str2 = &quot;ing&quot;;
+       String str3 = &quot;str&quot; + &quot;ing&quot;;//常量池中的对象
+       String str4 = str1 + str2; //在堆上创建的新的对象	  
+       String str5 = &quot;string&quot;;//常量池中的对象
+       System.out.println(str3 == str4);//false
+       System.out.println(str3 == str5);//true
+       System.out.println(str4 == str5);//false
+</code></pre>
+<p>尽量避免多个字符串拼接，因为这样会重新创建对象。如果需要改变字符串的话，可以使用 StringBuilder 或者 StringBuffer。</p>
+<h1 id="全局字符串池（string-pool也有叫做string-literal-pool）"><a href="#全局字符串池（string-pool也有叫做string-literal-pool）" class="headerlink" title="全局字符串池（string pool也有叫做string literal pool）"></a>全局字符串池（string pool也有叫做string literal pool）</h1><p>JDK 1.7后，intern方法还是会先去查询常量池中是否有已经存在，如果存在，则返回常量池中的引用，这一点与之前没有区别，区别在于，如果在常量池找不到对应的字符串，则不会再将字符串拷贝到常量池，而只是在常量池中生成一个对原字符串的引用。简单的说，就是往常量池放的东西变了：原来在常量池中找不到时，复制一个副本放到常量池，1.7后则是将在堆上的地址引用复制到常量池。</p>
+<h4 id="8种基本类型的包装类和常量池"><a href="#8种基本类型的包装类和常量池" class="headerlink" title="8种基本类型的包装类和常量池"></a>8种基本类型的包装类和常量池</h4><ul>
+<li>Java 基本类型的包装类的大部分都实现了常量池技术，即Byte,Short,Integer,Long,Character,Boolean；这5种包装类默认创建了数值<code>[-128，127]</code>的相应类型的缓存数据，但是超出此范围仍然会去创建新的对象。</li>
+<li>两种浮点数类型的包装类 Float,Double 并没有实现常量池技术。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = 33;</span><br><span class="line">Integer i2 = 33;</span><br><span class="line">System.out.println(i1 == i2);// 输出true</span><br><span class="line">Integer i11 = 333;</span><br><span class="line">Integer i22 = 333;</span><br><span class="line">System.out.println(i11 == i22);// 输出false</span><br><span class="line">Double i3 = 1.2;</span><br><span class="line">Double i4 = 1.2;</span><br><span class="line">System.out.println(i3 == i4);// 输出false</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Minor-GC-和-Full-GC-有什么不同"><a href="#Minor-GC-和-Full-GC-有什么不同" class="headerlink" title="Minor GC 和 Full GC  有什么不同"></a>Minor GC 和 Full GC  有什么不同</h3><ul>
+<li>新生代 GC （Minor GC ） 新生代垃圾回收非常频繁，回收速度快</li>
+<li>老年代GC (Major GC &#x2F;Full GC)  会比 Minor GC慢 10倍以上</li>
+</ul>
+<h3 id="如何判断一个对象死亡"><a href="#如何判断一个对象死亡" class="headerlink" title="如何判断一个对象死亡"></a>如何判断一个对象死亡</h3><ul>
+<li>引用计数法</li>
+<li>可达性分析算法</li>
+</ul>
+<h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h3><ul>
+<li>标记-清除算法</li>
+<li>复制算法</li>
+<li>标记-整理算法</li>
+<li>分代收集算法</li>
+</ul>
+<h3 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h3><ol>
+<li>Serial 收集器：</li>
+</ol>
+<ul>
+<li>最老的收集器； </li>
+<li>单线程 ， </li>
+<li>回收时工作线程都要停顿</li>
+<li>对于 Client模式下虚拟机是不错选择。</li>
+</ul>
+<ol start="2">
+<li>ParNew 收集器</li>
+</ol>
+<ul>
+<li>就是Serial 收集器的 多线程版本，控制参数,收集算法，回收策略和一样。</li>
+<li>许多运行在 Server 模式下虚拟机首要选择。只有它能与CMS收集器配合工作</li>
+</ul>
+<ol start="3">
+<li>ParaLLel Scavenge 收集器</li>
+</ol>
+<ul>
+<li>关注点是吞吐量</li>
+<li>提供了很多参数供用户找到最合适的停顿时间 或最大吞吐量。</li>
+</ul>
+<p>4.CMS􏶴􏽂􏰨收集器</p>
+<ul>
+<li>获取最短回收停顿时间为目标的收集器，非常适合注重用户体验的应用上使用。</li>
+<li>实现了让垃圾收集线程和用户线程同时工作。</li>
+<li>无法处理浮动垃圾</li>
+<li>使用回收算法 “标记-清除”算法 会导致收集结束时会有大量空间碎片产生。</li>
+</ul>
+<p>CMS垃圾回收期回收过程：</p>
+<ul>
+<li><p>初始标记（CMS initial mark）</p>
+</li>
+<li><p>并发标记（CMS concurrent mark）</p>
+</li>
+<li><p>重新标记（CMS remark）</p>
+</li>
+<li><p>并发清除（CMS concurrent sweep）</p>
+</li>
+</ul>
+<ol>
+<li><p>其中，&#x3D;&#x3D;初始标记、重新标记&#x3D;&#x3D;这两个步骤仍然需要“Stop The World”。初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快，并发标记阶段就是进行GC Roots Tracing的过程，而重新标记阶段则是为了修正并发标记期间因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段稍长一些，但远比并发标记的时间短。</p>
+</li>
+<li><p>CMS默认启动的回收线程数是（CPU数量+3）&#x2F; 4，也就是当CPU在4个以上时，并发回收时垃圾收集线程不少于25%的CPU资源，并且随着CPU数量的增加而下降。</p>
+</li>
+<li><p>CMS收集器无法处理浮动垃圾（Floating Garbage），可能出现“Concurrent Mode Failure”失败而导致另一次Full GC的产生。由于CMS并发清理阶段用户线程还在运行着，伴随程序运行自然就还会有新的垃圾不断产生，这一部分垃圾出现在标记过程之后，CMS无法在当次收集中处理掉它们，只好留待下一次GC时再清理掉。这一部分垃圾就称为“浮动垃圾”。</p>
+</li>
+<li><p>也是由于在垃圾收集阶段用户线程还需要运行，那也就还需要预留有足够的内存空间给用户线程使用，因此CMS收集器不能像其他收集器那样等到老年代几乎完全被填满了再进行收集，需要预留一部分空间提供并发收集时的程序运作使用。在JDK 1.5的默认设置下，CMS收集器当老年代使用了68%的空间后就会被激活，这是一个偏保守的设置，如果在应用中老年代增长不是太快，可以适当调高参数&#x3D;&#x3D;-XX:CMSInitiatingOccupancyFraction&#x3D;&#x3D;的值来提高触发百分比，在JDK 1.6中，CMS收集器的启动阈值已经提升至92%。要是CMS运行期间预留的内存无法满足程序需要，就会出现一次“Concurrent Mode Failure”失败，这时虚拟机将启动后备预案：临时启用Serial Old收集器来重新进行老年代的垃圾收集，这样停顿时间就很长了。所以说参数&#x3D;&#x3D;-XX:CM SInitiatingOccupancyFraction&#x3D;&#x3D;设置得太高很容易导致大量“Concurrent Mode Failure”失败，性能反而降低。</p>
+</li>
+<li><p>G1 收集器</p>
+</li>
+</ol>
+<h3 id="JVM-调优"><a href="#JVM-调优" class="headerlink" title="JVM 调优"></a>JVM 调优</h3><p>网上一个很形象的例子描述对象在JVM堆内存中的生命周期：</p>
+<p>我是一个普通的java对象，我出生在Eden区，在Eden区我还看到和我长的很像的小兄弟，我们在Eden区中玩了挺长时间。有一天Eden区中的人实在是太多了，我就被迫去了Survivor区的“To”区，自从去了Survivor区，我就开始漂泊了，因为Survivor的两个区总是交换名字，所以我总是搬家，搬到To Survivor居住，搬来搬去，居无定所。直到我18岁的时候，爸爸说我成人了，该去社会上闯闯了。于是我就去了年老代那边，年老代里，人很多，并且年龄都挺大的，我在这里也认识了很多人。在年老代里，我生活了20年(每次GC加一岁)，然后被回收。</p>
+<p><a target="_blank" rel="noopener" href="http://www.liuzk.com/294.html">一次JVM_OLD区占用过高、频繁Full GC的解决过程</a></p>
+<h3 id="JVM-调优工具（java-tools）"><a href="#JVM-调优工具（java-tools）" class="headerlink" title="JVM 调优工具（java-tools）"></a>JVM 调优工具（java-tools）</h3><ul>
+<li>jps 虚拟机进程状况工具</li>
+<li>jstat 虚拟机统计信息监视工具</li>
+<li>jmap 还阔以使用-XX:+HeapDumpOnOutOfMemoryError参数来让虚拟机出现OOM的时候·自动生成dump文件</li>
+<li>jstack 用户生成java 虚拟机当前时刻线程快照</li>
+<li>jinfo用户实时查看和调整虚拟机运行参数</li>
+<li>VisualVM 多合一故障管理工具，图形化界面，直接在命令行打入 jvisualvm</li>
+</ul>
+<h3 id="JVM-中的锁"><a href="#JVM-中的锁" class="headerlink" title="JVM 中的锁"></a>JVM 中的锁</h3><ul>
+<li>偏向锁</li>
+<li>轻量级锁</li>
+<li>自旋锁</li>
+</ul>
+<h4 id="内置于JVM中的获取锁的优化方法和获取锁的步骤"><a href="#内置于JVM中的获取锁的优化方法和获取锁的步骤" class="headerlink" title="内置于JVM中的获取锁的优化方法和获取锁的步骤"></a>内置于JVM中的获取锁的优化方法和获取锁的步骤</h4><ul>
+<li>当A线程获取对象，先会cas 设置偏向锁</li>
+<li>如果成功，会在<code>对象头</code>和栈帧的锁记录里记录线程A的ID</li>
+<li>如果这时有B来竞争对象，发现对象有偏向锁，则B 标记对象不适合偏向锁，然后触发轻量级锁（即：把对象头中的MarkWord 复制到自己线程的锁记录中）</li>
+<li>偏向锁可用会先尝试偏向锁</li>
+<li>如果获取失败，尝试自旋来</li>
+<li>轻量级锁可用会先尝试轻量级锁</li>
+<li>以上都失败，尝试自旋锁</li>
+<li>再失败，尝试普通锁，使用OS互斥量在操作系统层挂起</li>
+</ul>
+<h3 id="JVM参数调优"><a href="#JVM参数调优" class="headerlink" title="JVM参数调优"></a>JVM参数调优</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p> <a target="_blank" rel="noopener" href="https://xiaochengxinyizhan.blog.csdn.net/article/details/92385172">Java代码的执行篇</a><br> <a target="_blank" rel="noopener" href="https://github.com/Homiss/Java-interview-questions/blob/master/JVM/JVM%E9%9D%A2%E8%AF%95%E9%A2%98.md">JVM面试题</a><br><a target="_blank" rel="noopener" href="http://www.liuzk.com/294.html">一次JVM_OLD区占用过高、频繁Full GC的解决过程</a></p>
+<h1 id="字符串常量池和运行时常量池是在堆还是在方法区？"><a href="#字符串常量池和运行时常量池是在堆还是在方法区？" class="headerlink" title="字符串常量池和运行时常量池是在堆还是在方法区？"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cosmos-wong/p/12925299.html">字符串常量池和运行时常量池是在堆还是在方法区？</a></h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45112292/article/details/118732695?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.control&spm=1001.2101.3001.4242">class文常量池、运行时常量池、字符串常量池的区别</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/P8s3kuceBNovUP5adXpFCQ">线上服务的FGC问题排查，看这篇就够了！</a></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>8e426fdc9f06283135745f7def3811ac6a2aa3f7</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0325(JVM)/" data-id="cld1bs9sq000vfynh4bhp5s8m" data-title="每日一问0325(JVM)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0324(%E9%9B%86%E5%90%88)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0324(集合)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0330(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0330(多线程)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

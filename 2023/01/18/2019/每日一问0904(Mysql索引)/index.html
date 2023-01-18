@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0904(Mysql索引) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="索引索引好处关于MySQL索引的好处，如果正确合理设计并且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。对于没有索引的表，单表查询可能几十万数据就是瓶颈，而通常大型网站单日就可能会产生几十万甚至几百万的数据，没有索引查询会变的非常缓慢。 数据是存储在磁盘上的，操作系统读取磁盘的最小单位是页，如果没有索引，会加载所有的数据到内存，依次进行检索，加载的总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0904(Mysql索引)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="索引索引好处关于MySQL索引的好处，如果正确合理设计并且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。对于没有索引的表，单表查询可能几十万数据就是瓶颈，而通常大型网站单日就可能会产生几十万甚至几百万的数据，没有索引查询会变的非常缓慢。 数据是存储在磁盘上的，操作系统读取磁盘的最小单位是页，如果没有索引，会加载所有的数据到内存，依次进行检索，加载的总">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5asGu0xrowZ97BFBFvrXsCs2ZSu49ZvFjk5fWLAflFSD2iadlbJkQicDQ/640">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5dMTgZ8zvqoEax8dqq87xj59ywc2szJicaBsZkibTdnRx1icCtEYTDgRRQ/640">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt55ga3Fmqa9Hicn9CQ6Lh2ibT7chylHXd6C6RdrbmZdmFzZJiafyoyjyIjQ/640">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5nXZJIREPnjDpcQ73cLseLFZLjF5bWTVHYp7TvME6jWVgI3zmhWoqhQ/640">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5L11Q62nngFGjI1ZkhsQWE0f4wMXjnwI9YY480d17lG1wgfZib2gSaaw/640">
+<meta property="article:published_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5asGu0xrowZ97BFBFvrXsCs2ZSu49ZvFjk5fWLAflFSD2iadlbJkQicDQ/640">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2019/每日一问0904(Mysql索引)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0904(Mysql索引)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h3 id="索引好处"><a href="#索引好处" class="headerlink" title="索引好处"></a>索引好处</h3><p>关于MySQL索引的好处，如果正确合理设计并且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。对于没有索引的表，单表查询可能几十万数据就是瓶颈，而通常大型网站单日就可能会产生几十万甚至几百万的数据，没有索引查询会变的非常缓慢。</p>
+<p>数据是存储在磁盘上的，操作系统读取磁盘的最小单位是页，如果没有索引，会加载所有的数据到内存，依次进行检索，加载的总数据会很多，磁盘IO多。</p>
+<p>没有索引的情况下，不论是以主键还是其他列作为搜索条件，只能沿着页的双链表从左到右依次遍历各个页。</p>
+<h3 id="索引的类别"><a href="#索引的类别" class="headerlink" title="索引的类别"></a>索引的类别</h3><p>聚簇索引与非聚簇索引</p>
+<p>主键索引和辅助索引(常规所指的索引，也叫二级索引，又分为唯一索引和非唯一索引。)</p>
+<p>InnoDB引擎中，主键索引会被选中作为聚集索引，而唯一索引和普通辅助索引间除了唯一性约束外，在存储上没本质区别。</p>
+<h3 id="MySQL索引演化"><a href="#MySQL索引演化" class="headerlink" title="MySQL索引演化"></a>MySQL索引演化</h3><p>1.密集索引（Dense Index ）</p>
+<p>根据减少无效数据访问的原则，我们将键的值拿过来存放到独立的块中。并且为每一个键值添加一个指针， 指向原来的数据块。</p>
+<p>1.1折半块查找</p>
+<p>需要对Dense进行索引，每个索引块内是有序的，另外，需要一个数组按顺序存储索引块地址，这样整体就有序了，数组也要存储到磁盘上，放在<code>单独的块链中</code>。折半查找的时间复杂度是O(log2(N))</p>
+<p>2.稀疏索引（Sparse Index）</p>
+<p>介绍基于块的折半查找时发现，读出每个块后只需要和第一行的键值匹配，就可以决定下一个块的位置（方向）。 因此有效数据是每个块的第一行数据，将每一个块的第一行的数据单独拿出来，和索引数组的地址放到一起。这样就可以直接在这个数组上进行折半查找了，这个数组就进化成了Sparse Index了。</p>
+<p>3.多层稀疏索引</p>
+<p>因为Sparse Index本身是有序的，所以可以为Sparse Index再建sparse Index。通过这个方法，一层一层的建立 Sparse Indexes,直到最上层的Sparse Index只占用一个块为止。</p>
+<h3 id="索引组成简述"><a href="#索引组成简述" class="headerlink" title="索引组成简述"></a>索引组成简述</h3><p>   InnoDB数据页有7个部分组成，各个数据页可以组成一个双向链表，而每个数据页中的记录又可以组成一个单向链表，每个数据页都会为存储在它里边儿的记录生成一个页目录，在通过主键查找某条记录的时候可以在页目录中使用二分法快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5asGu0xrowZ97BFBFvrXsCs2ZSu49ZvFjk5fWLAflFSD2iadlbJkQicDQ/640" alt="avatar"><br>##索引执行步骤简述</p>
+<p>一个页中的查找</p>
+<p>假设目前表中的记录比较少，所有的记录都可以被存放到一个页中，在查找记录的时候可以根据搜索条件的不同分为两种情况：</p>
+<ul>
+<li>以主键为搜索条件</li>
+</ul>
+<p>这个查找过程我们已经很熟悉了，可以在页目录中使用<code>二分法</code>快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录。</p>
+<ul>
+<li>以其他列作为搜索条件</li>
+</ul>
+<p>对非主键列的查找的过程可就不这么幸运了，因为在数据页中并没有对非主键列建立所谓的<code>页目录</code>，所以我们无法通过二分法快速定位相应的槽。这种情况下只能从最小记录开始依次遍历<code>单链表</code>中的每条记录，然后对比每条记录是不是符合搜索条件。很显然，这种查找的效率是非常低的。</p>
+<p>在很多页中查找</p>
+<p>由于我们并不能快速的定位到记录所在的页，所以只能从第一个页沿着双向链表一直往下找，在每一个页中根据我们上边已经唠叨过的查找方式去查找指定的记录。</p>
+<p>一行的格式示意图</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5dMTgZ8zvqoEax8dqq87xj59ywc2szJicaBsZkibTdnRx1icCtEYTDgRRQ/640" alt="avatar"><br>我们只在示意图里展示记录的这几个部分：</p>
+<p><strong>record_type</strong>：记录头信息的一项属性，表示记录的类型，0表示普通记录、2表示最小记录、3表示最大记录、1我们还没用过，等会再说～</p>
+<p><strong>next_type</strong>：记录头信息的一项属性，表示下一条地址的偏移量，为了方便大家理解，我们都会用箭头来表明下一条记录是谁。</p>
+<p><strong>各个列的值</strong>：就是各个数据列的值，其中我们用橘黄色的格子代表c1列，深蓝色的格子代表c2列，红色格子代表c3列。</p>
+<p><em>其他信息</em>：除了上述3种信息以外的所有信息，包括其他隐藏列的值以及记录的额外信息。</p>
+<h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><p>概念:</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt55ga3Fmqa9Hicn9CQ6Lh2ibT7chylHXd6C6RdrbmZdmFzZJiafyoyjyIjQ/640" alt="avatar"></p>
+<p>实际用户记录其实都存放在B+树的最底层的节点上</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念:"></a>概念:</h3><ul>
+<li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</li>
+<li>非聚簇索引(又叫<code>二级索引</code>)：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行</li>
+</ul>
+<p>我们上边介绍的B+树本身就是一个目录，或者说本身就是一个索引。它有两个特点：</p>
+<p>1.使用记录主键值的大小进行记录和页的排序，这包括三个方面的含义：</p>
+<ul>
+<li><p>页内的记录是按照主键的大小顺序排成一个<code>单向链表</code>。</p>
+</li>
+<li><p>各个存放用户记录的页也是根据页中记录的主键大小顺序排成一个<code>双向链表</code>。</p>
+</li>
+<li><p>各个存放目录项的页也是根据页中记录的主键大小顺序排成一个<code>双向链表</code>。</p>
+</li>
+</ul>
+<p>2.B+树的叶子节点存储的是完整的用户记录。</p>
+<p>  所谓完整的用户记录，就是指这个记录中存储了所有列的值。</p>
+<p>我们把具有这两种特性的B+树称为聚簇索引</p>
+<p>聚簇索引优点:</p>
+<ul>
+<li>聚簇索引将索引和数据行保存在同一个B-Tree中，查询通过聚簇索引可以直接获取数据，相比非聚簇索引需要第二次查询（非覆盖索引的情况下）效率要高。</li>
+<li>聚簇索引对于范围查询的效率很高，因为其数据是按照大小排列的，</li>
+</ul>
+<h3 id="二级索引"><a href="#二级索引" class="headerlink" title="二级索引"></a>二级索引</h3><p>除了除了聚簇索引之外的索引</p>
+<p>二级索引这个B+树与聚簇索引有几处不同：</p>
+<p>使用记录索引列的大小进行记录和页的排序，这包括三个方面的含义：</p>
+<ul>
+<li><p>页内的记录是按照<code>索引列</code>的大小顺序排成一个单向链表。</p>
+<ul>
+<li>各个存放用户记录的页也是根据页中记录的<code>索引列</code>大小顺序排成一个双向链表。</li>
+<li>各个存放目录项的页也是根据页中记录的<code>索引列</code>大小顺序排成一个双向链表。</li>
+<li>B+树的叶子节点存储的并不是完整的<code>一页记录</code>，而只是<code>索引列</code>+<code>主键</code>这两个列的值。</li>
+</ul>
+</li>
+<li><p>目录项记录中不再是主键+页号的搭配，而变成了<code>索引列</code>+<code>页号</code>的搭配。</p>
+</li>
+</ul>
+<h3 id="二级索引查找过程"><a href="#二级索引查找过程" class="headerlink" title="二级索引查找过程"></a>二级索引查找过程</h3><p>查找过程如下：</p>
+<ol>
+<li>确定目录项记录页</li>
+<li>通过目录项记录页确定用户记录真实所在的页。</li>
+<li>在真实存储用户记录的页中定位到具体的记录。</li>
+<li>但是这个B+树的叶子节点中的记录只存储了c2(索引列)和c1（也就是主键）两个列，所以我们必须再根据主键值<code>去聚簇索引中再查找一遍</code>完整的用户记录。 (<strong>回表</strong>)</li>
+</ol>
+<h4 id="为啥回表？"><a href="#为啥回表？" class="headerlink" title="为啥回表？"></a>为啥回表？</h4><p>你说的对，如果把完整的用户记录放到叶子节点是可以不用回表，但是太占地方了呀</p>
+<p>最下层是一个个的数据页，每个页上有很多条数据，上边页目录可以进行二分查找，下边有每个记录各个列的全部数据，如果存到非聚簇索引中，则太占空间，数据同步也是个问题。</p>
+<h3 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h3><p><code>其非叶子节点存储的是第一个关键字的索引，而叶节点存储的则是三个关键字col1、col2、col3三个关键字的数据，且按照col1、col2、col3的顺序进行排序。</code></p>
+<ul>
+<li>先把各个记录和页按照c2列进行排序。</li>
+<li>在记录的c2列相同的情况下，采用c3列进行排序<br><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5nXZJIREPnjDpcQ73cLseLFZLjF5bWTVHYp7TvME6jWVgI3zmhWoqhQ/640" alt="avatar"></li>
+</ul>
+<p>与分别为c2和c3列建立索引的表述是不同的，不同点如下：</p>
+<ul>
+<li>建立联合索引只会建立如上图一样的1棵B+树。</li>
+<li>为c2和c3列建立索引会分别以c2和c3列的大小为排序规则建立2棵B+树。</li>
+</ul>
+<h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><p>涉及二级索引，因为索引中有建立索引的值，查询条件正好是这些索引值得时候 就不用回表了，直接从二级索引中把索引值返回就好了，这种 叫做覆盖索引。</p>
+<h2 id="MyISAM中的索引方案"><a href="#MyISAM中的索引方案" class="headerlink" title="MyISAM中的索引方案"></a>MyISAM中的索引方案</h2><p>MyISAM的索引方案虽然也使用B+树，但是却将索引和数据分开存储：</p>
+<ul>
+<li><p>将表中的记录按照插入时间顺序的存储在<code>一块存储空间</code>上，我们可以通过行号而快速访问到一条记录（因为index_demo表的记录是<code>定长</code>的，所以可以使用行号来进行快速访问，对于变长的记录MyISAM有不同的处理方案，我们这里就不介绍了），如图所示： (<strong><code>哈希索引？？？</code></strong>)<br><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5L11Q62nngFGjI1ZkhsQWE0f4wMXjnwI9YY480d17lG1wgfZib2gSaaw/640" alt="avatar"></p>
+</li>
+<li><p>由于在插入数据的时候并<code>没有刻意按照主键大小排序</code>，所以我们并<code>不能</code>在这些数据上使用二分法进行查找。</p>
+</li>
+<li><p>MyISAM会单独为表的主键创建一个<code>B+树</code>索引，只不过在B+树的叶子节点中存储的不是完整的用户记录，而是<code>主键值 + 行号</code>的组合。也就是先通过索引找到对应的行号，再通过行号去找对应的记录！</p>
+</li>
+<li><p>这一点和InnoDB是完全不相同的，在InnoDB存储引擎中，我们只需要根据主键值对聚簇索引进行一次查找能找到对应的记录，而在MyISAM中却需要进行一次<code>回表</code>操作，意味着MyISAM中建立的索引全部都是<code>二级索引</code>！</p>
+</li>
+<li><p>如果有需要的话，我们也可以对其它的列分别建立索引或者建立联合索引，原理和InnoDB中的索引是一样的，只不过在叶子节点处存储的是相应的列 + 行号而已。这些索引也全部都是<code>二级索引</code>。</p>
+</li>
+</ul>
+<h3 id="为啥索引建多了不好"><a href="#为啥索引建多了不好" class="headerlink" title="为啥索引建多了不好"></a>为啥索引建多了不好</h3><p>为啥不自动为每个列都建立个索引呢？别忘了，每建立一个索引都会<code>建立一棵B+树</code>，每插入一条记录都要维护各个记录、数据页的排序关系，这是<code>很费性能</code>和<code>存储空间</code>的。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="索引算法"><a href="#索引算法" class="headerlink" title="索引算法"></a>索引算法</h2><h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p><a href="./%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(%E6%A0%91).md">基础内容链接 多叉平衡树</a></p>
+<h4 id="为什么索引采用B-树呢？"><a href="#为什么索引采用B-树呢？" class="headerlink" title="为什么索引采用B+树呢？"></a>为什么索引采用B+树呢？</h4><p>和SQL的需求相关。<br>一个单行查询的SQL，例如passport，确实可以使用哈希索引。<br>但是对于排序查询的SQL需求：</p>
+<ol>
+<li>分组：group by</li>
+<li>排序：order by</li>
+<li>比较：&lt;、&gt;</li>
+</ol>
+<p>哈希型的索引，时间复杂度会退化为O(n)，而树型的“有序”特性，依然能够保持O(log(n)) 的高效率。</p>
+<p>哈希类型的索引，都要比树型的索引更快一些，那为什么，索引结构要设计成树型呢？</p>
+<h3 id="为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？"><a href="#为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？" class="headerlink" title="为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？"></a>为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？</h3><h3 id="B-Tree比BTree做索引的优势？"><a href="#B-Tree比BTree做索引的优势？" class="headerlink" title="B+Tree比BTree做索引的优势？"></a>B+Tree比BTree做索引的优势？</h3><h3 id="为什么MongoDB采用B-Tree作为索引结构而MySQL采用B-Tree作为索引存储结构？"><a href="#为什么MongoDB采用B-Tree作为索引结构而MySQL采用B-Tree作为索引存储结构？" class="headerlink" title="为什么MongoDB采用B-Tree作为索引结构而MySQL采用B+Tree作为索引存储结构？"></a>为什么MongoDB采用B-Tree作为索引结构而MySQL采用B+Tree作为索引存储结构？</h3><h2 id="mysql中建立索引的一些原则"><a href="#mysql中建立索引的一些原则" class="headerlink" title="mysql中建立索引的一些原则"></a>mysql中建立索引的一些原则</h2><ul>
+<li>先存数据，再建索引</li>
+<li>不要对数据量小的数据表建立索引，数据量超过300的表应该有索引</li>
+<li>对于规模小的数据表建立索引，不仅不会提高查询效率，相反使用索引查找可能比简单的全表扫描还要慢，而 且建索引还会占用一部分的存储空间</li>
+<li>当对表的查询操作比更新操作频率更高时，对该表建立索引</li>
+<li>在不同值较少的字段上不必要建立索引，如<code>性别</code>字段， <code>为啥？？？</code></li>
+<li>对查询操作中使用频繁的字段建立索引</li>
+<li>表的主键、外键必须有索引</li>
+<li>经常出现在Where后面的字段，特别是大表的字段，应该建立索引</li>
+<li>经常进行GROUP BY、ORDER BY的字段上建立索引</li>
+<li>索引应该建在小字段上，对于<code>大的文本字段甚至超长字段，不要建索引</code> <code>坏处？？？</code></li>
+</ul>
+<h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ul>
+<li>多索引查询，区间长的放最左边，因为区间短的可能效率还不如全表扫描</li>
+<li>or in ,unin 都能命中索引 建议使用 in </li>
+<li>更新频繁的字段不宜使用索引，因为会更新二叉树</li>
+<li>具有唯一特性的要建立唯一索引，及时是多个字段组合 并且影响Insert 性能，但索引的提升效率可见，并且增加了业务控制。</li>
+<li>查询尽量不要使用*  减少回表。（有的查询可以直接从索引里取）</li>
+<li>用explan 分析</li>
+<li>内存碎片</li>
+<li>调整数据页大小？（数据页默认16k,改8k查询效率好像快一点）</li>
+</ul>
+<h1 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h1><ul>
+<li>当like为’%abc’会失效</li>
+<li>is null  is not null （索引是不索引空值的）</li>
+<li>负向条件不会命中索引  （not，&lt;&gt;，!&#x3D;）</li>
+<li>不包含索引的放最前边，会导致后边有索引的也不会命中索引</li>
+<li>or 语句前后没有都使用索引</li>
+<li>数据类型发生隐式转换 ，如没加单引号，char 转成int 会全表扫描</li>
+<li>字段上使用函数，不走索引(emp(name,pp,sal))</li>
+<li>当全表扫描比索引速度快时，索引失效</li>
+<li>in 中参数条目超过阈值</li>
+<li>字符类型索引 两张表 字符集不一致</li>
+</ul>
+<h2 id="字符集问题导致索引失效问题排查"><a href="#字符集问题导致索引失效问题排查" class="headerlink" title="字符集问题导致索引失效问题排查"></a>字符集问题导致索引失效问题排查</h2><p>问题描述<br>在 业务开发中  用户表的主键ID 为vachar(32), 业务表里都有响应的user_id列 定义为 vachar(32) 来存储用户ID；<br>然后某个需求是查询 某个业务线 操作的所有用户信息。  正常的流程是  select *from 用户表 where id in( select distinct user_id from 业务表 加条件)<br>发现没有走索引；<br>排查思路：</p>
+<ol>
+<li><p>id 为索引列 是否添加了索引；索引不合理</p>
+</li>
+<li><p>in 中的子查询是不是数据量过大 导致的 in 中索引失效</p>
+</li>
+<li><p>id 和 子查询中的字段是否类型不一致。</p>
+</li>
+<li><p>检查都添加了索引。 再用强制走索引语法验证，发现还是不走</p>
+</li>
+<li><p>查出来子查询74条，查看一下 阈值  ，阈值是200 超过阈值 会使索引退化</p>
+</li>
+<li><p>问题基本锁定在了隐式转换首先检查两个表中字段都是vachar(32)；<br>然后模拟两种情况，将子查询结果直接放到父查询in中执行，发现是走索引的<br>所以问题基本锁定在了隐式转换<br>猜测1：子查询中 distinct 是否会把userId 进行类型转换， 做测试 ，很简单测试发现不成立<br>2：由于参数是数字 ，猜测执行优化器在子查询查出结果自动进行了隐式转换； 这个用cast 操作排除</p>
+<ol start="3">
+<li>由于是vachar类型 ，猜测字符集问题导致， 验证：子查询结果强制转换字符集 ，测试结果走索引；<br>查看两个表中，用户表手动添加了字符集，另一个表用的默认的，这就导致没走索引，在此记录，用字符类型的索引一定要检查字符集，否则导致索引失效。</li>
+</ol>
+</li>
+</ol>
+<p>下一步怎么解决：</p>
+<ol>
+<li>数据备份</li>
+<li>修改字符集</li>
+<li>数据导入</li>
+</ol>
+<p>mysql 三层索引大概能存多少数据？？</p>
+<p>每页大概 16k,  用bigint存 8k Mysql 是6k ,mysql 一个节点的大小设为一页或者页的倍数最为合适，16*1024&#x2F;14&#x3D; 1170   1170  * 1170  * 16&#x3D;2千万+</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&mid=2247486241&idx=1&sn=b9110c9d5be352f115c0d8cf6a0a520e&chksm=9bd0a6b9aca72faff0fe2f1ea1c3f43d6716f882bde357a999fe0094aa4e1f880f46473d1b98&scene=27#wechat_redirect">MySQL的索引</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU2NjIzNDk5NQ==&mid=2247484932&idx=1&sn=6819e1a80541e0e869cf61120aadbef4&chksm=fcaedc18cbd9550e317f1d258e8128a7894bd024c38f9829515cac3424b7d9eceb8ff76b35d9&scene=27#wechat_redirect">理解索引</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/morethink/p/9251530.html">MongoDB 及 Mysql 背后的 B&#x2F;B+树</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/" data-id="cld1bs9sj000mfynhef6gcrfl" data-title="每日一问0904(Mysql索引)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0903(Mysql知识点)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0905(%E8%B6%A3%E5%91%B3%E9%A2%98)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0905(趣味题)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

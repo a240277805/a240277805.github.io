@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>代码质量和安全性检测 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="代码质量和安全性检测  最佳实践：通过 @iceworks&#x2F;eslint-plugin-best-practices 分析项目，提出符合当前工程特征（对 ice 和 Rax项目友好）的最佳实践及阻塞问题发布卡口，帮助开发者优化项目性能，避免潜在 bug 。 安全实践：通过 @iceworks&#x2F;eslint-plugin-security-practices 扫码代码检测工程中可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码质量和安全性检测">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2022/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E6%80%A7%E6%A3%80%E6%B5%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="代码质量和安全性检测  最佳实践：通过 @iceworks&#x2F;eslint-plugin-best-practices 分析项目，提出符合当前工程特征（对 ice 和 Rax项目友好）的最佳实践及阻塞问题发布卡口，帮助开发者优化项目性能，避免潜在 bug 。 安全实践：通过 @iceworks&#x2F;eslint-plugin-security-practices 扫码代码检测工程中可">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9ETVA5WVZpYmlhMWRTNXJpYWF2ZHBMaHpiSEZCTlRKblNtSEM0MzFLQjBIaWJCS0w0R0prVjk0enI4eklpYXhrMkdzSEVvWXdjMGhMemliQW9RQW41RW5sWTZrQS82NDA?x-oss-process=image/format,png">
+<meta property="article:published_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9ETVA5WVZpYmlhMWRTNXJpYWF2ZHBMaHpiSEZCTlRKblNtSEM0MzFLQjBIaWJCS0w0R0prVjk0enI4eklpYXhrMkdzSEVvWXdjMGhMemliQW9RQW41RW5sWTZrQS82NDA?x-oss-process=image/format,png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2022/代码质量和安全性检测" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E6%80%A7%E6%A3%80%E6%B5%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      代码质量和安全性检测
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="代码质量和安全性检测"><a href="#代码质量和安全性检测" class="headerlink" title="代码质量和安全性检测"></a>代码质量和安全性检测</h1><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9ETVA5WVZpYmlhMWRTNXJpYWF2ZHBMaHpiSEZCTlRKblNtSEM0MzFLQjBIaWJCS0w0R0prVjk0enI4eklpYXhrMkdzSEVvWXdjMGhMemliQW9RQW41RW5sWTZrQS82NDA?x-oss-process=image/format,png" alt="img"></p>
+<ol>
+<li>最佳实践：通过 @iceworks&#x2F;eslint-plugin-best-practices 分析项目，提出符合当前工程特征（对 ice 和 Rax项目友好）的最佳实践及阻塞问题发布卡口，帮助开发者优化项目性能，避免潜在 bug 。</li>
+<li>安全实践：通过 @iceworks&#x2F;eslint-plugin-security-practices 扫码代码检测工程中可能存在的安全风险，包含 url 、敏感成词、明文账密信息及 npm 包证书检测，降低项目安全风险，守卫项目安全。</li>
+<li>阿里代码规范：这一维度主要反馈开发人员对于 eslint-config-ali 阿里开发规约的遵守程度。</li>
+<li>可维护度：通过 typhonjs-escomplex 对文件进行扫码，得出每个文件的可维护度，可读性及复杂度评分。针对得分较差的文件可以进行深度分析帮助开发者更好的重构复杂代码。</li>
+<li>重复度：通过 jscpd 计算重复出现的代码区块占比，计算出 clone 分数。并逐一列举重复的代码，方便开发者快速定位重复代码，将其封装成公共的方法或者组件。</li>
+</ol>
+<h2 id="Sorna"><a href="#Sorna" class="headerlink" title="Sorna"></a>Sorna</h2><ul>
+<li>Sornalint</li>
+<li>sornaQube</li>
+</ul>
+<p> SonarQube 是开源的代码质量管理平台，以 web 页面形式（即<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Sonar&spm=1001.2101.3001.7020">Sonar</a> Dashboard）可视化形式检查代码质量；SonarLint 是 SonarQube 提供的插件，可以安装在各个 IDE 工具。</p>
+<p>Sonar 可以从七个维度检测代码质量：</p>
+<ul>
+<li>代码规则——sonar可以通过PMD,CheckStyle,Findbugs等等代码规则检测工具规范代码编写；</li>
+<li>潜在的缺陷——通过PMD，CheckStyle，Findbugs 等代码规则检测工具检测出潜在的缺陷；</li>
+<li>复杂度——无论对于类还是方法，都不宜过长，长意味着复杂，问题丛生……。</li>
+<li>重复——sonar会检查重复片段，此时需要重构并提取共有逻辑；</li>
+<li>注释不足或者过多——关键的代码片段不能没有注释，注释得简洁有意义，且需要及时更新；</li>
+<li>单元测试——sonar可以很方便地统计并展示单元测试覆盖率；</li>
+<li>架构与设计——通过sonar可以找出循环，展示包与包、类与类之间相互依赖关系，可以检测自定义的架构规则 通过sonar可以管理第三方的jar包，可以利用LCOM4检测单个任务规则的应用情况， 检测耦合。</li>
+</ul>
+<h2 id="Alibaba-coding-guiding"><a href="#Alibaba-coding-guiding" class="headerlink" title="Alibaba coding guiding"></a>Alibaba coding guiding</h2><p>提供 IDEA 插件 Alibaba java coding guideline，方便集成在IDEA，实时发现并修改不规范代码。有一份详细的 pdf 文档《码出高效：阿里巴巴 Java 开发手册》解释编码规范；</p>
+<h2 id="Simian"><a href="#Simian" class="headerlink" title="Simian"></a>Simian</h2><p>冗余代码检查工具，非免费，支持语言： C#，C，C++，，COBOL，Ruby，JSP，ASP，HTML，XML，Visual Basic等。<br>支持Windows。</p>
+<h2 id="SourceMonitor"><a href="#SourceMonitor" class="headerlink" title="SourceMonitor"></a>SourceMonitor</h2><p>代码度量工具，免费，针对不同的语言（包括但不限于 C、C++、C#、Java、VB、Delphi和HTML），输出不同的代码度量值。SourceMonitor从几个不同的视图层次，如项目视图、检查点(checkpoint)视图和函数视图，展示如下度量值：</p>
+<ol>
+<li>总行数(Lines)：包括空行在内的代码行数；</li>
+<li>语句数(Statements)：在C语言中，语句是以分号结尾的。</li>
+<li>分支语句if，循环语句for、while，跳转语句goto都被计算在内，预处理语句#include、#define#undef也被计算在内，对其他的预处理语句则不作计算，在#else和#endif、#elif和#endif之间的语句将被忽略；</li>
+<li>分支语句比例(Percent Branch Statements)：该值表示分支语句占语句数目的比例，分支语句 指的是使程序不顺序执行的语句，包括if、else、for、while和switch；</li>
+<li>注释比例(Percent Lines with Comments)：该值指示注释行（包括&#x2F;* *&#x2F;和&#x2F;&#x2F;形式）占总行数的比例；</li>
+<li>函数数目(Functions)：指示函数的数量；</li>
+</ol>
+<h2 id="代码审查（code-review）工具"><a href="#代码审查（code-review）工具" class="headerlink" title="代码审查（code-review）工具"></a>代码审查（code-review）工具</h2><ul>
+<li>Review Board</li>
+<li>jArchitect</li>
+<li>RhodeCode</li>
+<li>Codebrag</li>
+<li>Crucible</li>
+<li>Malevich</li>
+<li>Gerrit</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E6%80%A7%E6%A3%80%E6%B5%8B/" data-id="cld1bs9ug003xfynhec624mhb" data-title="代码质量和安全性检测" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(HashMap)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问1224(HashMap)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2022/%E5%BC%82%E5%B8%B8%E8%A7%84%E8%8C%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">异常规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0506(mysql连接数调优) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="mysql 连接数调优12345678910111213141516171819202122232425262728293031323334353637命令：show status;mysql&gt;show status like &amp;#x27;%变量名%&amp;#x27;;变量名如下：Aborted_clients 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量。 Aborted_connect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0506(mysql连接数调优)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mysql 连接数调优12345678910111213141516171819202122232425262728293031323334353637命令：show status;mysql&gt;show status like &amp;#x27;%变量名%&amp;#x27;;变量名如下：Aborted_clients 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量。 Aborted_connect">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2022/每日一问0506(mysql连接数调优)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0506(mysql连接数调优)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-连接数调优"><a href="#mysql-连接数调优" class="headerlink" title="mysql 连接数调优"></a>mysql 连接数调优</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">命令：show status;</span><br><span class="line"></span><br><span class="line">mysql&gt;show status like &#x27;%变量名%&#x27;;</span><br><span class="line"></span><br><span class="line">变量名如下：</span><br><span class="line">Aborted_clients 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量。 </span><br><span class="line">Aborted_connects 尝试已经失败的MySQL服务器的连接的次数。 </span><br><span class="line">Connections 试图连接MySQL服务器的次数。 </span><br><span class="line">Created_tmp_tables 当执行语句时，已经被创造了的隐含临时表的数量。 </span><br><span class="line">Delayed_insert_threads 正在使用的延迟插入处理器线程的数量。 </span><br><span class="line">Delayed_writes 用INSERT DELAYED写入的行数。 </span><br><span class="line">Delayed_errors 用INSERT DELAYED写入的发生某些错误(可能重复键值)的行数。 </span><br><span class="line">Flush_commands 执行FLUSH命令的次数。 </span><br><span class="line">Handler_delete 请求从一张表中删除行的次数。 </span><br><span class="line">Handler_read_first 请求读入表中第一行的次数。 </span><br><span class="line">Handler_read_key 请求数字基于键读行。 </span><br><span class="line">Handler_read_next 请求读入基于一个键的一行的次数。 </span><br><span class="line">Handler_read_rnd 请求读入基于一个固定位置的一行的次数。 </span><br><span class="line">Handler_update 请求更新表中一行的次数。 </span><br><span class="line">Handler_write 请求向表中插入一行的次数。 </span><br><span class="line">Key_blocks_used 用于关键字缓存的块的数量。 </span><br><span class="line">Key_read_requests 请求从缓存读入一个键值的次数。 </span><br><span class="line">Key_reads 从磁盘物理读入一个键值的次数。 </span><br><span class="line">Key_write_requests 请求将一个关键字块写入缓存次数。 </span><br><span class="line">Key_writes 将一个键值块物理写入磁盘的次数。 </span><br><span class="line">Max_used_connections 同时使用的连接的最大数目。 </span><br><span class="line">Not_flushed_key_blocks 在键缓存中已经改变但是还没被清空到磁盘上的键块。 </span><br><span class="line">Not_flushed_delayed_rows 在INSERT DELAY队列中等待写入的行的数量。 </span><br><span class="line">Open_tables 打开表的数量。 </span><br><span class="line">Open_files 打开文件的数量。 </span><br><span class="line">Open_streams 打开流的数量(主要用于日志记载） </span><br><span class="line">Opened_tables 已经打开的表的数量。 </span><br><span class="line">Questions 发往服务器的查询的数量。 </span><br><span class="line">Slow_queries 要花超过long_query_time时间的查询数量。 </span><br><span class="line">Threads_connected 当前打开的连接的数量。 </span><br><span class="line">Threads_running 不在睡眠的线程数量。 </span><br><span class="line">Uptime 服务器工作了多长时间，单位秒。</span><br></pre></td></tr></table></figure>
+
+<p>常用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* **查询数据库连接:show full  processlist; </span><br><span class="line"></span><br><span class="line">* 查看最大连接数: show status like &#x27;%Max_used_connections%&#x27;;</span><br><span class="line">* 当前连接数: show status like &#x27;%Threads_connected%&#x27;;</span><br><span class="line">* SHOW STATUS LIKE &#x27;Qcache%&#x27;;</span><br><span class="line"></span><br><span class="line">* 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量:show status like &#x27;Aborted_clients&#x27;;</span><br><span class="line">* 查看最大连接数量:show variables like &#x27;%max_connections%&#x27;;</span><br><span class="line">* 查看超时时间:show variables like &#x27;%timeout%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>Threads_connected ：这个数值指的是打开的连接数.</p>
+<p>Threads_running ：这个数值指的是激活的连接数，这个数值一般远低于connected数值.</p>
+<p>Threads_connected 跟show processlist结果相同，表示当前连接数。准确的来说，Threads_running是代表当前<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>数</p>
+<p>查询数据库当前设置的最大连接数</p>
+<p>在&#x2F;etc&#x2F;my.cnf里面设置数据库的最大连接数</p>
+<p>[mysqld]</p>
+<p>max_connections &#x3D; 1000</p>
+<p>MySQL服务器的线程数需要在一个合理的范围之内，这样才能保证MySQL服务器健康平稳地运行。Threads_created表示创建过的线程数，通过查看Threads_created就可以查看MySQL服务器的进程状态。</p>
+<p>如果我们在MySQL服务器配置文件中设置了thread_cache_size，当客户端断开之后，服务器处理此客户的线程将会缓存起来以响应下一个客户而不是销毁(前提是缓存数未达上限)。</p>
+<p>Threads_created表示创建过的线程数，如果发现Threads_created值过大的话，表明MySQL服务器一直在创建线程，这也是比较耗资源，可以适当增加配置文件中thread_cache_size值，查询服务器thread_cache_size的值：</p>
+<p>命令：show processlist;<br>如果是root帐号，你能看到所有用户的当前连接。如果是其它普通帐号，&#x3D;&#x3D;只能看到自己占用的连接&#x3D;&#x3D;。<br>show processlist命令只列出前100条，如果想全列出请使用show full processlist;<br>mysql&gt; show processlist;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/" data-id="cld1bs9un004bfynhdndd7imk" data-title="每日一问0506(mysql连接数调优)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0331(TCP拥塞控制)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0709(%E5%B7%A5%E4%BD%9C%E8%BF%B0%E8%81%8C)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0709(工作述职)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

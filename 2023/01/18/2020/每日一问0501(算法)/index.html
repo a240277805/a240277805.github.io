@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0501(算法) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="算法LRU 最少使用算法堆排序特性 左子节点：2i+1 右子节点：2i+2 父节点：(i-1)&#x2F;2 最后一个非叶子节点:(arr.length-1-1)&#x2F;2&#x3D;arr.length&#x2F;2-1  步骤 构建大顶堆，从最后一个非叶子结点开始，先比较左右子节点找到最大的，然后将最大的和父节点比较，看是否替换；一次比较完了，还要看替换的子节点下在进行一次相同的比较。 开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0501(算法)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="算法LRU 最少使用算法堆排序特性 左子节点：2i+1 右子节点：2i+2 父节点：(i-1)&#x2F;2 最后一个非叶子节点:(arr.length-1-1)&#x2F;2&#x3D;arr.length&#x2F;2-1  步骤 构建大顶堆，从最后一个非叶子结点开始，先比较左右子节点找到最大的，然后将最大的和父节点比较，看是否替换；一次比较完了，还要看替换的子节点下在进行一次相同的比较。 开">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20211231112533735.png">
+<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20211102174743175.png">
+<meta property="article:published_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a240277805.github.io/ImgSource/image-20211231112533735.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问0501(算法)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0501(算法)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="LRU-最少使用算法"><a href="#LRU-最少使用算法" class="headerlink" title="LRU 最少使用算法"></a>LRU 最少使用算法</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>左子节点：2i+1</li>
+<li>右子节点：<img src="/../../ImgSource/image-20211231112533735.png" alt="image-20211231112533735">2i+2</li>
+<li>父节点：(i-1)&#x2F;2</li>
+<li>最后一个非叶子节点:(arr.length-1-1)&#x2F;2&#x3D;arr.length&#x2F;2-1</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>构建大顶堆，从最后一个非叶子结点开始，先比较左右子节点找到最大的，然后将最大的和父节点比较，看是否替换；一次比较完了，还要看替换的子节点下在进行一次相同的比较。</li>
+<li>开始替换根节点和最后一个节点的值，再次进行构建大顶堆，范围比上一次少一个节点。</li>
+</ol>
+<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><p>步骤：</p>
+<ol>
+<li>从0开始，拿出值， 先从后边比较，再从开始比较，大于0的放后边小于零的放前边，最终找到0拿出来的值最合适的位置，将其置换</li>
+<li>然后分成两部分，分别递归。</li>
+</ol>
+<h2 id="深度优先搜索和广度优先搜索"><a href="#深度优先搜索和广度优先搜索" class="headerlink" title="深度优先搜索和广度优先搜索"></a>深度优先搜索和广度优先搜索</h2><p>对象旁边的号码表示搜索顺序。</p>
+<p><img src="/../../ImgSource/image-20211102174743175.png" alt="image-20211102174743175"></p>
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><p>思路  </p>
+<ol>
+<li><p>准备  待遍历数组 ，当前元素取值位置，预备结果集，是否使用过标识</p>
+</li>
+<li><p>遍历数组 ，每个数组元素进行一次 dfs ，填装结果集（可能进行深copy） </p>
+</li>
+<li><p>dfs 一次是 深度加1 ，然后递归</p>
+</li>
+<li><p>枝剪 ：结果集超了位置则进行回溯，（一般在dfs 递归调用下边）回溯退回一个元素，然后下边的继续遍历 终止条件 当深度足够或 结果集合适 则添加结果集</p>
+</li>
+</ol>
+<p>每一次尝试都「复制」，则不需要回溯<br>如果在每一个 非叶子结点 分支的尝试，都创建 新的变量 表示状态，那么</p>
+<p>在回到上一层结点的时候不需要「回溯」；<br>在递归终止的时候也不需要做拷贝。</p>
+<p>做题的时候，建议 &#x3D;&#x3D;先画树形图&#x3D;&#x3D; ，画图能帮助我们想清楚递归结构，想清楚如何剪枝。拿题目中的示例，想一想人是怎么做的，一般这样下来，这棵递归树都不难画出。</p>
+<p>在画图的过程中思考清楚：</p>
+<p>分支如何产生；<br>题目需要的解在哪里？是在叶子结点、还是在非叶子结点、还是在从跟结点到叶子结点的路径？<br>哪些搜索会产生不需要的解的？例如：产生重复是什么原因，如果在浅层就知道这个分支不能产生需要的结果，应该提前剪枝，剪枝的条件是什么，代码怎么写？</p>
+<h2 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h2><p>算法总结</p>
+<ol>
+<li><p>巧用递归，一定要设定终止位置 ，否则很危险</p>
+</li>
+<li><p>栈 可用来解决 对称 匹配 出战入栈 （「[{}]」）</p>
+</li>
+<li><p>队列 可用于各种结构按自定义顺序入队列 比如二叉树 根据遍历方式不同 入队列 广度优先遍历</p>
+</li>
+<li><p>可引入map（无重复），数组（下标对应）用空间换时间的方式做一些优化 统计个数的时候可以考虑用hashMap做去重</p>
+</li>
+<li><p>回溯法，动态规划法，双指针+排序</p>
+</li>
+<li><p>摩尔投票法 ，两两抵消 ，留下最多；</p>
+</li>
+<li><p>优先队列  用堆    前多少 个元素，后多少个元素， 只用跟对顶对比  ： 思路  堆未满 先填充，堆满了 跟堆顶比较 ，合适就进堆，不合适 下一个，最后输出堆。</p>
+</li>
+<li><p>算法中使用list 别忘了值传递 要用 深copy  new ArrayList&lt;&gt;(arr);</p>
+</li>
+<li><p>回溯算法思路  （<br> 0） 准备  待遍历数组，当前元素取值位置，预备结果集，是否使用过标识</p>
+</li>
+</ol>
+<ol>
+<li>遍历数组 ，每个数组元素进行一次 dfs ，填装结果集（可能进行深copy） </li>
+<li>dfs 一次是 深度加1 ，然后递归<br>3） 枝剪 ：结果集超了位置则进行回溯，（一般在dfs 递归调用下边）回溯退回一个元素，然后下边的继续遍历 终止条件 当深度足够或 结果集合适 则添加结果集</li>
+</ol>
+<p>）</p>
+<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><h3 id="1）回溯法总结-Backtracking（回溯法）"><a href="#1）回溯法总结-Backtracking（回溯法）" class="headerlink" title="1）回溯法总结 Backtracking（回溯法）"></a>1）回溯法总结 Backtracking（回溯法）</h3><p>场景<br>除了可以解决与集合排列、组合相关的问题，回溯法还能解决很多算法面试题。如果解决一个问题需要若干步骤，并且每一步都面临若干选项，当在某一步做了某个选择之后前往下一步仍然面临若干选项，那么可以考虑尝试用回溯法解决。通常，回溯法可以用递归的代码实现。</p>
+<p>思路<br>8. 一般都是按步骤来，把一道题抽象成很多步骤组成。<br>2. 注意数据的copy 问题<br>3. 标记当前位置<br>7. 执行下一步所有可能情况。也就是转化成树的结构，然后深度遍历<br>4. 给定所有可用元素 一般  数字范围，数组 二维数组<br>5. 结果集 用来装所有结果<br>6. 重复判断 重复判断方式 可以用 map，set ,数组 位置</p>
+<ol>
+<li>list.remove() 进行回退，</li>
+</ol>
+<p>变种</p>
+<p>分治、贪心、回溯和动态规划等算法思想，二分查找、深度优先遍历和广度优先遍历、双指针、滑动窗口、位运算、并查集等解题思路和技巧，以及通用解题“套路”和解题模板等内容</p>
+<p>算法总结</p>
+<ol>
+<li>巧用递归，一定要设定终止位置 ，否则很危险</li>
+<li>栈 可用来解决 对称 匹配 出战入栈 （「[{}]」）</li>
+<li>队列 可用于各种结构按自定义顺序入队列 比如二叉树 根据遍历方式不同 入队列</li>
+<li>可引入map（无重复），数组（下标对应）用空间换时间的方式做一些优化</li>
+<li>回溯法，动态规划法，双指针+排序</li>
+</ol>
+<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><ol>
+<li>算法：二叉树给个头节点，求树高</li>
+<li>数组只有一个元素出现一次，怎么找出来，时间和空间复杂度是多少</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/" data-id="cld1bs9sw0016fynhepl38m3t" data-title="每日一问0501(算法)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0430(Mybatis)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0430(Mybatis)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0506(动态代理)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

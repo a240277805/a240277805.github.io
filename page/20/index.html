@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://a240277805.github.io/page/20/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2020/每日一问0925(k8s)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/">每日一问0925(k8s)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h1><h2 id="如何搭建-k8s"><a href="#如何搭建-k8s" class="headerlink" title="如何搭建 k8s"></a>如何搭建 k8s</h2><h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>pv PersistentVolume（PV）</p>
+<p>PV是对底层网络共享存储的抽象，将共享存储定义为一种“资源”，比如Node也是一种容器应用可以“消费”的资源。PV由管理员创建和配置，它与共享存储的具体实现直接相关，例如GlusterFS、iSCSI、RBD或GCE或AWS公有云提供的共享存储，通过插件式的机制完成与共享存储的对接，以供应用访问和使用。</p>
+<p>PVC PersistentVolumeClaim（PVC）</p>
+<p>PVC则是用户对存储资源的一个“申请”。就像Pod“消费”Node的资源一样，PVC能够“消费”PV资源。PVC可以申请特定的存储空间和访问模式。</p>
+<p>SVC</p>
+<p>pod</p>
+<p>node</p>
+<h2 id="CSI"><a href="#CSI" class="headerlink" title="CSI"></a>CSI</h2><p>引入容器存储接口Container Storage Interface（CSI）机制，用于在Kubernetes和外部存储系统之间建立一套标准的存储管理接口，通过该接口为容器提供存储服务。</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>我们通过设置kube-apiserver服务的启动参数–enable-swagger-ui&#x3D;true来启用Swagger UI页面，其访问地址为http:&#x2F;&#x2F;<master-ip>:<master-port>&#x2F;swagger-ui&#x2F;</p>
+<h2 id="Master的组件"><a href="#Master的组件" class="headerlink" title="Master的组件"></a>Master的组件</h2><ul>
+<li>（1）kube-apiserver</li>
+<li>（2）etcd</li>
+<li>（3）kube-scheduler</li>
+<li>（4）kube-controller-manager</li>
+<li>（5）cloud-controller-manager</li>
+</ul>
+<p>Pod有两种类型：普通的Pod和静态Pod（Static Pod）</p>
+<p>Service在Kubernetes中是一个抽象的概念，定义了一组逻辑上的Pod和一个访问它们的策略（通常称为微服务）。</p>
+<p>，在Kubernetes中，Volume是Pod中能够被多个容器访问的共享目录。</p>
+<h4 id="3．卷（Volume）"><a href="#3．卷（Volume）" class="headerlink" title="3．卷（Volume）"></a>3．卷（Volume）</h4><ul>
+<li>local 本地存储 ，使用Local Storage可以由Kubernetes自动对Pod进行调度，而使用HostPath只能人工手动调度Pod，因为Kubernetes已经知道了每个节点上kube-reserved和system-reserved设置的本地存储限制。</li>
+<li>NFS（Network File System，网络文件系统） 使用NFS数据卷适用于多读多写的持久化存储，适用于大数据分析、媒体处理、内容管理等场景。</li>
+<li>projected Volume projected Volume将多个Volume源映射到同一个目录，可以支持以下类型的卷源：secret、downwardAPI、configMap、serviceAccounttoken。 所有源都需要与Pod在同一名称空间中。</li>
+<li>secret volume用于将敏感信息（如密码）传递给Pod。 ，因此它们永远不会写入非易失性存储。</li>
+</ul>
+<h4 id="复制控制器（Replication-Controller-RC）"><a href="#复制控制器（Replication-Controller-RC）" class="headerlink" title="复制控制器（Replication Controller, RC）"></a>复制控制器（Replication Controller, RC）</h4><p>● 重新规划，比如重新设置Pod数量。</p>
+<p>● 缩放。</p>
+<p>● 滚动更新。</p>
+<p>● RC支持滚动更新，允许我们在更新服务时逐个替换Pod。</p>
+<ul>
+<li>除了在程序更新过程中同时可以运行多个版本的程序外，也可以在更新完成之后的一段时间内或者持续的同时运行多个版本（新旧），需要通过标签选择器来完成。</li>
+</ul>
+<h4 id="Replica-Set"><a href="#Replica-Set" class="headerlink" title="Replica Set"></a>Replica Set</h4><p>Replica Set 是下一代复制控制器。Replica Set和Replication Controller之间的&#x3D;&#x3D;唯一区别&#x3D;&#x3D;是选择器的支持——Replica Set支持基于集合的Label selector（Set-based selector），而RC只支持基于等式的Label selector（equality-basedselector），所以Replica Set的功能更强大。</p>
+<h4 id="7．部署控制器（Deployment）"><a href="#7．部署控制器（Deployment）" class="headerlink" title="7．部署控制器（Deployment）"></a>7．部署控制器（Deployment）</h4><h4 id="8．StatefulSet"><a href="#8．StatefulSet" class="headerlink" title="8．StatefulSet"></a>8．StatefulSet</h4><p>StatefulSet用于管理有状态应用程序，比如MySQL集群、MongoDB集群、ZooKeeper集群等。</p>
+<h4 id="9．后台支撑服务集（DaemonSet）"><a href="#9．后台支撑服务集（DaemonSet）" class="headerlink" title="9．后台支撑服务集（DaemonSet）"></a>9．后台支撑服务集（DaemonSet）</h4><p>DaemonSet保证在每个Node上都运行一个容器副本，常用来部署一些集群的日志、监控或者其他系统管理应用。典型的应用包括：</p>
+<p>● 日志收集守护程序，比如fluentd、logstash等。</p>
+<p>● 系统监控，比如Prometheus Node Exporter、collectd、New Relicagent、Ganglia gmond等。</p>
+<p>● 集群存储后台进程，比如glusterd、ceph等。</p>
+<p>● 系统程序，比如kube-proxy、kube-dns、glusterd、ceph等。</p>
+<h4 id="10-JOB"><a href="#10-JOB" class="headerlink" title="10. JOB"></a>10. JOB</h4><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p> journalctl -u docker</p>
+<p>journalctl -u kuberlet -f</p>
+<p>&#x2F;&#x2F;查看指定文件描述的所有资源</p>
+<p>kuberctl describe -f **.yaml</p>
+<p>kubectl-debug是一个简单的开源kubectl插件，可以帮助我们便捷地进行Kubernetes上的Pod排障诊断，背后做的事情很简单：在运行中的Pod上额外起一个新容器，并将新容器加入目标容器的pid、network、user以及ipc namespace中。这时我们就可以在新容器中直接用netstat、tcpdump这些熟悉的工具来诊断和解决问题了，而旧容器可以保持最小化，不需要预装任何额外的排障工具。</p>
+<p>（1）Pod一直处于Pending状态Pending一般情况下表示这个Pod没有被调度到一个节点上，通常使用“kubectldescribe”命令来查看Pod事件以得到具体原因。通常情况下，这是因为资源不足引起的。如果是资源不足，那么解决方案有：● 添加工作节点。● 移除部分Pod以释放资源。● 降低当前Pod的资源限制。</p>
+<p>（2）如果一个Pod卡在Waiting状态，</p>
+<p>就表示这个Pod已经调试到节点上，但是没有运行起来。解决方案有：</p>
+<p>● 检查网络问题。若是网络问题，则保障网络通畅，可以考虑使用代理或国际网络（部分域名在国内网络无法访问，比如“k8s.gcr.io”）。</p>
+<p>● 如果是拉取超时，可以考虑使用镜像加速器（比如使用阿里云或腾讯云提供的镜像加速地址），也可以考虑适当调整超时时间。</p>
+<p>● 尝试使用docker pull <image>来验证镜像是否可以正常拉取。（</p>
+<p>（3）Pod一直处于CrashLoopBackOff状态，经检查判为健康检查启动超时而退出CrashLoopBackOff状态说明容器曾经启动但又异常退出了，通常此Pod的重启次数是大于0的。解决方案有：● 重新设置合适的健康检查阈值。● 优化容器性能，提高启动速度。● 关闭健康检查。</p>
+<p>（4）出现大量状态为“Evicted”的PodEvicted即驱赶的意思，当节点NotReady（节点宕机或失联）或资源不足时就会将Pod驱逐到其他节点。解决方案有：● 排查节点异常。● 排查资源问题，扩充资源或释放其他资源。● 可使用以下命令批量删除已有的“Evicted”状态的Pod：</p>
+<p>Azure中国镜像源地址：<a target="_blank" rel="noopener" href="http://mirror.azure.cn/%E3%80%82">http://mirror.azure.cn/。</a></p>
+<p>中科大镜像源地址：<a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/%E3%80%82">http://mirrors.ustc.edu.cn/。</a></p>
+<p>网络组件flannel安装完成后，通过命令查看时一直在初始化状态，并且通过日志输出的内容如下所示：</p>
+<p><img src="/../../ImgSource/image-20211112162530870.png" alt="image-20211112162530870"></p>
+<p><img src="/../../ImgSource/image-20211112162721959.png" alt="image-20211112162721959"></p>
+<p>通常推荐使用“kubectl apply”命令替代“kubectl create”，因为“kubectl apply”既能创建Kubernetes资源，也能对资源进行更新，属于声明式对象配置管理，比命令式对象配置管理更易于理解和使用。</p>
+<h3 id="使用“kubectl-scale”命令来伸缩应用"><a href="#使用“kubectl-scale”命令来伸缩应用" class="headerlink" title="使用“kubectl scale”命令来伸缩应用"></a>使用“kubectl scale”命令来伸缩应用</h3><h4 id="9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用"><a href="#9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用" class="headerlink" title="9.2.2 使用“kubectl autoscale”命令来自动伸缩应用"></a>9.2.2 使用“kubectl autoscale”命令来自动伸缩应用</h4><h4 id="9-2-4-使用“kubectl-set”命令更新应用"><a href="#9-2-4-使用“kubectl-set”命令更新应用" class="headerlink" title="9.2.4 使用“kubectl set”命令更新应用"></a>9.2.4 使用“kubectl set”命令更新应用</h4><h4 id="9-2-5-使用“kubectl-rollout”命令回滚应用"><a href="#9-2-5-使用“kubectl-rollout”命令回滚应用" class="headerlink" title="9.2.5 使用“kubectl rollout”命令回滚应用"></a>9.2.5 使用“kubectl rollout”命令回滚应用</h4><p><img src="/../../ImgSource/image-20211112163203163.png" alt="image-20211112163203163"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yan234280533/article/details/72567261?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kubernetes中pod创建流程</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/" data-id="cld1bs9t5001mfynha27p4rnf" data-title="每日一问0925(k8s)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2020/每日一问0925(maven)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/">每日一问0925(maven)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/" data-id="cld1bs9t6001nfynhay742nu2" data-title="每日一问0925(maven)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2020/每日一问1009(mongodb)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">每日一问1009(mongodb)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li>show collections 查看集合</li>
+<li>db.dbName.find({“a”:”b”}) 查找</li>
+<li>创建&#x2F;切换仓库: use DATABASE_NAME</li>
+<li>查看当前仓库: db</li>
+<li>查看所有仓库: show dbs</li>
+<li>普通库增加用户: (1)use  dbName (2) db.createUser({“user”:”ctfo”,”pwd”:”pipelineCTFO!2020”,roles:[“dbOwner”]})</li>
+<li>查看用户: show users   ;     db.dbName.users.find().pretty()</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/" data-id="cld1bs9t6001ofynh7aq914oc" data-title="每日一问1009(mongodb)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2020/每日一问1015(docker)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">每日一问1015(docker)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>每一个指令都会创建一层，并构成新的镜像。当运行多个指令时，会产生一些非常臃肿、非常多层的镜像，既增加了构建部署的时间，也很容易出错。因此，在很多情况下，可以合并指令并运行</p>
+<h2 id="镜像存储方式"><a href="#镜像存储方式" class="headerlink" title="镜像存储方式"></a>镜像存储方式</h2><p><img src="https://pic2.zhimg.com/80/v2-f3109ae2689c869b28f5033e2dff9669_720w.jpg" alt="avator"></p>
+<ol>
+<li>镜像中心域名 </li>
+<li>命名空间</li>
+<li>仓库名称</li>
+<li>标签</li>
+</ol>
+<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><h3 id="docker-compose-yml-属性"><a href="#docker-compose-yml-属性" class="headerlink" title="docker-compose.yml 属性"></a>docker-compose.yml 属性</h3><ul>
+<li><strong>version</strong>：指定 docker-compose.yml 文件的写法格式</li>
+<li><strong>services</strong>：多个容器集合</li>
+<li><strong>build</strong>：配置构建时，Compose 会利用它自动构建镜像，该值可以是一个路径，也可以是一个对象，用于指定 Dockerfile 参数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">build: ./dir</span><br><span class="line">---------------</span><br><span class="line">build:</span><br><span class="line">    context: ./dir</span><br><span class="line">    dockerfile: Dockerfile</span><br><span class="line">    args:</span><br><span class="line">        buildno: 1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>command</strong>：覆盖容器启动后默认执行的命令</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">command: bundle exec thin -p 3000</span><br><span class="line">----------------------------------</span><br><span class="line">command: [bundle,exec,thin,-p,3000]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>dns</strong>：配置 dns 服务器，可以是一个值或列表</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dns: 8.8.8.8</span><br><span class="line">------------</span><br><span class="line">dns:</span><br><span class="line">    - 8.8.8.8</span><br><span class="line">    - 9.9.9.9</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>dns_search</strong>：配置 DNS 搜索域，可以是一个值或列表</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dns_search: example.com</span><br><span class="line">------------------------</span><br><span class="line">dns_search:</span><br><span class="line">    - dc1.example.com</span><br><span class="line">    - dc2.example.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>environment</strong>：环境变量配置，可以用数组或字典两种方式</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">    RACK_ENV: development</span><br><span class="line">    SHOW: &#x27;ture&#x27;</span><br><span class="line">-------------------------</span><br><span class="line">environment:</span><br><span class="line">    - RACK_ENV=development</span><br><span class="line">    - SHOW=ture</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>env_file</strong>：从文件中获取环境变量，可以指定一个文件路径或路径列表，其优先级低于 environment 指定的环境变量</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env_file: .env</span><br><span class="line">---------------</span><br><span class="line">env_file:</span><br><span class="line">    - ./common.env</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>expose</strong>：暴露端口，只将端口暴露给连接的服务，而不暴露给主机</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expose:</span><br><span class="line">    - &quot;3000&quot;</span><br><span class="line">    - &quot;8000&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>image</strong>：指定服务所使用的镜像</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image: java</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>network_mode</strong>：设置网络模式</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">network_mode: &quot;bridge&quot;</span><br><span class="line">network_mode: &quot;host&quot;</span><br><span class="line">network_mode: &quot;none&quot;</span><br><span class="line">network_mode: &quot;service:[service name]&quot;</span><br><span class="line">network_mode: &quot;container:[container name/id]&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ports</strong>：对外暴露的端口定义，和 expose 对应</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ports:   # 暴露端口信息  - &quot;宿主机端口:容器暴露端口&quot;</span><br><span class="line">- &quot;8763:8763&quot;</span><br><span class="line">- &quot;8763:8763&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>links</strong>：将指定容器连接到当前连接，可以设置别名，避免ip方式导致的容器重启动态改变的无法连接情况</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">links:    # 指定服务名称:别名 </span><br><span class="line">    - docker-compose-eureka-server:compose-eureka</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>volumes</strong>：卷挂载路径</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  - /lib</span><br><span class="line">  - /var</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>logs</strong>：日志输出信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--no-color          单色输出，不显示其他颜.</span><br><span class="line">-f, --follow        跟踪日志输出，就是可以实时查看日志</span><br><span class="line">-t, --timestamps    显示时间戳</span><br><span class="line">--tail              从日志的结尾显示，--tail=200</span><br></pre></td></tr></table></figure>
+
+<h3 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h3><ul>
+<li><strong>ps</strong>：列出所有运行容器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose ps</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>logs</strong>：查看服务日志输出</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose logs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>port</strong>：打印绑定的公共端口，下面命令可以输出 eureka 服务 8761 端口所绑定的公共端口</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose port eureka 8761</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><strong>kill</strong>：通过发送 SIGKILL 信号来停止指定服务的容器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill eureka</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>pull</strong>：下载服务镜像</li>
+<li><strong>scale</strong>：设置指定服务运气容器的个数，以 service&#x3D;num 形式指定</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose scale user=3 movie=3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>run</strong>：在一个服务上执行一个命令</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose run web bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="dockerFile"><a href="#dockerFile" class="headerlink" title="dockerFile"></a>dockerFile</h2><ul>
+<li>ENTRYPOINT是配置容器启动后执行的指令，并且不可被docker run提供的参数覆盖。每个Dockerfile中只能有一个ENTRYPOINT，当指定多个时，只有最后一个生效。</li>
+<li>ADD指令与COPY指令非常类似，但它包含了更多的功能。除了将文件从主机复制到容器镜像外，ADD指令还可以使用URL规范从远程位置复制文件。</li>
+<li>如果Dockerfile中指定了多个CMD指令，就只会执行最后一个指令。</li>
+<li>转义字符, Dockerfile指令需要跨多行进行编写，以提高脚本命令的可读性。这可以通过转义字符完成，默认Dockerfile转义字符是反斜杠“\”</li>
+</ul>
+<h3 id="dockerfile-优化"><a href="#dockerfile-优化" class="headerlink" title="dockerfile 优化"></a>dockerfile 优化</h3><p>（1）尽量选择官方镜像。</p>
+<p>（2）选择合适的基础镜像。<br>需要特别说明的是，标签中包含“alpine”的镜像是基于体积更小的Alpine Linux发行版制作的，一般情况下可以优先考虑。标签中包含“sdk”的镜像是包含完整的框架SDK的，往往体积比较大，如果仅用于运行托管，尽量选择带“runtime”的镜像<br>（3）优化指令顺序。Docker会缓存Dockerfile中尚未更改的所有步骤，但是不管更改什么指令，都将重做其后的所有步骤。也就是说，如果指令3有变动，那么4、5、6就会重做。因此，需要将最不可能产生更改的指令放在前面，按照这个顺序来编写Dockerfile指令。这样，在构建过程中就可以节省很多时间。比如，可以把WORKDIR、ENV等放在前面，把COPY、ADD放在后面。总的来说，就是把不需要经常更改的指令放到前面，将最频繁更改的指令放到最后面。</p>
+<p>（4）只复制需要的文件，切忌复制所有内容。</p>
+<p>（5）最小化可缓存的执行层。	<br>每一个RUN指令都会被看作是可缓存的执行单元。太多的RUN指令会增加镜像的层数，增大镜像体积，而将所有的命令都放到同一个RUN指令中又会破坏缓存，从而延缓构建周期。当使用包管理器安装软件时，一般都会先更新软件索引信息再安装软件。推荐将更新索引和安装软件放在同一个RUN指令中，这样可以形成一个可缓存的执行单元，否则可能会安装旧的软件包。</p>
+<p>（6）使用多阶段构建。</p>
+<p>多阶段构建可以由多个FROM指令组成，每一个FROM语句表示一个新的构建阶段，阶段名称可以用AS参数指定。例如，在下面的示例中，指定第一阶段的名称为builder，可以被第二阶段直接引用。两个阶段环境一致，并且第一阶段包含所有构建依赖项。第二阶段是构建最终镜像的最后阶段，包括应用运行时的所有必要条件。</p>
+<p><img src="/../../ImgSource/image-20211112111906126.png" alt="image-20211112111906126"></p>
+<p>（7）根据情况合并指令。</p>
+<p>（8）删除多余文件和清理没用的中间结果。	</p>
+<p>（9）使用.dockerignore。</p>
+<h2 id="快捷键方式"><a href="#快捷键方式" class="headerlink" title="快捷键方式"></a>快捷键方式</h2><ul>
+<li>拉取镜像: docker pull {imageName}</li>
+<li>查看镜像: docker images 查看镜像</li>
+<li>在容器中执行命令: docker exec -it {containerName} &#x2F;bin&#x2F;bash   ? &#x2F;bin&#x2F;sh</li>
+<li>查看基本信息: docker inspect {containerName}</li>
+<li>查看内存: docker stats </li>
+<li>查看日志： docker logs</li>
+<li>查看镜像的历史版本可以执行以下命令：docker history &lt;image_name&gt; </li>
+<li>将容器的状态保存为镜像： docker commit $sample_job job1 </li>
+<li>在registry中的镜像可以使用以下命令查找到： docker search &lt;image-name&gt; </li>
+<li>docker 查看挂载目录 docker inspect container_name | grep Mounts -A 20</li>
+<li>查看docker 镜像仓库地址:   cat &#x2F;etc&#x2F;docker&#x2F;daemon.json</li>
+<li>docker run 长久运行: docker run centos ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> &#x2F; sleep 50s 就是运行结束后重新运行</li>
+<li>修改镜像名称 docker tag source target</li>
+</ul>
+<p><img src="/../../ImgSource/image-20211111144335309.png" alt="image-20211111144335309"></p>
+<p><img src="/../../ImgSource/image-20211111144405420.png" alt="image-20211111144405420"></p>
+<p><img src="/../../ImgSource/image-20211111144434027.png" alt="image-20211111144434027"></p>
+<p><img src="/../../ImgSource/image-20211111144524928.png" alt="image-20211111144524928"></p>
+<p><img src="/../../ImgSource/image-20211111144553999.png" alt="image-20211111144553999"></p>
+<p><img src="/../../ImgSource/image-20211111144720541.png" alt="image-20211111144720541"></p>
+<p>定时清理不用镜像脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_42_centos opt]# cat clean.sh </span><br><span class="line">sh /opt/docker/lock.sh -t clean -a lock</span><br><span class="line">docker image prune -a -f</span><br><span class="line">docker container prune -f</span><br><span class="line">sh /opt/docker/lock.sh -t clean -a unlock </span><br><span class="line">dt=$(date)</span><br><span class="line">echo time is $dt</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../ImgSource/image-20211111150440975.png" alt="image-20211111150440975"></p>
+<p><img src="/../../ImgSource/image-20211112105933891.png" alt="image-20211112105933891"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="docker-compose-启动容器"><a href="#docker-compose-启动容器" class="headerlink" title="docker-compose 启动容器"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liaokui/p/11380590.html">docker-compose 启动容器</a></h1><p><a target="_blank" rel="noopener" href="https://weread.qq.com/web/reader/13b32c4071cc8f0613bd197kc1632f5021fc16a5320f3dc">微信读书-</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/" data-id="cld1bs9t7001pfynh5ucnb0nh" data-title="每日一问1015(docker)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2020/每日一问1024(docsify)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/">每日一问1024(docsify)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h1><p>一个神奇的文档网站生成工具</p>
+<p>docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会将 .md 转成 .html 文件，所有转换工作都是在运行时进行。这将非常实用，如果只是需要快速的搭建一个小型的文档网站，或者不想因为生成的一堆 .html 文件“污染” commit 记录，只需要创建一个 index.html 就可以开始写文档而且直接部署在GitHub Pages。</p>
+<p>参考地址：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4883e95aa903">有了docsify神器，从此爱上看文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">快速开始</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/" data-id="cld1bs9t7001qfynh8gvicop6" data-title="每日一问1024(docsify)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

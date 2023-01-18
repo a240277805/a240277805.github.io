@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://a240277805.github.io/page/16/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2019/每日一问0831(时序数据库)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/">每日一问0831(时序数据库)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="时序数据库"><a href="#时序数据库" class="headerlink" title="时序数据库"></a>时序数据库</h1><ul>
+<li>栗子 Informix TimeSeries<a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1625857888377870075&wfr=spider&for=pc">工业互联网时代，我们为什么需要时序数据库之：适合的就是最好的</a></li>
+<li>参考 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486232&amp;idx=1&amp;sn=6563cfb8a316cddc7a8e56f58d173305&source=41#wechat_redirect">百度无人车和天工物联网都使用了时序数据库，但是你有多了解时序数据库？</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 有效处理庞大数据</span><br><span class="line">* 对重复的部分，Informix TimeSeries只保持一份数据</span><br><span class="line">* 节省空间50%，有效降低I/O</span><br><span class="line">* 主键索引更有效</span><br><span class="line">* 时间序列表头分离的特性不浪费空间;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>可以说，目前所有数据库、文件系统等等，都是为了以最佳性价比来满足数据的这三个核心需求。对时序数据而言，其三个核心需求特征十分明显：</p>
+<p>数据写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 时间是一个主坐标轴，数据通常按照时间顺序抵达</span><br><span class="line">* 大多数测量是在观察后的几秒或几分钟内写入的，抵达的数据几乎总是作为新条目被记录</span><br><span class="line">* 95％到99％的操作是写入，有时更高</span><br><span class="line">* 更新几乎没有</span><br></pre></td></tr></table></figure>
+<p>数据读取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 随机位置的单个测量读取、删除操作几乎没有</span><br><span class="line">* 读取和删除是批量的，从某时间点开始的一段时间内</span><br><span class="line">* 时间段内读取的数据有可能非常巨大</span><br></pre></td></tr></table></figure>
+
+<p>数据存储</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 数据结构简单，价值随时间推移迅速降低</span><br><span class="line">* 通过压缩、移动、删除等手段降低存储成本</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/" data-id="cld1bs9sg000ifynh6ed97bab" data-title="每日一问0831(时序数据库)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0901(markdown语法)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0901(markdown%E8%AF%AD%E6%B3%95)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0901(markdown%E8%AF%AD%E6%B3%95)/">每日一问0901(markdown语法)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><p>&#x3D;&#x3D;&#x3D;dafs&#x3D;&#x3D;&#x3D;<br>&#x3D;&#x3D;&#x3D;&#x3D;fasdfsd&#x3D;&#x3D;&#x3D;&#x3D;<br>&#x3D;&#x3D;dsf&#x3D;&#x3D;<br>&#x3D;fsdf&#x3D;</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐标题 | 右对齐标题 | 居中对齐标题 |</span><br><span class="line">| :------| ------: | :------: |</span><br><span class="line">| 短文本 | 中等文本 | 稍微长一点的文本 |</span><br><span class="line">| 稍微长一点的文本 | 短文本 | 中等文本 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>左对齐</th>
+<th align="center">居中</th>
+<th align="right">右对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>（斜体）文本1</em></td>
+<td align="center"><strong>（加粗）文本2</strong></td>
+<td align="right"><del>（删除线）文本3</del></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://jianshu.com/">简书</a></td>
+<td align="center">$\color{red}{红色字}$</td>
+<td align="right"><em><strong>（加粗斜体）文本6</strong></em></td>
+</tr>
+</tbody></table>
+<h3 id="Markdown-实现”多级有序列表"><a href="#Markdown-实现”多级有序列表" class="headerlink" title="Markdown 实现”多级有序列表"></a>Markdown 实现”多级有序列表</h3><p>具体方法是: 写下一级有序列表时, 缩进 4 个空格</p>
+<p>A.</p>
+<ol>
+<li>段落标题<ol>
+<li>段落标题<ol>
+<li>段落标题</li>
+<li>段落标题</li>
+</ol>
+</li>
+<li>段落标题</li>
+<li>段落标题</li>
+</ol>
+</li>
+<li>段落标题</li>
+</ol>
+<p>B.</p>
+<ul>
+<li>1.段落标题<ul>
+<li>1.1段落标题</li>
+<li>1.2段落标题<ul>
+<li>1.2.1段落标题</li>
+<li>1.2.2段落标题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.段落标题</li>
+</ul>
+<p>C.</p>
+<ul>
+<li>段落标题<ul>
+<li>段落标题</li>
+<li>段落标题<ul>
+<li>段落标题</li>
+<li>段落标题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.段落标题</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
+<p>区块引用</p>
+<blockquote>
+<p>嵌套引用</p>
+<blockquote>
+<p>三嵌套引用</p>
+<blockquote>
+<p>四嵌套引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>$\underline{幽默小故事，笑死人不偿命}$<br><br>我：“老板，你这清炒油麦菜是荤菜还是素菜？<br>老板：“当然是素菜了”<br><br>我：“那这条虫是怎么回事”<br>老板：“呃……它也是来吃饭的。”<br><br>我：“它吃饭凭什么我付钱？我又不认识它！”<br>老板哭着说：“它为了这顿饭，把命都丢了，你还能要求它AA制吗？”</p>
+</blockquote>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[模块A] --&gt;|A1| B(模块B)</span><br><span class="line">B --&gt; C&#123;判断条件C&#125;</span><br><span class="line">C --&gt;|条件C1| D[模块D]</span><br><span class="line">C --&gt;|条件C2| E[模块E]</span><br><span class="line">C --&gt;|条件C3| F[模块F]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;B: 是否已收到消息？</span><br><span class="line">B--&gt;&gt;A: 已收到消息</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">title 甘特图</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">section 项目A</span><br><span class="line">任务1           :a1, 2018-06-06, 30d</span><br><span class="line">任务2     :after a1  , 20d</span><br><span class="line">section 项目B</span><br><span class="line">任务3      :2018-06-12  , 12d</span><br><span class="line">任务4      : 24d</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0901(markdown%E8%AF%AD%E6%B3%95)/" data-id="cld1bs9sh000jfynha4dfacs3" data-title="每日一问0901(markdown语法)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0902(NLP自然语言处理)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0902(NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0902(NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)/">每日一问0902(NLP自然语言处理)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="NLP-自然语言处理"><a href="#NLP-自然语言处理" class="headerlink" title="NLP(自然语言处理)"></a>NLP(自然语言处理)</h1><p>NLP 发展处于初级阶段 原因</p>
+<p>造成这样的原因其实比较简单，第一、高质量语料的获取成本很高；第二、真正懂 NLP 技术的人还是比较少，门槛比较高。</p>
+<p>突破口的话，我觉得仍然是 理解业务场景，和高质量语料的获取 问题。</p>
+<p>这里需要学习的有 分词技术、TF-IDF、朴素贝叶斯算法、Word Embedding、LDA、TextCNN 等</p>
+<p>从最前沿科技发展的角度来说，应该会有一批人研究 纯粹的无监督学习 的新方法，毕竟这个是非常理想的 NLP 进化方向</p>
+<p>(es 推荐用到了)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0902(NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)/" data-id="cld1bs9si000kfynhhjdt0t39" data-title="每日一问0902(NLP自然语言处理)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0903(Mysql知识点)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/">每日一问0903(Mysql知识点)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Mysql知识点"><a href="#Mysql知识点" class="headerlink" title="Mysql知识点"></a>Mysql知识点</h1><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567764108237&di=f9e123ee1767a719e0cd665dc397a5b2&imgtype=0&src=http://aliyunzixunbucket.oss-cn-beijing.aliyuncs.com/jpg/54444bc7077289d9330b6d63653afba0.jpg?x-oss-process=image/resize,p_100/auto-orient,1/quality,q_90/format,jpg/watermark,image_eXVuY2VzaGk=,t_100" alt="avatar"></p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p><img src="/../../ImgSource/image-20210720142315630.png" alt="image-20210720142315630"></p>
+<h2 id="InnoDB-存储结构"><a href="#InnoDB-存储结构" class="headerlink" title="InnoDB 存储结构"></a>InnoDB 存储结构</h2><p><a target="_blank" rel="noopener" href="https://nicky-chin.cn/media/mysql-page-detail/innodb-engine-struct.png"><img src="https://nicky-chin.cn/media/mysql-page-detail/innodb-engine-struct.png" alt="img"></a></p>
+<p>从InnoDB存储引擎的逻辑结构看，所有数据都被逻辑地存放在一个空间内，称为表空间(tablespace)，而表空间由段（sengment）、区（extent）、页（page）组成。 在一些文档中extend又称块（block）。</p>
+<h3 id="1-1-表空间（table-space）"><a href="#1-1-表空间（table-space）" class="headerlink" title="1.1 表空间（table space）"></a>1.1 表空间（table space）</h3><p>表空间（Tablespace）是一个逻辑容器，表空间存储的对象是段，在一个表空间中可以有一个或多个段，但是一个段只能属于一个表空间。数据库由一个或多个表空间组成，表空间从管理上可以划分为系统表空间、用户表空间、撤销表空间、临时表空间等。</p>
+<p>在 InnoDB 中存在两种表空间的类型：共享表空间和独立表空间。如果是共享表空间就意味着多张表共用一个表空间。如果是独立表空间，就意味着每张表有一个独立的表空间，也就是数据和索引信息都会保存在自己的表空间中。独立的表空间可以在不同的数据库之间进行迁移。可通过命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; show variables like &#x27;innodb_file_per_table&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>查看当前系统启用的表空间类型。目前最新版本已经默认启用独立表空间。</p>
+<p>InnoDB把数据保存在表空间内，表空间可以看作是InnoDB存储引擎逻辑结构的最高层。本质上是一个由一个或多个磁盘文件组成的虚拟文件系统。InnoDB用表空间并不只是存储表和索引，还保存了回滚段、双写缓冲区等。</p>
+<h3 id="1-2-段（segment）"><a href="#1-2-段（segment）" class="headerlink" title="1.2 段（segment）"></a>1.2 段（segment）</h3><p>段（Segment）由一个或多个区组成，区在文件系统是一个<strong>连续分配</strong>的空间（在 InnoDB 中是连续的 64 个页），不过在段中不要求区与区之间是相邻的。段是数据库中的分配单位，不同类型的数据库对象以不同的段形式存在。当我们创建数据表、索引的时候，就会相应创建对应的段，比如创建一张表时会创建一个表段，创建一个索引时会创建一个索引段。</p>
+<h3 id="1-3-区块（extent）"><a href="#1-3-区块（extent）" class="headerlink" title="1.3 区块（extent）"></a>1.3 区块（extent）</h3><p>在 InnoDB 存储引擎中，一个区会分配 64 个连续的页。因为 InnoDB 中的页大小默认是 16KB，所以一个区的大小是 64*16KB&#x3D;1MB。在任何情况下每个区大小都为1MB，为了保证页的连续性，&#x3D;&#x3D;InnoDB存储引擎每次从磁盘一次申请4-5个区&#x3D;&#x3D;。默认情况下，InnoDB存储引擎的页大小为16KB，即一个区中有64个连续的页。</p>
+<h3 id="1-4-页（Page）"><a href="#1-4-页（Page）" class="headerlink" title="1.4 页（Page）"></a>1.4 页（Page）</h3><p>页是InnoDB存储引擎磁盘管理的最小单位，每个页默认16KB；InnoDB存储引擎从1.2.x版本碍事，可以通过参数innodb_page_size将页的大小设置为4K、8K、16K。若设置完成，则所有表中页的大小都为innodb_page_size，不可以再次对其进行修改，除非通过mysqldump导入和导出操作来产生新的库。</p>
+<p>innoDB存储引擎中，常见的页类型有：</p>
+<blockquote>
+<ol>
+<li>数据页（B-tree Node)</li>
+<li>undo页（undo Log Page）</li>
+<li>系统页 （System Page）</li>
+<li>事物数据页 （Transaction System Page）</li>
+<li>插入缓冲位图页（Insert Buffer Bitmap）</li>
+<li>插入缓冲空闲列表页（Insert Buffer Free List）</li>
+<li>未压缩的二进制大对象页（Uncompressed BLOB Page）</li>
+<li>压缩的二进制大对象页 （compressed BLOB Page）</li>
+</ol>
+</blockquote>
+<h3 id="1-5-行（row）"><a href="#1-5-行（row）" class="headerlink" title="1.5 行（row）"></a>1.5 行（row）</h3><p>InnoDB存储引擎是按行进行存放的，每个页存放的行记录也是有硬性定义的，最多允许存放16KB&#x2F;2-200，即7992行记录。</p>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><h3 id="innerDB"><a href="#innerDB" class="headerlink" title="innerDB"></a>innerDB</h3><h3 id="大表优化"><a href="#大表优化" class="headerlink" title="大表优化"></a>大表优化</h3><ul>
+<li>限定数据的范围 （增删改查）</li>
+<li>读写分离</li>
+<li>垂直分区 优点:减少读取的Block数，减少I&#x2F;O 次数。缺点：主键冗余 </li>
+<li>水平分区 表的行数超过200万 就会变慢</li>
+</ul>
+<h3 id="一条SQL执行很慢-可能原因？"><a href="#一条SQL执行很慢-可能原因？" class="headerlink" title="一条SQL执行很慢 可能原因？"></a>一条SQL执行很慢 可能原因？</h3><p>一个 SQL 执行的很慢，我们要分两种情况讨论：</p>
+<p>1、大多数情况下很正常，偶尔很慢，则有如下原因</p>
+<p>(1)、数据库在刷新脏页，例如 redo log 写满了需要同步到磁盘。</p>
+<p>(2)、执行的时候，遇到锁，如表锁、行锁。</p>
+<p>2、这条 SQL 语句一直执行的很慢，则有如下原因。</p>
+<p>(1)、没有用上索引：例如该字段没有索引；由于对字段进行运算、函数操作导致无法用索引。</p>
+<p>(2)、数据库选错了索引。</p>
+<h3 id="慢查询"><a href="#慢查询" class="headerlink" title="慢查询"></a>慢查询</h3><p>慢查询日志：响应时间超过阈值的语句，默认时间10秒，默认不开，会影响性能，开启参数  slow_query_log&#x3D;1</p>
+<p>slow_query_log_file 这个表中记录</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247485185&idx=1&sn=66ef08b4ab6af5757792223a83fc0d45&chksm=cea248caf9d5c1dc72ec8a281ec16aa3ec3e8066dbb252e27362438a26c33fbe842b0e0adf47&token=79317275&lang=zh_CN%23rd">腾讯面试：一条SQL语句执行得很慢的原因有哪些？—不看后悔系列</a> </p>
+<ol>
+<li>刷脏页 (什么时候刷脏页?)</li>
+</ol>
+<h3 id="explain作用"><a href="#explain作用" class="headerlink" title="explain作用"></a>explain作用</h3><p>查看sql的执行计划，帮助我们分析mysql是如何解析sql语句的。</p>
+<ul>
+<li>查看表的加载顺序。</li>
+<li>查看sql的查询类型。</li>
+<li>哪些索引可能被使用，哪些索引又被实际使用了。</li>
+<li>表之间的引用关系。</li>
+<li>一个表中有多少行被优化器查询。</li>
+<li>其他额外的辅助信息。</li>
+</ul>
+<h4 id="id详解"><a href="#id详解" class="headerlink" title="id详解"></a>id详解</h4><p>含义：select查询的序列号，是一组数字，表示的是查询中执行select子句或者是操作表的顺序。</p>
+<p>id的情况有三种，分别是：</p>
+<ul>
+<li>id相同表示加载表的顺序是从上到下。</li>
+<li>id不同id值越大，优先级越高，越先被执行。</li>
+<li>id有相同，也有不同，同时存在。id相同的可以认为是一组，从上往下顺序执行；在所有的组中，id的值越大，优先级越高，越先执行。</li>
+</ul>
+<h4 id="key-表示实际使用的索引"><a href="#key-表示实际使用的索引" class="headerlink" title="key:表示实际使用的索引"></a>key:表示实际使用的索引</h4><h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>最好到最差的连接类型为const、eq_reg、ref、range、indexhe和ALL </p>
+<h3 id="mysql单表数据达到一定上限查询为啥会慢"><a href="#mysql单表数据达到一定上限查询为啥会慢" class="headerlink" title="mysql单表数据达到一定上限查询为啥会慢"></a>mysql单表数据达到一定上限查询为啥会慢</h3><ul>
+<li>假如MySQL服务器有足够的内存能将前三层索引缓存在内存中，索引只有三层，那么通过聚簇索引访问数据只需一次磁盘I&#x2F;O。而当我们数据量过大，索引层级达到四层或四层以上时，通过聚簇索引访问就需要两次以上的磁盘I&#x2F;O了。</li>
+<li>当单表数据库到达某个量级的上限时，导致内存无法存储其索引，使得之后的 SQL 查询会产生磁盘 IO，从而导致性能下降。当然，这个还有具体的表结构的设计有关，最终导致的问题都是内存限制。这里，增加硬件配置，可能会带来立竿见影的性能提升哈。</li>
+</ul>
+<h3 id="主备复制-数据迁移"><a href="#主备复制-数据迁移" class="headerlink" title="主备复制,数据迁移"></a>主备复制,数据迁移</h3><p>根据binlog</p>
+<p>canal</p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a target="_blank" rel="noopener" href="https://juejin.im/post/5d591c0a6fb9a06b1a5688e8?utm_source=gold_browser_extension">详解B+树及其正确打开方式</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&mid=2247486241&idx=1&sn=b9110c9d5be352f115c0d8cf6a0a520e&chksm=9bd0a6b9aca72faff0fe2f1ea1c3f43d6716f882bde357a999fe0094aa4e1f880f46473d1b98&scene=27#wechat_redirect">MySQL的索引</a><br><a target="_blank" rel="noopener" href="http://www.luyixian.cn/news_show_359744.aspx">分库分表的一些思考</a></p>
+<ul>
+<li><ul>
+<li><ul>
+<li><ul>
+<li><ul>
+<li><a target="_blank" rel="noopener" href="https://nicky-chin.cn/2019/07/11/mysql-page-detail/">MySQL中的page页详解</a> （多看两遍）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/" data-id="cld1bs9si000lfynh7vgka022" data-title="每日一问0903(Mysql知识点)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0904(Mysql索引)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/">每日一问0904(Mysql索引)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h3 id="索引好处"><a href="#索引好处" class="headerlink" title="索引好处"></a>索引好处</h3><p>关于MySQL索引的好处，如果正确合理设计并且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。对于没有索引的表，单表查询可能几十万数据就是瓶颈，而通常大型网站单日就可能会产生几十万甚至几百万的数据，没有索引查询会变的非常缓慢。</p>
+<p>数据是存储在磁盘上的，操作系统读取磁盘的最小单位是页，如果没有索引，会加载所有的数据到内存，依次进行检索，加载的总数据会很多，磁盘IO多。</p>
+<p>没有索引的情况下，不论是以主键还是其他列作为搜索条件，只能沿着页的双链表从左到右依次遍历各个页。</p>
+<h3 id="索引的类别"><a href="#索引的类别" class="headerlink" title="索引的类别"></a>索引的类别</h3><p>聚簇索引与非聚簇索引</p>
+<p>主键索引和辅助索引(常规所指的索引，也叫二级索引，又分为唯一索引和非唯一索引。)</p>
+<p>InnoDB引擎中，主键索引会被选中作为聚集索引，而唯一索引和普通辅助索引间除了唯一性约束外，在存储上没本质区别。</p>
+<h3 id="MySQL索引演化"><a href="#MySQL索引演化" class="headerlink" title="MySQL索引演化"></a>MySQL索引演化</h3><p>1.密集索引（Dense Index ）</p>
+<p>根据减少无效数据访问的原则，我们将键的值拿过来存放到独立的块中。并且为每一个键值添加一个指针， 指向原来的数据块。</p>
+<p>1.1折半块查找</p>
+<p>需要对Dense进行索引，每个索引块内是有序的，另外，需要一个数组按顺序存储索引块地址，这样整体就有序了，数组也要存储到磁盘上，放在<code>单独的块链中</code>。折半查找的时间复杂度是O(log2(N))</p>
+<p>2.稀疏索引（Sparse Index）</p>
+<p>介绍基于块的折半查找时发现，读出每个块后只需要和第一行的键值匹配，就可以决定下一个块的位置（方向）。 因此有效数据是每个块的第一行数据，将每一个块的第一行的数据单独拿出来，和索引数组的地址放到一起。这样就可以直接在这个数组上进行折半查找了，这个数组就进化成了Sparse Index了。</p>
+<p>3.多层稀疏索引</p>
+<p>因为Sparse Index本身是有序的，所以可以为Sparse Index再建sparse Index。通过这个方法，一层一层的建立 Sparse Indexes,直到最上层的Sparse Index只占用一个块为止。</p>
+<h3 id="索引组成简述"><a href="#索引组成简述" class="headerlink" title="索引组成简述"></a>索引组成简述</h3><p>   InnoDB数据页有7个部分组成，各个数据页可以组成一个双向链表，而每个数据页中的记录又可以组成一个单向链表，每个数据页都会为存储在它里边儿的记录生成一个页目录，在通过主键查找某条记录的时候可以在页目录中使用二分法快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5asGu0xrowZ97BFBFvrXsCs2ZSu49ZvFjk5fWLAflFSD2iadlbJkQicDQ/640" alt="avatar"><br>##索引执行步骤简述</p>
+<p>一个页中的查找</p>
+<p>假设目前表中的记录比较少，所有的记录都可以被存放到一个页中，在查找记录的时候可以根据搜索条件的不同分为两种情况：</p>
+<ul>
+<li>以主键为搜索条件</li>
+</ul>
+<p>这个查找过程我们已经很熟悉了，可以在页目录中使用<code>二分法</code>快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录。</p>
+<ul>
+<li>以其他列作为搜索条件</li>
+</ul>
+<p>对非主键列的查找的过程可就不这么幸运了，因为在数据页中并没有对非主键列建立所谓的<code>页目录</code>，所以我们无法通过二分法快速定位相应的槽。这种情况下只能从最小记录开始依次遍历<code>单链表</code>中的每条记录，然后对比每条记录是不是符合搜索条件。很显然，这种查找的效率是非常低的。</p>
+<p>在很多页中查找</p>
+<p>由于我们并不能快速的定位到记录所在的页，所以只能从第一个页沿着双向链表一直往下找，在每一个页中根据我们上边已经唠叨过的查找方式去查找指定的记录。</p>
+<p>一行的格式示意图</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5dMTgZ8zvqoEax8dqq87xj59ywc2szJicaBsZkibTdnRx1icCtEYTDgRRQ/640" alt="avatar"><br>我们只在示意图里展示记录的这几个部分：</p>
+<p><strong>record_type</strong>：记录头信息的一项属性，表示记录的类型，0表示普通记录、2表示最小记录、3表示最大记录、1我们还没用过，等会再说～</p>
+<p><strong>next_type</strong>：记录头信息的一项属性，表示下一条地址的偏移量，为了方便大家理解，我们都会用箭头来表明下一条记录是谁。</p>
+<p><strong>各个列的值</strong>：就是各个数据列的值，其中我们用橘黄色的格子代表c1列，深蓝色的格子代表c2列，红色格子代表c3列。</p>
+<p><em>其他信息</em>：除了上述3种信息以外的所有信息，包括其他隐藏列的值以及记录的额外信息。</p>
+<h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><p>概念:</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt55ga3Fmqa9Hicn9CQ6Lh2ibT7chylHXd6C6RdrbmZdmFzZJiafyoyjyIjQ/640" alt="avatar"></p>
+<p>实际用户记录其实都存放在B+树的最底层的节点上</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念:"></a>概念:</h3><ul>
+<li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</li>
+<li>非聚簇索引(又叫<code>二级索引</code>)：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行</li>
+</ul>
+<p>我们上边介绍的B+树本身就是一个目录，或者说本身就是一个索引。它有两个特点：</p>
+<p>1.使用记录主键值的大小进行记录和页的排序，这包括三个方面的含义：</p>
+<ul>
+<li><p>页内的记录是按照主键的大小顺序排成一个<code>单向链表</code>。</p>
+</li>
+<li><p>各个存放用户记录的页也是根据页中记录的主键大小顺序排成一个<code>双向链表</code>。</p>
+</li>
+<li><p>各个存放目录项的页也是根据页中记录的主键大小顺序排成一个<code>双向链表</code>。</p>
+</li>
+</ul>
+<p>2.B+树的叶子节点存储的是完整的用户记录。</p>
+<p>  所谓完整的用户记录，就是指这个记录中存储了所有列的值。</p>
+<p>我们把具有这两种特性的B+树称为聚簇索引</p>
+<p>聚簇索引优点:</p>
+<ul>
+<li>聚簇索引将索引和数据行保存在同一个B-Tree中，查询通过聚簇索引可以直接获取数据，相比非聚簇索引需要第二次查询（非覆盖索引的情况下）效率要高。</li>
+<li>聚簇索引对于范围查询的效率很高，因为其数据是按照大小排列的，</li>
+</ul>
+<h3 id="二级索引"><a href="#二级索引" class="headerlink" title="二级索引"></a>二级索引</h3><p>除了除了聚簇索引之外的索引</p>
+<p>二级索引这个B+树与聚簇索引有几处不同：</p>
+<p>使用记录索引列的大小进行记录和页的排序，这包括三个方面的含义：</p>
+<ul>
+<li><p>页内的记录是按照<code>索引列</code>的大小顺序排成一个单向链表。</p>
+<ul>
+<li>各个存放用户记录的页也是根据页中记录的<code>索引列</code>大小顺序排成一个双向链表。</li>
+<li>各个存放目录项的页也是根据页中记录的<code>索引列</code>大小顺序排成一个双向链表。</li>
+<li>B+树的叶子节点存储的并不是完整的<code>一页记录</code>，而只是<code>索引列</code>+<code>主键</code>这两个列的值。</li>
+</ul>
+</li>
+<li><p>目录项记录中不再是主键+页号的搭配，而变成了<code>索引列</code>+<code>页号</code>的搭配。</p>
+</li>
+</ul>
+<h3 id="二级索引查找过程"><a href="#二级索引查找过程" class="headerlink" title="二级索引查找过程"></a>二级索引查找过程</h3><p>查找过程如下：</p>
+<ol>
+<li>确定目录项记录页</li>
+<li>通过目录项记录页确定用户记录真实所在的页。</li>
+<li>在真实存储用户记录的页中定位到具体的记录。</li>
+<li>但是这个B+树的叶子节点中的记录只存储了c2(索引列)和c1（也就是主键）两个列，所以我们必须再根据主键值<code>去聚簇索引中再查找一遍</code>完整的用户记录。 (<strong>回表</strong>)</li>
+</ol>
+<h4 id="为啥回表？"><a href="#为啥回表？" class="headerlink" title="为啥回表？"></a>为啥回表？</h4><p>你说的对，如果把完整的用户记录放到叶子节点是可以不用回表，但是太占地方了呀</p>
+<p>最下层是一个个的数据页，每个页上有很多条数据，上边页目录可以进行二分查找，下边有每个记录各个列的全部数据，如果存到非聚簇索引中，则太占空间，数据同步也是个问题。</p>
+<h3 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h3><p><code>其非叶子节点存储的是第一个关键字的索引，而叶节点存储的则是三个关键字col1、col2、col3三个关键字的数据，且按照col1、col2、col3的顺序进行排序。</code></p>
+<ul>
+<li>先把各个记录和页按照c2列进行排序。</li>
+<li>在记录的c2列相同的情况下，采用c3列进行排序<br><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5nXZJIREPnjDpcQ73cLseLFZLjF5bWTVHYp7TvME6jWVgI3zmhWoqhQ/640" alt="avatar"></li>
+</ul>
+<p>与分别为c2和c3列建立索引的表述是不同的，不同点如下：</p>
+<ul>
+<li>建立联合索引只会建立如上图一样的1棵B+树。</li>
+<li>为c2和c3列建立索引会分别以c2和c3列的大小为排序规则建立2棵B+树。</li>
+</ul>
+<h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><p>涉及二级索引，因为索引中有建立索引的值，查询条件正好是这些索引值得时候 就不用回表了，直接从二级索引中把索引值返回就好了，这种 叫做覆盖索引。</p>
+<h2 id="MyISAM中的索引方案"><a href="#MyISAM中的索引方案" class="headerlink" title="MyISAM中的索引方案"></a>MyISAM中的索引方案</h2><p>MyISAM的索引方案虽然也使用B+树，但是却将索引和数据分开存储：</p>
+<ul>
+<li><p>将表中的记录按照插入时间顺序的存储在<code>一块存储空间</code>上，我们可以通过行号而快速访问到一条记录（因为index_demo表的记录是<code>定长</code>的，所以可以使用行号来进行快速访问，对于变长的记录MyISAM有不同的处理方案，我们这里就不介绍了），如图所示： (<strong><code>哈希索引？？？</code></strong>)<br><img src="https://mmbiz.qpic.cn/mmbiz_png/RLmbWWew55F3opxnpoB8oddtgyoia7Yt5L11Q62nngFGjI1ZkhsQWE0f4wMXjnwI9YY480d17lG1wgfZib2gSaaw/640" alt="avatar"></p>
+</li>
+<li><p>由于在插入数据的时候并<code>没有刻意按照主键大小排序</code>，所以我们并<code>不能</code>在这些数据上使用二分法进行查找。</p>
+</li>
+<li><p>MyISAM会单独为表的主键创建一个<code>B+树</code>索引，只不过在B+树的叶子节点中存储的不是完整的用户记录，而是<code>主键值 + 行号</code>的组合。也就是先通过索引找到对应的行号，再通过行号去找对应的记录！</p>
+</li>
+<li><p>这一点和InnoDB是完全不相同的，在InnoDB存储引擎中，我们只需要根据主键值对聚簇索引进行一次查找能找到对应的记录，而在MyISAM中却需要进行一次<code>回表</code>操作，意味着MyISAM中建立的索引全部都是<code>二级索引</code>！</p>
+</li>
+<li><p>如果有需要的话，我们也可以对其它的列分别建立索引或者建立联合索引，原理和InnoDB中的索引是一样的，只不过在叶子节点处存储的是相应的列 + 行号而已。这些索引也全部都是<code>二级索引</code>。</p>
+</li>
+</ul>
+<h3 id="为啥索引建多了不好"><a href="#为啥索引建多了不好" class="headerlink" title="为啥索引建多了不好"></a>为啥索引建多了不好</h3><p>为啥不自动为每个列都建立个索引呢？别忘了，每建立一个索引都会<code>建立一棵B+树</code>，每插入一条记录都要维护各个记录、数据页的排序关系，这是<code>很费性能</code>和<code>存储空间</code>的。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="索引算法"><a href="#索引算法" class="headerlink" title="索引算法"></a>索引算法</h2><h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p><a href="./%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(%E6%A0%91).md">基础内容链接 多叉平衡树</a></p>
+<h4 id="为什么索引采用B-树呢？"><a href="#为什么索引采用B-树呢？" class="headerlink" title="为什么索引采用B+树呢？"></a>为什么索引采用B+树呢？</h4><p>和SQL的需求相关。<br>一个单行查询的SQL，例如passport，确实可以使用哈希索引。<br>但是对于排序查询的SQL需求：</p>
+<ol>
+<li>分组：group by</li>
+<li>排序：order by</li>
+<li>比较：&lt;、&gt;</li>
+</ol>
+<p>哈希型的索引，时间复杂度会退化为O(n)，而树型的“有序”特性，依然能够保持O(log(n)) 的高效率。</p>
+<p>哈希类型的索引，都要比树型的索引更快一些，那为什么，索引结构要设计成树型呢？</p>
+<h3 id="为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？"><a href="#为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？" class="headerlink" title="为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？"></a>为什么B-Tree适合数据库索引及红黑树的二叉平衡树不适合作为索引？</h3><h3 id="B-Tree比BTree做索引的优势？"><a href="#B-Tree比BTree做索引的优势？" class="headerlink" title="B+Tree比BTree做索引的优势？"></a>B+Tree比BTree做索引的优势？</h3><h3 id="为什么MongoDB采用B-Tree作为索引结构而MySQL采用B-Tree作为索引存储结构？"><a href="#为什么MongoDB采用B-Tree作为索引结构而MySQL采用B-Tree作为索引存储结构？" class="headerlink" title="为什么MongoDB采用B-Tree作为索引结构而MySQL采用B+Tree作为索引存储结构？"></a>为什么MongoDB采用B-Tree作为索引结构而MySQL采用B+Tree作为索引存储结构？</h3><h2 id="mysql中建立索引的一些原则"><a href="#mysql中建立索引的一些原则" class="headerlink" title="mysql中建立索引的一些原则"></a>mysql中建立索引的一些原则</h2><ul>
+<li>先存数据，再建索引</li>
+<li>不要对数据量小的数据表建立索引，数据量超过300的表应该有索引</li>
+<li>对于规模小的数据表建立索引，不仅不会提高查询效率，相反使用索引查找可能比简单的全表扫描还要慢，而 且建索引还会占用一部分的存储空间</li>
+<li>当对表的查询操作比更新操作频率更高时，对该表建立索引</li>
+<li>在不同值较少的字段上不必要建立索引，如<code>性别</code>字段， <code>为啥？？？</code></li>
+<li>对查询操作中使用频繁的字段建立索引</li>
+<li>表的主键、外键必须有索引</li>
+<li>经常出现在Where后面的字段，特别是大表的字段，应该建立索引</li>
+<li>经常进行GROUP BY、ORDER BY的字段上建立索引</li>
+<li>索引应该建在小字段上，对于<code>大的文本字段甚至超长字段，不要建索引</code> <code>坏处？？？</code></li>
+</ul>
+<h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ul>
+<li>多索引查询，区间长的放最左边，因为区间短的可能效率还不如全表扫描</li>
+<li>or in ,unin 都能命中索引 建议使用 in </li>
+<li>更新频繁的字段不宜使用索引，因为会更新二叉树</li>
+<li>具有唯一特性的要建立唯一索引，及时是多个字段组合 并且影响Insert 性能，但索引的提升效率可见，并且增加了业务控制。</li>
+<li>查询尽量不要使用*  减少回表。（有的查询可以直接从索引里取）</li>
+<li>用explan 分析</li>
+<li>内存碎片</li>
+<li>调整数据页大小？（数据页默认16k,改8k查询效率好像快一点）</li>
+</ul>
+<h1 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h1><ul>
+<li>当like为’%abc’会失效</li>
+<li>is null  is not null （索引是不索引空值的）</li>
+<li>负向条件不会命中索引  （not，&lt;&gt;，!&#x3D;）</li>
+<li>不包含索引的放最前边，会导致后边有索引的也不会命中索引</li>
+<li>or 语句前后没有都使用索引</li>
+<li>数据类型发生隐式转换 ，如没加单引号，char 转成int 会全表扫描</li>
+<li>字段上使用函数，不走索引(emp(name,pp,sal))</li>
+<li>当全表扫描比索引速度快时，索引失效</li>
+<li>in 中参数条目超过阈值</li>
+<li>字符类型索引 两张表 字符集不一致</li>
+</ul>
+<h2 id="字符集问题导致索引失效问题排查"><a href="#字符集问题导致索引失效问题排查" class="headerlink" title="字符集问题导致索引失效问题排查"></a>字符集问题导致索引失效问题排查</h2><p>问题描述<br>在 业务开发中  用户表的主键ID 为vachar(32), 业务表里都有响应的user_id列 定义为 vachar(32) 来存储用户ID；<br>然后某个需求是查询 某个业务线 操作的所有用户信息。  正常的流程是  select *from 用户表 where id in( select distinct user_id from 业务表 加条件)<br>发现没有走索引；<br>排查思路：</p>
+<ol>
+<li><p>id 为索引列 是否添加了索引；索引不合理</p>
+</li>
+<li><p>in 中的子查询是不是数据量过大 导致的 in 中索引失效</p>
+</li>
+<li><p>id 和 子查询中的字段是否类型不一致。</p>
+</li>
+<li><p>检查都添加了索引。 再用强制走索引语法验证，发现还是不走</p>
+</li>
+<li><p>查出来子查询74条，查看一下 阈值  ，阈值是200 超过阈值 会使索引退化</p>
+</li>
+<li><p>问题基本锁定在了隐式转换首先检查两个表中字段都是vachar(32)；<br>然后模拟两种情况，将子查询结果直接放到父查询in中执行，发现是走索引的<br>所以问题基本锁定在了隐式转换<br>猜测1：子查询中 distinct 是否会把userId 进行类型转换， 做测试 ，很简单测试发现不成立<br>2：由于参数是数字 ，猜测执行优化器在子查询查出结果自动进行了隐式转换； 这个用cast 操作排除</p>
+<ol start="3">
+<li>由于是vachar类型 ，猜测字符集问题导致， 验证：子查询结果强制转换字符集 ，测试结果走索引；<br>查看两个表中，用户表手动添加了字符集，另一个表用的默认的，这就导致没走索引，在此记录，用字符类型的索引一定要检查字符集，否则导致索引失效。</li>
+</ol>
+</li>
+</ol>
+<p>下一步怎么解决：</p>
+<ol>
+<li>数据备份</li>
+<li>修改字符集</li>
+<li>数据导入</li>
+</ol>
+<p>mysql 三层索引大概能存多少数据？？</p>
+<p>每页大概 16k,  用bigint存 8k Mysql 是6k ,mysql 一个节点的大小设为一页或者页的倍数最为合适，16*1024&#x2F;14&#x3D; 1170   1170  * 1170  * 16&#x3D;2千万+</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&mid=2247486241&idx=1&sn=b9110c9d5be352f115c0d8cf6a0a520e&chksm=9bd0a6b9aca72faff0fe2f1ea1c3f43d6716f882bde357a999fe0094aa4e1f880f46473d1b98&scene=27#wechat_redirect">MySQL的索引</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU2NjIzNDk5NQ==&mid=2247484932&idx=1&sn=6819e1a80541e0e869cf61120aadbef4&chksm=fcaedc18cbd9550e317f1d258e8128a7894bd024c38f9829515cac3424b7d9eceb8ff76b35d9&scene=27#wechat_redirect">理解索引</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/morethink/p/9251530.html">MongoDB 及 Mysql 背后的 B&#x2F;B+树</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0904(Mysql%E7%B4%A2%E5%BC%95)/" data-id="cld1bs9sj000mfynhef6gcrfl" data-title="每日一问0904(Mysql索引)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0905(趣味题)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0905(%E8%B6%A3%E5%91%B3%E9%A2%98)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0905(%E8%B6%A3%E5%91%B3%E9%A2%98)/">每日一问0905(趣味题)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="趣味题"><a href="#趣味题" class="headerlink" title="趣味题"></a>趣味题</h1><h3 id="给你一个装满水的-8-升满壶和两个分别是-5-升、3-升的空壶，请想个优雅的办法，使得其中一个水壶恰好装-4-升水，每一步的操作只能是倒空或倒满。"><a href="#给你一个装满水的-8-升满壶和两个分别是-5-升、3-升的空壶，请想个优雅的办法，使得其中一个水壶恰好装-4-升水，每一步的操作只能是倒空或倒满。" class="headerlink" title="给你一个装满水的 8 升满壶和两个分别是 5 升、3 升的空壶，请想个优雅的办法，使得其中一个水壶恰好装 4 升水，每一步的操作只能是倒空或倒满。"></a>给你一个装满水的 8 升满壶和两个分别是 5 升、3 升的空壶，请想个优雅的办法，使得其中一个水壶恰好装 4 升水，每一步的操作只能是倒空或倒满。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0905(%E8%B6%A3%E5%91%B3%E9%A2%98)/" data-id="cld1bs9sj000nfynhbtvjcdla" data-title="每日一问0905(趣味题)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0906(mysql事务管理)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0906(mysql%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0906(mysql%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86)/">每日一问0906(mysql事务管理)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-事务管理"><a href="#mysql-事务管理" class="headerlink" title="mysql 事务管理"></a>mysql 事务管理</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="ACID是衡量事务的四个特性："><a href="#ACID是衡量事务的四个特性：" class="headerlink" title="ACID是衡量事务的四个特性："></a>ACID是衡量事务的四个特性：</h3><ul>
+<li>原子性：（Atomicity）(同时)</li>
+<li>一致性：（Consistency）(弱一致性，最终一致性)</li>
+<li>隔离性：（Isolation）</li>
+<li>持久性：（Durability）</li>
+</ul>
+<h3 id="mysql-日志"><a href="#mysql-日志" class="headerlink" title="mysql 日志"></a>mysql 日志</h3><p>MySQL的日志有很多种，如二进制日志、错误日志、查询日志、慢查询日志等，此外InnoDB存储引擎还提供了两种事务日志：redo log(重做日志)和undo log(回滚日志)</p>
+<ul>
+<li>binlog </li>
+<li>Redo log</li>
+<li>Undo log (记录的是和执行语句相反的sql)</li>
+</ul>
+<h2 id="事务的执行过程"><a href="#事务的执行过程" class="headerlink" title="事务的执行过程"></a>事务的执行过程</h2><p>mysql 日志</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ol>
+<li>undo log。实现<code>原子性</code>的关键，当发生回滚时，InnoDB会根据undo log的内容做与之前相反的工作</li>
+<li>利用MVCC实现一致性非锁定读，这就有保证在同一个事务中多次读取相同的数据返回的结果是一样的，解决了<code>不可重复读</code>的问题</li>
+<li>利用Gap Locks和Next-Key可以阻止其它事务在锁定区间内插入数据，因此解决了<code>幻读</code>问题</li>
+</ol>
+<h3 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h3><h4 id="更新丢失"><a href="#更新丢失" class="headerlink" title="更新丢失"></a>更新丢失</h4><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p>在一个事务中读到了另一个事务<code>未提交</code>的记录 </p>
+<h4 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h4><p> mysql 的幻读并非什么读取两次返回结果集不同，而是事务在插入事先检测不存在的记录时，惊奇的发现这些数据已经存在了，之前的检测读获取到的数据如同鬼影一般。</p>
+<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p>一个事务读取<code>同一条(同一范围)记录</code>2次，得到的结果不一致</p>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><ul>
+<li>Read Uncommitted（读取未提交内容):这会带来脏读，幻读，不可重复读，基本没用</li>
+<li>Read Committed（读取提交内容）: ，但仍然存在不可重复读和幻读问题。</li>
+<li>Repeatable Read（可重读）:同一个事务中多次读取相同的数据返回的结果是一样的。其避免了脏读和不可重复读问题，但幻读依然存在。</li>
+<li>Serializable（可串行化）: 事务串行执行.</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/27/1657927364adccc5" alt="avatar"></p>
+<h3 id="用到的技术"><a href="#用到的技术" class="headerlink" title="用到的技术"></a>用到的技术</h3><h4 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h4><p>使用数据版本（Version）记录机制实现，这是乐观锁最常用的一种实现方式。何谓数据版本？即为数据增加一个版本标识，一般是通过为数据库表增加一个数字类型的 “version” 字段来实现。当读取数据时，将version字段的值一同读出，数据每更新一次，对此version值加一。当我们提交更新的时候，判断数据库表对应记录的当前版本信息与第一次取出来的version值进行比对，如果数据库表当前版本号与第一次取出来的version值相等，则予以更新，否则认为是过期数据。<br>解决更新丢失</p>
+<h4 id="行锁-读锁、写锁"><a href="#行锁-读锁、写锁" class="headerlink" title="行锁(读锁、写锁)"></a>行锁(读锁、写锁)</h4><p>RC级别，提供了读锁和写锁，解决了赃读问题。</p>
+<h4 id="间隙锁"><a href="#间隙锁" class="headerlink" title="间隙锁"></a>间隙锁</h4><p>RR级别，在已有读锁和写锁的基础上，增加了gap锁，即间隙锁，解决了幻读的问题</p>
+<p>对<code>批量操作较多</code>，且操作结果有要求的系统，需要使用RR级别，如果都是按主健单条处理数据，完全不需要这个级别。</p>
+<h4 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h4><p>为了查询一些正在被另一个事务更新的行，并且可以看到它们被更新之前的值。</p>
+<h5 id="MVCC原理"><a href="#MVCC原理" class="headerlink" title="MVCC原理"></a>MVCC原理</h5><p>InnoDB会给数据库中的每一行增加三个字段，它们分别是DB_TRX_ID、DB_ROLL_PTR、DB_ROW_ID。<br>读取创建版本小于或等于当前事务版本号，并且删除版本为空或大于当前事务版本号的记录。<br>增,删,改 时 更新其版本号</p>
+<h3 id="快照读和当前读"><a href="#快照读和当前读" class="headerlink" title="快照读和当前读"></a>快照读和当前读</h3><ul>
+<li>快照读：读取的是快照版本，也就是历史版本</li>
+<li>当前读：读取的是最新版本</li>
+</ul>
+<p>普通的SELECT就是快照读，而UPDATE、DELETE、INSERT、SELECT …  LOCK IN SHARE MODE、SELECT … FOR UPDATE是当前读。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="ACID问题："><a href="#ACID问题：" class="headerlink" title="ACID问题："></a>ACID问题：</h3><ul>
+<li>为什么InnoDB能够保证原子性？用的什么方式？</li>
+<li>为什么InnoDB能够保证一致性？用的什么方式？</li>
+<li>为什么InnoDB能够保证持久性？用的什么方式？</li>
+</ul>
+<h3 id="隔离性里隔离级别的问题："><a href="#隔离性里隔离级别的问题：" class="headerlink" title="隔离性里隔离级别的问题："></a>隔离性里隔离级别的问题：</h3><ul>
+<li>为什么RU级别会发生脏读，而其他的隔离级别能够避免？</li>
+<li>为什么RC级别不能重复读，而RR级别能够避免？</li>
+<li>为什么InnoDB的RR级别能够防止幻读？</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/g1avP9FUA6CDOYRAlv4R">一篇文章带你学习分布式事务</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIxMzEzMjM5NQ==&mid=2651033136&idx=1&sn=9a91289141bf24bf242ada7e676f0ddb&chksm=8c4c5b34bb3bd2227d025f2c9f1043ed07594bd08072f41336fb591e479e444c3ffba5bf8582&scene=27#wechat_redirect">讲清楚分布式事务选型：XA、2PC、TCC、Saga、阿里Seata</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIwMzY1OTU1NQ==&mid=2247484137&idx=1&sn=f79302b061418771fc413c4b19a6218e&chksm=96cd42a5a1bacbb3dc9f2b6cc923b6a1fb021e467b8c4726078b499cef576b80c0dd86a1c131&scene=27#wechat_redirect">深入分析MySQL InnoDB的事务ACID特性</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247484915&idx=2&sn=a4c247a6bde0b3897be871a9706f3f1c&chksm=fa497a42cd3ef3541743cd9c835bf8a7a2100d0a0ab38ad63a4f943077f375e5bff75a937af9&scene=27#wechat_redirect">MySQL 乱七八糟的可重复读隔离级别实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48327345">一文了解InnoDB事务实现原理</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/chen77716/article/details/6742128">Mysql中的MVCC</a></li>
+<li><code>*****</code><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cjsblog/p/8365921.html">MySQL事务隔离级别的实现原理</a></li>
+<li><code>*****</code><a target="_blank" rel="noopener" href="http://hedengcheng.com/?p=771#_Toc374698312">MySQL 加锁处理分析</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0906(mysql%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86)/" data-id="cld1bs9sk000ofynh5b7i1efn" data-title="每日一问0906(mysql事务管理)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0907(mysql命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/">每日一问0907(mysql命令)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-命令"><a href="#mysql-命令" class="headerlink" title="mysql 命令"></a>mysql 命令</h1><h2 id="mysql-软件相关"><a href="#mysql-软件相关" class="headerlink" title="mysql 软件相关"></a>mysql 软件相关</h2><ul>
+<li>查看mysql 安装路径 ps -ef|grep mysql </li>
+<li>连接:mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p </li>
+<li>查看Mysql服务器上的版本  select version();</li>
+</ul>
+<h2 id="库-x2F-表操作"><a href="#库-x2F-表操作" class="headerlink" title="库&#x2F;表操作"></a>库&#x2F;表操作</h2><ul>
+<li>查看所有的数据库 show databases; ，</li>
+<li>查看当前所在数据库  select database(); </li>
+<li>选择数据库 use 库名;</li>
+<li>查看某表 show create table 表名;<br>或 show table status from db_name where name&#x3D;’table_name’;</li>
+<li>表锁定 show status like ‘%table_lock%’;</li>
+<li>行锁定 show status like ‘innodb_row_lock%’;</li>
+</ul>
+<h2 id="缓存相关"><a href="#缓存相关" class="headerlink" title="缓存相关"></a>缓存相关</h2><ul>
+<li>查询缓存情况 show status like ‘%qcache%’; </li>
+<li>show variables like “%query_cache%”;</li>
+</ul>
+<h2 id="优化操作"><a href="#优化操作" class="headerlink" title="优化操作"></a>优化操作</h2><h2 id="监控操作"><a href="#监控操作" class="headerlink" title="监控操作"></a>监控操作</h2><p>***查询数据库连接:show full  processlist; </p>
+<ul>
+<li><p>查看最大连接数: show status like ‘%Max_used_connections%’;</p>
+</li>
+<li><p>当前连接数: show status like ‘%Threads_connected%’;</p>
+</li>
+<li><p>SHOW STATUS LIKE ‘Qcache%’;</p>
+</li>
+<li><p>由于客户没有正确关闭连接已经死掉，已经放弃的连接数量:show status like ‘Aborted_clients’;</p>
+</li>
+<li><p>查看最大连接数量:show variables like ‘%max_connections%’;</p>
+</li>
+<li><p>查看超时时间:show variables like ‘%timeout%’;</p>
+</li>
+<li><p>查看引擎状态 (死锁分析，内存分析):show engine innodb statusinnodb_trx</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>BACKGROUND THREAD</th>
+<th>后台Master线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SEMAPHORES</td>
+<td>信号量信息</td>
+</tr>
+<tr>
+<td>LATEST DETECTED DEADLOCK</td>
+<td>最近一次死锁信息，只有产生过死锁才会有</td>
+</tr>
+<tr>
+<td>TRANSACTIONS</td>
+<td>事物信息</td>
+</tr>
+<tr>
+<td>FILE I&#x2F;O</td>
+<td>IO Thread信息</td>
+</tr>
+<tr>
+<td>INSERT BUFFER AND ADAPTIVE HASH INDEX</td>
+<td>INSERT BUFFER和自适应HASH索引</td>
+</tr>
+<tr>
+<td>LOG</td>
+<td>日志</td>
+</tr>
+<tr>
+<td>BUFFER POOL AND MEMORY</td>
+<td>BUFFER POOL和内存</td>
+</tr>
+<tr>
+<td>INDIVIDUAL BUFFER POOL INFO</td>
+<td>如果设置了多个BUFFER POOL实例，这里显示每个BUFFER POOL信息。可通过innodb_buffer_pool_instances参数设置</td>
+</tr>
+<tr>
+<td>ROW OPERATIONS‍‍</td>
+<td>行操作统计信息‍‍</td>
+</tr>
+<tr>
+<td>END OF INNODB MONITOR OUTPU</td>
+<td>输出结束语</td>
+</tr>
+</tbody></table>
+<h2 id="引擎操作"><a href="#引擎操作" class="headerlink" title="引擎操作"></a>引擎操作</h2><ul>
+<li>查看存储引擎  show engines;</li>
+</ul>
+<h2 id="binlog日志相关"><a href="#binlog日志相关" class="headerlink" title="binlog日志相关"></a>binlog日志相关</h2><ul>
+<li>查看日志是否启动:show variables like ‘log_%’; </li>
+<li>查看所有binlog日志列表:　show master logs;</li>
+<li>查看master状态，即最后（最新）一个binlog日志的编号名称，及其最后一个操作事件pos结束点(Position)值: 　show master status;</li>
+<li>flush 刷新log日志，自此刻开始产生一个新编号的binlog日志文件: 　flush logs;</li>
+<li>重置（清空）所有binlog日志 reset master;</li>
+<li>查看binlog日志内容(1) (命令外部): mysqlbinlog+binlog文件名</li>
+<li><code>查看binlog日志内容(2)</code>:show binlog events [IN ‘log_name’] [FROM pos] [LIMIT [offset,] row_count]; eg:show binlog events in ‘mysql-bin.000002’ from 624\G;</li>
+<li>show variables like “%binlog%”;</li>
+<li>查看 binlog 内容 show binlog events;</li>
+<li>查看具体一个binlog文件的内容 （in 后面为binlog的文件名）show binlog events in ‘master.000003’;</li>
+<li>设置binlog文件保存事件，过期删除，单位天 set global expire_log_days&#x3D;3; </li>
+<li>删除当前的binlog文件: reset master; </li>
+<li>删除slave的中继日志: reset slave;</li>
+<li>删除指定日期前的日志索引中binlog日志文件:purge master logs before ‘2019-03-09 14:00:00’;</li>
+<li>删除指定日志文件: purge master logs to ‘master.000003’;</li>
+</ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
+<li><p>查看事务隔离级别:show  variables like ‘transaction_isolation’ ;(Mysql8 has renamed tx_isolation to transaction_isolation)</p>
+</li>
+<li><blockquote>
+<p>设置事务隔离级别: mysql&gt; set global transaction isolation level read committed; &#x2F;&#x2F;全局的<br> mysql&gt; set session transaction isolation level read committed; &#x2F;&#x2F;当前会话
+ </p>
+</blockquote>
+</li>
+<li><p>关闭SQL语句的自动提交:set autocommit&#x3D;off;</p>
+</li>
+<li><p>查看SQL语句自动提交是否关闭:show variables like ‘autocommit’;</p>
+</li>
+</ul>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>**修改数据库字符集：<br>**</p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE db_name DEFAULT CHARACTER SET character_name [COLLATE ...]; </span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>把表默认的字符集和所有字符列（CHAR,VARCHAR,TEXT）改为新的字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name CONVERT TO CHARACTER SET character_name [COLLATE ...] </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>只是修改表的默认字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DEFAULT CHARACTER SET character_name [COLLATE...]; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>修改字段的字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name CHANGE c_name c_name CHARACTER SET character_name [COLLATE ...]; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest CHANGE title title VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>查看数据库编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE DATABASE db_name; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>查看表编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE tbl_name; </span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>查看字段编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW FULL COLUMNS FROM tbl_name; </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoboluo768/p/5171425.html">mysql之show engine innodb status解读</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1424670">一条命令解读InnoDB存储引擎—show engine innodb status</a></li>
+</ul>
+<h1 id="MySQL-重要参数-innodb-flush-log-at-trx-commit-和-sync-binlog"><a href="#MySQL-重要参数-innodb-flush-log-at-trx-commit-和-sync-binlog" class="headerlink" title="MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/klvchen/p/10861850.html">MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog</a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9sn000pfynhcksx70ku" data-title="每日一问0907(mysql命令)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0908(mysql缓存)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0908(mysql%E7%BC%93%E5%AD%98)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0908(mysql%E7%BC%93%E5%AD%98)/">每日一问0908(mysql缓存)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-缓存"><a href="#mysql-缓存" class="headerlink" title="mysql 缓存"></a>mysql 缓存</h1><h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>InnoDB作为MySQL的存储引擎，数据是存放在磁盘中的，但如果每次读写数据都需要磁盘IO，效率会很低。为此，InnoDB提供了缓存(Buffer Pool)</p>
+<h2 id="what"><a href="#what" class="headerlink" title="what"></a>what</h2><p>mysql缓存机制就是缓存sql 文本及缓存结果，用KV形式保存再服务器内存中</p>
+<p>查询缓存不仅将查询语句结构缓存起来，还将查询结果缓存起来</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55947158">[玩转MySQL之四]MySQL缓存机制</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0908(mysql%E7%BC%93%E5%AD%98)/" data-id="cld1bs9sn000qfynha0fwg6dw" data-title="每日一问0908(mysql缓存)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0909(mysql锁)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0909(mysql%E9%94%81)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0909(mysql%E9%94%81)/">每日一问0909(mysql锁)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-锁"><a href="#mysql-锁" class="headerlink" title="mysql 锁"></a>mysql 锁</h1><h2 id="锁的类型"><a href="#锁的类型" class="headerlink" title="锁的类型"></a>锁的类型</h2><p><img src="https://img-blog.csdn.net/20180902191802677" alt="avatar"></p>
+<p>分类图:</p>
+<p><img src="https://pic2.zhimg.com/80/v2-eec522a8cf7d8a38eaea29192edbb2f5_hd.jpg" alt="avatar"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-5cf8b96fdca1428e6f3cce863fdfa73e_hd.jpg" alt="avatar"></p>
+<p><img src="https://www.javazhiyin.com/wp-content/uploads/2019/01/java1-1547261661.jpeg" alt="avatar"></p>
+<h3 id="Shared（共享锁-x2F-读锁-x2F-S锁"><a href="#Shared（共享锁-x2F-读锁-x2F-S锁" class="headerlink" title="Shared（共享锁&#x2F;读锁&#x2F;S锁)"></a>Shared（共享锁&#x2F;读锁&#x2F;S锁)</h3><p>行锁</p>
+<p>若事务T对数据对象A加上S锁，则其他事务只能再对A加S锁，而不能X锁，直到T释放A上的锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</p>
+<h3 id="Exclusive-Locks（互斥锁-x2F-排他锁-x2F-X锁-x2F-写锁）"><a href="#Exclusive-Locks（互斥锁-x2F-排他锁-x2F-X锁-x2F-写锁）" class="headerlink" title="Exclusive Locks（互斥锁&#x2F;排他锁&#x2F;X锁&#x2F;写锁）"></a>Exclusive Locks（互斥锁&#x2F;排他锁&#x2F;X锁&#x2F;写锁）</h3><p>行锁</p>
+<p>若事务T对数据对象A加上X锁，则只允许T读取和修改A，其他任何事务都不能再对加任何类型的锁，知道T释放A上的锁。这就保证了其他事务在T释放A上的锁之前不能再读取和修改A。</p>
+<h3 id="自增锁"><a href="#自增锁" class="headerlink" title="自增锁"></a>自增锁</h3><blockquote>
+<p>自增锁是一种特殊的表级别锁（table-level lock），专门针对事务插入AUTO_INCREMENT类型的列。最简单的情况，如果一个事务正在往表中插入记录，所有其他事务的插入必须等待，以便第一个事务插入的行，是连续的主键值。</p>
+</blockquote>
+<h2 id="记录锁"><a href="#记录锁" class="headerlink" title="记录锁"></a>记录锁</h2><p>记录锁 是最简单的行锁</p>
+<p>UPDATE accounts SET level &#x3D; 100 WHERE id &#x3D; 5;<br>这条 SQL 语句就会在 id &#x3D; 5 这条记录上加上记录锁 防止其他事务对 id &#x3D; 5 这条记录进行修改或删除。</p>
+<p>注意，如果 SQL 语句无法使用索引时会走主索引实现全表扫描，这个时候 MySQL 会给整张表的所有数据行加记录锁。如果一个 WHERE 条件无法通过索引快速过滤，存储引擎层面就会将所有记录加锁后返回，再由 MySQL Server 层进行过滤。不过在实际使用过程中，MySQL 做了一些改进，在 MySQL Server 层进行过滤的时候，如果发现不满足，会调用 unlock_row 方法，把不满足条件的记录释放锁（显然这违背了二段锁协议）。这样做，保证了最后只会持有满足条件记录上的锁，但是每条记录的加锁操作还是不能省略的。可见在没有索引时，不仅会消耗大量的锁资源，增加数据库的开销，而且极大的降低了数据库的并发性能，所以说，更新操作一定要记得走索引。</p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="什么是FullText-index"><a href="#什么是FullText-index" class="headerlink" title="什么是FullText index??"></a>什么是FullText index??</h3><h3 id="怎么出现死锁？？"><a href="#怎么出现死锁？？" class="headerlink" title="怎么出现死锁？？"></a>怎么出现死锁？？</h3><h3 id="怎么解决死锁？？"><a href="#怎么解决死锁？？" class="headerlink" title="怎么解决死锁？？"></a>怎么解决死锁？？</h3><p>并发的问题就少不了死锁，在MySQL中同样会存在死锁的问题。</p>
+<p>但一般来说MySQL通过回滚帮我们解决了不少死锁的问题了，但死锁是无法完全避免的，可以通过以下的经验参考，来尽可能少遇到死锁：</p>
+<p>1）以固定的顺序访问表和行。比如对两个job批量更新的情形，简单方法是对id列表先排序，后执行，这样就避免了交叉等待锁的情形；将两个事务的sql顺序调整为一致，也能避免死锁。</p>
+<p>2）大事务拆小。大事务更倾向于死锁，如果业务允许，将大事务拆小。</p>
+<p>3）在同一个事务中，尽可能做到一次锁定所需要的所有资源，减少死锁概率。</p>
+<p>4）降低隔离级别。如果业务允许，将隔离级别调低也是较好的选择，比如将隔离级别从RR调整为RC，可以避免掉很多因为gap锁造成的死锁。</p>
+<p>5）为表添加合理的索引。可以看到如果不走索引将会为表的每一行记录添加上锁，死锁的概率大大增大。</p>
+<h2 id="什么是-两阶段锁？"><a href="#什么是-两阶段锁？" class="headerlink" title="什么是 两阶段锁？"></a>什么是 两阶段锁？</h2><h3 id="行锁为什么需要索引？"><a href="#行锁为什么需要索引？" class="headerlink" title="行锁为什么需要索引？"></a>行锁为什么需要索引？</h3><h3 id="行锁与聚簇索引的关系"><a href="#行锁与聚簇索引的关系" class="headerlink" title="行锁与聚簇索引的关系"></a>行锁与聚簇索引的关系</h3><h3 id="各种锁在事务中的应用？？"><a href="#各种锁在事务中的应用？？" class="headerlink" title="各种锁在事务中的应用？？"></a>各种锁在事务中的应用？？</h3><h3 id="为什么innodb-支持行锁，MyISAM-不行"><a href="#为什么innodb-支持行锁，MyISAM-不行" class="headerlink" title="为什么innodb 支持行锁，MyISAM 不行"></a>为什么innodb 支持行锁，MyISAM 不行</h3><p>我的理解: 因为innoDB 有一个聚簇索引(索引上有行内容),然后加锁时需要定位相关行然后进行操作，聚簇索引可以快速定位要加锁的行的内容，另外就是双向链表的插入操作比较快，定位位置之后，可以直接对该行内容进行处理,1）减少查找行的性能开销。 2） 行锁 是建立在索引上的，MyISAM 中 的索引都是等价的，不知道用哪个(可能会死锁)。</p>
+<h3 id="行锁为什么会出现死锁-表锁不会？"><a href="#行锁为什么会出现死锁-表锁不会？" class="headerlink" title="行锁为什么会出现死锁 表锁不会？"></a>行锁为什么会出现死锁 表锁不会？</h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><code>**</code><a target="_blank" rel="noopener" href="https://blog.csdn.net/oqkdws/article/details/82318157">InnoDB使用的七种锁</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/linuxheik/article/details/68067042">mysql锁原理</a></li>
+<li><code>***</code><a target="_blank" rel="noopener" href="https://blog.csdn.net/jack__frost/article/details/73347688">MySQL优化系列（八）–锁机制超详细解析（锁分类、事务并发、引擎并发控制）</a></li>
+<li><code>*****</code><a target="_blank" rel="noopener" href="https://lanjingling.github.io/2015/10/10/mysql-hangsuo/">mysql 行锁的实现</a></li>
+<li><code>*****</code><a target="_blank" rel="noopener" href="http://www.linkedkeeper.com/1332.html">读《MySQL 实战》03 锁和性能</a></li>
+<li><code>*****</code><a target="_blank" rel="noopener" href="http://vayi.site/2018/08/17/MYSQL_LOCK/">MYSQL锁以及死锁的产生跟解决</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0909(mysql%E9%94%81)/" data-id="cld1bs9so000rfynh2s3r9h9i" data-title="每日一问0909(mysql锁)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

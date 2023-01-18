@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问1224(es概念篇) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="elastic search 概念篇索引结构在存储结构上，由_index、_type和_id唯一标识一个文档。 _index指向一个或多个物理分片的逻辑命名空间，_type类型用于区分同一个集合中的不同细分，在不同的细分中，数据的整体模式是相同或相似的，不适合完全不同类型的数据。多个_type可以在相同的索引中存在，只要它们的字段不冲突即可（对于整个索引，映射在本质上被“扁平化”成一个单一的、全局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问1224(es概念篇)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="elastic search 概念篇索引结构在存储结构上，由_index、_type和_id唯一标识一个文档。 _index指向一个或多个物理分片的逻辑命名空间，_type类型用于区分同一个集合中的不同细分，在不同的细分中，数据的整体模式是相同或相似的，不适合完全不同类型的数据。多个_type可以在相同的索引中存在，只要它们的字段不冲突即可（对于整个索引，映射在本质上被“扁平化”成一个单一的、全局">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:\workspace\0zmkWorkSpace\javaWorkspace\myGitWorkspace\java-learn-dictionary\markdown\ImgSource\es_shard1.png">
+<meta property="og:image" content="https://a240277805.github.io/..%5CImgSource%5Ces_write1.png">
+<meta property="article:published_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\workspace\0zmkWorkSpace\javaWorkspace\myGitWorkspace\java-learn-dictionary\markdown\ImgSource\es_shard1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问1224(es概念篇)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问1224(es概念篇)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="elastic-search-概念篇"><a href="#elastic-search-概念篇" class="headerlink" title="elastic search 概念篇"></a>elastic search 概念篇</h1><h2 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h2><p>在存储结构上，由_index、_type和_id唯一标识一个文档。</p>
+<p>_index指向一个或多个物理分片的逻辑命名空间，_type类型用于区分同一个集合中的不同细分，在不同的细分中，数据的整体模式是相同或相似的，不适合完全不同类型的数据。多个_type可以在相同的索引中存在，只要它们的字段不冲突即可（对于整个索引，映射在本质上被“扁平化”成一个单一的、全局的模式）。_id文档标记符由系统自动生成或使用者提供。</p>
+<p><strong>理解type</strong></p>
+<p>很多初学者喜欢套用RDBMS中的概念，将_index理解为数据库，将_type理解为表，这是很牵强的理解，实际上这是完全不同的概念，没什么相似性，不同_type下的字段不能冲突，删除整个_type也不会释放空间。在实际应用中，数据模型不同，有不同_type需求的时候，我们应该建立单独的索引，而不是在一个索引下使用不同的_type。删除过期老化的数据时，最好以索引为单位，而不是_type和_id。正由于_type在实际应用中容易引起概念混淆，以及允许索引存在多_type并没有什么实际意义，在ES 6.x版本中，一个索引只允许存在一个_type，未来的7.x版本将完全删除_type的概念。</p>
+<h2 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h2><p>分片（shard）是底层的基本读写单元，分片的目的是分割巨大索引，让读写可以并行操作，由多台机器共同完成。读写请求最终落到某个分片上，分片可以独立执行读写工作。ES利用分片将数据分发到集群内各处。分片是数据的容器，文档保存在分片内，不会跨分片存储。分片又被分配到集群内的各个节点里。当集群规模扩大或缩小时，ES 会自动在各节点中迁移分片，使数据仍然均匀分布在集群里。</p>
+<p>索引与分片的关系如下图所示:</p>
+<p><img src="D:\workspace\0zmkWorkSpace\javaWorkspace\myGitWorkspace\java-learn-dictionary\markdown\ImgSource\es_shard1.png" alt="avator"></p>
+<pre><code> 一个ES索引包含很多分片，一个分片是一个Lucene的索引，它本身就是一个完整的搜索引擎，可以独立执行建立索引和搜索任务。Lucene索引又由很多分段组成，每个分段都是一个倒排索引。ES每次“refresh”都会生成一个新的分段，其中包含若干文档的数据。在每个分段内部，文档的不同字段被单独建立索引。每个字段的值由若干词（Term）组成，Term是原文本内容经过分词器处理和语言处理后的最终结果（例如，去除标点符号和转换为词根）。
+</code></pre>
+<p>如果想了解Lucene分段由哪些文件组成，每个文件都存储了什么内容，则可以参考Apache Lucene 的手册：<a target="_blank" rel="noopener" href="http://lucene.apache.org/core/7_3_0/core/org/apache/lucene/codecs/lucene70/package-summary.html#package.description%E3%80%82">http://lucene.apache.org/core/7_3_0/core/org/apache/lucene/codecs/lucene70/package-summary.html#package.description。</a></p>
+<p>索引建立的时候就需要确定好主分片数，在较老的版本中（5.x 版本之前），主分片数量不可以修改，副分片数可以随时修改。现在（5.x～6.x 版本之后）,ES 已经支持在一定条件的限制下，对某个索引的主分片进行拆分（Split）或缩小（Shrink）。但是，我们仍然需要在一开始就尽量规划好主分片数量：先依据硬件情况定好单个分片容量，然后<strong>依据业务场景预估数据量和增长量</strong>，再除以单个分片容量。??? 怎么预估数据量和增长量</p>
+<p>分片数不够时，可以考虑新建索引，搜索1个有着50个分片的索引与搜索50个每个都有1个分片的索引完全等价，或者使用_split API来拆分索引（6.1版本开始支持）。</p>
+<p>在实际应用中，我们不应该向单个索引持续写数据，直到它的分片巨大无比。巨大的索引会在数据老化后难以删除，<strong>以_id 为单位删除文档不会立刻释放空间，删除的 doc 只在 Lucene分段合并时才会真正从磁盘中删除</strong>。即使手工触发分段合并，仍然会引起较高的 I&#x2F;O 压力，并且可能因为分段巨大导致在合并过程中磁盘空间不足（分段大小大于磁盘可用空间的一半）。因此，我们建议周期性地创建新索引。</p>
+<p><strong>索引别名</strong>就像一个快捷方式或软链接，不同的是它可以指向一个或多个索引。可以用于实现索引分组，或者索引间的无缝切换。</p>
+<p>现在我们已经确定好了主分片数量，并且保证单个索引的数据量不会太大，周期性创建新索引带来的一个新问题是集群整体分片数量较多，集群管理的总分片数越多压力就越大。在每天生成一个新索引的场景中，可能某天产生的数据量很小，实际上不需要这么多分片，甚至一个就够。这时，可以使用_shrink API来缩减主分片数量，降低集群负载。</p>
+<h4 id="那么索引如何更新，让新添加的文档可以被搜索到？"><a href="#那么索引如何更新，让新添加的文档可以被搜索到？" class="headerlink" title="那么索引如何更新，让新添加的文档可以被搜索到？"></a>那么索引如何更新，让新添加的文档可以被搜索到？</h4><p>答案是使用更多的索引，新增内容并写到一个新的倒排索引中，查询时，每个倒排索引都被轮流查询，查询完再对结果进行合并。每次内存缓冲的数据被写入文件时，会产生一个新的Lucene段，每个段都是一个倒排索引。在一个记录元信息的文件中描述了当前Lucene索引都含有哪些分段。由于分段的不变性，更新、删除等操作实际上是将数据标记为删除，记录到单独的位置，这种方式称为标记删除。因此删除部分数据不会释放磁盘空间。</p>
+<p>在写操作中，一般会先在内存中缓冲一段数据，再将这些数据写入硬盘，每次写入硬盘的这批数据称为一个分段，如同任何写操作一样。一般情况下（direct方式除外），通过操作系统write接口写到磁盘的数据先到达系统缓存（内存）,write函数返回成功时，数据未必被刷到磁盘。通过手工调用flush，或者操作系统通过一定策略将系统缓存刷到磁盘。这种策略大幅提升了写入效率。从write函数返回成功开始，无论数据有没有被刷到磁盘，该数据已经对读取可见。</p>
+<p>ES正是利用这种特性实现了近实时搜索。<strong>每秒产生一个新分段</strong>，新段先写入文件系统缓存，但稍后再执行flush刷盘操作，写操作很快会执行完，一旦写成功，就可以像其他文件一样被打开和读取了。由于系统先缓冲一段数据才写，且新段不会立即刷入磁盘，这两个过程中如果出现某些意外情况（如主机断电），则会存在丢失数据的风险。通用的做法是记录事务日志，每次对ES进行操作时均记录事务日志，当ES启动的时候，重放translog中所有在最后一次提交后发生的变更操作。比如HBase等都有自己的事务日志。</p>
+<p>  <strong>注1</strong>：避免使用非常大的分片，因为这会对群集从故障中恢复的能力产生负面影响。 对分片的大小没有固定的限制，但是通常情况下很多场景限制在 50GB 的分片大小以内。</p>
+<p>  <strong>注2</strong>：当在ElasticSearch集群中配置好你的索引后, 你要明白在集群运行中你无法调整分片设置. 既便以后你发现需要调整分片数量, 你也只能新建创建并对数据进行重新索引(reindex)(虽然reindex会比较耗时, 但至少能保证你不会停机).<br>  主分片的配置与硬盘分区很类似, 在对一块空的硬盘空间进行分区时, 会要求用户先进行数据备份, 然后配置新的分区, 最后把数据写到新的分区上。</p>
+<p>  <strong>注3</strong>：尽可能使用基于时间的索引来管理数据保留期。 根据保留期将数据分组到索引中。 基于时间的索引还可以轻松地随时间改变主分片和副本的数量，因为可以更改下一个要生成的索引。</p>
+<h2 id="段合并"><a href="#段合并" class="headerlink" title="段合并"></a>段合并</h2><p>在ES中，<strong>每秒清空一次写缓冲</strong>，将这些数据写入文件，这个过程称为<strong>refresh</strong>，每次refresh会创建一个新的Lucene 段。但是分段数量太多会带来较大的麻烦，每个段都会<strong>消耗文件句柄、内存</strong>。每个搜索请求都需要轮流检查每个段，查询完再对结果进行合并；所以段越多，搜索也就越慢。因此需要通过一定的策略将这些较小的段合并为大的段，常用的方案是选择大小相似的分段进行合并。在合并过程中，标记为删除的数据不会写入新分段，<strong>当合并过程结束，旧的分段数据被删除，标记删除的数据才从磁盘删除。</strong></p>
+<p>HBase、Cassandra等系统都有类似的分段机制 Cassandra <strong>系统在段合并过程中的一个问题就是，当持续地向一个表中写入数据，如果段文件大小没有上限，当巨大的段达到磁盘空间的一半时，剩余空间不足以进行新的段合并过程。如果段文件设置一定上限不再合并，则对表中部分数据无法实现真正的物理删除。ES存在同样的问题。</strong></p>
+<h3 id="Elasticsearch写数据的底层原理"><a href="#Elasticsearch写数据的底层原理" class="headerlink" title="Elasticsearch写数据的底层原理"></a><strong>Elasticsearch写数据的底层原理</strong></h3><p>1）先写入buffer，在buffer里的时候数据是搜索不到的；同时将数据写入translog日志文件。</p>
+<p>2）如果buffer快满了，或者到一定时间，就会将buffer数据refresh到一个新的segment file中，但是此时数据不是直接进入segment file的磁盘文件的，而是先进入os cache的。这个过程就是refresh。</p>
+<p>每隔1秒钟，es将buffer中的数据写入一个新的segment file，每秒钟会产生一个新的磁盘文件，segment file，这个segment file中就存储最近1秒内buffer中写入的数据。</p>
+<p>但是如果buffer里面此时没有数据，那当然不会执行refresh操作咯，每秒创建换一个空的segment file，如果buffer里面有数据，默认1秒钟执行一次refresh操作，刷入一个新的segment file中。</p>
+<p>操作系统里面，磁盘文件其实都有一个东西，叫做os cache，操作系统缓存，就是说数据写入磁盘文件之前，会先进入os cache，先进入操作系统级别的一个内存缓存中去。</p>
+<p>只要buffer中的数据被refresh操作，刷入os cache中，就代表这个数据就可以被搜索到了。</p>
+<p>为什么叫es是准实时的？NRT，near real-time，准实时。默认是每隔1秒refresh一次的，所以es是准实时的，因为写入的数据1秒之后才能被看到。</p>
+<p>可以通过es的restful api或者java api，手动执行一次refresh操作，就是手动将buffer中的数据刷入os cache中，让数据立马就可以被搜索到。</p>
+<p>只要数据被输入os cache中，buffer就会被清空了，因为不需要保留buffer了，数据在translog里面已经持久化到磁盘去一份了。</p>
+<p><img src="/..%5CImgSource%5Ces_write1.png" alt="avator"></p>
+<h3 id="分片大小如何影响性能"><a href="#分片大小如何影响性能" class="headerlink" title="分片大小如何影响性能"></a>分片大小如何影响性能</h3><p>  在Elasticsearch中，每个查询在每个分片的单个线程中执行。 但是，可以并行处理多个分片，对同一分片也可以进行多个查询和聚合。<br>  这意味着，如果不涉及缓存，则最小查询延迟将取决于数据、查询类型以及分片的大小。 查询大量小的分片将使每个分片的处理速度更快，但是需要按顺序排队和处理更多的任务，它不一定比查询较少数量的较大分片更快。 如果存在多个并发查询，则拥有大量小分片也会降低查询吞吐量。<br>  从查询性能角度确定最大分片大小的最佳方法是使用实际数据和查询进行基准测试。 始终以查询和加载索引的节点在生产中需要处理的内容基准，因为优化单个查询可能会产生误导性结果。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="ES之1：基本概念及原理"><a href="#ES之1：基本概念及原理" class="headerlink" title="ES之1：基本概念及原理"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/duanxz/p/10108296.html">ES之1：基本概念及原理</a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/" data-id="cld1bs9tt002jfynhf9cx2vvs" data-title="每日一问1224(es概念篇)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1223(js%E7%9B%B8%E5%85%B3)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问1223(js相关)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问1225(Hystrix)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

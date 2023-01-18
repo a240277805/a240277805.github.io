@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0907(mysql命令) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="mysql 命令mysql 软件相关 查看mysql 安装路径 ps -ef|grep mysql  连接:mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p  查看Mysql服务器上的版本  select version();  库&#x2F;表操作 查看所有的数据库 show databases; ， 查看当前所在数据库  select database();  选择数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0907(mysql命令)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mysql 命令mysql 软件相关 查看mysql 安装路径 ps -ef|grep mysql  连接:mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p  查看Mysql服务器上的版本  select version();  库&#x2F;表操作 查看所有的数据库 show databases; ， 查看当前所在数据库  select database();  选择数据">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2019/每日一问0907(mysql命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0907(mysql命令)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql-命令"><a href="#mysql-命令" class="headerlink" title="mysql 命令"></a>mysql 命令</h1><h2 id="mysql-软件相关"><a href="#mysql-软件相关" class="headerlink" title="mysql 软件相关"></a>mysql 软件相关</h2><ul>
+<li>查看mysql 安装路径 ps -ef|grep mysql </li>
+<li>连接:mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p </li>
+<li>查看Mysql服务器上的版本  select version();</li>
+</ul>
+<h2 id="库-x2F-表操作"><a href="#库-x2F-表操作" class="headerlink" title="库&#x2F;表操作"></a>库&#x2F;表操作</h2><ul>
+<li>查看所有的数据库 show databases; ，</li>
+<li>查看当前所在数据库  select database(); </li>
+<li>选择数据库 use 库名;</li>
+<li>查看某表 show create table 表名;<br>或 show table status from db_name where name&#x3D;’table_name’;</li>
+<li>表锁定 show status like ‘%table_lock%’;</li>
+<li>行锁定 show status like ‘innodb_row_lock%’;</li>
+</ul>
+<h2 id="缓存相关"><a href="#缓存相关" class="headerlink" title="缓存相关"></a>缓存相关</h2><ul>
+<li>查询缓存情况 show status like ‘%qcache%’; </li>
+<li>show variables like “%query_cache%”;</li>
+</ul>
+<h2 id="优化操作"><a href="#优化操作" class="headerlink" title="优化操作"></a>优化操作</h2><h2 id="监控操作"><a href="#监控操作" class="headerlink" title="监控操作"></a>监控操作</h2><p>***查询数据库连接:show full  processlist; </p>
+<ul>
+<li><p>查看最大连接数: show status like ‘%Max_used_connections%’;</p>
+</li>
+<li><p>当前连接数: show status like ‘%Threads_connected%’;</p>
+</li>
+<li><p>SHOW STATUS LIKE ‘Qcache%’;</p>
+</li>
+<li><p>由于客户没有正确关闭连接已经死掉，已经放弃的连接数量:show status like ‘Aborted_clients’;</p>
+</li>
+<li><p>查看最大连接数量:show variables like ‘%max_connections%’;</p>
+</li>
+<li><p>查看超时时间:show variables like ‘%timeout%’;</p>
+</li>
+<li><p>查看引擎状态 (死锁分析，内存分析):show engine innodb statusinnodb_trx</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>BACKGROUND THREAD</th>
+<th>后台Master线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SEMAPHORES</td>
+<td>信号量信息</td>
+</tr>
+<tr>
+<td>LATEST DETECTED DEADLOCK</td>
+<td>最近一次死锁信息，只有产生过死锁才会有</td>
+</tr>
+<tr>
+<td>TRANSACTIONS</td>
+<td>事物信息</td>
+</tr>
+<tr>
+<td>FILE I&#x2F;O</td>
+<td>IO Thread信息</td>
+</tr>
+<tr>
+<td>INSERT BUFFER AND ADAPTIVE HASH INDEX</td>
+<td>INSERT BUFFER和自适应HASH索引</td>
+</tr>
+<tr>
+<td>LOG</td>
+<td>日志</td>
+</tr>
+<tr>
+<td>BUFFER POOL AND MEMORY</td>
+<td>BUFFER POOL和内存</td>
+</tr>
+<tr>
+<td>INDIVIDUAL BUFFER POOL INFO</td>
+<td>如果设置了多个BUFFER POOL实例，这里显示每个BUFFER POOL信息。可通过innodb_buffer_pool_instances参数设置</td>
+</tr>
+<tr>
+<td>ROW OPERATIONS‍‍</td>
+<td>行操作统计信息‍‍</td>
+</tr>
+<tr>
+<td>END OF INNODB MONITOR OUTPU</td>
+<td>输出结束语</td>
+</tr>
+</tbody></table>
+<h2 id="引擎操作"><a href="#引擎操作" class="headerlink" title="引擎操作"></a>引擎操作</h2><ul>
+<li>查看存储引擎  show engines;</li>
+</ul>
+<h2 id="binlog日志相关"><a href="#binlog日志相关" class="headerlink" title="binlog日志相关"></a>binlog日志相关</h2><ul>
+<li>查看日志是否启动:show variables like ‘log_%’; </li>
+<li>查看所有binlog日志列表:　show master logs;</li>
+<li>查看master状态，即最后（最新）一个binlog日志的编号名称，及其最后一个操作事件pos结束点(Position)值: 　show master status;</li>
+<li>flush 刷新log日志，自此刻开始产生一个新编号的binlog日志文件: 　flush logs;</li>
+<li>重置（清空）所有binlog日志 reset master;</li>
+<li>查看binlog日志内容(1) (命令外部): mysqlbinlog+binlog文件名</li>
+<li><code>查看binlog日志内容(2)</code>:show binlog events [IN ‘log_name’] [FROM pos] [LIMIT [offset,] row_count]; eg:show binlog events in ‘mysql-bin.000002’ from 624\G;</li>
+<li>show variables like “%binlog%”;</li>
+<li>查看 binlog 内容 show binlog events;</li>
+<li>查看具体一个binlog文件的内容 （in 后面为binlog的文件名）show binlog events in ‘master.000003’;</li>
+<li>设置binlog文件保存事件，过期删除，单位天 set global expire_log_days&#x3D;3; </li>
+<li>删除当前的binlog文件: reset master; </li>
+<li>删除slave的中继日志: reset slave;</li>
+<li>删除指定日期前的日志索引中binlog日志文件:purge master logs before ‘2019-03-09 14:00:00’;</li>
+<li>删除指定日志文件: purge master logs to ‘master.000003’;</li>
+</ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
+<li><p>查看事务隔离级别:show  variables like ‘transaction_isolation’ ;(Mysql8 has renamed tx_isolation to transaction_isolation)</p>
+</li>
+<li><blockquote>
+<p>设置事务隔离级别: mysql&gt; set global transaction isolation level read committed; &#x2F;&#x2F;全局的<br> mysql&gt; set session transaction isolation level read committed; &#x2F;&#x2F;当前会话
+ </p>
+</blockquote>
+</li>
+<li><p>关闭SQL语句的自动提交:set autocommit&#x3D;off;</p>
+</li>
+<li><p>查看SQL语句自动提交是否关闭:show variables like ‘autocommit’;</p>
+</li>
+</ul>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>**修改数据库字符集：<br>**</p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE db_name DEFAULT CHARACTER SET character_name [COLLATE ...]; </span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>把表默认的字符集和所有字符列（CHAR,VARCHAR,TEXT）改为新的字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name CONVERT TO CHARACTER SET character_name [COLLATE ...] </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>只是修改表的默认字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DEFAULT CHARACTER SET character_name [COLLATE...]; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>修改字段的字符集：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name CHANGE c_name c_name CHARACTER SET character_name [COLLATE ...]; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如：ALTER TABLE logtest CHANGE title title VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>查看数据库编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE DATABASE db_name; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>查看表编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE tbl_name; </span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>查看字段编码：</strong></p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW FULL COLUMNS FROM tbl_name; </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoboluo768/p/5171425.html">mysql之show engine innodb status解读</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1424670">一条命令解读InnoDB存储引擎—show engine innodb status</a></li>
+</ul>
+<h1 id="MySQL-重要参数-innodb-flush-log-at-trx-commit-和-sync-binlog"><a href="#MySQL-重要参数-innodb-flush-log-at-trx-commit-和-sync-binlog" class="headerlink" title="MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/klvchen/p/10861850.html">MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog</a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0907(mysql%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9sn000pfynhcksx70ku" data-title="每日一问0907(mysql命令)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0906(mysql%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0906(mysql事务管理)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0908(mysql%E7%BC%93%E5%AD%98)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0908(mysql缓存)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问0330(多线程) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="多线程实现方式 Thread runnable callable 和 Feature  前两种都存在以下问题  无法获取子线程的返回值 run方法不可以抛出异常  线程状态在任意时间点，一个线程只有一种状态* 新建(New)：创建后尚未启动* 运行(Runable)：正在执行或正在等待CPU为它分配执行时间* 等待(Waiting)：* 无限等待(Waiting)：线程不会被分配CPU执行时间，等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问0330(多线程)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0330(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="多线程实现方式 Thread runnable callable 和 Feature  前两种都存在以下问题  无法获取子线程的返回值 run方法不可以抛出异常  线程状态在任意时间点，一个线程只有一种状态* 新建(New)：创建后尚未启动* 运行(Runable)：正在执行或正在等待CPU为它分配执行时间* 等待(Waiting)：* 无限等待(Waiting)：线程不会被分配CPU执行时间，等">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220211111707313.png">
+<meta property="article:published_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.356Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a240277805.github.io/ImgSource/image-20220211111707313.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问0330(多线程)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0330(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问0330(多线程)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ul>
+<li>Thread</li>
+<li>runnable</li>
+<li>callable 和 Feature</li>
+</ul>
+<p>前两种都存在以下问题</p>
+<ul>
+<li>无法获取子线程的返回值</li>
+<li>run方法不可以抛出异常</li>
+</ul>
+<h2 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h2><p>在任意时间点，一个线程只有一种状态<br>* 新建(New)：创建后尚未启动<br>* 运行(Runable)：正在执行或正在等待CPU为它分配执行时间<br>* 等待(Waiting)：<br>* 无限等待(Waiting)：线程不会被分配CPU执行时间，等待被其他线程显式地唤醒。<br>* 期限等待(Timed Waiting)：线程不会被分配CPU执行时间，无须等待被其他线程显式地唤醒，在一定时间后它们会由系统自动唤醒。<br>* 阻塞(Blocked)：被阻塞<br>* 阻塞和等待的区别：<code>阻塞状态</code>在等待着获取到一个排他锁，这个事件将在另外一个线程放弃这个锁的时候发生；而<code>等待状态</code>则是在等待一段时间，或者唤醒动作的发生。在程序等待进入同步区域的时候，线程将进入这种状态。</p>
+<p>t.interrupted（）的精确含义是“唤醒轻量级阻塞”，而不是字面意思“中断一个线程”。</p>
+<p>synchronized关键字其实是“给某个对象加了把锁”，</p>
+<p><img src="/../../ImgSource/image-20220211111707313.png" alt="image-20220211111707313"></p>
+<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><ul>
+<li>可见性  （任何进程在读取的时候，都会清空本进程里面持有的共享变量的值，强制从主存里面获取；<br>任何进程在写入完毕的时候，都会强制将共享变量的值写会主存。）</li>
+<li>指令重排 （增加内存屏障）</li>
+</ul>
+<h3 id="实现Runnable接口和Callable接口的区别"><a href="#实现Runnable接口和Callable接口的区别" class="headerlink" title="实现Runnable接口和Callable接口的区别"></a>实现Runnable接口和Callable接口的区别</h3><p>如果想让线程池执行任务的话需要实现的Runnable接口或Callable接口。 Runnable接口或Callable接口实现类都可以被ThreadPoolExecutor或ScheduledThreadPoolExecutor执行。<br>两者的区别</p>
+<ul>
+<li>方法签名不同，void Runnable.run(), V Callable.call() throws Exception</li>
+<li>是否允许有返回值，Callable允许有返回值（回调）</li>
+<li>是否允许抛出异常，Callable允许抛出异常。</li>
+</ul>
+<h3 id="sleep-和wait-区别"><a href="#sleep-和wait-区别" class="headerlink" title="sleep 和wait 区别"></a>sleep 和wait 区别</h3><ul>
+<li>sleep 没有释放锁 ，wait释放锁</li>
+<li>wait 用于线程间通讯 ,sleep 用于暂停执行</li>
+<li>wait 调用后线程不会自动苏醒，需要notify ,sleep 执行完成后线程会自动苏醒。</li>
+</ul>
+<h3 id="Thread-和-Runnable-区别"><a href="#Thread-和-Runnable-区别" class="headerlink" title="Thread 和 Runnable 区别"></a>Thread 和 Runnable 区别</h3><p>实际上 Thread 类和 Runnable 接口之间在使用上也是有区别的，如果一个类继承 Thread类，则不适合于多个线程共享资源，而实现了 Runnable 接口，就可以方便的实现资源的共享。</p>
+<h3 id="为什么我们调用start-会执行run-而不能直接调用run"><a href="#为什么我们调用start-会执行run-而不能直接调用run" class="headerlink" title="为什么我们调用start() 会执行run() ,而不能直接调用run()"></a>为什么我们调用start() 会执行run() ,而不能直接调用run()</h3><p> 调用start() 会执行线程的相应的准备工作，然后其中的线程自动执行run();而直接调用run() 会把她当成main()下的普通方法，并不是多线程工作。</p>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p>线程私有</p>
+<p>每个THread 中都具备一个ThreadLocalMap ，而 ThreadLocalMap可以存储以ThreadLocal为Key的键值对。</p>
+<h4 id="ThreadLocal-内存泄露问题"><a href="#ThreadLocal-内存泄露问题" class="headerlink" title="ThreadLocal 内存泄露问题"></a>ThreadLocal 内存泄露问题</h4><p>􏰛􏱾􏱿使用的 key 为 􏰺 ThreadLocal 的弱引用􏼏􏱿,而􏲻 value是强引用。所以如果ThreadLocal没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而value 不会被清理掉。这样一来,ThreadLocalMap 中出现了key 为null 的Entry。加入没有任何措施的话，value 永远不会被GC回收，这个时候会产生内存泄露。<br>最好使用完ThreadLocal后手动调用remove()方法。</p>
+<h2 id="如何创建线程池"><a href="#如何创建线程池" class="headerlink" title="如何创建线程池"></a>如何创建线程池</h2><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>方法名	功能<br>newFixedThreadPool(int nThreads)	创建固定大小的线程池<br>newSingleThreadExecutor()	创建只有一个线程的线程池<br>newCachedThreadPool()	创建一个不限线程数上限的线程池，任何提交的任务都将立即执行</p>
+<p>阿里开发手册中强制线程池不允许使用 Executors去创建,而是通过 ThreadPoolExecutor 的方式，避免资源耗尽的风险。<br>Executors线程池对象弊端如下：</p>
+<ul>
+<li>FixedThreadPool 和SingleThreadPool 允许队列的长度为Integer.Max_value ，可能堆积大量的请求，导致OOM。</li>
+<li>CachedThreadPool 和 ScheduledThreadPool 允许创建的线程数量为 Integer.Max_value 可能创建大量线程 ，导致OOM 。</li>
+</ul>
+<h3 id="如何正确使用线程池"><a href="#如何正确使用线程池" class="headerlink" title="如何正确使用线程池"></a>如何正确使用线程池</h3><h3 id="ThreadPoolExecutor-重要参数"><a href="#ThreadPoolExecutor-重要参数" class="headerlink" title="ThreadPoolExecutor 重要参数"></a>ThreadPoolExecutor 重要参数</h3><ul>
+<li>corePoolSize :核心线程数</li>
+<li>maximumPoolSize: 最大线程数</li>
+<li>workQueue: 达到最大线程数，会放到队列中</li>
+</ul>
+<p>常见参数：</p>
+<ul>
+<li><p>keepAliveTime: 大于核心线程数 又没有新任务 等待时间，线程空闲了多久会被回收</p>
+</li>
+<li><p>unit：等待时间单位</p>
+</li>
+<li><p>threadFactory </p>
+</li>
+<li><p>handler: 饱和策略</p>
+</li>
+</ul>
+<h3 id="饱和策略"><a href="#饱和策略" class="headerlink" title="饱和策略"></a>饱和策略</h3><ul>
+<li>AbortPolicy： 抛异常</li>
+<li>CallerRUnsPolicy: 调用执行自己的线程运行任务,会降低新任务提交速度，影响性能，适合不能丢任务的请求。</li>
+<li>DiscardPolicy： 不处理新任务</li>
+<li>DiscardOldestPolicy: 丢弃最早的未处理的任务。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Demo &#123;</span><br><span class="line"> executor</span><br><span class="line"> </span><br><span class="line"> class runner&#123;&#125;</span><br><span class="line"> </span><br><span class="line"> executor.execute(runner)</span><br><span class="line"> executor.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="核心参数设置"><a href="#核心参数设置" class="headerlink" title="核心参数设置"></a>核心参数设置</h2><h3 id="核心线程数"><a href="#核心线程数" class="headerlink" title="核心线程数"></a>核心线程数</h3><p>CPU密集型：核心线程数 &#x3D; CPU核数 + 1 (计算比较多)(这里核心线程数不是等于CPU核心数，是因为考虑CPU密集型任务由于某些原因而暂停，此时有额外的线程能确保CPU这个时刻不会浪费。但同时也会增加一个CPU上下文切换，因此核心线程数是等于CPU核心数？还是CPU核心数+1？可以根据实际情况来确定)</p>
+<p>IO密集型：核心线程数 &#x3D; CPU核数 * 2  （硬盘内存 读写 操作比较多）</p>
+<p>注：IO密集型（某大厂实践经验）<br>       核心线程数 &#x3D; CPU核数 &#x2F; （1-阻塞系数）     例如阻塞系数 0.8，CPU核数为4<br>       则核心线程数为20</p>
+<h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>AQS的实现依赖内部的同步队列,也就是FIFO的双向队列，如果当前线程竞争锁失败，那么AQS会把当前线程以及等待状态信息构造成一个Node加入到同步队列中，同时再阻塞该线程。当获取锁的线程释放锁以后，会从队列中唤醒一个阻塞的节点(线程)。</p>
+<h3 id="Sync"><a href="#Sync" class="headerlink" title="Sync"></a>Sync</h3><p>sync是一个静态内部类，它继承了AQS这个抽象类，前面说过AQS是一个同步工具，主要用来实现同步控制。我们在利用这个工具的时候，会继承它来实现同步控制功能。<br>通过进一步分析，发现Sync这个类有两个具体的实现，分别是NofairSync(非公平锁),FailSync(公平锁).</p>
+<h3 id="acquire"><a href="#acquire" class="headerlink" title="acquire"></a>acquire</h3><h3 id="年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。"><a href="#年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。" class="headerlink" title="年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。"></a>年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final void acquire(int arg) &#123;</span><br><span class="line">        if (!tryAcquire(arg) &amp;&amp;</span><br><span class="line">            acquireQueued(addWaiter(Node.EXCLUSIVE), arg))</span><br><span class="line">            selfInterrupt();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法的主要逻辑是</p>
+<ul>
+<li>通过tryAcquire尝试获取独占锁，如果成功返回true，失败返回false</li>
+<li>如果tryAcquire失败，则会通过addWaiter方法将当前线程封装成Node添加到AQS队列尾部</li>
+<li>acquireQueued，将Node作为参数，通过自旋去尝试获取锁。</li>
+</ul>
+<h3 id="addWaiter"><a href="#addWaiter" class="headerlink" title="addWaiter"></a>addWaiter</h3><p>当tryAcquire方法获取锁失败以后，则会先调用addWaiter将当前线程封装成Node，然后添加到AQS队列</p>
+<h2 id="公平锁和非公平锁"><a href="#公平锁和非公平锁" class="headerlink" title="公平锁和非公平锁"></a>公平锁和非公平锁</h2><p>公平锁：</p>
+<p>公平和非公平锁的队列都基于锁内部维护的一个双向链表，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。<br>锁的实现方式是基于如下几点：<br>表结点Node和状态state的volatile关</p>
+<p>键字。<br>sum.misc.Unsafe.compareAndSet的原子操作(见附录)。</p>
+<p>非公平锁：</p>
+<p>在等待锁的过程中， 如果有任意新的线程妄图获取锁，都是有很大的几率直接获取到锁的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReentrantLock锁都不会使得线程中断，除非开发者自己设置了中断位。</span><br><span class="line">ReentrantLock获取锁里面有看似自旋的代码，但是它不是自旋锁。</span><br><span class="line">ReentrantLock公平与非公平锁都是属于排它锁。</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CarpenterLee/p/9558026.html">Java线程池详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44777693/article/details/95246059">java线程池如何合理配置核心线程数？</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017372067">深入分析AQS实现原理</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/little-fly/p/10365109.html">Java中的公平锁和非公平锁实现详解</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0330(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/" data-id="cld1bs9sr000wfynh6tm3eb7u" data-title="每日一问0330(多线程)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0325(JVM)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问0325(JVM)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(synchronized)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问0331(synchronized)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

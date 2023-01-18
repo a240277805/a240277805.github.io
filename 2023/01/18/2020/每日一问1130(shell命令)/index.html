@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问1130(shell命令) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="shell 命令输出linux中有三种标准输入输出，分别是 STDIN，STDOUT，STDERR，对应的数字是 0，1，2。 STDIN 是标准输入，默认从键盘读取信息；STDOUT 是标准输出，默认将输出结果输出至终端，也就是显示器之类的东西；STDERR 是标准的错误信息，默认也会显示在终端上。  &amp;表示全部输出，0,1,2 &amp;&gt;  以覆盖的方式，写入文件 &amp;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问1130(shell命令)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1130(shell%E5%91%BD%E4%BB%A4)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="shell 命令输出linux中有三种标准输入输出，分别是 STDIN，STDOUT，STDERR，对应的数字是 0，1，2。 STDIN 是标准输入，默认从键盘读取信息；STDOUT 是标准输出，默认将输出结果输出至终端，也就是显示器之类的东西；STDERR 是标准的错误信息，默认也会显示在终端上。  &amp;表示全部输出，0,1,2 &amp;&gt;  以覆盖的方式，写入文件 &amp;&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问1130(shell命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1130(shell%E5%91%BD%E4%BB%A4)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问1130(shell命令)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="shell-命令"><a href="#shell-命令" class="headerlink" title="shell 命令"></a>shell 命令</h1><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>linux中有三种标准输入输出，分别是 STDIN，STDOUT，STDERR，对应的数字是 0，1，2。</p>
+<p><em>STDIN 是标准输入，默认从键盘读取信息；<br>STDOUT 是标准输出，默认将输出结果输出至终端，也就是显示器之类的东西；<br>STDERR 是标准的错误信息，默认也会显示在终端上。</em></p>
+<p> &amp;表示全部输出，0,1,2</p>
+<p>&amp;&gt;  以覆盖的方式，写入文件</p>
+<p>&amp;&gt;&gt; 将输出追加到文件</p>
+<h2 id="shell-中的转义"><a href="#shell-中的转义" class="headerlink" title="shell 中的转义"></a>shell 中的转义</h2><p><strong>在shell中,特殊字符的转义有三种办法</strong></p>
+<ol>
+<li>用\转义: 把\字符放在特殊字符的前面   cat test*</li>
+<li>用单引号’’转义: 用单引号把参数括起来  cat ‘test*’</li>
+<li>用双引号””转义: 用双引号把参数括起来  cat “test*”</li>
+</ol>
+<p><strong>三种转义方法的范围</strong><br>在shell中,特殊字符是非常多的,而以上提到的三种转义方法的范围也不尽相同,</p>
+<ul>
+<li>其中第一种方法的范围是最广的,几乎可以对所有的特殊字符进行转义,常见的用法是把\放在一个命令行的最后,这样一个很长的命令就可以分为两行或者更多行写. 比如</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo this is a \</span><br><span class="line">very long \</span><br><span class="line">line</span><br></pre></td></tr></table></figure>
+
+<p>将显示成  this is a very long line，在这里,其实就是\把换行符转义了,让它失去了换行的意思,同时阻止命令立刻执行.</p>
+<ul>
+<li><p>第二种转义(单引号)的范围比第一种小,它可以阻止命令行立刻执行,但是它不能让换行符失去换行的意思</p>
+</li>
+<li><p>第三种转义(双引号)的范围又比第二种小,单引号可以转义”<code>&quot;, 而双引号不行. 在shell中, &quot;</code>“中间的东西将被视为命令替换. shell对参数进行预先处理时,将把两个”&#96;”中间的东西当做shell命令进行执行,再将执行结果替换掉他们本身.</p>
+</li>
+</ul>
+<p><strong>常见的一些特殊字符</strong></p>
+<ol>
+<li><p><code>*</code> 任意个任意字符</p>
+</li>
+<li><p><code>?</code> 一个任意字符</p>
+</li>
+<li><p><code>[..] []</code>中的任意一个字符,这里也类似于正则表达式,中括号内可以是具体的一些字符,如[abcd]也可以是用-指定的一个范围,如<code>[a-d]</code></p>
+</li>
+<li><p><code># </code>注释</p>
+</li>
+<li><p>(空格) 参数分隔符</p>
+</li>
+<li><p><code>cmd</code> 命令替换</p>
+</li>
+<li><p><code>|</code> 管道 分析前边命令的输出, 并将输出作为后边命令的输入</p>
+</li>
+<li><p><code>&amp;</code> 后台执行</p>
+</li>
+<li><p><code>;</code> 命令分隔符(可以在同一行执行两个命令,用;分割)</p>
+</li>
+<li><p><code>~ </code>用户home目录</p>
+</li>
+<li><p>&#96;  后置引用, 命令替换 相当于$()–命令替换</p>
+</li>
+<li><p>: 空命令, 等价于 “NOP”<br>也可被认为是 shell 内建命令 true 作用相同, 例如: 死循环</p>
+</li>
+<li><p>$</p>
+<p>变量符号<br>正则表达式中 行结束符<br>${} 参数替换<br>$*,$@ 位置参数<br>$? 退出状态<br>$$ 进程ID</p>
+</li>
+<li><p><strong>;;</strong>  终止 case 选项</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">case “$variable” in</span><br><span class="line">abc) echo “\$variable = abc”;;</span><br><span class="line">xyz) echo “\$variable = xyz”;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>{xxx,yyy,zzz}</strong>  </p>
+<p>大括号扩展<br>cat {file1,file2,file3} &gt; combined_file, 将file1,file2,file3合并在一起并重定向到commbined_file中. 大括号中不能有空格</p>
+</li>
+<li><p>{} 代码块. 事实上, 这个结构创建了一个匿名的函数. 但是与函数不同的是, 在其中声明的变量, 对于脚本的其他部分的代码来说还是可见的.</p>
+</li>
+<li><p><strong>{};</strong> 路径名, 一般都是在 find 命令中使用, 注意; 用来结束find 命令序列的 –exec</p>
+</li>
+<li><p>read <code>read</code> 命令是一个一个词组地接收输入的参数，每个词组需要使用空格进行分隔；如果输入的词组个数大于需要的参数个数，则多出的词组将被作为整体为最后一个参数接收。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read firstStr secondStr</span><br><span class="line">echo &quot;第一个参数:$firstStr; 第二个参数:$secondStr&quot;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>. 或者 source文件包含</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">. filename # 注意点号(.)和文件名中间有一空格</span><br><span class="line">source filename # 这样也可以		</span><br></pre></td></tr></table></figure>
+
+<p>例如 test.sh  : name&#x3D;”afei”</p>
+<p>然后test2.sh  source test.sh  ;echo “name is ${name}”  输出 ： name is  afei</p>
+<p>20.<br>21. </p>
+<h3 id="Shell脚本中的位置变量参数（特殊字符）实例讲解"><a href="#Shell脚本中的位置变量参数（特殊字符）实例讲解" class="headerlink" title="Shell脚本中的位置变量参数（特殊字符）实例讲解"></a>Shell脚本中的位置变量参数（特殊字符）实例讲解</h3><p>$# ： 传递到脚本的参数个数<br>$* ： 以一个单字符串显示所有向脚本传递的参数。与位置变量不同,此选项参数可超过 9个<br>$$ ： 脚本运行的当前进程 ID号<br>$! ： 后台运行的最后一个进程的进程 ID号<br>$@ ： 与$#相同,但是使用时加引号,并在引号中返回每个参数<br>$- ： 显示shell使用的当前选项,与 set命令功能相同<br>$? ： 显示最后命令的退出状态。 0表示没有错误,其他任何值表明有错误。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">param.sh</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$0</span>:文件完整路径名</span></span><br><span class="line">echo &quot;path of script : $0&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">利用<span class="built_in">basename</span>命令文件路径获取文件名</span></span><br><span class="line">echo &quot;name of script : $(basename $0)&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$1</span>：参数1</span></span><br><span class="line">echo &quot;parameter 1 : $1&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$2</span>：参数2</span></span><br><span class="line">echo &quot;parameter 2 : $2&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$3</span>：参数3</span></span><br><span class="line">echo &quot;parameter 3 : $3&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$4</span>：参数4</span></span><br><span class="line">echo &quot;parameter 4 : $4&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$5</span>：参数5</span></span><br><span class="line">echo &quot;parameter 5 : $5&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$#</span>:传递到脚本的参数个数</span></span><br><span class="line">echo &quot;The number of arguments passed : $#&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$*:显示所有参数内容i</span></span><br><span class="line">echo &quot;Show all arguments : $*&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$:脚本当前运行的ID号</span></span><br><span class="line">echo &quot;Process ID : $&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$?:回传码</span></span><br><span class="line">echo &quot;errors : $?&quot;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1130(shell%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9tg0027fynhdk57gfme" data-title="每日一问1130(shell命令)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1128(groovy%E8%AF%AD%E6%B3%95)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问1128(groovy语法)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1202(minio)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问1202(minio)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

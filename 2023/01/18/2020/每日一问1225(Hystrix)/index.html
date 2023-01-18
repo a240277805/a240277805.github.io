@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>每日一问1225(Hystrix) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Hystrix为啥需要隔离例如，我们容器(Tomcat)配置的线程个数为1000，从服务A到服务R，其中服务I的并发量非常的大，需要500个线程来执行，此时，服务I又挂了，那么这500个线程很可能就夯死了，那么剩下的服务，总共可用的线程为500个，随着并发量的增大，剩余服务挂掉的风险就会越来越大，最后导致整个系统的所有服务都不可用，直到系统宕机。这就是服务的雪崩效应。Hystrix就是用来做资源隔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一问1225(Hystrix)">
+<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hystrix为啥需要隔离例如，我们容器(Tomcat)配置的线程个数为1000，从服务A到服务R，其中服务I的并发量非常的大，需要500个线程来执行，此时，服务I又挂了，那么这500个线程很可能就夯死了，那么剩下的服务，总共可用的线程为500个，随着并发量的增大，剩余服务挂掉的风险就会越来越大，最后导致整个系统的所有服务都不可用，直到系统宕机。这就是服务的雪崩效应。Hystrix就是用来做资源隔">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/978381/201705/978381-20170516093016728-916759277.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/978381/201705/978381-20170516093153119-1533131398.png">
+<meta property="article:published_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:modified_time" content="2023-01-18T07:11:12.360Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/978381/201705/978381-20170516093016728-916759277.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2020/每日一问1225(Hystrix)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2020/">2020</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      每日一问1225(Hystrix)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Hystrix"><a href="#Hystrix" class="headerlink" title="Hystrix"></a>Hystrix</h1><h2 id="为啥需要隔离"><a href="#为啥需要隔离" class="headerlink" title="为啥需要隔离"></a>为啥需要隔离</h2><p>例如，我们容器(Tomcat)配置的线程个数为1000，从服务A到服务R，其中服务I的并发量非常的大，需要500个线程来执行，此时，服务I又挂了，那么这500个线程很可能就夯死了，那么剩下的服务，总共可用的线程为500个，随着并发量的增大，剩余服务挂掉的风险就会越来越大，最后导致整个系统的所有服务都不可用，直到系统宕机。这就是服务的雪崩效应。Hystrix就是用来做资源隔离的，比如说，当客户端向服务端发送请求时，给服务I分配了10个线程，只要超过了这个并发量就走降级服务，就算服务I挂了，最多也就导致服务I不可用，容器的10个线程不可用了，但是不会影响系统中的其他服务。下面，我们就来具体说下这两种隔离策略：</p>
+<h2 id="隔离策略"><a href="#隔离策略" class="headerlink" title="隔离策略"></a>隔离策略</h2><ul>
+<li>线程池隔离 （默认）</li>
+<li>信号量隔离</li>
+</ul>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><p>  Hystrix 是一个帮助解决分布式系统交互时超时处理和容错的类库, 它同样拥有保护系统的能力。Netflix的众多开源项目之一。</p>
+<p>   \1. <strong>隔离</strong>：</p>
+<p>​      Hystrix隔离方式采用线程&#x2F;信号的方式，通过隔离限制依赖的并发量和阻塞扩散</p>
+<p>​      1)线程隔离</p>
+<p>​      Hystrix在用户请求和服务之间加入了线程池。</p>
+<p>​      Hystrix为每个依赖调用分配一个小的线程池，如果线程池已满调用将被立即拒绝，默认不采用排队.加速失败判定时间。线程数是可以被设定的。</p>
+<p>​      原理：用户的请求将不再直接访问服务，而是通过线程池中的空闲线程来访问服务，如果线程池已满，则会进行降级处理，用户的请求不会被阻塞，至少可以看到一个执行结果（例如返回友好的提示信息），而不是无休止的等待或者看到系统崩溃。</p>
+<p>   b）信号隔离：</p>
+<p>​     信号隔离也可以用于限制并发访问，防止阻塞扩散, 与线程隔离最大不同在于执行依赖代码的线程依然是请求线程（该线程需要通过信号申请, 如果客户端是可信的且可以快速返回，可以使用信号隔离替换线程隔离,降低开销。信号量的大小可以动态调整, 线程池大小不可以。（参考文章2）</p>
+<p> \2. <strong>熔断</strong>：</p>
+<p>如果某个目标服务调用慢或者有大量超时，此时，熔断该服务的调用，对于后续调用请求，不在继续调用目标服务，直接返回，快速释放资源。如果目标服务情况好转则恢复调用。</p>
+<p><strong>熔断器:Circuit Breaker</strong></p>
+<p>   熔断器是位于线程池之前的组件。用户请求某一服务之后，Hystrix会先经过熔断器，此时如果熔断器的状态是打开（跳起），则说明已经熔断，这时将直接进行降级处理，不会继续将请求发到线程池<strong>。</strong>&#x3D;&#x3D;熔断器相当于在线程池之前的一层屏障。每个熔断器默认维护10个bucket ，每秒创建一个bucket ，每个blucket记录成功,失败,超时,拒绝的次数。当有新的bucket被创建时，最旧的bucket会被抛弃。&#x3D;&#x3D;</p>
+<p>​     熔断器的状态机：</p>
+<p>​      <img src="https://images2015.cnblogs.com/blog/978381/201705/978381-20170516093016728-916759277.png" alt="img"></p>
+<ul>
+<li>Closed：熔断器关闭状态，调用失败次数积累，到了阈值（或一定比例）则启动熔断机制；</li>
+<li>Open：熔断器打开状态，此时对下游的调用都内部直接返回错误，不走网络，但设计了一个时钟选项，默认的时钟达到了一定时间（这个时间一般设置成平均故障处理时间，也就是MTTR），到了这个时间，进入半熔断状态；</li>
+<li>Half-Open：半熔断状态，允许定量的服务请求，如果调用都成功（或一定比例）则认为恢复了，关闭熔断器，否则认为还没好，又回到熔断器打开状态；</li>
+</ul>
+<h2 id="、流程"><a href="#、流程" class="headerlink" title="、流程"></a>、流程</h2><p><img src="https://images2015.cnblogs.com/blog/978381/201705/978381-20170516093153119-1533131398.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">流程说明:</span><br><span class="line">1``:每次调用创建一个新的HystrixCommand，把依赖调用封装在run()方法中。</span><br><span class="line">2``:执行execute()/queue做同步或异步调用。</span><br><span class="line">3``:判断熔断器(circuit-breaker)是否打开，如果打开跳到步骤``8，``进行降级策略，如果关闭进入步骤。</span><br><span class="line">4``:判断线程池/队列/信号量是否跑满，如果跑满进入降级步骤``8，``否则继续后续步骤。</span><br><span class="line">5``:调用HystrixCommand的run方法。运行依赖逻辑</span><br><span class="line">5a:依赖逻辑调用超时，进入步骤``8。</span><br><span class="line">6``:判断逻辑是否调用成功</span><br><span class="line">6a:返回成功调用结果</span><br><span class="line">6b:调用出错，进入步骤``8。</span><br><span class="line">7``:计算熔断器状态，所有的运行状态(成功, 失败, 拒绝,超时)上报给熔断器，用于统计从而判断熔断器状态。</span><br><span class="line">8``:getFallback()降级逻辑。</span><br><span class="line"> ``以下四种情况将触发getFallback调用：</span><br><span class="line"> ``(``1``)：run()方法抛出非HystrixBadRequestException异常</span><br><span class="line"> ``(``2``)：run()方法调用超时</span><br><span class="line"> ``(``3``)：熔断器开启拦截调用</span><br><span class="line"> ``(``4``)：线程池/队列/信号量是否跑满</span><br><span class="line">8a:没有实现getFallback的Command将直接抛出异常</span><br><span class="line">8b:fallback降级逻辑调用成功直接返回</span><br><span class="line">8c:降级逻辑调用失败抛出异常</span><br><span class="line">9``:返回执行成功结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、代码实现"><a href="#六、代码实现" class="headerlink" title="六、代码实现"></a>六、代码实现</h2><p>jar包：</p>
+<p><strong>hystrix包</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;`` </span><br><span class="line">``&lt;groupId&gt;com.netflix.hystrix&lt;/groupId&gt;``  </span><br><span class="line">``&lt;artifactId&gt;hystrix-core&lt;/artifactId&gt;`` </span><br><span class="line">``&lt;version&gt;``1.4``.``21``&lt;/version&gt;``</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置参数</strong> 展开原码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>circuitBreaker.errorThresholdPercentage</td>
+<td>失败率达到多少百分比后熔断</td>
+<td>默认值：50主要根据依赖重要性进行调整</td>
+</tr>
+<tr>
+<td>circuitBreaker.forceClosed</td>
+<td>是否强制关闭熔断</td>
+<td>如果是强依赖，应该设置为true</td>
+</tr>
+<tr>
+<td>circuitBreaker.requestVolumeThreshold</td>
+<td>熔断触发的最小个数&#x2F;10s</td>
+<td>默认值：20</td>
+</tr>
+<tr>
+<td>circuitBreaker.sleepWindowInMilliseconds</td>
+<td>熔断多少秒后去尝试请求</td>
+<td>默认值：5000</td>
+</tr>
+<tr>
+<td>commandKey</td>
+<td></td>
+<td>默认值：当前执行方法名</td>
+</tr>
+<tr>
+<td>coreSize</td>
+<td>线程池coreSize</td>
+<td>默认值：10</td>
+</tr>
+<tr>
+<td>execution.isolation.semaphore.maxConcurrentRequests</td>
+<td>信号量最大并发度</td>
+<td>SEMAPHORE模式有效，默认值：10</td>
+</tr>
+<tr>
+<td>execution.isolation.strategy</td>
+<td>隔离策略，有THREAD和SEMAPHORE</td>
+<td>默认使用THREAD模式，以下几种可以使用SEMAPHORE模式：只想控制并发度外部的方法已经做了线程隔离调用的是本地方法或者可靠度非常高、耗时特别小的方法（如medis）</td>
+</tr>
+<tr>
+<td>execution.isolation.thread.interruptOnTimeout</td>
+<td>是否打开超时线程中断</td>
+<td>THREAD模式有效</td>
+</tr>
+<tr>
+<td>execution.isolation.thread.timeoutInMilliseconds</td>
+<td>超时时间</td>
+<td>默认值：1000在THREAD模式下，达到超时时间，可以中断在SEMAPHORE模式下，会等待执行完成后，再去判断是否超时</td>
+</tr>
+<tr>
+<td>execution.timeout.enabled</td>
+<td>是否打开超时</td>
+<td></td>
+</tr>
+<tr>
+<td>fallback.isolation.semaphore.maxConcurrentRequests</td>
+<td>fallback最大并发度</td>
+<td>默认值：10</td>
+</tr>
+<tr>
+<td>groupKey</td>
+<td>表示所属的group，一个group共用线程池</td>
+<td>默认值：getClass().getSimpleName();</td>
+</tr>
+<tr>
+<td>maxQueueSize</td>
+<td>请求等待队列</td>
+<td>默认值：-1如果使用正数，队列将从SynchronizeQueue改为LinkedBlockingQueue</td>
+</tr>
+<tr>
+<td>hystrix.command.default.metrics.rollingStats.timeInMilliseconds</td>
+<td>设置统计的时间窗口值的，毫秒值</td>
+<td>circuit break 的打开会根据1个rolling window的统计来计算。若rolling window被设为10000毫秒，则rolling window会被分成n个buckets，每个bucket包含success，failure，timeout，rejection的次数的统计信息。默认10000</td>
+</tr>
+<tr>
+<td>hystrix.command.default.metrics.rollingStats.numBuckets</td>
+<td>设置一个rolling window被划分的数量</td>
+<td></td>
+</tr>
+<tr>
+<td>hystrix.command.default.metrics.healthSnapshot.intervalInMilliseconds</td>
+<td>记录health 快照（用来统计成功和错误绿）的间隔，默认500ms</td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/" data-id="cld1bs9tt002kfynh8tyehtag" data-title="每日一问1225(Hystrix)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          每日一问1224(es概念篇)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1226(ribbon)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一问1226(ribbon)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
