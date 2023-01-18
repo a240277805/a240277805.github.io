@@ -1,129 +1,280 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>每日一问0109(JUC) | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="JUC   Concurrent包自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功 高并发技术手段线程标记 可重入 （偏向锁）自旋Cas 汇编 lock compareChangemonitor信号量 阻塞  unsafe 包里的 pack 和 unpack 先后一致次序（memory_order_seq_cst）、获取-释放次序（memory_order_consume、memo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="每日一问0109(JUC)">
-<meta property="og:url" content="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JUC   Concurrent包自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功 高并发技术手段线程标记 可重入 （偏向锁）自旋Cas 汇编 lock compareChangemonitor信号量 阻塞  unsafe 包里的 pack 和 unpack 先后一致次序（memory_order_seq_cst）、获取-释放次序（memory_order_consume、memo">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727">
-<meta property="og:image" content="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114141949386.png?lastModify=1642142727">
-<meta property="og:image" content="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142448008.png?lastModify=1642142727">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114142756341.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114150511690.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114151139570.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114151111094.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114151304344.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114153748518.png">
-<meta property="og:image" content="https://a240277805.github.io/ImgSource/image-20220114173933813.png">
-<meta property="article:published_time" content="2023-01-18T07:13:14.738Z">
-<meta property="article:modified_time" content="2023-01-18T07:13:14.738Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="The Redefine Team">
+    <link rel="canonical" href="http://example.com/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
+    <title>
+        
+            每日一问0109(JUC) |
+        
+        Theme Redefine
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/fonts.css">
 
-  
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
-      </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
     </div>
-  </div>
+
+    <div class="window-mask"></div>
+
 </header>
 
-      <div class="outer">
-        <section id="main"><article id="post-2022/每日一问0109(JUC)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      每日一问0109(JUC)
-    </h1>
-  
+        </div>
 
-      </header>
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0109(JUC)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">The Redefine Team</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-01-18 07:45:06</span>
+        <span class="mobile">2023-01-18 07:45</span>
+    </span>
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="JUC-Concurrent包"><a href="#JUC-Concurrent包" class="headerlink" title="JUC   Concurrent包"></a>JUC   Concurrent包</h1><p>自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功</p>
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2022/">2022</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="JUC-Concurrent包"><a href="#JUC-Concurrent包" class="headerlink" title="JUC   Concurrent包"></a>JUC   Concurrent包</h1><p>自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功</p>
 <p>高并发技术手段<br>线程标记 可重入 （偏向锁）<br>自旋<br>Cas 汇编 lock compareChange<br>monitor<br>信号量</p>
 <p>阻塞  unsafe 包里的 pack 和 unpack</p>
 <p>先后一致次序（memory_order_seq_cst）、<br>获取-释放次序（memory_order_consume、memory_order_acquire、memory_order_release和memory_order_acq_rel）、宽松次序（memory_order_relaxed）。</p>
 <h2 id="锁-相关"><a href="#锁-相关" class="headerlink" title="锁 相关"></a>锁 相关</h2><h2 id="同步工具"><a href="#同步工具" class="headerlink" title="同步工具"></a>同步工具</h2><h3 id="Semaphore-信号量"><a href="#Semaphore-信号量" class="headerlink" title="Semaphore 信号量"></a>Semaphore 信号量</h3><p>它内部的计数器是递增的，并且在一开始初始化Semaphore时可以指定一个初始值，但是并不需要知道需要同步的线程个数，而是在需要同步的地方调用acquire方法时指定需要同步的线程个数。</p>
-<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727" alt="image-20220114142541948"></p>
-<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114141949386.png?lastModify=1642142727" alt="image-20220114141949386"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727"
+                      alt="image-20220114142541948"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114141949386.png?lastModify=1642142727"
+                      alt="image-20220114141949386"
+                ></p>
 <p>基于AQS</p>
 <p>多个线程(&gt;n)执行，每次state -1,直到 semaphore 为0 其他线程阻塞，有线程执行完，新线程才能抢夺，当只有一个共享资源则 升级为排他锁；</p>
-<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142448008.png?lastModify=1642142727" alt="image-20220114142448008"></p>
+<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142448008.png?lastModify=1642142727"
+                      alt="image-20220114142448008"
+                ></p>
 <h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>CyclicBarrier基于ReentrantLock+Condition实现。</p>
 <p>满足计数器可以重置的需要，JDK开发组提供了CyclicBarrier类，并且CyclicBarrier类的功能并不限于CountDownLatch的功能。从字面意思理解，CyclicBarrier是回环屏障的意思，它可以让一组线程全部达到一个状态后再全部同时执行</p>
 <p>第1个同步点，要等所有应聘者都到达公司，再一起开始笔试；第2个同步点，要等所有应聘者都结束笔试，之后一起进入面试环节。具体到每个线程的run（）方法中，就是下面的伪代码：</p>
-<p><img src="/../../ImgSource/image-20220114142756341.png" alt="image-20220114142756341"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114142756341.png"
+                      alt="image-20220114142756341"
+                ></p>
 <p>（1）CyclicBarrier是可以被重用的</p>
 <p>（2）CyclicBarrier 会响应中断。10个线程没有到齐，如果有线程收到了中断信号，所有阻塞的线程也会被唤醒，就是上面的breakBarrier（）函数。然后count被重置为初始值（parties），重新开始。</p>
 <p>（3）上面的回调函数，barrierAction只会被第10个线程执行1次（在唤醒其他9个线程之前），而不是10个线程每个都执行1次。</p>
@@ -131,22 +282,47 @@
 <p>Exchanger的核心机制和Lock一样，也是CAS+park&#x2F;unpark。</p>
 <p>有两个内部类：Slot（AtomicReference存线程要交换的数据）和Node （线程的封装）</p>
 <p>Slot的AtomicReference就是指向的一个Node，通过Slot和Node相结合，实现了2个线程之间的数据交换，如图4-6所示。线程1持有数据item1，线程2持有数据item2，各自调用exchange（..），会各自生成一个Node。而Slot只会指向2个Node中的1个：如果是线程1先调用的exchange（..），那么Slot就指向Node1，线程1阻塞，等待线程2来交换；反之，如果是线程2先调用的exchange（..），那么Slot就指向Node2，线程2阻塞，等待线程1来交换数据。</p>
-<p><img src="/../../ImgSource/image-20220114150511690.png" alt="image-20220114150511690"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114150511690.png"
+                      alt="image-20220114150511690"
+                ></p>
 <p>一个Slot只能支持2个线程之间交换数据，要实现多个线程并行地交换数据，需要多个Slot，因此在Exchanger里面定义了Slot数组：</p>
 <h3 id="Phaser"><a href="#Phaser" class="headerlink" title="Phaser"></a>Phaser</h3><p>同步点</p>
 <p>可以实现 CountDownLatch 和CyclicBarrier</p>
 <h5 id="Phaser新特性"><a href="#Phaser新特性" class="headerlink" title="Phaser新特性"></a>Phaser新特性</h5><p>特性1：动态调整线程个数</p>
-<p><img src="/../../ImgSource/image-20220114151139570.png" alt="image-20220114151139570"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114151139570.png"
+                      alt="image-20220114151139570"
+                ></p>
 <p>特性2：层次Phaser</p>
-<p><img src="/../../ImgSource/image-20220114151111094.png" alt="image-20220114151111094"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114151111094.png"
+                      alt="image-20220114151111094"
+                ></p>
 <p>​	</p>
 <h5 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h5><p>这个64位的state变量被拆成4部分，</p>
-<p><img src="/../../ImgSource/image-20220114151304344.png" alt="image-20220114151304344"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114151304344.png"
+                      alt="image-20220114151304344"
+                ></p>
 <p>阻塞使用的是一个称为Treiber Stack的数据结构，而不是AQS的双向链表。Treiber Stack是一个无锁的栈</p>
 <p>它是一个单向链表，出栈、入栈都在链表头部，所以只需要一个head指针，而不需要tail指针。</p>
 <p>为了减少并发冲突，这里定义了2个链表，也就是2个Treiber Stack。当phase为奇数轮的时候，阻塞线程放在oddQ里面；当phase为偶数轮的时候，阻塞线程放在evenQ里面。</p>
 <h2 id="并发容器"><a href="#并发容器" class="headerlink" title="并发容器"></a>并发容器</h2><h3 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h3><p>BlockingQueue是一个带阻塞功能的队列，当入队列时，若队列已满，则阻塞调用者；当出队列时，若队列为空，则阻塞调用者。</p>
-<p><img src="/../../ImgSource/image-20220114153748518.png" alt="image-20220114153748518"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114153748518.png"
+                      alt="image-20220114153748518"
+                ></p>
 <h3 id="ArrayBlockingQueue"><a href="#ArrayBlockingQueue" class="headerlink" title="ArrayBlockingQueue"></a>ArrayBlockingQueue</h3><p>ArrayBlockingQueue 是一个用数组实现的环形队列，在构造函数中，会要求传入数组的容量。</p>
 <h3 id="LinkedBlockingQueue"><a href="#LinkedBlockingQueue" class="headerlink" title="LinkedBlockingQueue"></a>LinkedBlockingQueue</h3><p>LinkedBlockingQueue是一种基于单向链表的阻塞队列。因为队头和队尾是2个指针分开操作的，所以用了2把锁+2个条件，同时有1个AtomicInteger的原子变量记录count数。</p>
 <h3 id="PriorityBlockingQueue"><a href="#PriorityBlockingQueue" class="headerlink" title="PriorityBlockingQueue"></a>PriorityBlockingQueue</h3><p>队列通常是先进先出的，而PriorityQueue是按照元素的优先级从小到大出队列的。正因为如此，PriorityQueue中的2个元素之间需要可以比较大小，并实现Comparable接口。</p>
@@ -160,7 +336,12 @@
 <h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>每个Segment都继承自ReentrantLock，Segment的数量等于锁的数量，这些锁彼此之间相互独立，即所谓的“分段锁”</p>
 <p>为了提升hash的计算性能，会保证数组的大小始终是2的整数次方。例如设置concurrentyLevel&#x3D;9，在构造函数里面会找到比9大且距9最近的2的整数次方，也就是ssize&#x3D;16。对应segmentShift、segmentMask两个变量，是为了方便计算hash使用的。</p>
 <p>默认的Segment数组大小是16。</p>
-<p><img src="/../../ImgSource/image-20220114173933813.png" alt="image-20220114173933813"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220114173933813.png"
+                      alt="image-20220114173933813"
+                ></p>
 <p>扩容</p>
 <p>人在多核模式下为（n＞＞＞3）&#x2F;NCPU，并且保证步长的最小值是16。显然，需要的线程个数约为n&#x2F;stride。</p>
 <h3 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h3><p>treeMap 基于红黑树，ConcurrentSkipListMap，是基于SkipList（跳查表）来实现的</p>
@@ -168,142 +349,311 @@
 <p>无锁链表所实现的队列 是在头结点和尾节点增加cas 操作，</p>
 <p>但是 当在链表中间插入删除数据 CAS操作就会有问题，所以</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/youthlql/JavaYouth/blob/main/docs/java_concurrency/Java%E5%B9%B6%E5%8F%91%E4%BD%93%E7%B3%BB-%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5-JUC%E5%B9%B6%E5%8F%91%E5%8C%85-%5B1%5D.md"><strong>ava并发体系-第三阶段-JUC并发包-[1].md</strong></a></p>
-<h1 id="AbstractQueuedSynchronizer源码解读–续篇之Condition"><a href="#AbstractQueuedSynchronizer源码解读–续篇之Condition" class="headerlink" title="AbstractQueuedSynchronizer源码解读–续篇之Condition"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/micrari/p/7219751.html">AbstractQueuedSynchronizer源码解读–续篇之Condition</a></h1>
-      
+<h1 id="AbstractQueuedSynchronizer源码解读–续篇之Condition"><a href="#AbstractQueuedSynchronizer源码解读–续篇之Condition" class="headerlink" title="AbstractQueuedSynchronizer源码解读–续篇之Condition"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/micrari/p/7219751.html" >AbstractQueuedSynchronizer源码解读–续篇之Condition <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0109(JUC)</li>
+        <li>Post author：The Redefine Team</li>
+        <li>Create time：2023-01-18 07:45:06</li>
+        <li>
+            Post link：https://redefine.ohevan.com/2023/01/18/2022/每日一问0109(JUC)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0108(java锁)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0110(位运算)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JUC-Concurrent%E5%8C%85"><span class="nav-text">JUC   Concurrent包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%81-%E7%9B%B8%E5%85%B3"><span class="nav-text">锁 相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7"><span class="nav-text">同步工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Semaphore-%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">Semaphore 信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CountDownLatch"><span class="nav-text">CountDownLatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CyclicBarrier"><span class="nav-text">CyclicBarrier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exchanger"><span class="nav-text">Exchanger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phaser"><span class="nav-text">Phaser</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Phaser%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-text">Phaser新特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90"><span class="nav-text">原理解析</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8"><span class="nav-text">并发容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BlockingQueue"><span class="nav-text">BlockingQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayBlockingQueue"><span class="nav-text">ArrayBlockingQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedBlockingQueue"><span class="nav-text">LinkedBlockingQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityBlockingQueue"><span class="nav-text">PriorityBlockingQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DelayQueue"><span class="nav-text">DelayQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SynchronousQueue"><span class="nav-text">SynchronousQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CopyOnWrite"><span class="nav-text">CopyOnWrite</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CopyOnWriteArrayList"><span class="nav-text">CopyOnWriteArrayList</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentLinkedQueue-x2F-Deque"><span class="nav-text">ConcurrentLinkedQueue&#x2F;Deque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentSkipListMap"><span class="nav-text">ConcurrentSkipListMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AbstractQueuedSynchronizer%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E2%80%93%E7%BB%AD%E7%AF%87%E4%B9%8BCondition"><span class="nav-text">AbstractQueuedSynchronizer源码解读–续篇之Condition </span></a></li></ol>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" data-id="cld1buvu5003cbjop5xcz1to7" data-title="每日一问0109(JUC)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+</div>
+            </div>
         
-          每日一问0108(java锁)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">每日一问0110(位运算)</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
     </div>
-  </div>
+</div>
 
 
-  
-    
+                
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
-    </div>
-  </div>
+            </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">The Redefine Team. All Rights Reserved.</a>
+        </div>
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2022/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
 </footer>
-
+        </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
 
 
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+
+    
+<script src="/js/code-copy.js"></script>
 
 
 
 
+    
+<script src="/js/lazyload.js"></script>
 
-  </div>
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
 </body>
 </html>

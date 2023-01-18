@@ -1,1065 +1,932 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://a240277805.github.io/page/6/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="The Redefine Team">
+    <link rel="canonical" href="http://example.com/page/6" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
+    <title>
+        
+        Theme Redefine
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/fonts.css">
 
-  
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                <h1>
+                Theme Redefine
+                </h1>
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="active" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
-      </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="active" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
     </div>
-  </div>
+
+    <div class="window-mask"></div>
+
 </header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-2022/每日一问0218(用户态和内核态)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0218(%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0218(%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81)/">每日一问0218(用户态和内核态)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="用户态和内核态"><a href="#用户态和内核态" class="headerlink" title="用户态和内核态"></a>用户态和内核态</h1><p>如果一个程序运行在特权态，则该程序就可以访问计算机的任何资源，即它的资源访问不受限制。如果一个程序运行在用户态，则其资源需求将受到各种限制。</p>
-<p>如果要访问操作系统的内核数据结构，如进程表，则需要在特权态下才能办到。如果要访问用户程序里的数据，则在用户态就可以了。</p>
-<p>人们又想出了一个办法，就是微内核结构，即只将操作系统核心中的核心放在内核态运行，其他功能都移到用户态运行。这样就同时提高了效率和安全性</p>
-<p><img src="/Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220218094743528.png" alt="image-20220218094743528"></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0714(%E9%9D%A2%E8%AF%95%E8%AF%8D%E6%B1%87)/">
+                        每日一问0714(面试词汇)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        面试词汇自我介绍千方科技，智道网联科技(北京)有限公司
+工作内容云平台， kubernetes , 公有云 私有云，多云迁移工作
+负责蘑菇智行运营平台的中台技术架构，包括网关(auth认证，限流，路由)
+nacos 动态配置
+微服务监控(admin,...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0218(%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81)/" data-id="cld1buvu6003fbjop843ugmu4" data-title="每日一问0218(用户态和内核态)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0714(%E9%9D%A2%E8%AF%95%E8%AF%8D%E6%B1%87)/">Read more<span class="seo-reader-text">每日一问0714(面试词汇)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0331(TCP拥塞控制)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6)/">每日一问0331(TCP拥塞控制)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="TCP-拥塞控制"><a href="#TCP-拥塞控制" class="headerlink" title="TCP 拥塞控制"></a>TCP 拥塞控制</h1><p><strong>TCP协议有两个比较重要的控制算法，一个是流量控制，另一个就是阻塞控制。</strong></p>
-<p>TCP协议通过&#x3D;&#x3D;滑动窗口&#x3D;&#x3D;来进行流量控制</p>
-<p>拥塞算法需要<strong>掌握其状态机和四种算法</strong>。拥塞控制状态机的状态有五种，分别是：**”Open，Disorder、CWR、Recovery和Loss状态”<strong>。四个算法为</strong>“慢启动，拥塞避免，拥塞发生时算法和快速恢复”**。</p>
-<p>拥塞控制算法 需要状态机，根据状态来判断拥塞窗口cwnd大小 ，大概就是根据状态来决定 数据的接受和发送，收到拥塞通知就减少滑动窗口</p>
-<p>拥塞控制主要包括四个过程：1）慢启动；2）拥塞避免；3）拥塞发生；4）快速恢复。</p>
-<h4 id="基于丢包的拥塞控制：Tahoe、Reno、New-Reno"><a href="#基于丢包的拥塞控制：Tahoe、Reno、New-Reno" class="headerlink" title="基于丢包的拥塞控制：Tahoe、Reno、New Reno"></a>基于丢包的拥塞控制：<strong>Tahoe、Reno、New Reno</strong></h4><p>各种算法优劣，还在进化中。 ，参考指标 丢包 和时延   </p>
-<h4 id="基于精准带宽计算：BBR"><a href="#基于精准带宽计算：BBR" class="headerlink" title="基于精准带宽计算：BBR"></a>基于精准带宽计算：BBR</h4><p>BBR通过实时计算带宽和最小RTT来决定发送速率pacing rate和窗口大小cwnd。完全摒弃丢包作为拥塞控制的直接反馈因素。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/05b3502fea2b">什么是TCP拥塞控制算法？</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ed0fe3c95134">TCP拥塞控制及BBR原理分析</a></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(AQS)/">
+                        每日一问0716(AQS)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        AQS （AbstractQueuedSynchronizer）啥是AQS
+AQS 是 AbstractQueuedSynchronizer  的缩写
+
+AbstractQueuedSynchronizer 是一个抽象类
+
+AbstractQueue...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6)/" data-id="cld1buvu7003gbjopao5r0u65" data-title="每日一问0331(TCP拥塞控制)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(AQS)/">Read more<span class="seo-reader-text">每日一问0716(AQS)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0506(mysql连接数调优)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/">每日一问0506(mysql连接数调优)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="mysql-连接数调优"><a href="#mysql-连接数调优" class="headerlink" title="mysql 连接数调优"></a>mysql 连接数调优</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">命令：show status;</span><br><span class="line"></span><br><span class="line">mysql&gt;show status like &#x27;%变量名%&#x27;;</span><br><span class="line"></span><br><span class="line">变量名如下：</span><br><span class="line">Aborted_clients 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量。 </span><br><span class="line">Aborted_connects 尝试已经失败的MySQL服务器的连接的次数。 </span><br><span class="line">Connections 试图连接MySQL服务器的次数。 </span><br><span class="line">Created_tmp_tables 当执行语句时，已经被创造了的隐含临时表的数量。 </span><br><span class="line">Delayed_insert_threads 正在使用的延迟插入处理器线程的数量。 </span><br><span class="line">Delayed_writes 用INSERT DELAYED写入的行数。 </span><br><span class="line">Delayed_errors 用INSERT DELAYED写入的发生某些错误(可能重复键值)的行数。 </span><br><span class="line">Flush_commands 执行FLUSH命令的次数。 </span><br><span class="line">Handler_delete 请求从一张表中删除行的次数。 </span><br><span class="line">Handler_read_first 请求读入表中第一行的次数。 </span><br><span class="line">Handler_read_key 请求数字基于键读行。 </span><br><span class="line">Handler_read_next 请求读入基于一个键的一行的次数。 </span><br><span class="line">Handler_read_rnd 请求读入基于一个固定位置的一行的次数。 </span><br><span class="line">Handler_update 请求更新表中一行的次数。 </span><br><span class="line">Handler_write 请求向表中插入一行的次数。 </span><br><span class="line">Key_blocks_used 用于关键字缓存的块的数量。 </span><br><span class="line">Key_read_requests 请求从缓存读入一个键值的次数。 </span><br><span class="line">Key_reads 从磁盘物理读入一个键值的次数。 </span><br><span class="line">Key_write_requests 请求将一个关键字块写入缓存次数。 </span><br><span class="line">Key_writes 将一个键值块物理写入磁盘的次数。 </span><br><span class="line">Max_used_connections 同时使用的连接的最大数目。 </span><br><span class="line">Not_flushed_key_blocks 在键缓存中已经改变但是还没被清空到磁盘上的键块。 </span><br><span class="line">Not_flushed_delayed_rows 在INSERT DELAY队列中等待写入的行的数量。 </span><br><span class="line">Open_tables 打开表的数量。 </span><br><span class="line">Open_files 打开文件的数量。 </span><br><span class="line">Open_streams 打开流的数量(主要用于日志记载） </span><br><span class="line">Opened_tables 已经打开的表的数量。 </span><br><span class="line">Questions 发往服务器的查询的数量。 </span><br><span class="line">Slow_queries 要花超过long_query_time时间的查询数量。 </span><br><span class="line">Threads_connected 当前打开的连接的数量。 </span><br><span class="line">Threads_running 不在睡眠的线程数量。 </span><br><span class="line">Uptime 服务器工作了多长时间，单位秒。</span><br></pre></td></tr></table></figure>
+                
 
-<p>常用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* **查询数据库连接:show full  processlist; </span><br><span class="line"></span><br><span class="line">* 查看最大连接数: show status like &#x27;%Max_used_connections%&#x27;;</span><br><span class="line">* 当前连接数: show status like &#x27;%Threads_connected%&#x27;;</span><br><span class="line">* SHOW STATUS LIKE &#x27;Qcache%&#x27;;</span><br><span class="line"></span><br><span class="line">* 由于客户没有正确关闭连接已经死掉，已经放弃的连接数量:show status like &#x27;Aborted_clients&#x27;;</span><br><span class="line">* 查看最大连接数量:show variables like &#x27;%max_connections%&#x27;;</span><br><span class="line">* 查看超时时间:show variables like &#x27;%timeout%&#x27;;</span><br></pre></td></tr></table></figure>
+                
 
-<p>Threads_connected ：这个数值指的是打开的连接数.</p>
-<p>Threads_running ：这个数值指的是激活的连接数，这个数值一般远低于connected数值.</p>
-<p>Threads_connected 跟show processlist结果相同，表示当前连接数。准确的来说，Threads_running是代表当前<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%B9%B6%E5%8F%91&spm=1001.2101.3001.7020">并发</a>数</p>
-<p>查询数据库当前设置的最大连接数</p>
-<p>在&#x2F;etc&#x2F;my.cnf里面设置数据库的最大连接数</p>
-<p>[mysqld]</p>
-<p>max_connections &#x3D; 1000</p>
-<p>MySQL服务器的线程数需要在一个合理的范围之内，这样才能保证MySQL服务器健康平稳地运行。Threads_created表示创建过的线程数，通过查看Threads_created就可以查看MySQL服务器的进程状态。</p>
-<p>如果我们在MySQL服务器配置文件中设置了thread_cache_size，当客户端断开之后，服务器处理此客户的线程将会缓存起来以响应下一个客户而不是销毁(前提是缓存数未达上限)。</p>
-<p>Threads_created表示创建过的线程数，如果发现Threads_created值过大的话，表明MySQL服务器一直在创建线程，这也是比较耗资源，可以适当增加配置文件中thread_cache_size值，查询服务器thread_cache_size的值：</p>
-<p>命令：show processlist;<br>如果是root帐号，你能看到所有用户的当前连接。如果是其它普通帐号，&#x3D;&#x3D;只能看到自己占用的连接&#x3D;&#x3D;。<br>show processlist命令只列出前100条，如果想全列出请使用show full processlist;<br>mysql&gt; show processlist;</p>
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(RocketMQ)/">
+                        每日一问0716(RocketMQ)
+                    </a>
+                </h3>
 
-      
+                <div class="home-article-content markdown-body">
+                    
+                        RocketMQ延迟队列优点：设计简单，把所有相同延迟时间的消息都先放到一个队列中，定时扫描，可以保证消息消费的有序性
+缺点：定时器采用了timer，timer是单线程运行，如果延迟消息数量很大的情况下，可能单线程处理不过来，造成消息到期后也没有发送...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(mysql%E8%BF%9E%E6%8E%A5%E6%95%B0%E8%B0%83%E4%BC%98)/" data-id="cld1buvu7003hbjopf74t6bm4" data-title="每日一问0506(mysql连接数调优)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(RocketMQ)/">Read more<span class="seo-reader-text">每日一问0716(RocketMQ)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0709(工作述职)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0709(%E5%B7%A5%E4%BD%9C%E8%BF%B0%E8%81%8C)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0709(%E5%B7%A5%E4%BD%9C%E8%BF%B0%E8%81%8C)/">每日一问0709(工作述职)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="工作述职"><a href="#工作述职" class="headerlink" title="工作述职"></a>工作述职</h1><h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>​     领导好，我是千方研究院-下一代智能交通基础设施实验室-OS及平台组 高级研发工程师 张孟康。</p>
-<h2 id="展示主要工作成果"><a href="#展示主要工作成果" class="headerlink" title="展示主要工作成果"></a>展示主要工作成果</h2><ul>
-<li><p>业务</p>
-<ul>
-<li>2022年以来在规定时间内负责完成了研发效能平台5个大版本的迭代，完成后端代码提交517次，新增代码量69911行</li>
-<li>解决了几百个线上问题反馈，支撑各个事业部效能平台的正常使用，效能平台2022年以来新增22000多条事务，大大提高了公司的工作效率。</li>
-</ul>
-</li>
-<li><p>技术</p>
-<ul>
-<li><p>架构解耦</p>
-<p>技术架构上分离的模块化思想来将统计相关逻辑与效能平台正常业务解耦。来达到一个结构清晰，研发效率快，可扩展，支撑未来多种统计需求的基础</p>
-</li>
-<li><p>优化体验 </p>
-<p> 用户体验上做了很多的性能调优工作，效能平台页面打开，刷新效率&lt; 1s。</p>
-</li>
-<li><p>降本，增效 </p>
-<p>针对开发效率来说，研发了几个通用的工具中间件</p>
-<ul>
-<li>ES统计通用中间件<ul>
-<li>解决了es学习成本高，研发人员上手难度大的问题。</li>
-<li>es相关的开发效率提升3倍</li>
-<li>es 使用相关的bug率由原来的10% 降到了1%</li>
-<li>一劳永逸，将开发人员工作规范化，为今后架构调整提供可能。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="各项工作完成情况"><a href="#各项工作完成情况" class="headerlink" title="各项工作完成情况"></a>各项工作完成情况</h2><h3 id="工作分类梳理"><a href="#工作分类梳理" class="headerlink" title="工作分类梳理"></a>工作分类梳理</h3><ul>
-<li><p>业务研发</p>
-<ul>
-<li>事业部使用需求研发</li>
-</ul>
-<p>	<br>    * 研发效能平台<br>    * 公网制品库<br>    * 千方科技官网</p>
-<ul>
-<li>统计相关<ul>
-<li>代码库统计导出</li>
-<li>效能平台统计<ul>
-<li>效能度量</li>
-<li>调度分析</li>
-<li>用户行为分析</li>
-<li>模型统一化 ，支持BI报表</li>
-</ul>
-</li>
-<li>运营相关统计</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>性能优化</p>
-<ul>
-<li>操作体验优化</li>
-<li>展示速度优化</li>
-<li>服务器资源消耗优化</li>
-</ul>
-</li>
-<li><p>降本增效</p>
-<ul>
-<li><p>中间件研发</p>
-<ul>
-<li>ES统计通用中间件</li>
-<li>gitlab代码库通用中间件</li>
-<li>统计图表处理中间件</li>
-<li>分布式锁中间件</li>
-<li>缓存中间件</li>
-</ul>
-</li>
-<li><p>复盘总结</p>
-</li>
-<li><p>研发规范化</p>
-<ul>
-<li>sql 规范</li>
-<li>项目结构规范</li>
-<li>研发测试流程规范</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>业务维护稳定运行</p>
-</li>
-</ul>
-<h2 id="成长学习"><a href="#成长学习" class="headerlink" title="成长学习"></a>成长学习</h2><h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><ol>
-<li><p>在做研发效能平台的时候，从使用者角度出发，多次沟通需求，体验产品，然后将研发模式和产品需求之间做一个考量，以最快捷，最大性能，最全面的功能啦满足使用者需求。</p>
-</li>
-<li><p>当有需求提出来，这需求的难点是什么，以及遇到了问题，你应该如何去解决这个问题。<br>  比如 该需求有几种实现方案，哪种更适合我们当前的使用场景。<br>  需要多长开发时间，怎么在规定时间内进行技术拆解，设计研发计划，协调组内伙伴，按时保证质量的前提下完成任务。</p>
-</li>
-<li><p>当一个需求确定下来，我除了保证本版本的需求，还要考虑该需求以后的扩展方向，提前做出设计铺垫。</p>
-<p>  （比如 效能平台工时的设计，要考虑 工时的定位和发展，和将来的可预见的应用场景，比如如何支撑现在的统计指标维度场景，用户的操作如何记录更多的操作信息 以备将来做数据分析。比如某某某修复了多少缺陷，修复效率是多少缺陷接受效率等等指标。）</p>
-</li>
-</ol>
-<h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>1）持续性的学习业界先进的研发理念，技术栈，设计模式，给自己充电，保持向上的动力。<br>2）向身边好的伙伴学习，比如志明总 给我指导了很多先进的开源产品，研发思路；齐康帮我解决了很多运维上的问题，让我能够更快地去解决线上问题 等等。<br>3） 向业界先进的 公司 产品学习，学习他们的设计理念和研发方式。比如Ones 业界先进的ToB 的研发管理平台，我有朋友在那家公司，我们经常相互交流 取经。 还有阿里的Edas 有深入的调研过他们的devops平台，从中借鉴了很多好的思路，引入到我们研发效能平台中来。</p>
-<h3 id="行动"><a href="#行动" class="headerlink" title="行动"></a>行动</h3><ol>
-<li>既然已经遇到问题找准方向了，就不要拖拉和懒惰，积极的行动起来。如果能做到很好就一定要去做，而不是只 停留在当下舒适的范围内。</li>
-<li>那么困难我要及时想出解决办法，如果我不能当下解决这个问题，我需要让谁来帮助我可以解决这个问题</li>
-</ol>
-<h2 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h2><ol>
-<li><p>致力于智能路口云端数据仓库处理，深耕技术架构，为智能路口云端打造良好的技术底座</p>
-</li>
-<li><p>持续性关注业界前沿技术，引进我们项目中来，从技术角度给项目未来带来更多的可能性。</p>
-</li>
-<li><p>技术分享，带动技术部门技术学习氛围。</p>
-</li>
-<li><p>维持原有项目稳定运行，新项目版本持续更新。</p>
-</li>
-</ol>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91)/">
+                        每日一问0719(开发遇到的坑)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        开发过程中遇到的坑坑
+mybatis 一级缓存，查出的do如果被修改，那同一个线程第二次查询会查到修改后的值，
+
+​     怎么解决：
+
+hystrix 默认 线程池默认10个线程,并发高了,就会报熔断的异常
+解决: 调整核心线程数
+
+
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0709(%E5%B7%A5%E4%BD%9C%E8%BF%B0%E8%81%8C)/" data-id="cld1buvu8003ibjopf4035sbx" data-title="每日一问0709(工作述职)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91)/">Read more<span class="seo-reader-text">每日一问0719(开发遇到的坑)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0714(OLAP-OLDP)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0714(OLAP-OLDP)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0714(OLAP-OLDP)/">每日一问0714(OLAP-OLDP)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0720(mysql%E5%AD%97%E7%AC%A6%E9%9B%86)/">
+                        每日一问0720(mysql字符集)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        mysql 字符集UTF-8  汉字3字节GBK 汉字2，英文1uf8mb4 4字节 支持emojvarchar 最大长度为啥是65535？？
+答：总结一下，原来mysql的vachar字段的类型虽然最大长度是65535，但是并不是能存这么多数据，最...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
         
-      
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0714(OLAP-OLDP)/" data-id="cld1buvu8003jbjopbqjvhxwf" data-title="每日一问0714(OLAP-OLDP)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0720(mysql%E5%AD%97%E7%AC%A6%E9%9B%86)/">Read more<span class="seo-reader-text">每日一问0720(mysql字符集)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0719(nats)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(nats)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(nats)/">每日一问0719(nats)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="nats"><a href="#nats" class="headerlink" title="nats"></a>nats</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
-<li>nats 特点</li>
-<li>nats 定位 </li>
-<li>nats 使用场景</li>
-<li>nats 使用和 kafka ，redis 对比</li>
-<li>nats 使用应避免的坑</li>
-<li>nats 高级特性使用例子   source ，镜像</li>
-</ol>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0722(%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1DDD)/">
+                        每日一问0722(领域驱动设计DDD)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        领域驱动设计 （DDD）理论一. 方式 
+   战略设计 ，战术设计两种方式
+二. DDD 使用记分卡
+
+当我们在复杂性问题上犯错时，我们很难轻易地扭转颓势。这意味着我们应该在项目计划早期便对简单性和复杂性做出判断，
+这将为我们节约很多时间和开销，并...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(nats)/" data-id="cld1buvu9003kbjop7tth9apr" data-title="每日一问0719(nats)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0722(%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1DDD)/">Read more<span class="seo-reader-text">每日一问0722(领域驱动设计DDD)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0723(jenkins流水线)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF)/">每日一问0723(jenkins流水线)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="jenkins-流水线部署"><a href="#jenkins-流水线部署" class="headerlink" title="jenkins 流水线部署"></a>jenkins 流水线部署</h1><h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>prod devplatformserver  pipeline script</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">def ProdServer()&#123;</span><br><span class="line">    def remote = [:]</span><br><span class="line">    remote.name = &quot;172.20.60.16&quot;</span><br><span class="line">    remote.host = &quot;172.20.60.16&quot;</span><br><span class="line">    remote.port = 22</span><br><span class="line">    remote.allowAnyHosts = true</span><br><span class="line">    withCredentials([usernamePassword(credentialsId: &#x27;prod-k8s-master1_host-root&#x27;, passwordVariable: &#x27;password&#x27;, usernameVariable: &#x27;userName&#x27;)]) &#123;</span><br><span class="line">        remote.user = &quot;$&#123;userName&#125;&quot;</span><br><span class="line">        remote.password = &quot;$&#123;password&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    return remote</span><br><span class="line">&#125;</span><br><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        label &#x27;jenkins-slave&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    environment &#123;</span><br><span class="line">        def DEVOPS_PIPELINE_HOME = &quot;/jenkins_pod_data/devops_server/pipeline_home&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    // parameters &#123; string(name: &#x27;git_branch&#x27;, defaultValue: &#x27;20201113-zmk-k8sdeploy&#x27;, description: &#x27;输入需要发布的分支名称&#x27;) &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        stage(&#x27;Java Build&#x27;) &#123;</span><br><span class="line">            steps&#123;</span><br><span class="line">                git branch: &quot;master&quot;,</span><br><span class="line">                url: &#x27;https://git.ctfo.com/devops/devplatform-server.git&#x27;,</span><br><span class="line">                credentialsId: &#x27;dbddbe0b-bfec-4f40-9b9a-a2f5a4bba4fd&#x27;</span><br><span class="line">                script&#123;</span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        ### create git-version</span><br><span class="line">                        cd deploy-k8s/jenkins;/bin/bash git-version.sh</span><br><span class="line">                        DOCKER_TAG=`cat git-version`</span><br><span class="line">                        echo $DOCKER_TAG</span><br><span class="line">                        cd ../../</span><br><span class="line"></span><br><span class="line">                        mvn clean package</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage(&#x27;Docker Build image&#x27;)&#123;</span><br><span class="line">            steps&#123;</span><br><span class="line">                withCredentials([usernamePassword(credentialsId: &#x27;admin-harbor.ctfo.com&#x27;, passwordVariable: &#x27;harbor_password&#x27;, usernameVariable: &#x27;harbor_username&#x27;)]) &#123;</span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                    docker login -u $harbor_username -p $harbor_password harbor.ctfo.com</span><br><span class="line">                    DOCKER_TAG=`cat deploy-k8s/jenkins/git-version`</span><br><span class="line">                    echo $DOCKER_TAG</span><br><span class="line">                    docker build -t harbor.ctfo.com/devops/devplatform-server:$DOCKER_TAG .</span><br><span class="line">                    docker push harbor.ctfo.com/devops/devplatform-server:$DOCKER_TAG</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage(&#x27;Deploy k8s Pod&#x27;) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                script &#123;</span><br><span class="line">                def sshServer = ProdServer()</span><br><span class="line">                sshPut remote: sshServer, from: &quot;deploy-k8s/jenkins/git-version&quot;, into: &quot;/tmp/prod-server.version&quot;</span><br><span class="line">                sshPut remote: sshServer, from: &quot;deploy-k8s/jenkins/prod-deploy-k8s.sh&quot;, into: &quot;/tmp/prod-server.sh&quot;</span><br><span class="line">                sshCommand remote: sshServer, command: &quot;bash -x /tmp/prod-server.sh /tmp/prod-server.version&quot;</span><br><span class="line">                ssh &#x27;&#x27;&#x27;</span><br><span class="line">                    sleep 90</span><br><span class="line">                &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                
 
-<p>报警 k8s 部署 k8s jenkins-pipeline script</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br></pre></td><td class="code"><pre><span class="line">def server_d5f217261c364cc1b9c0280f64a90275()&#123;</span><br><span class="line">    def remote = [:]</span><br><span class="line">    remote.name = &quot;172.20.60.95&quot;</span><br><span class="line">    remote.host = &quot;172.20.60.95&quot;</span><br><span class="line">    withCredentials([usernamePassword(credentialsId: &#x27;Mzk2OjIwMjAxMDIyMDgxMTA3MzQ1MjMzMTA4MDE2MDAwMDAxOui3r+WPo+S6keerry3lvIDlj5E=&#x27;, passwordVariable: &#x27;password&#x27;, usernameVariable: &#x27;userName&#x27;)]) &#123;</span><br><span class="line">        remote.user = &quot;$userName&quot;</span><br><span class="line">        remote.password = &quot;$password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    remote.port = 22</span><br><span class="line">    remote.allowAnyHosts = true</span><br><span class="line">    return remote</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        kubernetes &#123;</span><br><span class="line">            yaml &quot;&quot;&quot;</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Pod</span><br><span class="line">metadata:</span><br><span class="line">  labels:</span><br><span class="line">    appName: 7aaf8dcff4f046b695a4204c8a516460</span><br><span class="line">  namespace: jenkins</span><br><span class="line">spec:</span><br><span class="line">  hostAliases:</span><br><span class="line">  - hostnames:</span><br><span class="line">    - harbordev.ctfo.com</span><br><span class="line">    ip: 172.20.80.7</span><br><span class="line">  - hostnames:</span><br><span class="line">    - harbordev-public.ctfo.com</span><br><span class="line">    ip: 172.20.60.31</span><br><span class="line">  containers:</span><br><span class="line">  - name: jnlp</span><br><span class="line">    image: harbor.ctfo.com/jenkins/inbound-agent:4.6-1-alpine-baseimage-10</span><br><span class="line">    imagePullPolicy: IfNotPresent</span><br><span class="line">    env:</span><br><span class="line">    - name: SLAVE_NODE_NAME</span><br><span class="line">      valueFrom:</span><br><span class="line">        fieldRef:</span><br><span class="line">          fieldPath: spec.nodeName</span><br><span class="line">    - name: SLAVE_NODE_IP</span><br><span class="line">      valueFrom:</span><br><span class="line">        fieldRef:</span><br><span class="line">          fieldPath: status.hostIP</span><br><span class="line">    securityContext:</span><br><span class="line">      privileged: true</span><br><span class="line">    resources:</span><br><span class="line">      requests:</span><br><span class="line">        memory: &quot;1024Mi&quot;</span><br><span class="line">        cpu: &quot;500m&quot;</span><br><span class="line">    volumeMounts:</span><br><span class="line">    - name: &quot;volume-docker&quot;</span><br><span class="line">      mountPath: &quot;/var/run/docker.sock&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">    - name: &quot;volume-share&quot;</span><br><span class="line">      subPath: &quot;jenkins_plugin_bin/docker/cli-plugins&quot;</span><br><span class="line">      mountPath: &quot;/usr/libexec/docker/cli-plugins&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">    - name: &quot;volume-share&quot;</span><br><span class="line">      subPath: &quot;jenkins_plugin_bin/docker/docker&quot;</span><br><span class="line">      mountPath: &quot;/usr/bin/docker&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">    - name: &quot;volume-share&quot;</span><br><span class="line">      subPath: &quot;jenkins_plugin_bin/mc_bin/mc&quot;</span><br><span class="line">      mountPath: &quot;/usr/bin/mc&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">    - name: &quot;volume-share&quot;</span><br><span class="line">      subPath: &quot;jenkins_plugin_bin/jenkins_bin/dingtalk&quot;</span><br><span class="line">      mountPath: &quot;/usr/bin/dingtalk&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">    - name: &quot;volume-share&quot;</span><br><span class="line">      mountPath: &quot;/jenkins_pod_data&quot;</span><br><span class="line">      readOnly: false</span><br><span class="line">  nodeSelector:</span><br><span class="line">    devops-server-type: devops-jenkins-slave</span><br><span class="line">  restartPolicy: &quot;Never&quot;</span><br><span class="line">  tolerations:</span><br><span class="line">  - effect: &quot;NoSchedule&quot;</span><br><span class="line">    key: &quot;prod-devops-tolerations&quot;</span><br><span class="line">    operator: &quot;Exists&quot;</span><br><span class="line">  volumes:</span><br><span class="line">  - name: volume-docker</span><br><span class="line">    hostPath:</span><br><span class="line">      path: /var/run/docker.sock</span><br><span class="line">  - name: volume-share</span><br><span class="line">    persistentVolumeClaim:</span><br><span class="line">      claimName: jenkins-poddata-pvc</span><br><span class="line">      readOnly: false</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stages &#123;</span><br><span class="line">        stage (&quot;start callback&quot;)&#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                container(&#x27;jnlp&#x27;) &#123;</span><br><span class="line">                    writeFile (file: &#x27;/usr/bin/ccsupgrade.sh&#x27;, text: &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">CCS_CHECK=true</span><br><span class="line">if [ &quot;$CCS_API&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云地址未设置!(export CCS_API=http://CCS_IP:30888)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_USERNAME&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云账号未设置!(export CCS_USERNAME=admin)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_PASSWORD&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云密码未设置!(export CCS_PASSWORD=123456)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_REGISTRY&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云仓库地址未设置!(export CCS_REGISTRY=REGISTRY_IP:5000)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_CLUSTER&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云集群名称未设置!(export CCS_CLUSTER=main)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_NAMESPACE&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云命令空间未设置!(export CCS_NAMESPACE=namespace)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_DEPLOYMENT&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云部署名称未设置!(export CCS_DEPLOYMENT=deployname)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_CONTAINER&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云容器名称未设置!(export CCS_CONTAINER=containername)&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># login ccs get token</span><br><span class="line">CCS_TOKEN=$(curl -X POST -H &#x27;Cookie: csrfToken=pipeline&#x27; -H &#x27;x-csrf-token: pipeline&#x27; -H &#x27;Content-Type: application/json&#x27; \\</span><br><span class="line">-d &#x27;&#123;&quot;username&quot;: &quot;&#x27;$CCS_USERNAME&#x27;&quot;, &quot;password&quot;: &quot;&#x27;$CCS_PASSWORD&#x27;&quot;&#125;&#x27; \\</span><br><span class="line">&quot;$CCS_API/api/ccs/auth/v1/login&quot; | jq .data | cut -d\\&quot; -f2)</span><br><span class="line"></span><br><span class="line">if [ &quot;$CCS_TOKEN&quot; == &quot;&quot; ];then</span><br><span class="line">  echo &#x27;敏捷云认证失败! 请检查CCS_USERNAME CCS_PASSWORD变量&#x27;</span><br><span class="line">  CCS_CHECK=false</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># 检查失败退出</span><br><span class="line">if [ &quot;$CCS_CHECK&quot; == &quot;false&quot; ];then</span><br><span class="line">  exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;检查通过!&quot;</span><br><span class="line">echo &quot;开上下载镜像...&quot;</span><br><span class="line">docker pull $IMAGE_TAG</span><br><span class="line">docker save $IMAGE_TAG -o /tmp/image.tar</span><br><span class="line"></span><br><span class="line">echo &quot;开始上传镜像...&quot;</span><br><span class="line">curl --proxy 172.17.5.60:32146 -X POST -H &quot;Cookie: csrfToken=pipeline; ccsToken=$CCS_TOKEN&quot; -H &#x27;x-csrf-token: pipeline&#x27; -F &quot;file=@/tmp/image.tar&quot; \\</span><br><span class="line">&quot;$CCS_API/api/ccs/apps/v1/imageStores/default/importImageTar&quot;</span><br><span class="line"></span><br><span class="line">echo &quot;开始更新镜像...&quot;</span><br><span class="line"># upgrade ccs deployment</span><br><span class="line">curl -XPATCH -H &quot;Cookie: csrfToken=pipeline; ccsToken=$CCS_TOKEN&quot; \\</span><br><span class="line">-H &#x27;x-csrf-token: pipeline&#x27; -H &quot;Content-Type: application/strategic-merge-patch+json&quot; \\</span><br><span class="line">-d &#x27;&#123;&quot;spec&quot;:&#123;&quot;template&quot;:&#123;&quot;spec&quot;:&#123;&quot;containers&quot;:[&#123;&quot;image&quot;:&quot;&#x27;$&#123;IMAGE_TAG/harbor.ctfo.com/$CCS_REGISTRY&#125;&#x27;&quot;,&quot;name&quot;:&quot;&#x27;$CCS_CONTAINER&#x27;&quot;&#125;]&#125;&#125;&#125;&#125;&#x27; \\</span><br><span class="line">&quot;$CCS_API/api/ccs/k8s/v1/clusters/$CCS_CLUSTER/namespaces/$CCS_NAMESPACE/deployments/$CCS_DEPLOYMENT&quot;</span><br><span class="line">&#x27;&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">                    writeFile (file: &#x27;/usr/bin/dingtalk.sh&#x27;, text: &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">export DOCKER_HOST=tcp://172.20.3.61:2375;</span><br><span class="line">docker run --rm \\</span><br><span class="line">-e DRONE_BUILD_LINK=&quot;$BUILD_URL&quot; \\</span><br><span class="line">-e DRONE_COMMIT_MESSAGE=&quot;$GIT_COMMIT_MSG&quot; \\</span><br><span class="line">-e DRONE_COMMIT_AUTHOR=&quot;$GIT_COMMITTER_NAME&quot; \\</span><br><span class="line">-e DRONE_COMMIT_AUTHOR_EMAIL=&quot;$GIT_COMMITTER_EMAIL&quot; \\</span><br><span class="line">-e DRONE_BUILD_NUMBER=&quot;$BUILD_NUMBER&quot; \\</span><br><span class="line">-e DRONE_COMMIT_BRANCH=&quot;$GIT_PULL_RESOURCE&quot; \\</span><br><span class="line">-e DRONE_REPO_NAME=&quot;$JOB_NAME&quot; \\</span><br><span class="line">-e DRONE_BUILD_STATUS=&quot;success&quot; \\</span><br><span class="line">-e DRONE_COMMIT_SHA=&quot;$GIT_COMMIT&quot; \\</span><br><span class="line">-e DRONE_COMMIT_LINK=&quot;https://git.ctfo.com/znlk/backend/cloud_java/ctfo-cloud-alertevent/-/commit/$GIT_COMMIT&quot; \\</span><br><span class="line">-e DRONE_REMOTE_URL=&quot;https://git.ctfo.com/znlk/backend/cloud_java/ctfo-cloud-alertevent.git&quot; \\</span><br><span class="line">-e PLUGIN_TOKEN=$1 \\</span><br><span class="line">-e PLUGIN_SECRET=$2 \\</span><br><span class="line">-e PLUGIN_MSG_TYPE=markdown \\</span><br><span class="line">harbor.ctfo.com/devops-public/drone-dingtalk-message;</span><br><span class="line">unset DOCKER_HOST</span><br><span class="line">&#x27;&#x27;&#x27;)</span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        echo &quot;jenkins pipeline is Schedule on node $SLAVE_NODE_NAME&quot;</span><br><span class="line">                        curl -X POST &quot;https://devops-api.ctfo.com/ctfo-devplatform-server/api/callback/v1/jenkins/build/start?uniqueKey=$uniqueKey&amp;buildNum=$BUILD_NUMBER&quot;</span><br><span class="line">                        docker buildx create --name mulit-archs --use --driver-opt image=harbor.ctfo.com/devops-public/buildkit:buildx-stable-1,network=host --node mulit-archs</span><br><span class="line"></span><br><span class="line">                        mkdir -p /jenkins_pod_data/devops_server/pipeline_home/7aaf8dcff4f046b695a4204c8a516460 /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460</span><br><span class="line">                        echo VERSION_FILE=/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION &gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo BUILD_START=$(date +%s) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo BUILD_DATE=$(date &quot;+%Y-%m-%d&quot;) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo BUILD_TIME=$(date &quot;+%H:%M:%S&quot;) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo IMAGE_TAG_GIT=$IMAGE_TAG &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo MINIO_PREFIX=$(echo $MINIO_PREFIX | awk -F / &#x27;&#123;print $1&quot;/&quot;$2&quot;/&#x27;$IMAGE_TAG&#x27;/&quot;$4&#125;&#x27;) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                        echo SLAVE_NODE_IP=$SLAVE_NODE_IP &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line"></span><br><span class="line">                        chmod +x /usr/bin/dingtalk.sh /usr/bin/ccsupgrade.sh /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 镜像构建 镜像构建 pipeline_image_build/pipeline_java_build</span><br><span class="line">        stage(&#x27;b6644a5e94c04fd79c29659e3847df71&#x27;) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">            </span><br><span class="line">                container(&#x27;jnlp&#x27;) &#123;</span><br><span class="line">                    checkout([$class: &#x27;GitSCM&#x27;, branches: [[name: &#x27;$GIT_PULL_RESOURCE&#x27;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[</span><br><span class="line">                        credentialsId: &#x27;Mzk2OjIwMjAwOTE2MDkxMTM4MDA4MDIwMDE0MDI1MDAwMDAxOnB5bQ==&#x27;, url: &#x27;https://git.ctfo.com/znlk/backend/cloud_java/ctfo-cloud-alertevent.git&#x27;</span><br><span class="line">                    ]]])</span><br><span class="line"></span><br><span class="line">                    withCredentials([usernamePassword(credentialsId: &#x27;Mzk2OjIwMjAwOTE2MDkxMTM4MDA4MDIwMDE0MDI1MDAwMDAxOnB5bQ==&#x27;, usernameVariable: &#x27;git_username&#x27;, passwordVariable: &#x27;git_password&#x27;)]) &#123;</span><br><span class="line">                        sh &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">                            GIT_COMMIT=$(git rev-parse --short HEAD)</span><br><span class="line">                            echo GIT_COMMIT=$GIT_COMMIT &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                            #echo GIT_COMMIT_MSG=&quot;msg: $(git log -1 --pretty=%B $GIT_COMMIT)&quot; &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                            echo GIT_COMMITTER_NAME=$(git log -1 --pretty=%cn $GIT_COMMIT) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                            echo GIT_COMMITTER_EMAIL=$(git log -1 --pretty=%ce $GIT_COMMIT) &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION</span><br><span class="line">                            </span><br><span class="line">                            echo docker login -u $git_username -p \\&#x27;$git_password\\&#x27; harbor.ctfo.com &gt; /tmp/login_harbor</span><br><span class="line">                            sed -i &#x27;s#\\$\\$#$#g&#x27; /tmp/login_harbor</span><br><span class="line">                            sh /tmp/login_harbor || true</span><br><span class="line"></span><br><span class="line">                            GIT_PASSWORD=$(echo $git_password | tr -d &#x27;\n&#x27; | od -An -tx1| tr &#x27; &#x27; %)</span><br><span class="line">                            echo &#x27;git config --global url.&quot;https://&#x27;$git_username&#x27;:&#x27;$GIT_PASSWORD&#x27;@git.ctfo.com&quot;.insteadOf &quot;https://git.ctfo.com&quot;&#x27; &gt; .git_init.sh</span><br><span class="line">                            sh .git_init.sh</span><br><span class="line"></span><br><span class="line">                            #rm -rf .dockerignore</span><br><span class="line">                            echo *.dockerfile &gt; .dockerignore</span><br><span class="line">                        &#x27;&#x27;&#x27;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    </span><br><span class="line">                    script &#123;</span><br><span class="line">                        readProperties(text: readFile(file: &#x27;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION&#x27;)).each &#123;</span><br><span class="line">                            env.&quot;$&#123;it.key&#125;&quot; = &quot;$&#123;it.value&#125;&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                container(&#x27;jnlp&#x27;)&#123;</span><br><span class="line">                    writeFile (file: &#x27;compile-shell-b6644a5e94c04fd79c29659e3847df71.sh&#x27;, text: &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line"># 加载全局的环境变量, 以便在脚本中直接使用</span><br><span class="line">IFS_O=$IFS; IFS=$&#x27;\n\n&#x27;; for line in $(cat compile-env-b6644a5e94c04fd79c29659e3847df71.sh); do export $line;done; IFS=$IFS_O</span><br><span class="line"></span><br><span class="line"># 执行不同语言的预处理脚本</span><br><span class="line">/usr/local/bin/mvn-entrypoint.sh || true</span><br><span class="line"></span><br><span class="line"># 开启执行跟踪</span><br><span class="line">set -xe</span><br><span class="line"></span><br><span class="line"># 执行用户的编译脚本, 里面可以直接使用全局的环境变量</span><br><span class="line">mvn clean package -DskipTests</span><br><span class="line">&#x27;&#x27;&#x27;)</span><br><span class="line">                    writeFile (file: &#x27;compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile&#x27;, text: &#x27;&#x27;&#x27;FROM --platform=$BUILDPLATFORM harbor.ctfo.com/jenkins/maven:3.8.2-jdk-8-buildjava-12 as pipeline-builder</span><br><span class="line">ARG BUILDPLATFORM</span><br><span class="line">ARG BUILDOS</span><br><span class="line">ARG BUILDARCH</span><br><span class="line">ARG TARGETPLATFORM</span><br><span class="line">ARG TARGETOS</span><br><span class="line">ARG TARGETARCH</span><br><span class="line">WORKDIR /root</span><br><span class="line">COPY . .</span><br><span class="line">RUN sh compile-shell-b6644a5e94c04fd79c29659e3847df71.sh</span><br><span class="line">FROM scratch</span><br><span class="line">ARG BUILDPLATFORM</span><br><span class="line">ARG BUILDOS</span><br><span class="line">ARG BUILDARCH</span><br><span class="line">ARG TARGETPLATFORM</span><br><span class="line">ARG TARGETOS</span><br><span class="line">ARG TARGETARCH</span><br><span class="line">&#x27;&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">                    writeFile (file: &#x27;ctfo_prepare-b6644a5e94c04fd79c29659e3847df71.sh&#x27;, text: &#x27;&#x27;&#x27;&#x27;&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">                    sh &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">                        set -xe</span><br><span class="line">                        # 编译制品</span><br><span class="line">                        mkdir -p /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71</span><br><span class="line">                        cp /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/CTFO_VERSION /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                        echo &quot;ARTIFACTS_PATH=/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71&quot; &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                        echo &quot;WORKDIR=/app&quot; &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                        </span><br><span class="line">                        </span><br><span class="line"></span><br><span class="line">                        cp /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION compile-env-b6644a5e94c04fd79c29659e3847df71.sh</span><br><span class="line"></span><br><span class="line">                        chmod +x compile-shell-b6644a5e94c04fd79c29659e3847df71.sh</span><br><span class="line"></span><br><span class="line">                        echo &#x27;#!/bin/sh -e</span><br><span class="line">exec java \\</span><br><span class="line">    $JAVA_OPTS \\</span><br><span class="line">    -Djava.security.egd=file:/dev/./urandom \\</span><br><span class="line">    -Dfile.encoding=UTF-8 \\</span><br><span class="line">    -Dsun.jnu.encoding=UTF-8 \\</span><br><span class="line">    -jar /app//alerevent-0.0.1-SNAPSHOT.jar \\</span><br><span class="line">    $*</span><br><span class="line">    &#x27; &gt; ctfo_entrypoint-b6644a5e94c04fd79c29659e3847df71.sh</span><br><span class="line">                        chmod +x ctfo_entrypoint-b6644a5e94c04fd79c29659e3847df71.sh</span><br><span class="line"></span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                </span><br><span class="line">                container(&#x27;jnlp&#x27;) &#123;</span><br><span class="line">                    script &#123;</span><br><span class="line">                        readProperties(text: readFile(file: &#x27;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION&#x27;)).each &#123;</span><br><span class="line">                            env.&quot;$&#123;it.key&#125;&quot; = &quot;$&#123;it.value&#125;&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        echo &#x27;COPY --from=pipeline-builder /root/target/alerevent-0.0.1-SNAPSHOT.jar //app/&#x27; &gt;&gt; compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile</span><br><span class="line">                      </span><br><span class="line">                        echo &quot;$RUNCOPY&quot; | sed &#x27;s#^\\s*COPY\\s*#COPY --from=pipeline-builder /root/#g&#x27; &gt;&gt; compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile</span><br><span class="line">                      </span><br><span class="line">                        # 无架构编译</span><br><span class="line">                        if [ -f compile-shell-b6644a5e94c04fd79c29659e3847df71.sh ];then</span><br><span class="line">                            docker buildx build -f compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile -o type=local,dest=/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/linux_amd64 .</span><br><span class="line">                        fi</span><br><span class="line">                        cd $WORKSPACE</span><br><span class="line">                        </span><br><span class="line">                        export TARGETPLATFORM=linux/amd64</span><br><span class="line">                        export TARGETOS=linux</span><br><span class="line">                        export TARGETARCH=amd64</span><br><span class="line">                        if [ ! -f compile-shell-b6644a5e94c04fd79c29659e3847df71.sh ];then</span><br><span class="line">                            mkdir -p /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/linux_amd64</span><br><span class="line">                            cp -r target/alerevent-0.0.1-SNAPSHOT.jar /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/linux_amd64//app/</span><br><span class="line">                        fi</span><br><span class="line"></span><br><span class="line">                        BUCKET_NAME=znlk-cloud</span><br><span class="line">                        BIN_FILE_NAME=/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/ctfo-cloud-alertevent.tar.gz</span><br><span class="line">                        MINIO_PATH=$BUCKET_NAME/ctfo-cloud-alertevent/$MINIO_PREFIX</span><br><span class="line"></span><br><span class="line">                        # 先进入制品目录</span><br><span class="line">                        cd /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/linux_amd64</span><br><span class="line"></span><br><span class="line">                        FILE_NUM=$(find -type f| wc -l)</span><br><span class="line">                        if [[ $FILE_NUM -eq 1 ]];then</span><br><span class="line">                            PUSH_FILE_NAME=/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/linux_amd64/$(find -type f)</span><br><span class="line">                        else</span><br><span class="line">                            tar -czf $BIN_FILE_NAME *</span><br><span class="line">                            PUSH_FILE_NAME=$BIN_FILE_NAME</span><br><span class="line">                        fi</span><br><span class="line">                        echo &quot;BIN_FILE_NAME_amd64=$PUSH_FILE_NAME&quot; &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                        echo &quot;BIN_FILE_NUM_amd64=$FILE_NUM&quot; &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line"></span><br><span class="line">                        # 制作待推送文件的  md5 文件</span><br><span class="line">                        FILE_NAME_MD5=$(md5sum $PUSH_FILE_NAME | awk &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">                        FILE_NAME=$(basename $PUSH_FILE_NAME)</span><br><span class="line">                        echo $FILE_NAME_MD5 $FILE_NAME&gt; $PUSH_FILE_NAME.md5</span><br><span class="line"></span><br><span class="line">                        # 创建bucket, 分配下载权限</span><br><span class="line">                        mc mb http_prod-minio-devops/$BUCKET_NAME || true</span><br><span class="line">                        mc policy set download http_prod-minio-devops/$BUCKET_NAME || true</span><br><span class="line">                        mc cp $PUSH_FILE_NAME http_prod-minio-devops/$MINIO_PATH/$FILE_NAME</span><br><span class="line">                        mc cp $PUSH_FILE_NAME.md5 http_prod-minio-devops/$MINIO_PATH/$FILE_NAME_MD5.md5</span><br><span class="line">                        echo &quot;&#123;</span><br><span class="line">                            \\&quot;stageId\\&quot;:\\&quot;b6644a5e94c04fd79c29659e3847df71\\&quot;,</span><br><span class="line">                            \\&quot;pushMinioResult\\&quot;:\\&quot;$(mc ls http_prod-minio-devops/$MINIO_PATH/$FILE_NAME)\\&quot;,</span><br><span class="line">                            \\&quot;minioPath\\&quot;:\\&quot;$MINIO_PATH/$FILE_NAME\\&quot;,</span><br><span class="line">                            \\&quot;bucketName\\&quot;:\\&quot;$BUCKET_NAME\\&quot;,</span><br><span class="line">                            \\&quot;fileName\\&quot;:\\&quot;$FILE_NAME\\&quot;</span><br><span class="line">                        &#125;&quot; &gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71_buildparam.txt</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                                container(&#x27;jnlp&#x27;) &#123;</span><br><span class="line">                    withCredentials([usernamePassword(credentialsId: &#x27;Mzk2OjIwMjAwOTE2MDkxMTM4MDA4MDIwMDE0MDI1MDAwMDAxOnB5bQ==&#x27;, usernameVariable: &#x27;harbor_username&#x27;, passwordVariable: &#x27;harbor_password&#x27;)]) &#123;</span><br><span class="line">                        sh &#x27;&#x27;&#x27;</span><br><span class="line">                            echo docker login -u $harbor_username -p \\&#x27;$harbor_password\\&#x27; harbor.ctfo.com &gt; /tmp/login_harbor</span><br><span class="line">                            sed -i &#x27;s#\\$\\$#$#g&#x27; /tmp/login_harbor</span><br><span class="line">                            sh /tmp/login_harbor</span><br><span class="line">                            export BASE_IMAGE_DIGEST=$(curl -k &#x27;https://$harbor_username:$harbor_password@harbor.ctfo.com/api/v2.0/projects/jenkins/repositories/openjdk/artifacts&#x27; | jq &#x27;[foreach .[] as $item ([]; $item; if $item.tags == null then empty else $item end)] | [foreach .[] as $item ([]; $item; if $item.tags[].name == &quot;8-runjava-10&quot; then $item.digest else empty end)] | first&#x27; | xargs)</span><br><span class="line">                            if [ &quot;$BASE_IMAGE_DIGEST&quot; != &quot;&quot; ] ; then</span><br><span class="line">                              echo &quot;BASE_IMAGE_DIGEST=$BASE_IMAGE_DIGEST&quot; &gt;&gt;  /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                            fi</span><br><span class="line">                        &#x27;&#x27;&#x27;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    script &#123;</span><br><span class="line">                        readProperties(text: readFile(file: &#x27;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION&#x27;)).each &#123;</span><br><span class="line">                            env.&quot;$&#123;it.key&#125;&quot; = &quot;$&#123;it.value&#125;&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                        env.IMAGE_TAG = &quot;harbor.ctfo.com/test-public/ctfo-cloud-alertevent:&quot; + env.IMAGE_TAG</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    sh &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">                        # 设置环境变量</span><br><span class="line">                        echo IMAGE_TAG=$IMAGE_TAG &gt;&gt; /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION</span><br><span class="line">                        set -xe</span><br><span class="line"></span><br><span class="line">                        sed -i &#x27;/COPY --from=/d&#x27; compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile</span><br><span class="line">                        if [ -f ./Dockerfile ]; then</span><br><span class="line">                          cat ./Dockerfile | sed &#x27;/--from=/!s#^\\s*COPY\\s*#COPY --from=pipeline-builder /root/#g&#x27; | sed &#x27;/--from=/!s#^\\s*ADD\\s*#COPY --from=pipeline-builder /root/#g&#x27; &gt;&gt; compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile</span><br><span class="line">                        elif [ -f ./Dockerfile/Dockerfile ]; then</span><br><span class="line">                          cat ./Dockerfile/Dockerfile | sed &#x27;/--from=/!s#^\\s*COPY\\s*#COPY --from=pipeline-builder /root/#g&#x27; | sed &#x27;/--from=/!s#^\\s*ADD\\s*#COPY --from=pipeline-builder /root/#g&#x27; &gt;&gt; compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile</span><br><span class="line">                        else</span><br><span class="line">                          echo &quot;./Dockerfile not exist Dockerfile!&quot;</span><br><span class="line">                          exit 1</span><br><span class="line">                        fi</span><br><span class="line">                        </span><br><span class="line">                        docker buildx build --platform linux/amd64 -t $IMAGE_TAG -f compile-docker-b6644a5e94c04fd79c29659e3847df71.dockerfile --push .</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 部署 K8S发布 pipeline_deploy/deploy_k8s_upgrade</span><br><span class="line">        stage(&#x27;d5f217261c364cc1b9c0280f64a90275&#x27;) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">            </span><br><span class="line">                container(&#x27;jnlp&#x27;) &#123;</span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        mkdir -p /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275</span><br><span class="line">                        cp /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/b6644a5e94c04fd79c29659e3847df71/CTFO_VERSION /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">                    script &#123;</span><br><span class="line">                        readProperties(text: readFile(file: &#x27;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275/CTFO_VERSION&#x27;)).each &#123;</span><br><span class="line">                            env.&quot;$&#123;it.key&#125;&quot; = &quot;$&#123;it.value&#125;&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    writeFile (file: &#x27;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275/deploy_k8s_upgrade_d5f217261c364cc1b9c0280f64a90275.sh&#x27;, text: &#x27;&#x27;&#x27;#!/bin/sh</span><br><span class="line">if [ -f CTFO_VERSION ] ; then IFS_O=$IFS; IFS=$&#x27;\n\n&#x27;; for line in $(cat CTFO_VERSION); do export $line;done; IFS=$IFS_O; fi</span><br><span class="line"></span><br><span class="line">set -xe</span><br><span class="line"></span><br><span class="line">set -xe</span><br><span class="line">export IS_RESTART=$(kubectl set image Deployment ctfo-cloud-alertevent -n znlk-cloud ctfo-cloud-alertevent=$IMAGE_TAG)</span><br><span class="line">if [ &quot;$IS_RESTART&quot; == &quot;&quot; ];then</span><br><span class="line">    kubectl rollout restart -n znlk-cloud Deployment ctfo-cloud-alertevent</span><br><span class="line">fi</span><br><span class="line">                        </span><br><span class="line">&#x27;&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        cd /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275</span><br><span class="line">                        chmod +x /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275/deploy_k8s_upgrade_d5f217261c364cc1b9c0280f64a90275.sh</span><br><span class="line">                        tar -czf deployment.tgz *</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                    </span><br><span class="line">                    script &#123;</span><br><span class="line">                        def remote = server_d5f217261c364cc1b9c0280f64a90275()</span><br><span class="line">                        sshCommand remote: remote, command: &quot;mkdir -p /tmp/d5f217261c364cc1b9c0280f64a90275&quot;</span><br><span class="line">                        sshPut remote: remote, from: &quot;/home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275/deployment.tgz&quot;, into: &quot;/tmp/d5f217261c364cc1b9c0280f64a90275&quot;</span><br><span class="line">                        sshCommand remote: remote, command: &#x27;&#x27;&#x27;</span><br><span class="line">                            cd /tmp/d5f217261c364cc1b9c0280f64a90275; tar -xzf deployment.tgz; rm -f deployment.tgz</span><br><span class="line">                            nohup bash -x deploy_k8s_upgrade_d5f217261c364cc1b9c0280f64a90275.sh &gt; service.log 2&gt;&amp;1 &amp;</span><br><span class="line">                        &#x27;&#x27;&#x27;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    sh &#x27;&#x27;&#x27;</span><br><span class="line">                        rm -rf /home/jenkins/agent/7aaf8dcff4f046b695a4204c8a516460/d5f217261c364cc1b9c0280f64a90275</span><br><span class="line">                    &#x27;&#x27;&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    post &#123;</span><br><span class="line">        always &#123;</span><br><span class="line">            script &#123;</span><br><span class="line">                execCode = sh(script: &#x27;&#x27;&#x27;</span><br><span class="line">                  curl -X POST &quot;https://devops-api.ctfo.com/ctfo-devplatform-server/api/callback/v1/jenkins/build/finished?uniqueKey=$uniqueKey&amp;buildNum=$BUILD_NUMBER&quot;</span><br><span class="line">                &#x27;&#x27;&#x27;, returnStatus: true)</span><br><span class="line">                echo &quot;$execCode&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+                
 
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(Mysql%E4%B8%AD%E7%9A%84Page%E9%A1%B5)/">
+                        每日一问0723(Mysql中的Page页)
+                    </a>
+                </h3>
 
-      
+                <div class="home-article-content markdown-body">
+                    
+                        mysql 中的page页
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF)/" data-id="cld1buvu9003lbjopf9rjguy4" data-title="每日一问0723(jenkins流水线)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(Mysql%E4%B8%AD%E7%9A%84Page%E9%A1%B5)/">Read more<span class="seo-reader-text">每日一问0723(Mysql中的Page页)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0922(架构)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
-<li>PA 预备阶段</li>
-<li>CA 概念阶段</li>
-<li>RA细化阶段</li>
-</ul>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0726(http2.0)/">
+                        每日一问0726(http2
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        http2.0HTTP协议HTTP1.0HTTP1.1HTTP&#x2F;1.1相较于 HTTP&#x2F;1.0 协议的区别主要体现在：
+1 缓存处理
+2 带宽优化及网络连接的使用
+3 错误通知的管理
+4 消息在网络中的发送
+5 互联网地址的维护
+...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/" data-id="cld1buvua003mbjophfckdudm" data-title="每日一问0922(架构)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0726(http2.0)/">Read more<span class="seo-reader-text">每日一问0726(http2</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/述职模板" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="述职模板"><a href="#述职模板" class="headerlink" title="述职模板"></a>述职模板</h1><h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><h2 id="业绩数据（-展示主要工作成果）"><a href="#业绩数据（-展示主要工作成果）" class="headerlink" title="业绩数据（ 展示主要工作成果）"></a>业绩数据（ 展示主要工作成果）</h2><h2 id="总结反思"><a href="#总结反思" class="headerlink" title="总结反思"></a>总结反思</h2><h2 id="成长学习"><a href="#成长学习" class="headerlink" title="成长学习"></a>成长学习</h2><h2 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h2>
-      
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(SOA)/">
+                        每日一问0728(SOA)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        SOASOA（Service-Oriented Architecture)
+人们将互联网协议从不同维度分为OSI七层、TCP&#x2F;IP五层或TCP&#x2F;IP四层
+
+
+
+单一应用架构 当网站流量很小时，只需一个应用，将所有功能都部署在一起，...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/" data-id="cld1buvua003nbjopd4svelnz" data-title="述职模板" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(SOA)/">Read more<span class="seo-reader-text">每日一问0728(SOA)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-学习英语/英文单词积累" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="英文单词积累"><a href="#英文单词积累" class="headerlink" title="英文单词积累"></a>英文单词积累</h1><table>
-<thead>
-<tr>
-<th>单词</th>
-<th>翻译</th>
-<th>出处</th>
-<th>打分</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>art</td>
-<td>艺术</td>
-<td>目录</td>
-<td></td>
-</tr>
-<tr>
-<td>Classic</td>
-<td>经典</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Graphic Novels</td>
-<td>图形小说</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Romance</td>
-<td>浪漫</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>community</td>
-<td>社区</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>curious</td>
-<td>好奇</td>
-<td><a target="_blank" rel="noopener" href="https://www.goodreads.com/topic/show/22368772-does-anyone-own-a-book-themed-etsy-business">https://www.goodreads.com/topic/show/22368772-does-anyone-own-a-book-themed-etsy-business</a></td>
-<td></td>
-</tr>
-<tr>
-<td>blind date</td>
-<td>男女初次见面(相亲)</td>
-<td>I have a small business on mercari, buti don’t sell books. <br/>my friend Fabi does! I absolutely recommend her shop! <br/> it’s called “mystery books by Fabi”on etsy. She’s one of my friends on here. <br/>u can find her shop there! She sells blind date with books. :)</td>
-<td></td>
-</tr>
-<tr>
-<td>perfume</td>
-<td>香水</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>literally</td>
-<td>字面意义</td>
-<td>i literally just bend the corner of the page hahaha</td>
-<td></td>
-</tr>
-<tr>
-<td>memoir</td>
-<td>回忆录</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>autobiography</td>
-<td>自传</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>fiction</td>
-<td>小说</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>comfort rules</td>
-<td>舒适性规则</td>
-<td>chrome-extension:&#x2F;&#x2F;ikhdkkncnoglghljlkmcimlnlhkeamad&#x2F;pdf-viewer&#x2F;web&#x2F;viewer.html?file&#x3D;https%3A%2F%2Fsun6-22.userapi.com%2Fc534536%2Fu448173336%2Fdocs%2Fd42%2F9c20f877211d%2FROVA__October-November_2022.pdf%3Fextra%3DTToRGlY4OApT7mJgC6wMEkbydRbbb9LoHLF1-o8KxBQELzJhnHqc9J5VBIaUDd5At8OXv7FzVQV7DPT6dW-0UyXg8BiYf42IhWZRzM4tVU7xmHwtkFjX2SWAfFu1UsqwFW2_b_DnC7Afpg</td>
-<td>5</td>
-</tr>
-<tr>
-<td>Nothing worth doing is easy.</td>
-<td>值得做的没有简单的事</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>intolerances</td>
-<td>不耐受</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>transformative</td>
-<td>变革性的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>awkward</td>
-<td>令人尴尬的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ultimately</td>
-<td>最终</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>mangled</td>
-<td>破损的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>urges</td>
-<td>催促，敦促</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>introvert</td>
-<td>内向的人</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>frustrations</td>
-<td>挫折</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>in common</td>
-<td>共同之处</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>catalyst</td>
-<td>催化剂</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>immerse yourself in these</td>
-<td>使自己沉浸其中</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Soundtrack</td>
-<td>原声带</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>impeccably</td>
-<td>无可挑剔的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Calm</td>
-<td>平静的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>meditative</td>
-<td>冥想</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>anxiety-relieving</td>
-<td>焦虑缓解</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>enthusiasts</td>
-<td>爱好者</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>enthusiastic</td>
-<td>热情</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ridiculous</td>
-<td>荒唐的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>hilarious</td>
-<td>令人捧腹的 ，搞笑的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>rosemary</td>
-<td>迷迭香</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>spicy margarita</td>
-<td>辛辣的玛格丽特</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>alcohol</td>
-<td>酒精</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>permanent population</td>
-<td>常驻人口</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Spend time on Mount Desert Island on the top of a mountain, in a boat on the water, or surrounded by the fresh scents of an autumn forest</td>
-<td>花费时间在某岛的山顶上，在水上的船上，在围绕着新鲜气味的秋天的森林里</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>priceless</td>
-<td>无价的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>although</td>
-<td>尽管</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>a distant fantasy,</td>
-<td>遥远的幻想</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ruminate on</td>
-<td>沉思</td>
-<td>I have yet to stop ruminating on this thought</td>
-<td></td>
-</tr>
-<tr>
-<td>In hindsight,</td>
-<td>事后看来</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>blossomed</td>
-<td>开花</td>
-<td>In hindsight, it was probably this seed of an idea that <br/>blossomed into the realization that a life <br/>of travel, with all of its attached discomfort, must <br/>be far more worthwhile than any amount of time <br/>surrounded by modern amenities in the luxury of my <br/>hometown</td>
-<td></td>
-</tr>
-<tr>
-<td>worthwhile</td>
-<td>值得的</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="/../../ImgSource/image-20221130160459660.png" alt="image-20221130160459660"></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(es%E5%88%86%E9%A1%B5)/">
+                        每日一问0728(es分页)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        es 分页参考Elasticsearch 三种分页方式 
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/" data-id="cld1buvub003objopbyei6oep" data-title="英文单词积累" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(es%E5%88%86%E9%A1%B5)/">Read more<span class="seo-reader-text">每日一问0728(es分页)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
-  </nav>
-
-</section>
+            </li>
         
-          <aside id="sidebar">
-  
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+        <a class="prev btn"
+           href="/page/5/"
+        >Prev</a>
+    
+
+    
+        <a class="next btn"
+           href="/page/7/"
+        >Next</a>
+    
+</div>
+
     </div>
-  </div>
+</div>
 
 
-  
-    
+                
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
-    </div>
-  </div>
+            </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">The Redefine Team. All Rights Reserved.</a>
+        </div>
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2022/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
 </footer>
-
+        </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
     
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
 
 
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+
+    
+<script src="/js/code-copy.js"></script>
 
 
 
 
+    
+<script src="/js/lazyload.js"></script>
 
-  </div>
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
 </body>
 </html>

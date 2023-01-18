@@ -1,787 +1,936 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://a240277805.github.io/page/5/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="The Redefine Team">
+    <link rel="canonical" href="http://example.com/page/5" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
+    <title>
+        
+        Theme Redefine
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/fonts.css">
 
-  
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                <h1>
+                Theme Redefine
+                </h1>
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="active" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a240277805.github.io"></form>
-      </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="active" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
     </div>
-  </div>
+
+    <div class="window-mask"></div>
+
 </header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-2022/数据仓库(数仓)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/">数据仓库(数仓)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="数据仓库-数仓"><a href="#数据仓库-数仓" class="headerlink" title="数据仓库(数仓)"></a>数据仓库(数仓)</h1><h2 id="数仓建模"><a href="#数仓建模" class="headerlink" title="数仓建模"></a>数仓建模</h2><p><img src="/../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101111659.png" alt="img"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0406(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B)/">
+                        每日一问0406(链路追踪技术选型)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        链路追踪技术选型为什么选skywalkingskywalking概念skywalking 优势后期优化点参考
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/" data-id="cld1buvu10035bjop4nhj3cdl" data-title="数据仓库(数仓)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0406(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B)/">Read more<span class="seo-reader-text">每日一问0406(链路追踪技术选型)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/数据仓库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">数据仓库</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/../../ImgSource/20180528092706337" alt="è¿éåå¾çæè¿°"></p>
-<p><img src="/../../ImgSource/20180528092839867" alt="è¿éåå¾çæè¿°"></p>
-<h3 id="ODS层"><a href="#ODS层" class="headerlink" title="ODS层"></a>ODS层</h3><pre><code>ODS才是数据仓库真正意义上的基础数据，数据是被清洗过的，ODS层的数据是定义统一的、可以体现历史的、被长期保存的数据。 
-ODS层的数据粒度与Stage层数据粒度是一致的。 
-Stage层中的数据是完全形式的源数据，需要进行清洗才能进入ODS层，所以说ODS层是数据仓库格式规整的基础数据，为上层服务。
-</code></pre>
-<h3 id="MDS层"><a href="#MDS层" class="headerlink" title="MDS层"></a>MDS层</h3><pre><code>MDS是数据仓库中间层，数据是以主题域划分的，并根据业务进行数据关联形成宽表，但是不对数据进行聚合处理，MDS层数据为数据仓库的上层的统计、分析、挖掘和应用提供直接支持。 
-</code></pre>
-<p>MDS层的数据也可以执行一定的老化策略。</p>
-<h3 id="ADS层"><a href="#ADS层" class="headerlink" title="ADS层"></a>ADS层</h3><pre><code>ADS层是数据仓库的应用层，一般以业务线或者部门划分库。这一层可以为各个业务线创建一个数据库。 
-</code></pre>
-<p>ADS层的数据是基于MDS层数据生成的业务报表数据，可以直接作为数据仓库的输出导出到外部的操作型系统中（MySQL、MSSQL、Hbase、Elasticsearch等）。</p>
-<h3 id="DIM层"><a href="#DIM层" class="headerlink" title="DIM层"></a>DIM层</h3><pre><code>DIM层是数据仓库数据中，各层公用的维度数据。比如：省市县数据。
-</code></pre>
-<h3 id="ETL调度系统"><a href="#ETL调度系统" class="headerlink" title="ETL调度系统"></a>ETL调度系统</h3><p>​    对接入数据仓库的数据进行清洗、数据仓库各层间数据流转都需要大量的程序任务来操作，这些任务一般都是定时的，并且之间都是有前后依赖关系的，为了能保证任务的有序执行，就需要一个ETL调度系统来管理。</p>
-<h3 id="1、-粒度"><a href="#1、-粒度" class="headerlink" title="1、 粒度"></a>1、 粒度</h3><pre><code>粒度是指数据仓库中数据单元的细节程度或综合程度的级别。粒度会深刻地影响数据量的大小以及数据仓库的查询能力。 
-</code></pre>
-<p>细节程度越高，粒度级别就越低，查询就越灵活；相反，细节程度越低，粒度级别就越高。<br>    双重粒度：<br>    双重粒度是存储两个粒度下的数据：一个是全量的细节数据；另一个是轻度综合的数据。</p>
-<h3 id="2、-分区"><a href="#2、-分区" class="headerlink" title="2、 分区"></a>2、 分区</h3><p>​    数据分区是指把数据分散到可独立处理的分离物理单元中去。恰当地进行分区可以给数据仓库带来多个方面的好处：<br>(1) 数据装载 (2) 数据访问 (3) 数据存档 (4) 数据删除 (5) 数据监控 (6) 数据存储</p>
-<p>1.3、OLAP 可以对 多维数据库 执行五种类型：<br>汇总(Roll-up)： 也称为向上钻取或合并，用于汇总操作数据和维度。<br>下钻(Roll-down)： 在数据维度中进行更深入的分析。例如，从“时间段”向下钻取“年”、“月”和“天”等以绘制产品的销售增长图。<br>切片(Slice)： 执行分析以显示一级信息，例如“2019 年的销售额”。<br>切块(Dice)： 进行分析，从多个维度中选取数据进行分析，例如“班加罗尔2019年青苹果的销售额”。<br>旋转(Pivot)： 执行可以通过旋转多维数据集的数据轴来获得新数据视图的分析。</p>
-<p>与 OLAP 一样，我们使用的另一个术语是 OLTP，即在线事务处理；两者<strong>都是在线处理系统</strong>；</p>
-<ul>
-<li>OLTP 是事务处理，主要关注事务任务上的任务，</li>
-<li>而 OLAP 是一个分析处理系统，主要关注分析和报告，并为他们提供有价值的见解以改进业务。</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/newchitu/article/details/87883788">数据仓库基本概念介绍</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxintdrh/article/details/119931658">什么是OLAP？</a></p>
-<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wenwu5832/p/6845898.html">数据仓库基本概念</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43713049/article/details/116571675">大数据：数据仓库设计</a></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(EDAS)/">
+                        每日一问0407(EDAS)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        EDAS 调研企业级分布式应用服务 EDAS（Enterprise Distributed Application Service）是应用全生命周期管理和监控的一站式 PaaS 平台
+随着Node.js、Go和Python等语言的快速发展，多语言微服...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/" data-id="cld1buvu20036bjopdg8i847y" data-title="数据仓库" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(EDAS)/">Read more<span class="seo-reader-text">每日一问0407(EDAS)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0103(消息队列)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">每日一问0103(消息队列)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="选型对比"><a href="#选型对比" class="headerlink" title="选型对比"></a>选型对比</h2><p>rabbitMQ,RocketMQ,kafka</p>
-<h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>吞吐量，性能</p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0409(nacos)/">
+                        每日一问0409(nacos)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        nacos
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/" data-id="cld1buvu20037bjop3itq05ze" data-title="每日一问0103(消息队列)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0409(nacos)/">Read more<span class="seo-reader-text">每日一问0409(nacos)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0104(rabbitMQ)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/">每日一问0104(rabbitMQ)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>AMQ协议的结构</p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0420(%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93)/">
+                        每日一问0420(面试总结)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        面试总结面试步骤自我介绍以下几点要素
+
+几句简单话介绍自己主要的技术栈于擅长的领域
+领域:电商,车联网 服务治理(CI&#x2F;CD,监控与报警,调用链,限流,熔断,降级,连接复用(连接池),配置优化,故障定位,提高资源利用率)
+
+
+Spring ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/" data-id="cld1buvu30038bjopc24a7u3i" data-title="每日一问0104(rabbitMQ)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0420(%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93)/">Read more<span class="seo-reader-text">每日一问0420(面试总结)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0106(log4j)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/">每日一问0106(log4j)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="log4j"><a href="#log4j" class="headerlink" title="log4j"></a>log4j</h1><h2 id="SLF4J-Failed-to-load-class-“org-slf4j-impl-StaticLoggerBinder”原因及解决方案"><a href="#SLF4J-Failed-to-load-class-“org-slf4j-impl-StaticLoggerBinder”原因及解决方案" class="headerlink" title="SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”原因及解决方案"></a>SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”原因及解决方案</h2><p>导致此异常的原因是：在运行时，没有日志的实现（或者说日志的绑定），所以slf4j默认使用了一个空实现。</p>
-<p>因此也就是缺少了相关的jar包，因为slf4j-api包中只有方法定义，没有具体的方法实现，所以需要引入具体的实现包。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="http://www.choupangxia.com/2019/11/03/slf4j-failed-to-load-class/">http://www.choupangxia.com/2019/11/03/slf4j-failed-to-load-class/</a></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(Prometheus)/">
+                        每日一问0421(Prometheus)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Prometheus
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/" data-id="cld1buvu40039bjop06l56equ" data-title="每日一问0106(log4j)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(Prometheus)/">Read more<span class="seo-reader-text">每日一问0421(Prometheus)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0107(maven-settings.xml)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/">每日一问0107(maven-settings</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="maven-settings-xml"><a href="#maven-settings-xml" class="headerlink" title="maven-settings.xml"></a>maven-settings.xml</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>/Users/root-admin/Desktop/zmk-workspace/javaLocalRepository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">interactiveMode</span>&gt;</span>true<span class="tag">&lt;/<span class="name">interactiveMode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">offline</span>&gt;</span>false<span class="tag">&lt;/<span class="name">offline</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span><span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">proxies</span>&gt;</span><span class="tag">&lt;/<span class="name">proxies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--   &lt;properties&gt;</span></span><br><span class="line"><span class="comment">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span></span><br><span class="line"><span class="comment">    &lt;/properties&gt; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--服务用户配置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc-releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">username</span>&gt;</span>61d7de8a8c4a398a0577dc9b<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">password</span>&gt;</span>NXN8IiOADY[1<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">username</span>&gt;</span>61d7de8a8c4a398a0577dc9b<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">password</span>&gt;</span>NXN8IiOADY[1<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--镜像配置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>mirror<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central,jcenter,!rdc-releases,!rdc-snapshots<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>mirror<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">altReleaseDeploymentRepository</span>&gt;</span></span><br><span class="line">                    rdc-releases::default::https://packages.aliyun.com/maven/repository/2175619-release-Gvs1pk/</span><br><span class="line">                <span class="tag">&lt;/<span class="name">altReleaseDeploymentRepository</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">altSnapshotDeploymentRepository</span>&gt;</span></span><br><span class="line">                    rdc-snapshots::default::https://packages.aliyun.com/maven/repository/2175619-snapshot-xhg0U4/</span><br><span class="line">                <span class="tag">&lt;/<span class="name">altSnapshotDeploymentRepository</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 激活profiles配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>rdc<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0422(%E4%B8%80%E8%87%B4%E6%80%A7hash)/">
+                        每日一问0422(一致性hash)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        一致性hash参考一致性哈希（Consistent Hashing）的实现 
+http://www.javashuo.com/article/p-xryhhuag-hp.html 
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/" data-id="cld1buvu4003abjop7ofnhtt9" data-title="每日一问0107(maven-settings" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0422(%E4%B8%80%E8%87%B4%E6%80%A7hash)/">Read more<span class="seo-reader-text">每日一问0422(一致性hash)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0108(java锁)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/">每日一问0108(java锁)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Java-锁"><a href="#Java-锁" class="headerlink" title="Java  锁"></a>Java  锁</h1><h2 id="concurent包"><a href="#concurent包" class="headerlink" title="concurent包"></a>concurent包</h2><p>Concurrent包中的锁都是“可重入锁”，所以一般都命名为ReentrantX</p>
-<h3 id="Atomic-类"><a href="#Atomic-类" class="headerlink" title="Atomic 类"></a>Atomic 类</h3><h5 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h5><p>对于乐观锁，作者认为数据发生并发冲突的概率比较小，所以读操作之前不上锁。等到写操作的时候，再判断数据在此期间是否被其他线程修改了。如果被其他线程修改了，就把数据重新读出来，重复该过程；如果没有被修改，就写回去。判断数据是否被修改，同时写回新值，这两个操作要合成一个原子操作，也就是CAS（Compare And Set）。</p>
-<p>CAS函数，其实是封装的Unsafe类中的一个native函数</p>
-<h4 id="AtomicInteger和AtomicLong"><a href="#AtomicInteger和AtomicLong" class="headerlink" title="AtomicInteger和AtomicLong"></a>AtomicInteger和AtomicLong</h4><p>AtomicInteger的实现就是典型的乐观锁 ，CAS 比较 修改int&#x2F;Long 值</p>
-<p>AtomicReference CAS 比较修改特定类型值</p>
-<h4 id="AtomicStampedReference和AtomicMarkableReference"><a href="#AtomicStampedReference和AtomicMarkableReference" class="headerlink" title="AtomicStampedReference和AtomicMarkableReference"></a>AtomicStampedReference和AtomicMarkableReference</h4><p>AtomicStamped-Reference 解决ABA问题 ，增加了版本号概念，赋值时候 同时比较版本号，相同才赋值</p>
-<p>&#x3D;&#x3D;？？为什么没有AtomicStampedInteger或AtomictStampedLong？？&#x3D;&#x3D;： 因为这里要同时比较数据的“值”和“版本号”，而Integer型或者Long型的CAS没有办法同时比较两个变量，于是只能把值和版本号封装成一个对象，也就是这里面的Pair 内部类，然后通过对象引用的CAS来实现</p>
-<h5 id="AtomicMarkableReference"><a href="#AtomicMarkableReference" class="headerlink" title="AtomicMarkableReference"></a>AtomicMarkableReference</h5><p>AtomicMarkableReference与AtomicStampedReference原理类似，只是Pair里面的版本号是boolean类型的，而不是整型的累加变量</p>
-<p>因为是boolean类型，只能有true、false 两个版本号，所以并不能完全避免ABA问题，只是降低了ABA发生的概率。</p>
-<h3 id="AtomicXXXFieldUpdater"><a href="#AtomicXXXFieldUpdater" class="headerlink" title="AtomicXXXFieldUpdater"></a>AtomicXXXFieldUpdater</h3><ol>
-<li>为什么需要AtomicXXXFieldUpdater？</li>
-</ol>
-<p>如果一个类是自己编写的，则可以在编写的时候把成员变量定义为Atomic类型。但如果是一个已经有的类，在不能更改其源代码的情况下，要想实现对其成员变量的原子操作，就需要AtomicIntegerFieldUpdater、AtomicLongFieldUpdater 和AtomicReferenceFieldUpdater</p>
-<p>原理和 CAS一样</p>
-<img src="../ImgSource/image-20220111141918732.png" alt="image-20220111141918732" style="zoom:50%;" />
+                
 
-<ol start="2">
-<li>限制条件</li>
-</ol>
-<p>要想使用AtomicIntegerFieldUpdater修改成员变量，成员变量必须是volatile的int类型（不能是Integer包装类），该限制从其构造函数中可以看到：</p>
-<p><img src="/../../ImgSource/image-20220111142105602.png" alt="image-20220111142105602"></p>
-<p>Concurrent包提供了AtomicIntegerArray、AtomicLongArray、AtomicReferenceArray三个数组元素的原子操作。注意，这里并不是说对整个数组的操作是原子的，而是针对数组中一个元素的原子操作而言。</p>
-<h3 id="LongAdder"><a href="#LongAdder" class="headerlink" title="LongAdder"></a>LongAdder</h3><p>AtomicLong内部是一个volatile long型变量，由多个线程对这个变量进行CAS操作。多个线程同时对一个变量进行CAS操作，在高并发的场景下仍不够快，如果再要提高性能，该怎么做呢？把一个变量拆成多份，变为多个变量，有些类似于ConcurrentHashMap 的分段锁的例子</p>
-<p>如果并发度高，冲突大，平摊到这些Cell上。在最后取值的时候，再把base和这些Cell求sum运算。</p>
-<p><img src="/../../ImgSource/image-20220111142516503.png" alt="image-20220111142516503"></p>
-<p>是位于基类Striped64当中的。英文Striped意为“条带”，也就是分片。</p>
-<ol start="3">
-<li><p>最终一致性</p>
-<p>在sum求和函数中，并没有对cells[]数组加锁。也就是说，一边有线程对其执行求和操作，一边还有线程修改数组里的值，也就是最终一致性，而不是强一致性。这也类似于ConcurrentHashMap 中的clear（）函数，一边执行清空操作，一边还有线程放入数据，clear（）函数调用完毕后再读取，hash map里面可能还有元素。</p>
-</li>
-</ol>
-<p>把它和AtomicLong 的使用场景做了比较。它适合高并发的统计场景，而不适合要对某个Long 型变量进行严格同步的场景。</p>
-<h4 id="伪共享与缓存行填充"><a href="#伪共享与缓存行填充" class="headerlink" title="伪共享与缓存行填充"></a>伪共享与缓存行填充</h4><p>主内存中有变量X、Y、Z（假设每个变量都是一个Long型），被CPU1和CPU2分别读入自己的缓存，放在了同一行Cache Line里面。当CPU1修改了X变量，它要失效整行Cache Line，也就是往总线上发消息，通知CPU 2对应的Cache Line失效。由于Cache Line是数据交换的基本单位，无法只失效X，要失效就会失效整行的Cache Line，这会导致Y、Z变量的缓存也失效。</p>
-<p><img src="/../../ImgSource/image-20220111143024858.png" alt="image-20220111143024858"></p>
-<p>虽然只修改了X变量，本应该只失效X变量的缓存，但Y、Z变量也随之失效。Y、Z变量的数据没有修改，本应该很好地被CPU1和CPU2共享，却没做到，这就是所谓的“伪共享问题”。</p>
-<p>问题的原因是，Y、Z和X变量处在了同一行Cache Line里面。要解决这个问题，需要用到所谓的“缓存行填充”，分别在X、Y、Z后面加上7个无用的Long型，填充整个缓存行，让X、Y、Z处在三行不同的缓存行中</p>
-<p><img src="/../../ImgSource/image-20220111143150398.png" alt="image-20220111143150398"></p>
-<p>而在JDK 8中，就不需要写这种晦涩的代码了，只需声明一个@sun.misc.Contended即可。</p>
-<img src="../ImgSource/image-20220111143354570.png" alt="image-20220111143354570" style="zoom:50%;" />
+                
 
-<p>回到上面的例子，之所以这个地方要用缓存行填充，是为了不让Cell[]数组中相邻的元素落到同一个缓存行里。</p>
-<ol start="4">
-<li>LongAccumulator</li>
-</ol>
-<p>LongAccumulator的原理和LongAdder类似，只是功能更强大，</p>
-<p>LongAdder只能进行累加操作，并且初始值默认为0；LongAccumulator可以自己定义一个二元操作符，并且可以传入一个初始值。¬</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h3><p>很显然，通常的锁都要设计成可重入的，否则就会发生死锁。（自己已经拿到锁了，没有释放的情况再次获取锁，获取不到就发生死锁了）</p>
-<p><img src="/../../ImgSource/image-20220112104034136.png" alt="image-20220112104034136"></p>
-<p>ReentrantLock本身没有代码逻辑，实现都在其内部类Sync中。</p>
-<p>Sync的父类&#x3D;&#x3D;AbstractQueuedSynchronizer&#x3D;&#x3D;经常被称作队列同步器（AQS）</p>
-<p>它还有很多方法，可以下边慢慢去了解</p>
-<ul>
-<li>lock()</li>
-<li>unlock()</li>
-<li>tryAcquire() 尝试获取资源</li>
-<li>acquireQueued() 使线程在等待队列中等待，首先尝试的去获取资源，如果获得到了资源，直接返回。如果没获取到资源，则将当前线程进行阻塞。等到其他线程执行完成对其进行唤醒。</li>
-</ul>
-<h2 id="ReadWriteLock"><a href="#ReadWriteLock" class="headerlink" title="ReadWriteLock"></a>ReadWriteLock</h2><ul>
-<li>读写锁 和ReentrantLock 不一样的地方 ，是通过 state 设置高16位 低16位 区分读写；然后其他方面根据逻辑实现</li>
-</ul>
-<p>读锁的公平，读锁的不公平，写锁的公平，写锁的不公平</p>
-<ul>
-<li>对于读线程的非公平，要做一些“约束”。当发现队列的第1个元素是写线程的时候，读线程也要阻塞一下，不能“肆无忌惮”地直接去抢。</li>
-</ul>
-<h2 id="StampedLock"><a href="#StampedLock" class="headerlink" title="StampedLock"></a>StampedLock</h2><p>StampedLock引入了“乐观读”策略，读的时候不加读锁，读出来发现数据被修改了，再升级为“悲观读”，相当于降低了“读”的地位，把抢锁的天平往“写”的一方倾斜了一下，避免写线程被饿死。</p>
-<p><img src="/../../ImgSource/image-20220112114126444.png" alt="image-20220112114126444"></p>
-<p>从ReentrantLock到StampedLock，并发度依次提高。</p>
-<p>到“读”与“写”也不互斥、并发地访问的呢？MySQL 高并发的核心机制MVCC，也就是一份数据多个版本，此处的StampedLock有异曲同工之妙。</p>
-<p>读的时候不加读锁，读出来发现数据被修改了，再升级为“悲观读”，相当于降低了“读”的地位，把抢锁的天平往“写”的一方倾斜了一下，避免写线程被饿死。</p>
-<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><p>多线程 并发不间断写 ，偶尔一次读的场景</p>
-<p>比如：并发实时更新 坐标位置x,y ,偶尔求一次 坐标距离  （具体参考：Java并发实现原理）</p>
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0706(Springboot%E6%B3%A8%E8%A7%A3)/">
+                        每日一问0706(Springboot注解)
+                    </a>
+                </h3>
 
-      
+                <div class="home-article-content markdown-body">
+                    
+                        Springboot 注解
+
+
+注解
+作用概述
+作用
+使用方式
+参考
+
+
+
+@EnableAutoConfiguration
+自动装配
+
+
+
+
+
+@import
+
+@Import注解是用来导入配置类或者一些需要前置加载的类.
+
+
+
+
+@Compone...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/" data-id="cld1buvu5003bbjop5dob6vyk" data-title="每日一问0108(java锁)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0706(Springboot%E6%B3%A8%E8%A7%A3)/">Read more<span class="seo-reader-text">每日一问0706(Springboot注解)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0109(JUC)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/">每日一问0109(JUC)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="JUC-Concurrent包"><a href="#JUC-Concurrent包" class="headerlink" title="JUC   Concurrent包"></a>JUC   Concurrent包</h1><p>自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功</p>
-<p>高并发技术手段<br>线程标记 可重入 （偏向锁）<br>自旋<br>Cas 汇编 lock compareChange<br>monitor<br>信号量</p>
-<p>阻塞  unsafe 包里的 pack 和 unpack</p>
-<p>先后一致次序（memory_order_seq_cst）、<br>获取-释放次序（memory_order_consume、memory_order_acquire、memory_order_release和memory_order_acq_rel）、宽松次序（memory_order_relaxed）。</p>
-<h2 id="锁-相关"><a href="#锁-相关" class="headerlink" title="锁 相关"></a>锁 相关</h2><h2 id="同步工具"><a href="#同步工具" class="headerlink" title="同步工具"></a>同步工具</h2><h3 id="Semaphore-信号量"><a href="#Semaphore-信号量" class="headerlink" title="Semaphore 信号量"></a>Semaphore 信号量</h3><p>它内部的计数器是递增的，并且在一开始初始化Semaphore时可以指定一个初始值，但是并不需要知道需要同步的线程个数，而是在需要同步的地方调用acquire方法时指定需要同步的线程个数。</p>
-<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727" alt="image-20220114142541948"></p>
-<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114141949386.png?lastModify=1642142727" alt="image-20220114141949386"></p>
-<p>基于AQS</p>
-<p>多个线程(&gt;n)执行，每次state -1,直到 semaphore 为0 其他线程阻塞，有线程执行完，新线程才能抢夺，当只有一个共享资源则 升级为排他锁；</p>
-<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142448008.png?lastModify=1642142727" alt="image-20220114142448008"></p>
-<h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>CyclicBarrier基于ReentrantLock+Condition实现。</p>
-<p>满足计数器可以重置的需要，JDK开发组提供了CyclicBarrier类，并且CyclicBarrier类的功能并不限于CountDownLatch的功能。从字面意思理解，CyclicBarrier是回环屏障的意思，它可以让一组线程全部达到一个状态后再全部同时执行</p>
-<p>第1个同步点，要等所有应聘者都到达公司，再一起开始笔试；第2个同步点，要等所有应聘者都结束笔试，之后一起进入面试环节。具体到每个线程的run（）方法中，就是下面的伪代码：</p>
-<p><img src="/../../ImgSource/image-20220114142756341.png" alt="image-20220114142756341"></p>
-<p>（1）CyclicBarrier是可以被重用的</p>
-<p>（2）CyclicBarrier 会响应中断。10个线程没有到齐，如果有线程收到了中断信号，所有阻塞的线程也会被唤醒，就是上面的breakBarrier（）函数。然后count被重置为初始值（parties），重新开始。</p>
-<p>（3）上面的回调函数，barrierAction只会被第10个线程执行1次（在唤醒其他9个线程之前），而不是10个线程每个都执行1次。</p>
-<h3 id="Exchanger"><a href="#Exchanger" class="headerlink" title="Exchanger"></a>Exchanger</h3><p>用于线程之间交换数据</p>
-<p>Exchanger的核心机制和Lock一样，也是CAS+park&#x2F;unpark。</p>
-<p>有两个内部类：Slot（AtomicReference存线程要交换的数据）和Node （线程的封装）</p>
-<p>Slot的AtomicReference就是指向的一个Node，通过Slot和Node相结合，实现了2个线程之间的数据交换，如图4-6所示。线程1持有数据item1，线程2持有数据item2，各自调用exchange（..），会各自生成一个Node。而Slot只会指向2个Node中的1个：如果是线程1先调用的exchange（..），那么Slot就指向Node1，线程1阻塞，等待线程2来交换；反之，如果是线程2先调用的exchange（..），那么Slot就指向Node2，线程2阻塞，等待线程1来交换数据。</p>
-<p><img src="/../../ImgSource/image-20220114150511690.png" alt="image-20220114150511690"></p>
-<p>一个Slot只能支持2个线程之间交换数据，要实现多个线程并行地交换数据，需要多个Slot，因此在Exchanger里面定义了Slot数组：</p>
-<h3 id="Phaser"><a href="#Phaser" class="headerlink" title="Phaser"></a>Phaser</h3><p>同步点</p>
-<p>可以实现 CountDownLatch 和CyclicBarrier</p>
-<h5 id="Phaser新特性"><a href="#Phaser新特性" class="headerlink" title="Phaser新特性"></a>Phaser新特性</h5><p>特性1：动态调整线程个数</p>
-<p><img src="/../../ImgSource/image-20220114151139570.png" alt="image-20220114151139570"></p>
-<p>特性2：层次Phaser</p>
-<p><img src="/../../ImgSource/image-20220114151111094.png" alt="image-20220114151111094"></p>
-<p>​	</p>
-<h5 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h5><p>这个64位的state变量被拆成4部分，</p>
-<p><img src="/../../ImgSource/image-20220114151304344.png" alt="image-20220114151304344"></p>
-<p>阻塞使用的是一个称为Treiber Stack的数据结构，而不是AQS的双向链表。Treiber Stack是一个无锁的栈</p>
-<p>它是一个单向链表，出栈、入栈都在链表头部，所以只需要一个head指针，而不需要tail指针。</p>
-<p>为了减少并发冲突，这里定义了2个链表，也就是2个Treiber Stack。当phase为奇数轮的时候，阻塞线程放在oddQ里面；当phase为偶数轮的时候，阻塞线程放在evenQ里面。</p>
-<h2 id="并发容器"><a href="#并发容器" class="headerlink" title="并发容器"></a>并发容器</h2><h3 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h3><p>BlockingQueue是一个带阻塞功能的队列，当入队列时，若队列已满，则阻塞调用者；当出队列时，若队列为空，则阻塞调用者。</p>
-<p><img src="/../../ImgSource/image-20220114153748518.png" alt="image-20220114153748518"></p>
-<h3 id="ArrayBlockingQueue"><a href="#ArrayBlockingQueue" class="headerlink" title="ArrayBlockingQueue"></a>ArrayBlockingQueue</h3><p>ArrayBlockingQueue 是一个用数组实现的环形队列，在构造函数中，会要求传入数组的容量。</p>
-<h3 id="LinkedBlockingQueue"><a href="#LinkedBlockingQueue" class="headerlink" title="LinkedBlockingQueue"></a>LinkedBlockingQueue</h3><p>LinkedBlockingQueue是一种基于单向链表的阻塞队列。因为队头和队尾是2个指针分开操作的，所以用了2把锁+2个条件，同时有1个AtomicInteger的原子变量记录count数。</p>
-<h3 id="PriorityBlockingQueue"><a href="#PriorityBlockingQueue" class="headerlink" title="PriorityBlockingQueue"></a>PriorityBlockingQueue</h3><p>队列通常是先进先出的，而PriorityQueue是按照元素的优先级从小到大出队列的。正因为如此，PriorityQueue中的2个元素之间需要可以比较大小，并实现Comparable接口。</p>
-<h3 id="DelayQueue"><a href="#DelayQueue" class="headerlink" title="DelayQueue"></a>DelayQueue</h3><p>DelayQueue即延迟队列，也就是一个按延迟时间从小到大出队的PriorityQueue。所谓延迟时间，就是“未来将要执行的时间”-“当前时间”。为此，放入DelayQueue中的元素，必须实现Delayed接口</p>
-<h3 id="SynchronousQueue"><a href="#SynchronousQueue" class="headerlink" title="SynchronousQueue"></a>SynchronousQueue</h3><p>它本身没有容量。先调put（..），线程会阻塞；直到另外一个线程调用了take（），两个线程才同时解锁，反之亦然。对于多个线程而言，例如3个线程，调用3次put（..），3个线程都会阻塞；直到另外的线程调用3次take（），6个线程才同时解锁，反之亦然。</p>
-<h3 id="CopyOnWrite"><a href="#CopyOnWrite" class="headerlink" title="CopyOnWrite"></a>CopyOnWrite</h3><p>CopyOnWrite指在“写”的时候，不是直接“写”源数据，而是把数据拷贝一份进行修改，再通过悲观锁或者乐观锁的方式写回。那为什么不直接修改，而是要拷贝一份修改呢？这是为了在“读”的时候不加锁。</p>
-<h4 id="CopyOnWriteArrayList"><a href="#CopyOnWriteArrayList" class="headerlink" title="CopyOnWriteArrayList"></a>CopyOnWriteArrayList</h4><p>读的时候不加锁，写的时候加 lock  悲观锁 ，写完再读</p>
-<h3 id="ConcurrentLinkedQueue-x2F-Deque"><a href="#ConcurrentLinkedQueue-x2F-Deque" class="headerlink" title="ConcurrentLinkedQueue&#x2F;Deque"></a>ConcurrentLinkedQueue&#x2F;Deque</h3><p>原理 基于同样是基于CAS</p>
-<p>它是一个单向链表</p>
-<p>但在ConcurrentLinkedQueue中，head&#x2F;tail的更新可能落后于节点的入队和出队，因为它不是直接对head&#x2F;tail指针进行CAS操作的，而是对Node中的item进行操作。</p>
-<h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>每个Segment都继承自ReentrantLock，Segment的数量等于锁的数量，这些锁彼此之间相互独立，即所谓的“分段锁”</p>
-<p>为了提升hash的计算性能，会保证数组的大小始终是2的整数次方。例如设置concurrentyLevel&#x3D;9，在构造函数里面会找到比9大且距9最近的2的整数次方，也就是ssize&#x3D;16。对应segmentShift、segmentMask两个变量，是为了方便计算hash使用的。</p>
-<p>默认的Segment数组大小是16。</p>
-<p><img src="/../../ImgSource/image-20220114173933813.png" alt="image-20220114173933813"></p>
-<p>扩容</p>
-<p>人在多核模式下为（n＞＞＞3）&#x2F;NCPU，并且保证步长的最小值是16。显然，需要的线程个数约为n&#x2F;stride。</p>
-<h3 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h3><p>treeMap 基于红黑树，ConcurrentSkipListMap，是基于SkipList（跳查表）来实现的</p>
-<p>2．无锁链表</p>
-<p>无锁链表所实现的队列 是在头结点和尾节点增加cas 操作，</p>
-<p>但是 当在链表中间插入删除数据 CAS操作就会有问题，所以</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/youthlql/JavaYouth/blob/main/docs/java_concurrency/Java%E5%B9%B6%E5%8F%91%E4%BD%93%E7%B3%BB-%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5-JUC%E5%B9%B6%E5%8F%91%E5%8C%85-%5B1%5D.md"><strong>ava并发体系-第三阶段-JUC并发包-[1].md</strong></a></p>
-<h1 id="AbstractQueuedSynchronizer源码解读–续篇之Condition"><a href="#AbstractQueuedSynchronizer源码解读–续篇之Condition" class="headerlink" title="AbstractQueuedSynchronizer源码解读–续篇之Condition"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/micrari/p/7219751.html">AbstractQueuedSynchronizer源码解读–续篇之Condition</a></h1>
-      
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0707(oauth2.0)/">
+                        每日一问0707(oauth2
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        OAuth 2.0 的四种方式上一篇文章 介绍了 OAuth 2.0 是一种授权机制，主要用来颁发令牌（token）。本文接着介绍颁发令牌的实务操作。
+
+下面我假定，你已经理解了 OAuth 2.0 的含义和设计思想，否则请先阅读这个系列的上一篇文章...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" data-id="cld1buvu5003cbjop5xcz1to7" data-title="每日一问0109(JUC)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0707(oauth2.0)/">Read more<span class="seo-reader-text">每日一问0707(oauth2</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0110(位运算)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/">每日一问0110(位运算)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><p><img src="/../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA2MjMzOQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
-<p>&amp;与：<br>两个二进制位只要有一个为0那么结果就为0，否则结果为1。<br>|或：<br>两个二进制位只要有一个为1那么结果就为1，否则结果为0。<br>^异或:<br>任何相同二进制位进行 ^ 运算，结果是0；不相同二进制位 ^ 运算结果是1。<br>~取反：<br>0变1，1变0</p>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t6">判断奇偶数</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t7">取余运算</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t8">判断一个数是不是2的幂</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t9">判断数字的正负号</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t10">hashmap的tableSizeFor方法</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t11">求相反数</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t12">求绝对值</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t13">交换两个变量（不引入第三个变量）</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t14">判断两个数正负号是否相同</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t15">求两个数的平均数</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t16">求两个数的最大值</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t17">求两个数的最小值</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1">Java位运算和几个使用场景解析</a></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0708(%E5%88%86%E5%B8%83%E5%BC%8FID)/">
+                        每日一问0708(分布式ID)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        数据库主键自增这种方式就比较简单直白了，就是通过关系型数据库的自增主键产生来唯一的 ID。
+
+以 MySQL 举例，我们通过下面的方式即可。
+1.创建一个数据库表。
+123456CREATE TABLE `sequence_id` (  `id` b...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/" data-id="cld1buvu5003dbjop4j796sna" data-title="每日一问0110(位运算)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0708(%E5%88%86%E5%B8%83%E5%BC%8FID)/">Read more<span class="seo-reader-text">每日一问0708(分布式ID)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-    <article id="post-2022/每日一问0214(握手挥手)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2022/">2022</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            </li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/">每日一问0214(握手挥手)</a>
-    </h1>
-  
+            <li class="home-article-item">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="握手挥手"><a href="#握手挥手" class="headerlink" title="握手挥手"></a>握手挥手</h1><p><img src="/../../ImgSource/o_tcp.png" alt="img"></p>
-<h2 id="问题-什么情况下会出现Closedwait-以及-解决办法"><a href="#问题-什么情况下会出现Closedwait-以及-解决办法" class="headerlink" title="问题  什么情况下会出现Closedwait ,以及 解决办法"></a>问题  什么情况下会出现Closedwait ,以及 解决办法</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baishuchao/p/9024205.html">CLOSE_WAIT状态的原因与解决方法</a></p>
-<h1 id="CLOSE-WAIT问题-TCP"><a href="#CLOSE-WAIT问题-TCP" class="headerlink" title="CLOSE_WAIT问题-TCP "></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baishuchao/p/9024205.html">CLOSE_WAIT问题-TCP </a></h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shixin_0125/article/details/78829069">TCP SYN洪泛攻击的原理及防御方法</a></p>
+                
 
-      
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0712(clickhouse)/">
+                        每日一问0712(clickhouse)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        clickhouse列式存储Hbase、HP Vertica、EMC Greenplum等分布式数据库采用列式存储，当然这些数据库也有对行式存储的支持比如HP Vertica。
+压缩行式数据库因为存贮数据是一行行的来存贮，而每一行数据的差异性太大，所...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:45:06 GMT+0000">
+                
+                    2023/01/18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2021/">2021</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/" data-id="cld1buvu6003ebjopewrxglkz" data-title="每日一问0214(握手挥手)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0712(clickhouse)/">Read more<span class="seo-reader-text">每日一问0712(clickhouse)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-  </nav>
-
-</section>
+            </li>
         
-          <aside id="sidebar">
-  
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2019/">2019</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2020/">2020</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2021/">2021</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/">学习英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/">快速通道</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li></ul>
+        <a class="prev btn"
+           href="/page/4/"
+        >Prev</a>
+    
+
+    
+        <a class="next btn"
+           href="/page/6/"
+        >Next</a>
+    
+</div>
+
     </div>
-  </div>
+</div>
 
 
-  
-    
+                
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
-    </div>
-  </div>
+            </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">The Redefine Team. All Rights Reserved.</a>
+        </div>
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2022/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
 </footer>
-
+        </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
     
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
 
 
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+
+    
+<script src="/js/code-copy.js"></script>
 
 
 
 
+    
+<script src="/js/lazyload.js"></script>
 
-  </div>
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
 </body>
 </html>
