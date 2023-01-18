@@ -1,9 +1,11 @@
+.github/workflows/pages.yml
 name: Pages
 
 on:
   push:
     branches:
-      - master   # default branch
+      - main # default branch
+
 jobs:
   pages:
     runs-on: ubuntu-latest
@@ -17,9 +19,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: Linux-npm-cache
+          key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            Linux-npm-cache
+            ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
       - name: Build
@@ -27,5 +29,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: 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
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
