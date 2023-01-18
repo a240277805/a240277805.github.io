@@ -17,9 +17,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          key: Linux-npm-cache
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
+            Linux-npm-cache
       - name: Install Dependencies
         run: npm install
       - name: Build
