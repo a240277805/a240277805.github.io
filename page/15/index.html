@@ -27,7 +27,7 @@
     <script id="hexo-configurations">
     let REDEFINE = window.REDEFINE || {};
     REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
     REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
     
@@ -193,25 +193,28 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1223(js%E7%9B%B8%E5%85%B3)/">
-                        每日一问1223(js相关)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/">
+                        每日一问0501(算法)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        javascript##语法
-数组追加数组
-数组.concat(追加的数组);
+                        算法LRU 最少使用算法堆排序特性
+左子节点：2i+1
+右子节点：2i+2
+父节点：(i-1)&#x2F;2
+最后一个非叶子节点:(arr.length-1-1)&#x2F;2&#x3D;arr.length&#x2F;2-1
 
-reduce 用法reduce() 方法接收一个函数作为累加器（accumulator），数组中的每个值（从左到右）开始缩减，最终为一个值。reduce 为数组中的每一...
+步骤
+构建大顶堆，从...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -233,7 +236,7 @@ reduce 用法reduce() 方法接收一个函数作为累加器（accumulator）�
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1223(js%E7%9B%B8%E5%85%B3)/">Read more<span class="seo-reader-text">每日一问1223(js相关)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/">Read more<span class="seo-reader-text">每日一问0501(算法)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -245,22 +248,22 @@ reduce 用法reduce() 方法接收一个函数作为累加器（accumulator）�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/">
-                        每日一问1224(es概念篇)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86)/">
+                        每日一问0506(动态代理)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        elastic search 概念篇索引结构在存储结构上，由_index、_type和_id唯一标识一个文档。
-_index指向一个或多个物理分片的逻辑命名空间，_type类型用于区分同一个集合中的不同细分，在不同的细分中，数据的整体模式是相同或相似...
+                        动态代理FmyJava 语言常用动态代理方式JDK内置动态代理Java SDK代理面向的是一组接口
+CGLIB动态代理Java SDK动态代理的局限在于，它只能为接口创建代理，返回的代理对象也只能转换到某个接口类型，如果一个类没有接口，或者希望代理非...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -282,7 +285,7 @@ _index指向一个或多个物理分片的逻辑命名空间，_type类型用于
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1224(es%E6%A6%82%E5%BF%B5%E7%AF%87)/">Read more<span class="seo-reader-text">每日一问1224(es概念篇)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86)/">Read more<span class="seo-reader-text">每日一问0506(动态代理)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -294,21 +297,33 @@ _index指向一个或多个物理分片的逻辑命名空间，_type类型用于
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/">
-                        每日一问1225(Hystrix)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0509(java%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D)/">
+                        每日一问0509(java性能问题定位)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Hystrix为啥需要隔离例如，我们容器(Tomcat)配置的线程个数为1000，从服务A到服务R，其中服务I的并发量非常的大，需要500个线程来执行，此时，服务I又挂了，那么这500个线程很可能就夯死了，那么剩下的服务，总共可用的线程为500个，随...
+                        java 性能问题定位常用命令
+top
+vmstat
+pidstat
+jstack
+jstat
+jmap
+mat内存工具
+
+模拟环境准备CPU 高方式: 
+
+top 或者其他方式获取进程ID
+进程ID获取 下边的线程列表信息 （top -Hp 328...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -330,7 +345,7 @@ _index指向一个或多个物理分片的逻辑命名空间，_type类型用于
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1225(Hystrix)/">Read more<span class="seo-reader-text">每日一问1225(Hystrix)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0509(java%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D)/">Read more<span class="seo-reader-text">每日一问0509(java性能问题定位)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -342,22 +357,23 @@ _index指向一个或多个物理分片的逻辑命名空间，_type类型用于
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1226(ribbon)/">
-                        每日一问1226(ribbon)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0511(Sevlet)/">
+                        每日一问0511(Sevlet)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        ribbonribbon 与 feign 关系Feign是一个声明式的web service客户端，它使得编写web service客户端更为容易。
-Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件负载均衡算法，将Netflix...
+                        Servlet生命周期多线程 单实例doGet doPostConfig ,Request ,Response实例初始化 可以配置 tomcat 启动时，也可以在第一次调用时。
+Servlet 3.0新特性
+引入注解配置 :@WebServlet(n...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -379,7 +395,7 @@ Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件�
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1226(ribbon)/">Read more<span class="seo-reader-text">每日一问1226(ribbon)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0511(Sevlet)/">Read more<span class="seo-reader-text">每日一问0511(Sevlet)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -391,27 +407,30 @@ Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1227(threadlocal)/">
-                        每日一问1227(threadlocal)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0512(Tomcat)/">
+                        每日一问0512(Tomcat)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        threadlocal
-lock 的资源是多个线程共享的，所以访问的时候需要加锁。
-ThreadLocal 是每个线程都有一个副本，是不需要加锁的。
-lock 是通过时间换空间的做法。
-ThreadLocal 是典型的通过空间换时间的做法。
+                        Tomcat基于http 协议的服务器
+Apche
+IIS 
+Nginx
+Tomcat 
+JBoss
 
-值真正...
+特性connect container一个containner 可以对应多个connector多线程模型，
+NIO
+基础加载顺序：1.$java_...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -433,7 +452,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1227(threadlocal)/">Read more<span class="seo-reader-text">每日一问1227(threadlocal)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0512(Tomcat)/">Read more<span class="seo-reader-text">每日一问0512(Tomcat)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -445,21 +464,23 @@ ThreadLocal 是典型的通过空间换时间的做法。
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1228(sentinel)/">
-                        每日一问1228(sentinel)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0515(nginx)/">
+                        每日一问0515(nginx)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        sentinelHystrix 和 sentinel 区别1Hystrix is a library that helps you control the interactions between these distributed services...
+                        nginx负载均衡算法
+轮询（默认算法）：每个请求按时间顺序分配到不同后端服务器，如果某个后端服务器宕机，能自动剔除掉。
+加权轮询（平滑加权轮询算法）：nginx反向代理接收到客户端收到的请求后，可以给不同的后端服务器设置一个权重值（weight），...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -481,7 +502,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1228(sentinel)/">Read more<span class="seo-reader-text">每日一问1228(sentinel)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0515(nginx)/">Read more<span class="seo-reader-text">每日一问0515(nginx)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -493,22 +514,22 @@ ThreadLocal 是典型的通过空间换时间的做法。
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1229(%E5%BA%8F%E5%88%97%E5%8C%96)/">
-                        每日一问1229(序列化)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0516(zookeeper)/">
+                        每日一问0516(zookeeper)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        序列化fastjson ,Gson,jackson 区别Jackson 在运行时占用的内存较少，Fastjson 的速度更快，而我，可以处理任意的 Java 对象，甚至在没有源代码的情况下。另外，我对泛型的支持也更加的友好。
-参考Gson：我爸是 G...
+                        分布式协调zookeeperPAC：分区容错性，可用性，一致性产生背景、数据模型、基本架构、程序设计以及应用案例 避免 脑裂脑裂:本来为一个整体的系统，分裂为两个独立节点，这时两个节点开始争抢共享资源，结果会导致系统混乱，数据损坏。
+数据结构ZNod...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -530,7 +551,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1229(%E5%BA%8F%E5%88%97%E5%8C%96)/">Read more<span class="seo-reader-text">每日一问1229(序列化)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0516(zookeeper)/">Read more<span class="seo-reader-text">每日一问0516(zookeeper)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -542,21 +563,25 @@ ThreadLocal 是典型的通过空间换时间的做法。
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1230(netty)/">
-                        每日一问1230(netty)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0520(dubbo)/">
+                        每日一问0520(dubbo)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        netty
+                        dubbo基础篇Dobbo 服务调用过程
+
+服务提供方(Provider)所在的应用在容器中启动并运行
+服务 提供方(Provider)将自己要发布的服务注册到注册中心(Registry)
+服务调用方(Consumer)启动后想注册中心订阅它想要调用...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -578,7 +603,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1230(netty)/">Read more<span class="seo-reader-text">每日一问1230(netty)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0520(dubbo)/">Read more<span class="seo-reader-text">每日一问0520(dubbo)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -590,23 +615,26 @@ ThreadLocal 是典型的通过空间换时间的做法。
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1231(eventbus)/">
-                        每日一问1231(eventbus)
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0521(SpringAOP)/">
+                        每日一问0521(SpringAOP)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        eventbus消息总线
-什么时候用cloud busspring cloud bus在整个后端服务中起到联通的作用，联通后端的多台服务器。我们为什么需要他做联通呢？
-后端服务器一般都做了集群化，很多台服务器，而且在大促活动期经常发生服务的扩容、缩容...
+                        AOP （Aspect Oriented Programming）AOP应用范围
+Authentication：权限；
+● Caching：缓存；
+● Context passing：内容传递；
+● Error handling：错误处理；
+● La...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -628,7 +656,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1231(eventbus)/">Read more<span class="seo-reader-text">每日一问1231(eventbus)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0521(SpringAOP)/">Read more<span class="seo-reader-text">每日一问0521(SpringAOP)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -640,27 +668,22 @@ ThreadLocal 是典型的通过空间换时间的做法。
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2021/2021%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
-                        2021上半年度总结
+                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0522(%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)/">
+                        每日一问0522(设计模式)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        2021上半年度总结
-
-研发工作业绩1. 研发效能平台
-效能平台代码库统计功能
-微服务&#x2F;L3  添加,删除，修改，列表 ，评论&#x2F;回复 添加删除 功能开发
-二进制制品仓库，二进制目录树对接minio功能开发
-二进制制品仓库 添加&#...
+                        设计模式设计的六大原则：
+ 单一职责原则(Single Responsibility Principle, SRP)：一个类只负责一个功能领域中的相应职责，或者可以定义为：&#x3D;&#x3D;就一个类而言，应该只有一个引起它变化的原因.&#x3D...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -672,7 +695,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
                     
                         <li>
                             
-                            <a href="/categories/2021/">2021</a>&nbsp;
+                            <a href="/categories/2020/">2020</a>&nbsp;
                         </li>
                     
                     
@@ -682,7 +705,7 @@ ThreadLocal 是典型的通过空间换时间的做法。
         
     </div>
 
-    <a href="/2023/01/18/2021/2021%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">2021上半年度总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0522(%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)/">Read more<span class="seo-reader-text">每日一问0522(设计模式)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>

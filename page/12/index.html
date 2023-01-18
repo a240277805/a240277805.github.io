@@ -27,7 +27,7 @@
     <script id="hexo-configurations">
     let REDEFINE = window.REDEFINE || {};
     REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
     REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
     
@@ -193,27 +193,25 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">
-                        每日一问1009(mongodb)
+                    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">
+                        数据仓库
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        mongodb命令
-show collections 查看集合
-db.dbName.find({“a”:”b”}) 查找
-创建&#x2F;切换仓库: use DATABASE_NAME
-查看当前仓库: db
-查看所有仓库: show dbs
-普通库增...
+                        数据仓库概念
+
+ODS层ODS才是数据仓库真正意义上的基础数据，数据是被清洗过的，ODS层的数据是定义统一的、可以体现历史的、被长期保存的数据。 
+ODS层的数据粒度与Stage层数据粒度是一致的。 
+Stage层中的数据是完全形式的源数据，需要进行...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -225,7 +223,7 @@ db.dbName.find({“a”:”b”}) 查找
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -235,7 +233,7 @@ db.dbName.find({“a”:”b”}) 查找
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">Read more<span class="seo-reader-text">每日一问1009(mongodb)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">Read more<span class="seo-reader-text">数据仓库</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -247,29 +245,23 @@ db.dbName.find({“a”:”b”}) 查找
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">
-                        每日一问1015(docker)
+                    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">
+                        每日一问0103(消息队列)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        docker每一个指令都会创建一层，并构成新的镜像。当运行多个指令时，会产生一些非常臃肿、非常多层的镜像，既增加了构建部署的时间，也很容易出错。因此，在很多情况下，可以合并指令并运行
-镜像存储方式
+                        消息队列选型对比rabbitMQ,RocketMQ,kafka
+词汇吞吐量，性能
 
-镜像中心域名 
-命名空间
-仓库名称
-标签
-
-doc...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -281,7 +273,7 @@ doc...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -291,7 +283,7 @@ doc...
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">Read more<span class="seo-reader-text">每日一问1015(docker)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">Read more<span class="seo-reader-text">每日一问0103(消息队列)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -303,22 +295,22 @@ doc...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/">
-                        每日一问1024(docsify)
+                    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/">
+                        每日一问0104(rabbitMQ)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        docsify一个神奇的文档网站生成工具
-docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会将 .md 转成 .html 文件，所有转换工作都是在运行时进行。这将非常实用，如果只是需要快速的搭建一个小型的文...
+                        RabbitMQ概念AMQ协议的结构
+
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -330,7 +322,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -340,7 +332,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/">Read more<span class="seo-reader-text">每日一问1024(docsify)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/">Read more<span class="seo-reader-text">每日一问0104(rabbitMQ)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -352,22 +344,21 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1027(%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)/">
-                        每日一问1027(正则表达式)
+                    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/">
+                        每日一问0106(log4j)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        正则表达式 正则表达式是一串字符，它描述了一个文本模式，利用它可以方便地处理文本，包括文本的查找、替换、验证、切分等
- 正则表达式中的字符有两类：一类是普通字符，就是匹配字符本身；另一类是元字符，这些字符有特殊含义，这些元字符及其特殊含义构成了正则表...
+                        log4jSLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”原因及解决方案导致此异常的原因是：在运行时，没有日志的实现（或者说日志的绑定），所以slf4j默认使用了一个空实现...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -379,7 +370,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -389,7 +380,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1027(%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)/">Read more<span class="seo-reader-text">每日一问1027(正则表达式)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/">Read more<span class="seo-reader-text">每日一问0106(log4j)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -401,21 +392,21 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1029(logstash)/">
-                        每日一问1029(logstash)
+                    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/">
+                        每日一问0107(maven-settings
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        logstash
+                        maven-settings.xml123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;?xml...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -427,7 +418,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -437,7 +428,7 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1029(logstash)/">Read more<span class="seo-reader-text">每日一问1029(logstash)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/">Read more<span class="seo-reader-text">每日一问0107(maven-settings</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -449,24 +440,22 @@ docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo �
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1102(kubernetes)/">
-                        每日一问1102(kubernetes)
+                    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/">
+                        每日一问0108(java锁)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        kubernetes 基本概念和术语kubernates 架构控制平面
-API服务器
-etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实例组成一个集群。如果你丢失了etcd存储中的数据，那么你会丢掉整个集群。
-调度器  它实现了一种...
+                        Java  锁concurent包Concurrent包中的锁都是“可重入锁”，所以一般都命名为ReentrantX
+Atomic 类乐观锁对于乐观锁，作者认为数据发生并发冲突的概率比较小，所以读操作之前不上锁。等到写操作的时候，再判断数据在此期间是...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -478,7 +467,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2022/">2022</a>&nbsp;
                         </li>
                     
                     
@@ -488,7 +477,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1102(kubernetes)/">Read more<span class="seo-reader-text">每日一问1102(kubernetes)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/">Read more<span class="seo-reader-text">每日一问0108(java锁)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -500,25 +489,23 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(netstat%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95)/">
-                        每日一问1103(netstat命令用法)
+                    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/">
+                        每日一问0831(时序数据库)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        netstat 命令用法参考地址
-
-*** [Linux下netstat命令详解] (https://blog.csdn.net/dongl890426/article/details/86981901 )
-
-
+                        时序数据库
+栗子 Informix TimeSeries工业互联网时代，我们为什么需要时序数据库之：适合的就是最好的 
+参考 百度无人车和天工物联网都使用了时序数据库，但是你有多了解时序数据库？ 12345* 有效处理庞大数据* 对重复的部分，Inf...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -530,7 +517,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2019/">2019</a>&nbsp;
                         </li>
                     
                     
@@ -540,7 +527,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(netstat%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95)/">Read more<span class="seo-reader-text">每日一问1103(netstat命令用法)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/">Read more<span class="seo-reader-text">每日一问0831(时序数据库)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -552,24 +539,21 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(systemctl%20%E5%91%BD%E4%BB%A4)/">
-                        每日一问1103(systemctl 命令)
+                    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0901(markdown%E8%AF%AD%E6%B3%95)/">
+                        每日一问0901(markdown语法)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        systemctl  命令参考地址
-
-
-
+                        markdown语法&#x3D;&#x3D;&#x3D;dafs&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;fasdfsd&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;dsf&#x3D...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -581,7 +565,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2019/">2019</a>&nbsp;
                         </li>
                     
                     
@@ -591,7 +575,7 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(systemctl%20%E5%91%BD%E4%BB%A4)/">Read more<span class="seo-reader-text">每日一问1103(systemctl 命令)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0901(markdown%E8%AF%AD%E6%B3%95)/">Read more<span class="seo-reader-text">每日一问0901(markdown语法)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -603,24 +587,24 @@ etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/">
-                        每日一问1104(es搜索)
+                    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0902(NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)/">
+                        每日一问0902(NLP自然语言处理)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        ES 搜索1.多索引参数例如+test*，-test3表示查询所有test开头的索引，排除test3
-2. 日期搜索
-3 通用参数
-pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返回的结果具有可读的...
+                        NLP(自然语言处理)NLP 发展处于初级阶段 原因
+造成这样的原因其实比较简单，第一、高质量语料的获取成本很高；第二、真正懂 NLP 技术的人还是比较少，门槛比较高。
+突破口的话，我觉得仍然是 理解业务场景，和高质量语料的获取 问题。
+这里需要学习...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -632,7 +616,7 @@ pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2019/">2019</a>&nbsp;
                         </li>
                     
                     
@@ -642,7 +626,7 @@ pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/">Read more<span class="seo-reader-text">每日一问1104(es搜索)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0902(NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86)/">Read more<span class="seo-reader-text">每日一问0902(NLP自然语言处理)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -654,24 +638,24 @@ pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/">
-                        每日一问1105(git命令)
+                    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/">
+                        每日一问0903(Mysql知识点)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        GIT命令
-查看当前仓库地址：git remote show origin
-添加远程仓库地址：  git remote add origin “xxx.git”
-修改仓库地址： git remote set-url origin &#103;&#x6...
+                        Mysql知识点
+架构
+InnoDB 存储结构
+从InnoDB存储引擎的逻辑结构看，所有数据都被逻辑地存放在一个空间内，称为表空间(tablespace)，而表空间由段（sengment）、区（extent）、页（page）组成。 在一些文档中ext...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jan 18 2023 07:50:50 GMT+0000">
+            <span class="home-article-date" data-date="Wed Jan 18 2023 07:51:48 GMT+0000">
                 
                     2023/01/18
                 
@@ -683,7 +667,7 @@ pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2019/">2019</a>&nbsp;
                         </li>
                     
                     
@@ -693,7 +677,7 @@ pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返
         
     </div>
 
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/">Read more<span class="seo-reader-text">每日一问1105(git命令)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0903(Mysql%E7%9F%A5%E8%AF%86%E7%82%B9)/">Read more<span class="seo-reader-text">每日一问0903(Mysql知识点)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
