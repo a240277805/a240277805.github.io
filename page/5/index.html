@@ -71,14 +71,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2020/每日一问1104(es搜索)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/数据仓库(数仓)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/">每日一问1104(es搜索)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/">数据仓库(数仓)</a>
     </h1>
   
 
@@ -97,34 +97,83 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="ES-搜索"><a href="#ES-搜索" class="headerlink" title="ES 搜索"></a>ES 搜索</h1><h2 id="1-多索引参数"><a href="#1-多索引参数" class="headerlink" title="1.多索引参数"></a>1.多索引参数</h2><p>例如+test*，-test3表示查询所有test开头的索引，排除test3</p>
-<h2 id="2-日期搜索"><a href="#2-日期搜索" class="headerlink" title="2. 日期搜索"></a>2. 日期搜索</h2><p><img src="/../../ImgSource/es_query_date.png" alt="avator"></p>
-<h2 id="3-通用参数"><a href="#3-通用参数" class="headerlink" title="3 通用参数"></a>3 通用参数</h2><ul>
-<li>pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返回的结果具有可读的YAML格式。</li>
-<li>human参数，对于统计数据，系统支持计算机数据，同时也支持比较适合人类阅读的数据。比如，计算机数据”exists_time_in_millis”:3600000or”size_in_bytes”:1024。更适合人类阅读的数据：”exists_time”:”1h”or”size”:”1kb”。当?human&#x3D;false的时候，只输出计算机数据，当?human&#x3D;true的时候输出更适合人类阅读的数据，但这会消耗更多的资源，默认是false。</li>
-<li>日期表达式，大多数参数接受格式化日期表达式，如范围查询gt（大于）和lt（小于），或在日期聚合中用from to来表达时间范围。表达式设定的日期为now或者日期字符串加||。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">·+1h 增加一小时。</span><br><span class="line">·-1D 减少一个小时。</span><br><span class="line">·/D 上一个小时。</span><br><span class="line"></span><br><span class="line">支持的时间单位为：y（年）、M（月）、w（周）、d（日）、h（小时）、m（分钟）、s（秒）。</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">·now+1h：当前时间加一小时，以毫秒为单位。</span><br><span class="line">·now+1h+1m：当前时间加一小时和一分钟，以毫秒为单位。</span><br><span class="line">·now+1h/d：当前时间加一小时，四舍五入到最近的一天。</span><br><span class="line">·2015-01-01||+1M/d：2015-01-01加一个月，向下舍入到最近的一天。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>响应过滤（filter_path）。所有的返回值可以通过filter_path来减少返回值的内容，多个值可以用逗号分开。<br><img src="/../../ImgSource/es_query_filterpath.png" alt="avator"></li>
-<li></li>
-</ul>
-<h2 id="聚合操作"><a href="#聚合操作" class="headerlink" title="聚合操作"></a>聚合操作</h2><p>掌握Aggregations需要理解两个概念：</p>
+        <h1 id="数据仓库-数仓"><a href="#数据仓库-数仓" class="headerlink" title="数据仓库(数仓)"></a>数据仓库(数仓)</h1><h2 id="数仓建模"><a href="#数仓建模" class="headerlink" title="数仓建模"></a>数仓建模</h2><p><img src="/../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101111659.png" alt="img"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93(%E6%95%B0%E4%BB%93)/" data-id="cld1buvu10035bjop4nhj3cdl" data-title="数据仓库(数仓)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022/数据仓库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">数据仓库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/../../ImgSource/20180528092706337" alt="è¿éåå¾çæè¿°"></p>
+<p><img src="/../../ImgSource/20180528092839867" alt="è¿éåå¾çæè¿°"></p>
+<h3 id="ODS层"><a href="#ODS层" class="headerlink" title="ODS层"></a>ODS层</h3><pre><code>ODS才是数据仓库真正意义上的基础数据，数据是被清洗过的，ODS层的数据是定义统一的、可以体现历史的、被长期保存的数据。 
+ODS层的数据粒度与Stage层数据粒度是一致的。 
+Stage层中的数据是完全形式的源数据，需要进行清洗才能进入ODS层，所以说ODS层是数据仓库格式规整的基础数据，为上层服务。
+</code></pre>
+<h3 id="MDS层"><a href="#MDS层" class="headerlink" title="MDS层"></a>MDS层</h3><pre><code>MDS是数据仓库中间层，数据是以主题域划分的，并根据业务进行数据关联形成宽表，但是不对数据进行聚合处理，MDS层数据为数据仓库的上层的统计、分析、挖掘和应用提供直接支持。 
+</code></pre>
+<p>MDS层的数据也可以执行一定的老化策略。</p>
+<h3 id="ADS层"><a href="#ADS层" class="headerlink" title="ADS层"></a>ADS层</h3><pre><code>ADS层是数据仓库的应用层，一般以业务线或者部门划分库。这一层可以为各个业务线创建一个数据库。 
+</code></pre>
+<p>ADS层的数据是基于MDS层数据生成的业务报表数据，可以直接作为数据仓库的输出导出到外部的操作型系统中（MySQL、MSSQL、Hbase、Elasticsearch等）。</p>
+<h3 id="DIM层"><a href="#DIM层" class="headerlink" title="DIM层"></a>DIM层</h3><pre><code>DIM层是数据仓库数据中，各层公用的维度数据。比如：省市县数据。
+</code></pre>
+<h3 id="ETL调度系统"><a href="#ETL调度系统" class="headerlink" title="ETL调度系统"></a>ETL调度系统</h3><p>​    对接入数据仓库的数据进行清洗、数据仓库各层间数据流转都需要大量的程序任务来操作，这些任务一般都是定时的，并且之间都是有前后依赖关系的，为了能保证任务的有序执行，就需要一个ETL调度系统来管理。</p>
+<h3 id="1、-粒度"><a href="#1、-粒度" class="headerlink" title="1、 粒度"></a>1、 粒度</h3><pre><code>粒度是指数据仓库中数据单元的细节程度或综合程度的级别。粒度会深刻地影响数据量的大小以及数据仓库的查询能力。 
+</code></pre>
+<p>细节程度越高，粒度级别就越低，查询就越灵活；相反，细节程度越低，粒度级别就越高。<br>    双重粒度：<br>    双重粒度是存储两个粒度下的数据：一个是全量的细节数据；另一个是轻度综合的数据。</p>
+<h3 id="2、-分区"><a href="#2、-分区" class="headerlink" title="2、 分区"></a>2、 分区</h3><p>​    数据分区是指把数据分散到可独立处理的分离物理单元中去。恰当地进行分区可以给数据仓库带来多个方面的好处：<br>(1) 数据装载 (2) 数据访问 (3) 数据存档 (4) 数据删除 (5) 数据监控 (6) 数据存储</p>
+<p>1.3、OLAP 可以对 多维数据库 执行五种类型：<br>汇总(Roll-up)： 也称为向上钻取或合并，用于汇总操作数据和维度。<br>下钻(Roll-down)： 在数据维度中进行更深入的分析。例如，从“时间段”向下钻取“年”、“月”和“天”等以绘制产品的销售增长图。<br>切片(Slice)： 执行分析以显示一级信息，例如“2019 年的销售额”。<br>切块(Dice)： 进行分析，从多个维度中选取数据进行分析，例如“班加罗尔2019年青苹果的销售额”。<br>旋转(Pivot)： 执行可以通过旋转多维数据集的数据轴来获得新数据视图的分析。</p>
+<p>与 OLAP 一样，我们使用的另一个术语是 OLTP，即在线事务处理；两者<strong>都是在线处理系统</strong>；</p>
 <ul>
-<li>桶(Buckets)：符合条件的文档的集合，相当于SQL中的group by。比如，在users表中，按“地区”聚合，一个人将被分到北京桶或上海桶或其他桶里；按“性别”聚合，一个人将被分到男桶或女桶</li>
-<li>指标(Metrics)：基于Buckets的基础上进行统计分析，相当于SQL中的count,avg,sum等。比如，按“地区”聚合，计算每个地区的人数，平均年龄等</li>
+<li>OLTP 是事务处理，主要关注事务任务上的任务，</li>
+<li>而 OLAP 是一个分析处理系统，主要关注分析和报告，并为他们提供有价值的见解以改进业务。</li>
 </ul>
-<h3 id="es-多字段唯一性"><a href="#es-多字段唯一性" class="headerlink" title="es 多字段唯一性"></a>es 多字段唯一性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">es文档都有个id字段，不显式指定则会生成随机字符串，你可以考虑用area_code,pt_longitude,pt_latitude这3个字段的值构造个id，保证id唯一性，插入时显式指定id，这样即使插入多次，也只是重复更新同一个文档</span><br></pre></td></tr></table></figure>
-
-<h2 id="es-查找-数组是否包含一个值"><a href="#es-查找-数组是否包含一个值" class="headerlink" title="es 查找 数组是否包含一个值"></a>es 查找 数组是否包含一个值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">POST</span> /idx/typ/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;query&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;match_all&quot;</span>: &#123;&#125;</span><br><span class="line">    &#125;, </span><br><span class="line">    <span class="string">&quot;filter&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;script&quot;</span>: &#123;</span><br><span class="line">           <span class="string">&quot;script&quot;</span>: <span class="string">&quot;doc[&#x27;the_field&#x27;].values.contains(2)&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zyc88888/article/details/83016513">ES aggregation详解</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.it1352.com/670639.html">ElasticSearch脚本：检查数组是否包含一个值</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/eryuan/p/7389352.html">elasticsearch数据结构</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/newchitu/article/details/87883788">数据仓库基本概念介绍</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxintdrh/article/details/119931658">什么是OLAP？</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wenwu5832/p/6845898.html">数据仓库基本概念</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43713049/article/details/116571675">大数据：数据仓库设计</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/" data-id="cld1bs9tb001wfynhh7erdyew" data-title="每日一问1104(es搜索)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/" data-id="cld1buvu20036bjopdg8i847y" data-title="数据仓库" class="article-share-link">Share</a>
       
       
       
@@ -136,14 +185,14 @@
 
 
   
-    <article id="post-2020/每日一问1105(git命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/每日一问0103(消息队列)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -154,7 +203,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/">每日一问1105(git命令)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">每日一问0103(消息队列)</a>
     </h1>
   
 
@@ -162,22 +211,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
-<li>查看当前仓库地址：git remote show origin</li>
-<li>添加远程仓库地址：  git remote add origin “xxx.git”</li>
-<li>修改仓库地址： git remote set-url origin <a href="mailto:&#103;&#x69;&#116;&#64;&#49;&#x39;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#51;&#48;&#x2e;&#x32;&#x39;">&#103;&#x69;&#116;&#64;&#49;&#x39;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#51;&#48;&#x2e;&#x32;&#x39;</a>:chenwei&#x2F;em-data.com.cn.git</li>
-<li>git查看远程仓库地址命令：git remote -v</li>
-<li>git 删除远程分支： git push origin –delete [branch_name]</li>
-</ul>
-<h2 id="git-add-出现-filename-too-long"><a href="#git-add-出现-filename-too-long" class="headerlink" title="git add 出现 filename too long"></a>git add 出现 filename too long</h2><p> 解决：打开Git Bash并以管理员身份运行<br>要使长路径能够在git bash中运行执行</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.<span class="property">longpaths</span> <span class="literal">true</span> </span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/git-merge.html">git-merge（1）手册页</a></p>
+        <h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="选型对比"><a href="#选型对比" class="headerlink" title="选型对比"></a>选型对比</h2><p>rabbitMQ,RocketMQ,kafka</p>
+<h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>吞吐量，性能</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9tb001xfynh73l83aaf" data-title="每日一问1105(git命令)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0103(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/" data-id="cld1buvu20037bjop3itq05ze" data-title="每日一问0103(消息队列)" class="article-share-link">Share</a>
       
       
       
@@ -189,14 +229,14 @@
 
 
   
-    <article id="post-2020/每日一问1106(linux命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/每日一问0104(rabbitMQ)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1106(linux%E5%91%BD%E4%BB%A4)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -207,7 +247,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1106(linux%E5%91%BD%E4%BB%A4)/">每日一问1106(linux命令)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/">每日一问0104(rabbitMQ)</a>
     </h1>
   
 
@@ -215,24 +255,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h1><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
-<li><h1 id="Linux-查看磁盘或文件夹及文件大小"><a href="#Linux-查看磁盘或文件夹及文件大小" class="headerlink" title="Linux 查看磁盘或文件夹及文件大小"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sumuncle/p/11314671.html">Linux 查看磁盘或文件夹及文件大小</a></h1></li>
-</ul>
-<p>Esc+b 移动到当前单词的开头</p>
-<p>Esc+f 移动到当前单词的结尾<br>Esc+t 颠倒光标所在处及其相邻单词的位置<br>ESC-c 使下一个单词首字母大写, 同时光标前进一个单词, 如光标停留在单词的某个  字母上, 如word中的o字母上, 则o字母变大写. 而不是w<br>ESC+u 使下一个单词所有字母变大写, 同时光标前进一个单词, 同上, 如光标在o字母上, 则ord变大写, w不变.<br>ESC+l 同ESC-U, 但使之全变为小写</p>
-<p>esc+. 上一个命令的后面的参数</p>
-<p>其他控制键：</p>
-<p>Ctrl+b：光标向行首移动一个字符。 （b：backwards）<br>Ctrl+ f：光标向行尾移动一个字符。 （f：forwards）<br>Ctrl+h：向行首删除一个字符。<br>Ctrl+d：向行尾删除一个字符。<br>Ctrl+p: 上一个使用的历史命令。 （p：previous）<br>Ctrl+n： 下一个使用的历史命令。（n：next ）<br>Ctrl+t： 交换光标所在字符和其前的字符。<br>Ctrl+i：相当于Tab键。<br>Ctrl+o：相当于Ctrl+m.<br>Ctrl+m：相当Enter键。</p>
-<p>Ctrl+n相当于方向向下的方向键。</p>
-<p>Ctrl+p相当于方向向上的方向键。</p>
-<p>Ctrl+s:使终端发呆，静止，可以使快速输出的终端屏幕停下来。</p>
-<p>Ctrl+q：退出Ctrl+s引起的发呆。<br>Ctrl+z：使正在运行在终端的任务，运行于后台。 （可用fg恢复）<br>Ctrl+c：中断终端中正在执行的任务。<br>Ctrl+d: 在空命令行的情况下可以退出终端。<br>Ctrl+[ ：相当于Esc键。<br>Esc键：连续按3次显示所有的支持的终端命令。<br>Tab键：命令、文件名等自动补全功能。</p>
-<p><strong>df命令</strong>  <strong>du命令</strong></p>
-<h2 id="awk-命令"><a href="#awk-命令" class="headerlink" title="awk 命令"></a>awk 命令</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="Linux三剑客之awk命令"><a href="#Linux三剑客之awk命令" class="headerlink" title="Linux三剑客之awk命令"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ginvip/p/6352157.html">Linux三剑客之awk命令</a></h1>
+        <h1 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>AMQ协议的结构</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1106(linux%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9tc001yfynh5iawgp7j" data-title="每日一问1106(linux命令)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(rabbitMQ)/" data-id="cld1buvu30038bjopc24a7u3i" data-title="每日一问0104(rabbitMQ)" class="article-share-link">Share</a>
       
       
       
@@ -244,14 +272,14 @@
 
 
   
-    <article id="post-2020/每日一问1107(nacos)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/每日一问0106(log4j)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1107(nacos)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -262,7 +290,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1107(nacos)/">每日一问1107(nacos)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/">每日一问0106(log4j)</a>
     </h1>
   
 
@@ -270,11 +298,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="nacos"><a href="#nacos" class="headerlink" title="nacos"></a>nacos</h1>
+        <h1 id="log4j"><a href="#log4j" class="headerlink" title="log4j"></a>log4j</h1><h2 id="SLF4J-Failed-to-load-class-“org-slf4j-impl-StaticLoggerBinder”原因及解决方案"><a href="#SLF4J-Failed-to-load-class-“org-slf4j-impl-StaticLoggerBinder”原因及解决方案" class="headerlink" title="SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”原因及解决方案"></a>SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”原因及解决方案</h2><p>导致此异常的原因是：在运行时，没有日志的实现（或者说日志的绑定），所以slf4j默认使用了一个空实现。</p>
+<p>因此也就是缺少了相关的jar包，因为slf4j-api包中只有方法定义，没有具体的方法实现，所以需要引入具体的实现包。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="http://www.choupangxia.com/2019/11/03/slf4j-failed-to-load-class/">http://www.choupangxia.com/2019/11/03/slf4j-failed-to-load-class/</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1107(nacos)/" data-id="cld1bs9tc001zfynh4zepeqg5" data-title="每日一问1107(nacos)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0106(log4j)/" data-id="cld1buvu40039bjop06l56equ" data-title="每日一问0106(log4j)" class="article-share-link">Share</a>
       
       
       
@@ -286,14 +317,14 @@
 
 
   
-    <article id="post-2020/每日一问1109(eureka)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/每日一问0107(maven-settings.xml)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(eureka)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -304,7 +335,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(eureka)/">每日一问1109(eureka)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/">每日一问0107(maven-settings</a>
     </h1>
   
 
@@ -312,18 +343,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h1><p>高可用</p>
-<h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><p>服务治理中的3个角色：</p>
-<ul>
-<li>服务治理服务器</li>
-<li>服务提供者</li>
-<li>服务消费者。</li>
-</ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="怎么理解高可用"><a href="#怎么理解高可用" class="headerlink" title="怎么理解高可用"></a>怎么理解高可用</h3>
+        <h1 id="maven-settings-xml"><a href="#maven-settings-xml" class="headerlink" title="maven-settings.xml"></a>maven-settings.xml</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>/Users/root-admin/Desktop/zmk-workspace/javaLocalRepository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">interactiveMode</span>&gt;</span>true<span class="tag">&lt;/<span class="name">interactiveMode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">offline</span>&gt;</span>false<span class="tag">&lt;/<span class="name">offline</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span><span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">proxies</span>&gt;</span><span class="tag">&lt;/<span class="name">proxies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--   &lt;properties&gt;</span></span><br><span class="line"><span class="comment">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span></span><br><span class="line"><span class="comment">    &lt;/properties&gt; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--服务用户配置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc-releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">username</span>&gt;</span>61d7de8a8c4a398a0577dc9b<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">password</span>&gt;</span>NXN8IiOADY[1<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">username</span>&gt;</span>61d7de8a8c4a398a0577dc9b<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">password</span>&gt;</span>NXN8IiOADY[1<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--镜像配置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>mirror<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central,jcenter,!rdc-releases,!rdc-snapshots<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>mirror<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>rdc<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">altReleaseDeploymentRepository</span>&gt;</span></span><br><span class="line">                    rdc-releases::default::https://packages.aliyun.com/maven/repository/2175619-release-Gvs1pk/</span><br><span class="line">                <span class="tag">&lt;/<span class="name">altReleaseDeploymentRepository</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">altSnapshotDeploymentRepository</span>&gt;</span></span><br><span class="line">                    rdc-snapshots::default::https://packages.aliyun.com/maven/repository/2175619-snapshot-xhg0U4/</span><br><span class="line">                <span class="tag">&lt;/<span class="name">altSnapshotDeploymentRepository</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 激活profiles配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>rdc<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(eureka)/" data-id="cld1bs9td0020fynheepn9wnp" data-title="每日一问1109(eureka)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0107(maven-settings.xml)/" data-id="cld1buvu4003abjop7ofnhtt9" data-title="每日一问0107(maven-settings" class="article-share-link">Share</a>
       
       
       
@@ -335,14 +359,14 @@
 
 
   
-    <article id="post-2020/每日一问1109(git分支管理)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2022/每日一问0108(java锁)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2022/">2022</a>
   </div>
 
   </div>
@@ -353,7 +377,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86)/">每日一问1109(git分支管理)</a>
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/">每日一问0108(java锁)</a>
     </h1>
   
 
@@ -361,266 +385,284 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h1><p> 我们采用目前的保留的分支体系 </p>
-<ul>
-<li>master 生产环境分支 </li>
-<li>pre  预发布环境分支</li>
-<li>test 测试环境分支</li>
-<li>dev 开发环境分支</li>
-</ul>
-<h2 id="git-新需求提交流程"><a href="#git-新需求提交流程" class="headerlink" title="git 新需求提交流程"></a>git 新需求提交流程</h2><p><img src="/../../ImgSource/git_manager.png" alt="avator"></p>
-<h3 id="步骤描述"><a href="#步骤描述" class="headerlink" title="步骤描述"></a>步骤描述</h3><ol>
-<li>新版本开始 ，从master 拉取 dev,test 分支</li>
-<li>新需求A开始：从master 拉取新分支 </li>
-<li>开发过程中：merge 到 dev 分支 进行开发环境测试(由研发人员操作，可执行多次，并在群里做同步)</li>
-<li>开发完成： 发布提测邮件(包括 部署分支，部署脚本，和部署详细步骤等)，merge 到 test 分支 进行提测 （由测试人员根据测试进度操作）</li>
-<li>测试过程中: 如有线上发布，可定时合并master 到 test 分支 进行测试</li>
-<li>研发过程中： 如果有线上发布，可定时合并master 到需求分支，进行测试</li>
-<li>测试完成: 发布上线邮件，merge master 到 <code>需求A</code>分支进行合并，并自测，（如有问题，再次提测，测试合并问题）没有问题，<code>需求A</code>提交 pull request 到 master 。管理员合并 request 到master 并打新tag </li>
-<li>大版本发布完成： 删除 dev ，test 分支，重新从 master 拉取 ，等待下一个大版本使用</li>
+        <h1 id="Java-锁"><a href="#Java-锁" class="headerlink" title="Java  锁"></a>Java  锁</h1><h2 id="concurent包"><a href="#concurent包" class="headerlink" title="concurent包"></a>concurent包</h2><p>Concurrent包中的锁都是“可重入锁”，所以一般都命名为ReentrantX</p>
+<h3 id="Atomic-类"><a href="#Atomic-类" class="headerlink" title="Atomic 类"></a>Atomic 类</h3><h5 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h5><p>对于乐观锁，作者认为数据发生并发冲突的概率比较小，所以读操作之前不上锁。等到写操作的时候，再判断数据在此期间是否被其他线程修改了。如果被其他线程修改了，就把数据重新读出来，重复该过程；如果没有被修改，就写回去。判断数据是否被修改，同时写回新值，这两个操作要合成一个原子操作，也就是CAS（Compare And Set）。</p>
+<p>CAS函数，其实是封装的Unsafe类中的一个native函数</p>
+<h4 id="AtomicInteger和AtomicLong"><a href="#AtomicInteger和AtomicLong" class="headerlink" title="AtomicInteger和AtomicLong"></a>AtomicInteger和AtomicLong</h4><p>AtomicInteger的实现就是典型的乐观锁 ，CAS 比较 修改int&#x2F;Long 值</p>
+<p>AtomicReference CAS 比较修改特定类型值</p>
+<h4 id="AtomicStampedReference和AtomicMarkableReference"><a href="#AtomicStampedReference和AtomicMarkableReference" class="headerlink" title="AtomicStampedReference和AtomicMarkableReference"></a>AtomicStampedReference和AtomicMarkableReference</h4><p>AtomicStamped-Reference 解决ABA问题 ，增加了版本号概念，赋值时候 同时比较版本号，相同才赋值</p>
+<p>&#x3D;&#x3D;？？为什么没有AtomicStampedInteger或AtomictStampedLong？？&#x3D;&#x3D;： 因为这里要同时比较数据的“值”和“版本号”，而Integer型或者Long型的CAS没有办法同时比较两个变量，于是只能把值和版本号封装成一个对象，也就是这里面的Pair 内部类，然后通过对象引用的CAS来实现</p>
+<h5 id="AtomicMarkableReference"><a href="#AtomicMarkableReference" class="headerlink" title="AtomicMarkableReference"></a>AtomicMarkableReference</h5><p>AtomicMarkableReference与AtomicStampedReference原理类似，只是Pair里面的版本号是boolean类型的，而不是整型的累加变量</p>
+<p>因为是boolean类型，只能有true、false 两个版本号，所以并不能完全避免ABA问题，只是降低了ABA发生的概率。</p>
+<h3 id="AtomicXXXFieldUpdater"><a href="#AtomicXXXFieldUpdater" class="headerlink" title="AtomicXXXFieldUpdater"></a>AtomicXXXFieldUpdater</h3><ol>
+<li>为什么需要AtomicXXXFieldUpdater？</li>
 </ol>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li>分支命名推荐:日期-用户-需求描述  例子：20111109-zmk-fixgitbug</li>
-<li>master ，dev，test 不允许直接写代码</li>
-<li>dev,test 不允许合并到 master </li>
-<li>dev,test 大版本上线后删除，重新拉取</li>
-<li>推荐 master 不允许直接 merge 代码，需提交merge request 由相关人合并</li>
+<p>如果一个类是自己编写的，则可以在编写的时候把成员变量定义为Atomic类型。但如果是一个已经有的类，在不能更改其源代码的情况下，要想实现对其成员变量的原子操作，就需要AtomicIntegerFieldUpdater、AtomicLongFieldUpdater 和AtomicReferenceFieldUpdater</p>
+<p>原理和 CAS一样</p>
+<img src="../ImgSource/image-20220111141918732.png" alt="image-20220111141918732" style="zoom:50%;" />
+
+<ol start="2">
+<li>限制条件</li>
 </ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86)/" data-id="cld1bs9td0021fynh27xd48vj" data-title="每日一问1109(git分支管理)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1109(nacos)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(nacos)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(nacos)/">每日一问1109(nacos)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="nacos"><a href="#nacos" class="headerlink" title="nacos"></a>nacos</h1><p><strong>3.添加接口读取配置信息并添加动态刷新配置的注解@RefreshScope</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@RefreshScope</span><br></pre></td></tr></table></figure>
-
-<p><strong>4.打开nacos管理控制台添加配置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATA-ID :  $&#123;prefix&#125;-$&#123;spring.profiles.active&#125;.$&#123;file-extension&#125; </span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://task.zbj.com/?k=%E5%88%B6%E4%BD%9C%E5%BE%AE%E4%BF%A1%E7%BD%91%E9%A1%B5">nacos文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/haoxianrui/p/13585125.html">Spring Cloud实战 | 第三篇：Spring Cloud整合Nacos实现配置中心</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(nacos)/" data-id="cld1bs9te0022fynhdlqzftiu" data-title="每日一问1109(nacos)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1111(k8s命令)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1111(k8s%E5%91%BD%E4%BB%A4)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1111(k8s%E5%91%BD%E4%BB%A4)/">每日一问1111(k8s命令)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="K8S-命令"><a href="#K8S-命令" class="headerlink" title="K8S 命令"></a>K8S 命令</h1><h2 id="自收集命令"><a href="#自收集命令" class="headerlink" title="自收集命令"></a>自收集命令</h2><ul>
-<li>查看集群中有多少个Node: kubectl get nodes </li>
-<li>查看某个Node详细信息: kubectl describe node  node-1 (Node启动后会做一系列的自检工作，比如磁盘空间是否不足（DiskPressure）、内存是否不足（MemoryPressure）、网络是否正常（NetworkUnavailable）、PID资源是否充足（PIDPressure）。在一切正常时设置Node为Ready状态（Ready&#x3D;True），该状态表示Node处于健康状态，Master将可以在其上调度新的任务了（如启动Pod）。;Node 主机地址；Node 主机系统信息；Node可分配资源量；Node相关Event 信息)</li>
-<li>创建Deployment ： kubectl create -f  demo-deployment.yaml</li>
-<li>查看 deployment 信息 ： kubectl get deployments</li>
-<li>查看deployment 对应的 Replica Set : kubectl get rs</li>
-<li>查看Service端口： k get endpoints</li>
-<li>查看Service 更多信息: k get svc  {service-name} -o yaml </li>
-<li>查看命名空间: k get namespaces</li>
-<li>设置默认命名空间: k config set-context $(kubectl config current-context) –namespace&#x3D;devops</li>
-<li>查看一个命名空间下 pod : k  get pods –namespace&#x3D;devops</li>
-<li>根据文件或者输入来创建资源: k create -f demo.yaml</li>
-<li>删除资源: k delete demo.yaml</li>
-<li>启动mongo客户端: kubectl run –namespace devops devops-mongodb-client –rm –tty -i –restart&#x3D;’Never’ –image harbor.ctfo.com&#x2F;mongodb&#x2F;mongodb:4.2.4-debian-10-r0 –command – mongo admin –host devops-mongodb –authenticationDatabase admin -u root -p RA4nkkbXgD</li>
-<li>启动 mysql 客户端： kubectl run –namespace devops mysql-client –rm –tty -i –restart&#x3D;’Never’ –image harbor.ctfo.com&#x2F;mysql&#x2F;mysql:5.7.30 –command – mysql -h devops-mysql -u root -pmFnVpyc5YGXX</li>
-<li>删除 pods :  k delete po   {po_name}  -n  devops</li>
-</ul>
-<h2 id="0、kubectl-命令帮助"><a href="#0、kubectl-命令帮助" class="headerlink" title="0、kubectl 命令帮助"></a>0、kubectl 命令帮助</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># kubectl --help</span></span><br><span class="line">kubectl controls the Kubernetes cluster manager.</span><br><span class="line"> </span><br><span class="line">Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/</span><br><span class="line"> </span><br><span class="line">Basic Commands (Beginner):</span><br><span class="line">  create         Create a resource from a file or from stdin.</span><br><span class="line">  expose         使用 replication controller, service, deployment 或者 pod 并暴露它作为一个新的Kubernetes Service</span><br><span class="line">  run            在集群中运行一个指定的镜像</span><br><span class="line">  set            为 objects 设置一个指定的特征</span><br><span class="line"> </span><br><span class="line">Basic Commands (Intermediate):</span><br><span class="line">  explain        查看资源的文档</span><br><span class="line">  get            显示一个或更多 resources</span><br><span class="line">  edit           在服务器上编辑一个资源</span><br><span class="line">  delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector</span><br><span class="line"> </span><br><span class="line">Deploy Commands:</span><br><span class="line">  rollout        Manage the rollout of a resource</span><br><span class="line">  scale          为 Deployment, ReplicaSet, Replication Controller 或者 Job 设置一个新的副本数量</span><br><span class="line">  autoscale      自动调整一个 Deployment, ReplicaSet, 或者 ReplicationController 的副本数量</span><br><span class="line"> </span><br><span class="line">Cluster Management Commands:</span><br><span class="line">  certificate    修改 certificate 资源.</span><br><span class="line">  cluster-info   显示集群信息</span><br><span class="line">  top            Display Resource (CPU/Memory/Storage) usage.</span><br><span class="line">  cordon         标记 node 为 unschedulable</span><br><span class="line">  uncordon       标记 node 为 schedulable</span><br><span class="line">  drain          Drain node in preparation for maintenance</span><br><span class="line">  taint          更新一个或者多个 node 上的 taints</span><br><span class="line"> </span><br><span class="line">Troubleshooting and Debugging Commands:</span><br><span class="line">  describe       显示一个指定 resource 或者 group 的 resources 详情</span><br><span class="line">  logs           输出容器在 pod 中的日志</span><br><span class="line">  attach         Attach 到一个运行中的 container</span><br><span class="line">  exec           在一个 container 中执行一个命令</span><br><span class="line">  port-forward   Forward one or more local ports to a pod</span><br><span class="line">  proxy          运行一个 proxy 到 Kubernetes API server</span><br><span class="line">  cp             复制 files 和 directories 到 containers 和从容器中复制 files 和 directories.</span><br><span class="line">  auth           Inspect authorization</span><br><span class="line"> </span><br><span class="line">Advanced Commands:</span><br><span class="line">  diff           Diff live version against would-be applied version</span><br><span class="line">  apply          通过文件名或标准输入流(stdin)对资源进行配置</span><br><span class="line">  patch          使用 strategic merge patch 更新一个资源的 field(s)</span><br><span class="line">  replace        通过 filename 或者 stdin替换一个资源</span><br><span class="line">  wait           Experimental: Wait for a specific condition on one or many resources.</span><br><span class="line">  convert        在不同的 API versions 转换配置文件</span><br><span class="line"> </span><br><span class="line">Settings Commands:</span><br><span class="line">  label          更新在这个资源上的 labels</span><br><span class="line">  annotate       更新一个资源的注解</span><br><span class="line">  completion     Output shell completion code for the specified shell (bash or zsh)</span><br><span class="line"> </span><br><span class="line">Other Commands:</span><br><span class="line">  api-resources  Print the supported API resources on the server</span><br><span class="line">  api-versions   Print the supported API versions on the server, in the form of &quot;group/version&quot;</span><br><span class="line">  config         修改 kubeconfig 文件</span><br><span class="line">  plugin         Provides utilities for interacting with plugins.</span><br><span class="line">  version        输出 client 和 server 的版本信息</span><br><span class="line"> </span><br><span class="line">Usage:</span><br><span class="line">  kubectl [flags] [options]</span><br><span class="line"> </span><br><span class="line">Use &quot;kubectl <span class="language-xml"><span class="tag">&lt;<span class="name">command</span>&gt;</span></span> --help&quot; for more information about a given command.</span><br><span class="line">Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).　</span><br></pre></td></tr></table></figure>
-
-<h2 id="1、kubect-create-创建一个资源从一个文件或标准输入"><a href="#1、kubect-create-创建一个资源从一个文件或标准输入" class="headerlink" title="1、kubect create 创建一个资源从一个文件或标准输入"></a>1、kubect create 创建一个资源从一个文件或标准输入</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl create deployment nginx --image=nginx:1.14 </span><br><span class="line">kubectl create -f my-nginx.yaml</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、kubectl-run-在集群中运行一个指定的镜像"><a href="#2、kubectl-run-在集群中运行一个指定的镜像" class="headerlink" title="2、kubectl run 在集群中运行一个指定的镜像"></a>2、kubectl run 在集群中运行一个指定的镜像</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl run nginx --image=nginx:1.16 --port=80 --replicas=1</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、kubectl-expose-创建Service对象以将应用程序”暴露”于网络中"><a href="#3、kubectl-expose-创建Service对象以将应用程序”暴露”于网络中" class="headerlink" title="3、kubectl expose 创建Service对象以将应用程序”暴露”于网络中"></a>3、kubectl expose 创建Service对象以将应用程序”暴露”于网络中</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl expose deployment/nginx --type=``&quot;NodePort&quot;` `--port=80 --name=nginx</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、kubectl-get-显示一个或更多resources资源"><a href="#4、kubectl-get-显示一个或更多resources资源" class="headerlink" title="4、kubectl get 显示一个或更多resources资源"></a>4、kubectl get 显示一个或更多resources资源</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kubectl get cs                          # 查看集群状态</span><br><span class="line">kubectl get nodes                       # 查看集群节点信息</span><br><span class="line">kubectl get ns                          # 查看集群命名空间</span><br><span class="line">kubectl get svc -n kube-system          # 查看指定命名空间的服务</span><br><span class="line">kubectl get pod <span class="language-xml"><span class="tag">&lt;<span class="name">pod-name</span>&gt;</span></span> -o wide      # 查看Pod详细信息</span><br><span class="line">kubectl get pod <span class="language-xml"><span class="tag">&lt;<span class="name">pod-name</span>&gt;</span></span> -o yaml      # 以yaml格式查看Pod详细信息</span><br><span class="line">kubectl get pods                        # 查看资源对象，查看所有Pod列表</span><br><span class="line">kubectl get rc,service                  # 查看资源对象，查看rc和service列表</span><br><span class="line">kubectl get pod,svc,ep --show-labels    # 查看pod,svc,ep能及标签信息</span><br><span class="line">kubectl get all --all-namespaces        # 查看所有的命名空间</span><br></pre></td></tr></table></figure>
-
-<h2 id="5、kubectl-clster-info-显示集群信息"><a href="#5、kubectl-clster-info-显示集群信息" class="headerlink" title="5、kubectl clster-info 显示集群信息"></a>5、kubectl clster-info 显示集群信息</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl cluster-info            # 查看集群状态信息</span><br></pre></td></tr></table></figure>
-
-<h2 id="6、kubectl-describe-描述资源对象"><a href="#6、kubectl-describe-描述资源对象" class="headerlink" title="6、kubectl describe 描述资源对象"></a>6、kubectl describe 描述资源对象</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl describe nodes <span class="language-xml"><span class="tag">&lt;<span class="name">node-name</span>&gt;</span></span>  # 显示Node的详细信息</span><br><span class="line">kubectl describe pods/<span class="language-xml"><span class="tag">&lt;<span class="name">pod-name</span>&gt;</span></span>    # 显示Pod的详细信息</span><br></pre></td></tr></table></figure>
-
-<h2 id="7、kubectl-scale-pod扩容与缩容"><a href="#7、kubectl-scale-pod扩容与缩容" class="headerlink" title="7、kubectl scale pod扩容与缩容"></a>7、kubectl scale pod扩容与缩容</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl scale deployment nginx --replicas 5    # 扩容</span><br><span class="line">kubectl scale deployment nginx --replicas 3    # 缩容</span><br></pre></td></tr></table></figure>
-
-<h2 id="8、查看服务器上支持的API资源"><a href="#8、查看服务器上支持的API资源" class="headerlink" title="8、查看服务器上支持的API资源"></a>8、查看服务器上支持的API资源</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># kubectl api-resources</span></span><br><span class="line">NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND</span><br><span class="line">bindings                                                                      true         Binding</span><br><span class="line">componentstatuses                 cs                                          false        ComponentStatus</span><br><span class="line">configmaps                        cm                                          true         ConfigMap</span><br><span class="line">endpoints                         ep                                          true         Endpoints</span><br><span class="line">events                            ev                                          true         Event</span><br><span class="line">limitranges                       limits                                      true         LimitRange</span><br><span class="line">namespaces                        ns                                          false        Namespace</span><br><span class="line">nodes                             no                                          false        Node</span><br><span class="line">persistentvolumeclaims            pvc                                         true         PersistentVolumeClaim</span><br><span class="line">persistentvolumes                 pv                                          false        PersistentVolume</span><br><span class="line">pods                              po                                          true         Pod</span><br><span class="line">podtemplates                                                                  true         PodTemplate</span><br><span class="line">replicationcontrollers            rc                                          true         ReplicationController</span><br><span class="line">resourcequotas                    quota                                       true         ResourceQuota</span><br><span class="line">secrets                                                                       true         Secret</span><br><span class="line">serviceaccounts                   sa                                          true         ServiceAccount</span><br><span class="line">services                          svc                                         true         Service</span><br><span class="line">mutatingwebhookconfigurations                  admissionregistration.k8s.io   false        MutatingWebhookConfiguration</span><br><span class="line">validatingwebhookconfigurations                admissionregistration.k8s.io   false        ValidatingWebhookConfiguration</span><br><span class="line">customresourcedefinitions         crd,crds     apiextensions.k8s.io           false        CustomResourceDefinition</span><br><span class="line">apiservices                                    apiregistration.k8s.io         false        APIService</span><br><span class="line">controllerrevisions                            apps                           true         ControllerRevision</span><br><span class="line">daemonsets                        ds           apps                           true         DaemonSet</span><br><span class="line">deployments                       deploy       apps                           true         Deployment</span><br><span class="line">replicasets                       rs           apps                           true         ReplicaSet</span><br><span class="line">statefulsets                      sts          apps                           true         StatefulSet</span><br><span class="line">tokenreviews                                   authentication.k8s.io          false        TokenReview</span><br><span class="line">localsubjectaccessreviews                      authorization.k8s.io           true         LocalSubjectAccessReview</span><br><span class="line">selfsubjectaccessreviews                       authorization.k8s.io           false        SelfSubjectAccessReview</span><br><span class="line">selfsubjectrulesreviews                        authorization.k8s.io           false        SelfSubjectRulesReview</span><br><span class="line">subjectaccessreviews                           authorization.k8s.io           false        SubjectAccessReview</span><br><span class="line">horizontalpodautoscalers          hpa          autoscaling                    true         HorizontalPodAutoscaler</span><br><span class="line">cronjobs                          cj           batch                          true         CronJob</span><br><span class="line">jobs                                           batch                          true         Job</span><br><span class="line">certificatesigningrequests        csr          certificates.k8s.io            false        CertificateSigningRequest</span><br><span class="line">leases                                         coordination.k8s.io            true         Lease</span><br><span class="line">events                            ev           events.k8s.io                  true         Event</span><br><span class="line">daemonsets                        ds           extensions                     true         DaemonSet</span><br><span class="line">deployments                       deploy       extensions                     true         Deployment</span><br><span class="line">ingresses                         ing          extensions                     true         Ingress</span><br><span class="line">networkpolicies                   netpol       extensions                     true         NetworkPolicy</span><br><span class="line">podsecuritypolicies               psp          extensions                     false        PodSecurityPolicy</span><br><span class="line">replicasets                       rs           extensions                     true         ReplicaSet</span><br><span class="line">ingresses                         ing          networking.k8s.io              true         Ingress</span><br><span class="line">networkpolicies                   netpol       networking.k8s.io              true         NetworkPolicy</span><br><span class="line">runtimeclasses                                 node.k8s.io                    false        RuntimeClass</span><br><span class="line">poddisruptionbudgets              pdb          policy                         true         PodDisruptionBudget</span><br><span class="line">podsecuritypolicies               psp          policy                         false        PodSecurityPolicy</span><br><span class="line">clusterrolebindings                            rbac.authorization.k8s.io      false        ClusterRoleBinding</span><br><span class="line">clusterroles                                   rbac.authorization.k8s.io      false        ClusterRole</span><br><span class="line">rolebindings                                   rbac.authorization.k8s.io      true         RoleBinding</span><br><span class="line">roles                                          rbac.authorization.k8s.io      true         Role</span><br><span class="line">priorityclasses                   pc           scheduling.k8s.io              false        PriorityClass</span><br><span class="line">csidrivers                                     storage.k8s.io                 false        CSIDriver</span><br><span class="line">csinodes                                       storage.k8s.io                 false        CSINode</span><br><span class="line">storageclasses                    sc           storage.k8s.io                 false        StorageClass</span><br><span class="line">volumeattachments                              storage.k8s.io                 false        VolumeAttachment</span><br></pre></td></tr></table></figure>
-
-<h2 id="9、生成yaml资源配置文件方法"><a href="#9、生成yaml资源配置文件方法" class="headerlink" title="9、生成yaml资源配置文件方法"></a>9、生成yaml资源配置文件方法</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 用run命令生成yaml文件</span></span><br><span class="line">kubectl create deployment nginx --image=nginx:1.14 -o yaml --dry-run &gt; my.deploy.yaml</span><br><span class="line"> </span><br><span class="line"><span class="section"># 用get命令导出yaml文件</span></span><br><span class="line">kubectl get deploy nginx-deployment -o yaml --export &gt; my.deploy.yaml</span><br><span class="line"> </span><br><span class="line"><span class="section"># Pod容器的字段拼写忘记了</span></span><br><span class="line">kubectl explain pods.spec.containers</span><br></pre></td></tr></table></figure>
-
-<p>kubectl的主要操作命令</p>
-<p>地址： <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands">https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands</a></p>
-<p><img src="/../../ImgSource/image-20211112155431357.png" alt="image-20211112155431357"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1111(k8s%E5%91%BD%E4%BB%A4)/" data-id="cld1bs9tf0023fynh2lwp60uu" data-title="每日一问1111(k8s命令)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1119(雪花算法)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1119(%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1119(%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95)/">每日一问1119(雪花算法)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="雪花算法"><a href="#雪花算法" class="headerlink" title="雪花算法"></a>雪花算法</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1119(%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95)/" data-id="cld1bs9tf0024fynh73swckew" data-title="每日一问1119(雪花算法)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1127(Spring事务)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1127(Spring%E4%BA%8B%E5%8A%A1)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1127(Spring%E4%BA%8B%E5%8A%A1)/">每日一问1127(Spring事务)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-事务"><a href="#Spring-事务" class="headerlink" title="Spring 事务"></a>Spring 事务</h1><h2 id="事务传播属性"><a href="#事务传播属性" class="headerlink" title="事务传播属性"></a>事务传播属性</h2><ul>
-<li>REQUIRED 支持当前事务，如果没有事务会创建一个新的事务</li>
-<li>SUPPORTS 支持当前事务，如果没有事务的话以非事务方式执行</li>
-<li>MANDATORY 支持当前事务，如果没有事务抛出异常</li>
-<li>REQUIRES_NEW 创建一个新的事务并挂起当前事务</li>
-</ul>
-<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><h2 id="Springboot-2-3-为啥不需要加-EnableTransactionManagement"><a href="#Springboot-2-3-为啥不需要加-EnableTransactionManagement" class="headerlink" title="Springboot 2.3 + 为啥不需要加 EnableTransactionManagement"></a>Springboot 2.3 + 为啥不需要加 EnableTransactionManagement</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32370913/article/details/105924209">【springboot】为何不使用@EnableTransactionManagement就能使用事务？</a></p>
+<p>要想使用AtomicIntegerFieldUpdater修改成员变量，成员变量必须是volatile的int类型（不能是Integer包装类），该限制从其构造函数中可以看到：</p>
+<p><img src="/../../ImgSource/image-20220111142105602.png" alt="image-20220111142105602"></p>
+<p>Concurrent包提供了AtomicIntegerArray、AtomicLongArray、AtomicReferenceArray三个数组元素的原子操作。注意，这里并不是说对整个数组的操作是原子的，而是针对数组中一个元素的原子操作而言。</p>
+<h3 id="LongAdder"><a href="#LongAdder" class="headerlink" title="LongAdder"></a>LongAdder</h3><p>AtomicLong内部是一个volatile long型变量，由多个线程对这个变量进行CAS操作。多个线程同时对一个变量进行CAS操作，在高并发的场景下仍不够快，如果再要提高性能，该怎么做呢？把一个变量拆成多份，变为多个变量，有些类似于ConcurrentHashMap 的分段锁的例子</p>
+<p>如果并发度高，冲突大，平摊到这些Cell上。在最后取值的时候，再把base和这些Cell求sum运算。</p>
+<p><img src="/../../ImgSource/image-20220111142516503.png" alt="image-20220111142516503"></p>
+<p>是位于基类Striped64当中的。英文Striped意为“条带”，也就是分片。</p>
+<ol start="3">
+<li><p>最终一致性</p>
+<p>在sum求和函数中，并没有对cells[]数组加锁。也就是说，一边有线程对其执行求和操作，一边还有线程修改数组里的值，也就是最终一致性，而不是强一致性。这也类似于ConcurrentHashMap 中的clear（）函数，一边执行清空操作，一边还有线程放入数据，clear（）函数调用完毕后再读取，hash map里面可能还有元素。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qinzj/p/11420840.html">Springboot源码分析之@Transactional</a>F</p>
-</li>
+</ol>
+<p>把它和AtomicLong 的使用场景做了比较。它适合高并发的统计场景，而不适合要对某个Long 型变量进行严格同步的场景。</p>
+<h4 id="伪共享与缓存行填充"><a href="#伪共享与缓存行填充" class="headerlink" title="伪共享与缓存行填充"></a>伪共享与缓存行填充</h4><p>主内存中有变量X、Y、Z（假设每个变量都是一个Long型），被CPU1和CPU2分别读入自己的缓存，放在了同一行Cache Line里面。当CPU1修改了X变量，它要失效整行Cache Line，也就是往总线上发消息，通知CPU 2对应的Cache Line失效。由于Cache Line是数据交换的基本单位，无法只失效X，要失效就会失效整行的Cache Line，这会导致Y、Z变量的缓存也失效。</p>
+<p><img src="/../../ImgSource/image-20220111143024858.png" alt="image-20220111143024858"></p>
+<p>虽然只修改了X变量，本应该只失效X变量的缓存，但Y、Z变量也随之失效。Y、Z变量的数据没有修改，本应该很好地被CPU1和CPU2共享，却没做到，这就是所谓的“伪共享问题”。</p>
+<p>问题的原因是，Y、Z和X变量处在了同一行Cache Line里面。要解决这个问题，需要用到所谓的“缓存行填充”，分别在X、Y、Z后面加上7个无用的Long型，填充整个缓存行，让X、Y、Z处在三行不同的缓存行中</p>
+<p><img src="/../../ImgSource/image-20220111143150398.png" alt="image-20220111143150398"></p>
+<p>而在JDK 8中，就不需要写这种晦涩的代码了，只需声明一个@sun.misc.Contended即可。</p>
+<img src="../ImgSource/image-20220111143354570.png" alt="image-20220111143354570" style="zoom:50%;" />
+
+<p>回到上面的例子，之所以这个地方要用缓存行填充，是为了不让Cell[]数组中相邻的元素落到同一个缓存行里。</p>
+<ol start="4">
+<li>LongAccumulator</li>
+</ol>
+<p>LongAccumulator的原理和LongAdder类似，只是功能更强大，</p>
+<p>LongAdder只能进行累加操作，并且初始值默认为0；LongAccumulator可以自己定义一个二元操作符，并且可以传入一个初始值。¬</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h3><p>很显然，通常的锁都要设计成可重入的，否则就会发生死锁。（自己已经拿到锁了，没有释放的情况再次获取锁，获取不到就发生死锁了）</p>
+<p><img src="/../../ImgSource/image-20220112104034136.png" alt="image-20220112104034136"></p>
+<p>ReentrantLock本身没有代码逻辑，实现都在其内部类Sync中。</p>
+<p>Sync的父类&#x3D;&#x3D;AbstractQueuedSynchronizer&#x3D;&#x3D;经常被称作队列同步器（AQS）</p>
+<p>它还有很多方法，可以下边慢慢去了解</p>
+<ul>
+<li>lock()</li>
+<li>unlock()</li>
+<li>tryAcquire() 尝试获取资源</li>
+<li>acquireQueued() 使线程在等待队列中等待，首先尝试的去获取资源，如果获得到了资源，直接返回。如果没获取到资源，则将当前线程进行阻塞。等到其他线程执行完成对其进行唤醒。</li>
 </ul>
+<h2 id="ReadWriteLock"><a href="#ReadWriteLock" class="headerlink" title="ReadWriteLock"></a>ReadWriteLock</h2><ul>
+<li>读写锁 和ReentrantLock 不一样的地方 ，是通过 state 设置高16位 低16位 区分读写；然后其他方面根据逻辑实现</li>
+</ul>
+<p>读锁的公平，读锁的不公平，写锁的公平，写锁的不公平</p>
+<ul>
+<li>对于读线程的非公平，要做一些“约束”。当发现队列的第1个元素是写线程的时候，读线程也要阻塞一下，不能“肆无忌惮”地直接去抢。</li>
+</ul>
+<h2 id="StampedLock"><a href="#StampedLock" class="headerlink" title="StampedLock"></a>StampedLock</h2><p>StampedLock引入了“乐观读”策略，读的时候不加读锁，读出来发现数据被修改了，再升级为“悲观读”，相当于降低了“读”的地位，把抢锁的天平往“写”的一方倾斜了一下，避免写线程被饿死。</p>
+<p><img src="/../../ImgSource/image-20220112114126444.png" alt="image-20220112114126444"></p>
+<p>从ReentrantLock到StampedLock，并发度依次提高。</p>
+<p>到“读”与“写”也不互斥、并发地访问的呢？MySQL 高并发的核心机制MVCC，也就是一份数据多个版本，此处的StampedLock有异曲同工之妙。</p>
+<p>读的时候不加读锁，读出来发现数据被修改了，再升级为“悲观读”，相当于降低了“读”的地位，把抢锁的天平往“写”的一方倾斜了一下，避免写线程被饿死。</p>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><p>多线程 并发不间断写 ，偶尔一次读的场景</p>
+<p>比如：并发实时更新 坐标位置x,y ,偶尔求一次 坐标距离  （具体参考：Java并发实现原理）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1127(Spring%E4%BA%8B%E5%8A%A1)/" data-id="cld1bs9tg0025fynhez1306mt" data-title="每日一问1127(Spring事务)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0108(java%E9%94%81)/" data-id="cld1buvu5003bbjop5dob6vyk" data-title="每日一问0108(java锁)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022/每日一问0109(JUC)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/">每日一问0109(JUC)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="JUC-Concurrent包"><a href="#JUC-Concurrent包" class="headerlink" title="JUC   Concurrent包"></a>JUC   Concurrent包</h1><p>自旋10次 ，自适应自旋  可能2-3次 ，根据上次枷锁是否成功</p>
+<p>高并发技术手段<br>线程标记 可重入 （偏向锁）<br>自旋<br>Cas 汇编 lock compareChange<br>monitor<br>信号量</p>
+<p>阻塞  unsafe 包里的 pack 和 unpack</p>
+<p>先后一致次序（memory_order_seq_cst）、<br>获取-释放次序（memory_order_consume、memory_order_acquire、memory_order_release和memory_order_acq_rel）、宽松次序（memory_order_relaxed）。</p>
+<h2 id="锁-相关"><a href="#锁-相关" class="headerlink" title="锁 相关"></a>锁 相关</h2><h2 id="同步工具"><a href="#同步工具" class="headerlink" title="同步工具"></a>同步工具</h2><h3 id="Semaphore-信号量"><a href="#Semaphore-信号量" class="headerlink" title="Semaphore 信号量"></a>Semaphore 信号量</h3><p>它内部的计数器是递增的，并且在一开始初始化Semaphore时可以指定一个初始值，但是并不需要知道需要同步的线程个数，而是在需要同步的地方调用acquire方法时指定需要同步的线程个数。</p>
+<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142541948.png?lastModify=1642142727" alt="image-20220114142541948"></p>
+<p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114141949386.png?lastModify=1642142727" alt="image-20220114141949386"></p>
+<p>基于AQS</p>
+<p>多个线程(&gt;n)执行，每次state -1,直到 semaphore 为0 其他线程阻塞，有线程执行完，新线程才能抢夺，当只有一个共享资源则 升级为排他锁；</p>
+<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p><img src="file:///Users/root-admin/zmk-workspace/GitWorkSpace/java/java-learn-dictionary/markdown/ImgSource/image-20220114142448008.png?lastModify=1642142727" alt="image-20220114142448008"></p>
+<h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>CyclicBarrier基于ReentrantLock+Condition实现。</p>
+<p>满足计数器可以重置的需要，JDK开发组提供了CyclicBarrier类，并且CyclicBarrier类的功能并不限于CountDownLatch的功能。从字面意思理解，CyclicBarrier是回环屏障的意思，它可以让一组线程全部达到一个状态后再全部同时执行</p>
+<p>第1个同步点，要等所有应聘者都到达公司，再一起开始笔试；第2个同步点，要等所有应聘者都结束笔试，之后一起进入面试环节。具体到每个线程的run（）方法中，就是下面的伪代码：</p>
+<p><img src="/../../ImgSource/image-20220114142756341.png" alt="image-20220114142756341"></p>
+<p>（1）CyclicBarrier是可以被重用的</p>
+<p>（2）CyclicBarrier 会响应中断。10个线程没有到齐，如果有线程收到了中断信号，所有阻塞的线程也会被唤醒，就是上面的breakBarrier（）函数。然后count被重置为初始值（parties），重新开始。</p>
+<p>（3）上面的回调函数，barrierAction只会被第10个线程执行1次（在唤醒其他9个线程之前），而不是10个线程每个都执行1次。</p>
+<h3 id="Exchanger"><a href="#Exchanger" class="headerlink" title="Exchanger"></a>Exchanger</h3><p>用于线程之间交换数据</p>
+<p>Exchanger的核心机制和Lock一样，也是CAS+park&#x2F;unpark。</p>
+<p>有两个内部类：Slot（AtomicReference存线程要交换的数据）和Node （线程的封装）</p>
+<p>Slot的AtomicReference就是指向的一个Node，通过Slot和Node相结合，实现了2个线程之间的数据交换，如图4-6所示。线程1持有数据item1，线程2持有数据item2，各自调用exchange（..），会各自生成一个Node。而Slot只会指向2个Node中的1个：如果是线程1先调用的exchange（..），那么Slot就指向Node1，线程1阻塞，等待线程2来交换；反之，如果是线程2先调用的exchange（..），那么Slot就指向Node2，线程2阻塞，等待线程1来交换数据。</p>
+<p><img src="/../../ImgSource/image-20220114150511690.png" alt="image-20220114150511690"></p>
+<p>一个Slot只能支持2个线程之间交换数据，要实现多个线程并行地交换数据，需要多个Slot，因此在Exchanger里面定义了Slot数组：</p>
+<h3 id="Phaser"><a href="#Phaser" class="headerlink" title="Phaser"></a>Phaser</h3><p>同步点</p>
+<p>可以实现 CountDownLatch 和CyclicBarrier</p>
+<h5 id="Phaser新特性"><a href="#Phaser新特性" class="headerlink" title="Phaser新特性"></a>Phaser新特性</h5><p>特性1：动态调整线程个数</p>
+<p><img src="/../../ImgSource/image-20220114151139570.png" alt="image-20220114151139570"></p>
+<p>特性2：层次Phaser</p>
+<p><img src="/../../ImgSource/image-20220114151111094.png" alt="image-20220114151111094"></p>
+<p>​	</p>
+<h5 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h5><p>这个64位的state变量被拆成4部分，</p>
+<p><img src="/../../ImgSource/image-20220114151304344.png" alt="image-20220114151304344"></p>
+<p>阻塞使用的是一个称为Treiber Stack的数据结构，而不是AQS的双向链表。Treiber Stack是一个无锁的栈</p>
+<p>它是一个单向链表，出栈、入栈都在链表头部，所以只需要一个head指针，而不需要tail指针。</p>
+<p>为了减少并发冲突，这里定义了2个链表，也就是2个Treiber Stack。当phase为奇数轮的时候，阻塞线程放在oddQ里面；当phase为偶数轮的时候，阻塞线程放在evenQ里面。</p>
+<h2 id="并发容器"><a href="#并发容器" class="headerlink" title="并发容器"></a>并发容器</h2><h3 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h3><p>BlockingQueue是一个带阻塞功能的队列，当入队列时，若队列已满，则阻塞调用者；当出队列时，若队列为空，则阻塞调用者。</p>
+<p><img src="/../../ImgSource/image-20220114153748518.png" alt="image-20220114153748518"></p>
+<h3 id="ArrayBlockingQueue"><a href="#ArrayBlockingQueue" class="headerlink" title="ArrayBlockingQueue"></a>ArrayBlockingQueue</h3><p>ArrayBlockingQueue 是一个用数组实现的环形队列，在构造函数中，会要求传入数组的容量。</p>
+<h3 id="LinkedBlockingQueue"><a href="#LinkedBlockingQueue" class="headerlink" title="LinkedBlockingQueue"></a>LinkedBlockingQueue</h3><p>LinkedBlockingQueue是一种基于单向链表的阻塞队列。因为队头和队尾是2个指针分开操作的，所以用了2把锁+2个条件，同时有1个AtomicInteger的原子变量记录count数。</p>
+<h3 id="PriorityBlockingQueue"><a href="#PriorityBlockingQueue" class="headerlink" title="PriorityBlockingQueue"></a>PriorityBlockingQueue</h3><p>队列通常是先进先出的，而PriorityQueue是按照元素的优先级从小到大出队列的。正因为如此，PriorityQueue中的2个元素之间需要可以比较大小，并实现Comparable接口。</p>
+<h3 id="DelayQueue"><a href="#DelayQueue" class="headerlink" title="DelayQueue"></a>DelayQueue</h3><p>DelayQueue即延迟队列，也就是一个按延迟时间从小到大出队的PriorityQueue。所谓延迟时间，就是“未来将要执行的时间”-“当前时间”。为此，放入DelayQueue中的元素，必须实现Delayed接口</p>
+<h3 id="SynchronousQueue"><a href="#SynchronousQueue" class="headerlink" title="SynchronousQueue"></a>SynchronousQueue</h3><p>它本身没有容量。先调put（..），线程会阻塞；直到另外一个线程调用了take（），两个线程才同时解锁，反之亦然。对于多个线程而言，例如3个线程，调用3次put（..），3个线程都会阻塞；直到另外的线程调用3次take（），6个线程才同时解锁，反之亦然。</p>
+<h3 id="CopyOnWrite"><a href="#CopyOnWrite" class="headerlink" title="CopyOnWrite"></a>CopyOnWrite</h3><p>CopyOnWrite指在“写”的时候，不是直接“写”源数据，而是把数据拷贝一份进行修改，再通过悲观锁或者乐观锁的方式写回。那为什么不直接修改，而是要拷贝一份修改呢？这是为了在“读”的时候不加锁。</p>
+<h4 id="CopyOnWriteArrayList"><a href="#CopyOnWriteArrayList" class="headerlink" title="CopyOnWriteArrayList"></a>CopyOnWriteArrayList</h4><p>读的时候不加锁，写的时候加 lock  悲观锁 ，写完再读</p>
+<h3 id="ConcurrentLinkedQueue-x2F-Deque"><a href="#ConcurrentLinkedQueue-x2F-Deque" class="headerlink" title="ConcurrentLinkedQueue&#x2F;Deque"></a>ConcurrentLinkedQueue&#x2F;Deque</h3><p>原理 基于同样是基于CAS</p>
+<p>它是一个单向链表</p>
+<p>但在ConcurrentLinkedQueue中，head&#x2F;tail的更新可能落后于节点的入队和出队，因为它不是直接对head&#x2F;tail指针进行CAS操作的，而是对Node中的item进行操作。</p>
+<h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>每个Segment都继承自ReentrantLock，Segment的数量等于锁的数量，这些锁彼此之间相互独立，即所谓的“分段锁”</p>
+<p>为了提升hash的计算性能，会保证数组的大小始终是2的整数次方。例如设置concurrentyLevel&#x3D;9，在构造函数里面会找到比9大且距9最近的2的整数次方，也就是ssize&#x3D;16。对应segmentShift、segmentMask两个变量，是为了方便计算hash使用的。</p>
+<p>默认的Segment数组大小是16。</p>
+<p><img src="/../../ImgSource/image-20220114173933813.png" alt="image-20220114173933813"></p>
+<p>扩容</p>
+<p>人在多核模式下为（n＞＞＞3）&#x2F;NCPU，并且保证步长的最小值是16。显然，需要的线程个数约为n&#x2F;stride。</p>
+<h3 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h3><p>treeMap 基于红黑树，ConcurrentSkipListMap，是基于SkipList（跳查表）来实现的</p>
+<p>2．无锁链表</p>
+<p>无锁链表所实现的队列 是在头结点和尾节点增加cas 操作，</p>
+<p>但是 当在链表中间插入删除数据 CAS操作就会有问题，所以</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/youthlql/JavaYouth/blob/main/docs/java_concurrency/Java%E5%B9%B6%E5%8F%91%E4%BD%93%E7%B3%BB-%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5-JUC%E5%B9%B6%E5%8F%91%E5%8C%85-%5B1%5D.md"><strong>ava并发体系-第三阶段-JUC并发包-[1].md</strong></a></p>
+<h1 id="AbstractQueuedSynchronizer源码解读–续篇之Condition"><a href="#AbstractQueuedSynchronizer源码解读–续篇之Condition" class="headerlink" title="AbstractQueuedSynchronizer源码解读–续篇之Condition"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/micrari/p/7219751.html">AbstractQueuedSynchronizer源码解读–续篇之Condition</a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0109(JUC)/" data-id="cld1buvu5003cbjop5xcz1to7" data-title="每日一问0109(JUC)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022/每日一问0110(位运算)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/">每日一问0110(位运算)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><p><img src="/../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA2MjMzOQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<p>&amp;与：<br>两个二进制位只要有一个为0那么结果就为0，否则结果为1。<br>|或：<br>两个二进制位只要有一个为1那么结果就为1，否则结果为0。<br>^异或:<br>任何相同二进制位进行 ^ 运算，结果是0；不相同二进制位 ^ 运算结果是1。<br>~取反：<br>0变1，1变0</p>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t6">判断奇偶数</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t7">取余运算</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t8">判断一个数是不是2的幂</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t9">判断数字的正负号</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t10">hashmap的tableSizeFor方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t11">求相反数</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t12">求绝对值</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t13">交换两个变量（不引入第三个变量）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t14">判断两个数正负号是否相同</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t15">求两个数的平均数</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t16">求两个数的最大值</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1#t17">求两个数的最小值</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/110482069?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&utm_relevant_index=1">Java位运算和几个使用场景解析</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0110(%E4%BD%8D%E8%BF%90%E7%AE%97)/" data-id="cld1buvu5003dbjop4j796sna" data-title="每日一问0110(位运算)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022/每日一问0214(握手挥手)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022/">2022</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/">每日一问0214(握手挥手)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="握手挥手"><a href="#握手挥手" class="headerlink" title="握手挥手"></a>握手挥手</h1><p><img src="/../../ImgSource/o_tcp.png" alt="img"></p>
+<h2 id="问题-什么情况下会出现Closedwait-以及-解决办法"><a href="#问题-什么情况下会出现Closedwait-以及-解决办法" class="headerlink" title="问题  什么情况下会出现Closedwait ,以及 解决办法"></a>问题  什么情况下会出现Closedwait ,以及 解决办法</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baishuchao/p/9024205.html">CLOSE_WAIT状态的原因与解决方法</a></p>
+<h1 id="CLOSE-WAIT问题-TCP"><a href="#CLOSE-WAIT问题-TCP" class="headerlink" title="CLOSE_WAIT问题-TCP "></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baishuchao/p/9024205.html">CLOSE_WAIT问题-TCP </a></h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shixin_0125/article/details/78829069">TCP SYN洪泛攻击的原理及防御方法</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0214(%E6%8F%A1%E6%89%8B%E6%8C%A5%E6%89%8B)/" data-id="cld1buvu6003ebjopewrxglkz" data-title="每日一问0214(握手挥手)" class="article-share-link">Share</a>
       
       
       
@@ -675,23 +717,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
           </li>
         
       </ul>

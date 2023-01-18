@@ -71,14 +71,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2020/每日一问1231(eventbus)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-读书/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1231(eventbus)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/README/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1231(eventbus)/">每日一问1231(eventbus)</a>
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/README/">README</a>
     </h1>
   
 
@@ -97,22 +97,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="eventbus"><a href="#eventbus" class="headerlink" title="eventbus"></a>eventbus</h1><p>消息总线</p>
-<h1 id="什么时候用cloud-bus"><a href="#什么时候用cloud-bus" class="headerlink" title="什么时候用cloud bus"></a>什么时候用cloud bus</h1><p>spring cloud bus在整个后端服务中起到联通的作用，联通后端的多台服务器。我们为什么需要他做联通呢？</p>
-<p>后端服务器一般都做了集群化，很多台服务器，而且在大促活动期经常发生服务的扩容、缩容、上线、下线。这样，后端服务器的数量、IP就会变来变去，如果我们想进行一些线上的管理和维护工作，就需要维护服务器的IP。</p>
-<p>比如我们需要更新配置、比如我们需要同时失效所有服务器上的某个缓存，都需要向所有的相关服务器发送命令，也就是调用一个接口。</p>
-<p>你可能会说，我们一般会采用zookeeper的方式，统一存储服务器的ip地址，需要的时候，向对应服务器发送命令。这是一个方案，但是他的解耦性、灵活性、实时性相比消息总线都差那么一点。</p>
-<p>总的来说，就是在我们需要把一个操作散发到所有后端相关服务器的时候，就可以选择使用cloud bus了。</p>
-<h1 id="cloud-bus能做什么"><a href="#cloud-bus能做什么" class="headerlink" title="cloud bus能做什么"></a>cloud bus能做什么</h1><p>当前spring cloud bus提供了两个可用的接口:1.&#x2F;bus&#x2F;env用于设置某一个配置项2.&#x2F;bus&#x2F;refresh用于刷新所有绑定到刷新点的配置项。</p>
-<p>这两个接口是使用spring boot actuator方式发布出来的（可以参见：深入<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/9fab4e81d7bb">SpringBoot:自定义Endpoint</a>一文），接收到消息后会使用spring的stream框架（可以参考：张开涛的<a target="_blank" rel="noopener" href="http://jinnianshilongnian.iteye.com/blog/1902886">解Spring事件驱动模型</a>一文）把消息传播到所有注册的相关服务器。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/babycomeon/p/11141160.html">SpringCloud系列教程 | 第八篇：Spring Cloud Bus 消息总线</a></p>
-<p><a target="_blank" rel="noopener" href="https://buqutianya.blog.csdn.net/article/details/78698755?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control">spring cloud 中消息总线（bus）使用</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/093ed9816993">spring cloud bus 扩展消息总线方法</a></p>
+        <h1 id="读书学习"><a href="#读书学习" class="headerlink" title="读书学习"></a>读书学习</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>提高表达能力,写作能力,丰富自己的内心生活,<strong><code>把我的每日一幅写的更好 </code></strong></p>
+<p>希望记录下来始愿,能让我少走弯路,经过几番停顿,最终归位,追寻最初的那个状态. 收获良多</p>
+<h1 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h1><p>copy 读书架构到一本新书中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1231(eventbus)/" data-id="cld1bs9tw002qfynheorxhlff" data-title="每日一问1231(eventbus)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/README/" data-id="cld1buvuy004tbjopc2kzhgts" data-title="README" class="article-share-link">Share</a>
       
       
       
@@ -124,14 +116,14 @@
 
 
   
-    <article id="post-2021/2021上半年度总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-读书/goodread.com" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2021/2021%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/goodread.com/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
   </div>
 
   </div>
@@ -142,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/2021%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">2021上半年度总结</a>
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/goodread.com/">goodread</a>
     </h1>
   
 
@@ -150,65 +142,344 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <pre><code>2021上半年度总结
+        <h1 id="goodreads-com"><a href="#goodreads-com" class="headerlink" title="goodreads.com"></a>goodreads.com</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>学英语，翻找国外文章 ，开阔视野</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<h3 id="出处，作者"><a href="#出处，作者" class="headerlink" title="出处，作者"></a>出处，作者</h3><p><a target="_blank" rel="noopener" href="https://www.goodreads.com/">https://www.goodreads.com</a></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><table>
+<thead>
+<tr>
+<th>单词</th>
+<th>翻译</th>
+<th>出处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>art</td>
+<td>艺术</td>
+<td>目录</td>
+</tr>
+<tr>
+<td>Classic</td>
+<td>经典</td>
+<td></td>
+</tr>
+<tr>
+<td>Graphic Novels</td>
+<td>图形小说</td>
+<td></td>
+</tr>
+<tr>
+<td>Romance</td>
+<td>浪漫</td>
+<td></td>
+</tr>
+<tr>
+<td>community</td>
+<td>社区</td>
+<td></td>
+</tr>
+<tr>
+<td>curious</td>
+<td>好奇</td>
+<td><a target="_blank" rel="noopener" href="https://www.goodreads.com/topic/show/22368772-does-anyone-own-a-book-themed-etsy-business">https://www.goodreads.com/topic/show/22368772-does-anyone-own-a-book-themed-etsy-business</a></td>
+</tr>
+<tr>
+<td>blind date</td>
+<td>男女初次见面(相亲)</td>
+<td>I have a small business on mercari, buti don’t sell books. my friend Fabi does! I absolutely recommend her shop! it’s called “mystery books by Fabi”on etsy. She’s one of my friends on here. u can find her shop there! She sells blind date with books. :)</td>
+</tr>
+<tr>
+<td>perfume</td>
+<td>香水</td>
+<td></td>
+</tr>
+<tr>
+<td>literally</td>
+<td>字面意义</td>
+<td>i literally just bend the corner of the page hahaha</td>
+</tr>
+<tr>
+<td>memoir</td>
+<td>回忆录</td>
+<td></td>
+</tr>
+<tr>
+<td>autobiography</td>
+<td>自传</td>
+<td></td>
+</tr>
+<tr>
+<td>fiction</td>
+<td>小说</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/goodread.com/" data-id="cld1buvuy004ubjope6nbe7a3" data-title="goodread" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书/twiter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/twiter/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/twiter/">twiter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="twiter"><a href="#twiter" class="headerlink" title="twiter"></a>twiter</h1><h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><p>capable ： 有能力的， eg:You have no idea what you are capable of until you try.</p>
+<p>*philosophiae : 哲学  <em>philosophiae doctor</em> </p>
+<p>Awesome ：令人惊叹的</p>
+<p>Pyramid: 金字塔</p>
+<p>achieve： 实现</p>
+<p>latency: 延迟</p>
+<p>delivery：传送</p>
+<p>Sequential ： 顺序的</p>
+<p>argument ：论点</p>
+<p>expanding ：扩大</p>
+<p>exposing ：暴露</p>
+<p>external ：外部的</p>
+<p>monolithic ：庞大而单一的</p>
+<p>implementing ：实施，实现</p>
+<p>figure：图形</p>
+<p>depicted ：描绘</p>
+<p>assume ：假设</p>
+<p>architecture ：建筑学</p>
+<p>approaches：方法</p>
+<p>enterprise ：企业</p>
+<p>polyglot nature ：多种语言环境</p>
+<p>downside ：缺点</p>
+<p>overall ：全面的</p>
+<p>diagram ：简图</p>
+<p>illustrates ：说明</p>
+<p>refined：细化</p>
+<p>Effort：力气</p>
+<p>reliability：可靠的</p>
+<p>emitter ：发射器</p>
+<p>further improve ：进一步的提高</p>
+<p>introduced ：被介绍，被引进</p>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><pre><code> 身为中国人，深知共产党早先做出的贡献，给我们创造的和平稳定的环境。但是近年来，我们感受到了政策带给我们的一些压力，诸多不便，生活在最底层的我也感同身受，一些反党反社会的言论更多了。我非常理解这部分人
 </code></pre>
-<h2 id="研发工作业绩"><a href="#研发工作业绩" class="headerlink" title="研发工作业绩"></a>研发工作业绩</h2><h3 id="1-研发效能平台"><a href="#1-研发效能平台" class="headerlink" title="1. 研发效能平台"></a>1. 研发效能平台</h3><ul>
-<li>效能平台代码库统计功能</li>
-<li>微服务&#x2F;L3  添加,删除，修改，列表 ，评论&#x2F;回复 添加删除 功能开发</li>
-<li>二进制制品仓库，二进制目录树对接minio功能开发</li>
-<li>二进制制品仓库 添加&#x2F;修改&#x2F;删除 功能开发</li>
-<li>用例库下用例模块分组 数据树形展示功能开发</li>
-<li>网关增加透传harbor 基础服务 功能开发</li>
-<li>需求研发看板按模块分组，数据树形展示</li>
-<li>工时功能开发</li>
-</ul>
-<h3 id="公网制品库"><a href="#公网制品库" class="headerlink" title="公网制品库"></a>公网制品库</h3><ul>
-<li>公网制品库微服务 开发</li>
-<li>公网制品库下载接口迁移文件服务</li>
-</ul>
-<h3 id="公网网关"><a href="#公网网关" class="headerlink" title="公网网关"></a>公网网关</h3><ul>
-<li>网关合并方案设计</li>
-<li>tomcat 上传文件连接超时问题</li>
-</ul>
-<h3 id="内外网文件服务"><a href="#内外网文件服务" class="headerlink" title="内外网文件服务"></a>内外网文件服务</h3><ul>
-<li>解决大文件上传</li>
-<li>流水线制品库改造，数据清洗脚本</li>
-<li>文件服务上传时间长 连接中断问题修复</li>
-</ul>
-<h3 id="EDAS-调研-详情如下"><a href="#EDAS-调研-详情如下" class="headerlink" title="EDAS 调研 详情如下"></a>EDAS 调研 详情如下</h3><ul>
-<li>EDAS nacos 自带 nacos 接入 </li>
-<li>EDAS springcloud 功能准备 demo 搭建</li>
-<li>EDAS RDS 数据库创建 以及问题跟进</li>
-<li>EDAS 公有云子账号权限分批，功能预览</li>
-<li>EDAS 监控 发布 链路追踪 限流 日志收集等功能测试</li>
-</ul>
-<h2 id="项目支撑情况"><a href="#项目支撑情况" class="headerlink" title="项目支撑情况"></a>项目支撑情况</h2><h3 id="千方科技官网"><a href="#千方科技官网" class="headerlink" title="千方科技官网"></a>千方科技官网</h3><ul>
-<li>官网首页 banner 改版</li>
-<li>官网首页 样板案例 改版 </li>
-<li>官网招聘信息，新闻中心增加筛选 增加排序</li>
-<li>官网 投资者关系 财务报告 数据导入  新功能开发完成</li>
-</ul>
-<h2 id="其他支撑事宜"><a href="#其他支撑事宜" class="headerlink" title="其他支撑事宜"></a>其他支撑事宜</h2><ul>
-<li>harbo  镜像 chart 管理接入效能平台</li>
-<li>代码生成项目优化</li>
-<li>mino 二进制对象文件管理接入效能平台</li>
-<li>接入 skywalking skywalking 告警功能开发</li>
-<li>Spring boot admin 监控平台搭建 接入</li>
-<li>ES 统计数据完善</li>
-<li>common项目 通用工具包调整</li>
-<li>优化网关 日志打印，token认证，链路追踪</li>
-<li>java-tools java 内存调优工具 k8s 安装调研</li>
-<li>千方CMS 系统 开发支持</li>
-</ul>
-<h2 id="个人发展想法"><a href="#个人发展想法" class="headerlink" title="个人发展想法"></a>个人发展想法</h2><p>希望更多的参与到应用架构设计和应用性能调优 相关的工作中，深挖技术瓶颈，解决平时工作中遇到的疑难杂症。</p>
-<h2 id="下半年工作计划"><a href="#下半年工作计划" class="headerlink" title="下半年工作计划"></a>下半年工作计划</h2><p>下半年计划花更多的精力在服务治理和服务性能优化，使服务运行中一些常见问题能够有效控制和帮助开发人员快速定位问题定位线上问题，将这些功能迁移到效我们的效能平台中来。再有就是应用 监控管理，报警平台等相关的工作。</p>
-<h2 id="工作建议"><a href="#工作建议" class="headerlink" title="工作建议"></a>工作建议</h2><p>建议平时工作中增加技术氛围，提升大家学习进步的积极性，再有提高代码质量，使之能够更好的复用。</p>
-<h2 id="需要的支持或帮助"><a href="#需要的支持或帮助" class="headerlink" title="需要的支持或帮助"></a>需要的支持或帮助</h2><p>无</p>
+<p> 但有些人开始反党反政府，我不认为是理智的做法。<br>     党和政府在我有生之年不可能推翻，政权相当稳固，那么共产党就代表中国，我们身为中国人，我们的命运和中国关联的，你的荣辱你的发展都是和你的国家绑定的，即便你迁了国籍，你的血统没办法改变。<br> 台湾也是一样，是不是独 我不关心，台海两岸相互诋毁，最终伤害的是我们这个种族，外国人只会更看不起华人。 一个人不懂得推崇自己的种族，是愚昧的。<br> 国家层面有矛盾是他们的事情，我们自己给自己拆台，那就是傻子了，千里之堤毁于蚁穴，将来中国变成最差最原始的比非洲还低端的国家，那我们被侵略奴役的日子就不远了。<br> 共产党近期的政策，无论是 行政，金融，生活 ，各个方面的措施 ，在我看来都是有很多不妥的地方的。但是，这些举措的由来，都是由一个大家都知道的隐形的外部压力，美国的制约，所做的大方针 是应对美国的制约，<br> 在这个大方针下，所做的很多行政，金融，生活各方面措施被很多人诟病，你要综合考虑做出的决策，估计这也是最好得决策了，很客观的来说换做任何一个政府来做，我觉得不一定有共产党做的好。<br> 在美国的重压下，这种政策的不适可能还会延长，甚至加重。我们的反抗情绪可能会更重，可是归根到底 美国是罪魁祸首啊。 		中国在和美国的对抗中，一直处于弱势，却一直顽强抵抗着，也示弱了，然后美国步步逼近，所以，是共产党不想让我们舒服嘛，不是，这和他的党政理念相悖，是美国不想让我们舒服，这是因为立场不同，利益蛋糕 不够分了。<br> 这时候你退缩他就逼近，退让是解决不了问题的。只能硬刚，拼出一条血路，支持俄罗斯，支持伊朗，台湾寸步不让。。。。。。<br> 既然到这个地步了，身为理性的中国人，应该义无反顾的支持中国，支持共产党。在这过程中的问题，我们内部解决。 我们国家昌盛了，受益的是我们每一个人。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/2021%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" data-id="cld1bs9tx002rfynhgaml7x01" data-title="2021上半年度总结" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/twiter/" data-id="cld1buvuz004vbjop0o65ezke" data-title="twiter" class="article-share-link">Share</a>
       
       
       
@@ -220,14 +491,14 @@
 
 
   
-    <article id="post-2021/EDAS测试输出文档" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-读书/世界最伟大的演讲词" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2021/EDAS%E6%B5%8B%E8%AF%95%E8%BE%93%E5%87%BA%E6%96%87%E6%A1%A3/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E4%B8%96%E7%95%8C%E6%9C%80%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%BC%94%E8%AE%B2%E8%AF%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
   </div>
 
   </div>
@@ -238,7 +509,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/EDAS%E6%B5%8B%E8%AF%95%E8%BE%93%E5%87%BA%E6%96%87%E6%A1%A3/">EDAS测试输出文档</a>
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E4%B8%96%E7%95%8C%E6%9C%80%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%BC%94%E8%AE%B2%E8%AF%8D/">世界最伟大的演讲词</a>
     </h1>
   
 
@@ -246,17 +517,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="EDAS-测试输出文档"><a href="#EDAS-测试输出文档" class="headerlink" title="EDAS 测试输出文档"></a>EDAS 测试输出文档</h1><h2 id="可借鉴功能"><a href="#可借鉴功能" class="headerlink" title="可借鉴功能"></a>可借鉴功能</h2><h3 id="部署-自动挂载Java-agent"><a href="#部署-自动挂载Java-agent" class="headerlink" title="部署 自动挂载Java agent"></a>部署 自动挂载Java agent</h3><p>默认自动挂载 Java Agent 进行精细化监控，并提供完整微服务治理方案（金丝雀发布、服务鉴权、限流&#x2F;降级等）</p>
-<p>服务监控</p>
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="服务监控"><a href="#服务监控" class="headerlink" title="服务监控"></a>服务监控</h3><p>JVM监控，主机监控，调用链路监控， 可以集成skywalking到平台</p>
-<p><img src="C:\Users\zmk\AppData\Roaming\Typora\typora-user-images\image-20210712110812197.png" alt="image-20210712110812197"></p>
-<h2 id="EDAS-架构设计"><a href="#EDAS-架构设计" class="headerlink" title="EDAS 架构设计"></a>EDAS 架构设计</h2><h3 id="应用部署"><a href="#应用部署" class="headerlink" title="应用部署"></a>应用部署</h3><p>针对Java 应用单独处理部署，增加了很多java 分布式应用很多特有处理，比如增加agent,Spring cloud 监控等等。</p>
-<h3 id="微服务空间设计"><a href="#微服务空间设计" class="headerlink" title="微服务空间设计"></a>微服务空间设计</h3><p>用来隔离各个k8s集群 应用组，适应不同的业务开发线吧</p>
-
+        <h1 id="世界最伟大的演讲词"><a href="#世界最伟大的演讲词" class="headerlink" title="世界最伟大的演讲词"></a>世界最伟大的演讲词</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>节约时间，提供读一本书的新思路</p>
+<p>提高演讲，了解伟大的东西，重要时刻，有才能的人是怎么思考表达的</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<h3 id="出处，作者"><a href="#出处，作者" class="headerlink" title="出处，作者"></a>出处，作者</h3><p>微信阅读，</p>
+<p>斗南</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/EDAS%E6%B5%8B%E8%AF%95%E8%BE%93%E5%87%BA%E6%96%87%E6%A1%A3/" data-id="cld1bs9tx002sfynheu50h5f1" data-title="EDAS测试输出文档" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E4%B8%96%E7%95%8C%E6%9C%80%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%BC%94%E8%AE%B2%E8%AF%8D/" data-id="cld1buvuz004wbjopgmgv2wq1" data-title="世界最伟大的演讲词" class="article-share-link">Share</a>
       
       
       
@@ -268,14 +538,14 @@
 
 
   
-    <article id="post-2021/每日一问0104(缓存实施情况)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-读书/全脑演讲左脑逻辑右脑情商" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%85%A8%E8%84%91%E6%BC%94%E8%AE%B2%E5%B7%A6%E8%84%91%E9%80%BB%E8%BE%91%E5%8F%B3%E8%84%91%E6%83%85%E5%95%86/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
   </div>
 
   </div>
@@ -286,7 +556,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/">每日一问0104(缓存实施情况)</a>
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%85%A8%E8%84%91%E6%BC%94%E8%AE%B2%E5%B7%A6%E8%84%91%E9%80%BB%E8%BE%91%E5%8F%B3%E8%84%91%E6%83%85%E5%95%86/">全脑演讲左脑逻辑右脑情商</a>
     </h1>
   
 
@@ -294,293 +564,733 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="缓存实施情况"><a href="#缓存实施情况" class="headerlink" title="缓存实施情况"></a>缓存实施情况</h1><p><strong>redis key 规则定义</strong></p>
-<p>定义redis key 规则方便 定位，拆分 或 附加的业务逻辑处理 。</p>
-<p>比如： mq 聚合 缓存操作时统一处理</p>
-<p>规则:<strong>{项目}:{服务名}:{业务模块}:{type}:{缓存接口}</strong></p>
-<p> **type: **</p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%85%A8%E8%84%91%E6%BC%94%E8%AE%B2%E5%B7%A6%E8%84%91%E9%80%BB%E8%BE%91%E5%8F%B3%E8%84%91%E6%83%85%E5%95%86/" data-id="cld1buvv0004xbjopfl2u7va6" data-title="全脑演讲左脑逻辑右脑情商" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书/历史学是什么" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%86%E5%8F%B2%E5%AD%A6%E6%98%AF%E4%BB%80%E4%B9%88/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%86%E5%8F%B2%E5%AD%A6%E6%98%AF%E4%BB%80%E4%B9%88/">历史学是什么</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="历史学是什么"><a href="#历史学是什么" class="headerlink" title="历史学是什么"></a>历史学是什么</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>节约时间，提供读一本书的新思路</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<h3 id="出处，作者"><a href="#出处，作者" class="headerlink" title="出处，作者"></a>出处，作者</h3><p>微信读书</p>
+<p>葛剑雄 周筱贇</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>◆ 1 “历”和“史”</p>
+<blockquote>
+<blockquote>
+<p>由于甲骨文是刻在龟甲和兽骨上的，记录极为不便，所以用字必定非常俭约，能少一个字就少一个字，甲骨文中有不同类型的“史”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>史，记事者也，从又持中。中，正也。</p>
+</blockquote>
+</blockquote>
+<p>◆ 3 图画与历史</p>
+<blockquote>
+<blockquote>
+<p>画虎不成反类犬</p>
+</blockquote>
+</blockquote>
+<p>◆ 1 董狐的力量</p>
+<p>名留靑史这种价值观在政治上不见得那么鲜明了</p>
+<blockquote>
+<blockquote>
+<p>明历史意识产生之后，它就有了非常巨大的力量，统治者可以不害怕他生前的行为，残酷暴虐，为所欲为，但他知道历史的记录将长久地保留下去，一旦载入史册，善举为后世传颂，恶行为千载唾弃。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>明历史意识产生之后，它就有了非常巨大的力量，统治者可以不害怕他生前的行为，残酷暴虐，为所欲为，但他知道历史的记录将长久地保留下去，一旦载入史册，善举为后世传颂，恶行为千载唾弃。</p>
+</blockquote>
+</blockquote>
+<p>天命这个也是一方面吧，还有就是可能会影响他的统治稳定，舆论看似轻如水，但水 有覆舟之能</p>
+<blockquote>
+<blockquote>
+<p>这恐怕更多还是与当时人敬畏天命、相信因果报应</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>古人认为冥冥之中，上天在主宰着一切，而文字是与上天沟通的手段，只要记录保留下来，上天自然就会知道，后人也终究会知道。即便贵如帝王，掌握世间至高无上的权力，也难逃上天的惩罚。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>我死后，哪管那洪水滔天</p>
+</blockquote>
+</blockquote>
+<p>豪横</p>
+<blockquote>
+<blockquote>
+<p>臣不能讼陛下，自当有史官书之。</p>
+</blockquote>
+</blockquote>
+<p>◆ 2 《春秋》笔法</p>
+<p>这是儒家的价值观，想想文化大革命中那些检举父母，推向人群任人鞭挞的某些人另有一番味道</p>
+<blockquote>
+<blockquote>
+<p>父为子隐，子为父隐，直在其中矣</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>庚子西狩</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>此后中国史学中不顾历史事实，随意地取舍、任意地拔高或贬低，甚至不惜篡改历史的种种不良习气，都是从《春秋》那里继承下来的恶习。</p>
+</blockquote>
+</blockquote>
+<p>◆ 3 太史公的地位</p>
+<blockquote>
+<blockquote>
+<p>史家之绝唱，无韵之离骚</p>
+</blockquote>
+</blockquote>
+<p>◆ 4 《资治通鉴》：历史的“资治”作用</p>
+<blockquote>
+<blockquote>
+<p>“所谓史官文化者，以政治权威为无上权威，使文化从属于政治权威，绝对不得涉及超过政治权威的宇宙与其他问题的这种文化之谓也。”（《希腊思想、基督教和中国的史官文化》，见《顾准文集》，贵州人民出版社1994年）所以，古代史书里所要总结的“道”，都是纵横捭阖之术、驾驭臣下之道，而非探讨自然规律、社会规律。顾准由此出发，指出中国传统社会落后的必然性，确实值得深思。</p>
+</blockquote>
+</blockquote>
+<p>◆ 5 古为今用</p>
+<blockquote>
+<blockquote>
+<p>古为今用”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>政治</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>经济、文化、教育、科技、军事</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>小部分统治者</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>精神愉悦</p>
+</blockquote>
+</blockquote>
+<p>敢这么说的人不多啊，作者这种想法还是很靠谱的，不取悦于读者， 不取悦于政治，不取悦于当今文化，虽然不知道危险在哪，但隐隐感觉不放心。</p>
+<blockquote>
+<blockquote>
+<p>单纯为了“古为今用”而进行研究，那就非常危险了。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>古为今用”中的“用”本身是一种价值判断，并不是绝对客观的，随着主体的不同会发生转变</p>
+</blockquote>
+</blockquote>
+<p>说古为今用危险就为现在了这个用上，用本身就是一种价值判断，但这种判断并不是客观标准的，一个人一个想法，或者一个人不同处境也想法不同，那这个用法有可能就前后矛盾，历史更重要的是记录客观事实，让真正理解它的人自行去取舍更好</p>
+<blockquote>
+<blockquote>
+<p>“用”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>既然某一事物究竟有没有“用”，不同的人会有截然不同的判断，那么历史学家应该根据谁的标准来判断呢？如果历史研究唯一的目的就是古为今用，那么在研究之前首先必须确定研究命题的有用与否，但是，在进行研究以前是很难正确判断哪个命题有用，或一个命题的哪一方面的实际功用更大。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>就对道士炼丹活动给予了高度评价，认为中国的炼丹术通过阿拉伯人传到西方世界，发展为炼金术，成为近代化学的起源。在欧洲历史上产生了翻天覆地变化的火药，也是中国道士在炼丹过程中偶然发明的。</p>
+</blockquote>
+</blockquote>
+<p>古董的价值也是一样，这就是古董为啥不能像黄金一样用来炒作，对于不懂它的人根本就没有任何价值。</p>
+<blockquote>
+<blockquote>
+<p>。有些研究的价值要很长时间以后才能显示出来，或者同样的内容对不同的人会有不同的价值。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>现在很多人往往习惯于用历史运用者的目的来要求历史研究者</p>
+</blockquote>
+</blockquote>
+<p>这个角度有点另辟蹊径。有点道理。</p>
+<blockquote>
+<blockquote>
+<p>但这种研究的过程可能会形成或验证一种历史研究的方法，或者是一种逻辑思维的训练</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>但这种研究的过程可能会形成或验证一种历史研究的方法，或者是一种逻辑思维的训练</p>
+</blockquote>
+</blockquote>
+<p>怀疑我上了个假大学</p>
+<blockquote>
+<blockquote>
+<p>大学生</p>
+</blockquote>
+</blockquote>
+<p>◆ 6 影射史学及其遗风</p>
+<blockquote>
+<blockquote>
+<p>我们常把历史比作一面镜子，则历史研究者的工作，就是擦去蒙在镜子上的灰尘，使镜子更加光洁，使镜中的影像尽可能与历史事实一致。至于旁人要从这影像中读出什么微言大义来，与研究者是毫不相干的。</p>
+</blockquote>
+</blockquote>
+<p>很少的词有很大的意义</p>
+<blockquote>
+<blockquote>
+<p>微言大义</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>其唯一的现实目的便是打击政治对手</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>影射史学的致命缺陷在于，历史是不断发展变化的，绝对的重复是不存在的，影射史学表达的实际上是一种历史循环论的观点，将过去的史实和今天的现实挂起钩来，把古人和今人做极不恰当的比附，而看不到现实绝非过去的循环或重复，因为时间、地点和条件都发生了改变</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>其实，历史上除了确实存在过屈指可数的几位清官、好皇帝（且不说其中不乏某些好事者制造的假象）以外，绝大多数人不可能超越时代的局限，君主专制体制下造就更多的只能是暴虐残忍的帝王和贪赃枉法的官僚。不依赖于制度的创新，而寄希望于抽象的个人道德，是极其危险的。</p>
+</blockquote>
+</blockquote>
+<p>制度的创新，怎么才能推动制度的创新，从古代就开始有很多的改革，都知道要改革，就是推行不了，问题在哪</p>
+<blockquote>
+<blockquote>
+<p>不依赖于制度的创新，而寄希望于抽象的个人道德，是极其危险的。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>自负盈亏</p>
+</blockquote>
+</blockquote>
+<p>你怎么知道海瑞不是当朝政府用来树立典范以正朝纲的工具。</p>
+<blockquote>
+<blockquote>
+<p>海瑞</p>
+</blockquote>
+</blockquote>
+<p>雷锋？</p>
+<blockquote>
+<blockquote>
+<p>崇高的道德典范不具有普遍意义，一旦要用它来要求社会中每一个人，只会造成更多的伪君子和两面派</p>
+</blockquote>
+</blockquote>
+<p>制度是理性的，典范是感性的，只有理性没有感性，人民生活就会缺乏幸福感，没有归属感，只有感性没有理性，社会秩序也会为之瘫痪。</p>
+<blockquote>
+<blockquote>
+<p>合理的制度</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>如果民真能主，真依法而治，官好不好就关系不大，因为不管你心地如何，总不能不依法办事，否则民有力量让你下台，法有力量让你走进牢房。所以再推而论之，颂扬好官就正好表示，民未能主，法未能治”（《月是异邦明》，载《读书》1992年第9期）。说得实在是一针见血，发人深省。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>利益</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>20世纪三四十年代的敦煌莫高窟可以吸引张大千、常书鸿这样的画家、学者，但只有交通改善和设施具备后才会成为旅游热点。今天真正要产生市场效益，历史悠久不是决定因素。即便全是假的，只要市场定位准确，也同样可以吸引大量的客源。像杭州的“宋城”主题公园，全是新建的仿古建筑，游客也源源不绝。而杭州城南凤凰山麓真正的南宋皇城遗址却堙没于草木之间，到那里去发思古之幽情的人恐怕没有几个。长期无人知晓的四川九寨沟，除了编出一些民间故事外，在汉文史料中找不到什么记载，但大自然的无穷魅力使它在短短几年内就名闻世界。<br>由此我想起了南宋诗人陆游在《入蜀记》中记下的一件事：镇江北固山甘露寺中有一块“狠石”，相传刘备与孙权曾围着这块石头商议如何对付曹操。石头早已不存在了，寺中僧人就随便放一块充数。每当游客围着石头抚摩感叹，大谈三国故事时，知情的和尚和小孩都在暗暗发笑。记得前几年我游览甘露寺时也见过这块“狠石”，从南宋到今天又不知换了几块，但这并没有影响游客的兴致，因为刘备、孙权到过这里已经通过小说《三国演义》（不是史书《三国志》）而变得尽人皆知，难道还有必要让历史学家或地质学家来证明这块石头的真伪吗？</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>中国古已有之，</p>
+</blockquote>
+</blockquote>
+<p>◆ 7 走出庐山</p>
+<blockquote>
+<blockquote>
+<p>“横看成岭侧成峰，远近高低各不同。不识庐山真面目，只缘身在此山中。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>保持一定的时间与空间上的距离就可以摆脱功利的羁绊、政治的束缚和视野的局限，从更广阔、深入、超脱的角度来观察和评价历史。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>但如果要做一个历史研究者，最关心的应当是历史事实的真相，而与研究者的国籍无关。否则，如果涉及国家的耻辱、民族的陋习、文化的劣性等，就不必研究、甚至一笔抹杀吗？即使是最敏感的问题，例如国家之间有争议的领土归属，历史事实也是客观存在、无法改变的，无论哪一国的历史学家，研究出来的结论应该是一致的</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>我们以前在研究中往往过分强调自己中国人的身份，强调中国历史的特殊性，就没有把中国历史放在整个历史时代、整个世界体系中，缺乏全球性的视野，缺乏融会贯通的气势，甚至没有把中国纳入亚洲范围来考察。研究中国史的不知世界史，研究世界史的又不知中国史，研究明清史的不知近代史，研究近代史的又不知明清史，这样就无法真正深入地了解中国历史。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>到底历史上的中国在当时的世界处于什么地位，到现在为止很多人、包括不少历史研究者在内其实并不清楚。这样就逐渐滋长了一种夜郎自大、固步自封的心态，认为历史上的中国一直是世界上最先进的国家，只是到了近代遭受西方列强入侵才落后于世界，实际上并非如此。由于地理环境的制约，也由于发展水平的时空差距，长期以来中国一直没有受到过外界强有力的挑战。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>中国近代化的艰难历程和百余年来的曲折迂回，这种“天朝大国”“世界革命中心”的心态难辞其咎。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>在报刊上见到国人津津乐道于百余年前某位西方伟人将中国比喻为一头睡狮，以为他预见到了中国终将崛起于世界。其实，民国年间的汪康年就已经指出，西洋驯狮者用掺鸦片的牛肉喂食狮子，“狮则终日昏昏在睡梦中，尽人调戏”（《汪穰卿笔记》卷八，上海书店出版社1997年），于是永远没有醒来的时候，这正是当年苦难深重的中国的象征，又有什么可值得骄傲呢？</p>
+</blockquote>
+</blockquote>
+<p>◆ 8 历史的智慧</p>
+<blockquote>
+<blockquote>
+<p>是否符合以尽量少的投入产生尽量多的效益的经济学原理，</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>怎样使一个人短暂的一生，能够或多或少地在历史上留下一点痕迹，使一生不致虚度，很重要的一点就是要借鉴历史的智慧。历史给各种各样的人都提供了无穷的知识、有益的经验和教训，而单个个人所能经历的现实就远没有这么丰富。因为在现实中，一个人所能接触到的范围毕竟很有限，而从历史上去看，见于记载的人物、事件、经验经过了无数人、无数年代的积累是如此丰富多彩，应有尽有。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>穷人的标准，也许就会和以前大不相同。未来所谓的穷人，有一部分就是精神上的贫乏。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>在精神领域，进化论未必适用。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>人们习惯于把历史上的经验教训介绍给各个君主、各个政治家、各个民族国家。但是，经验和历史所昭示我们的却是各政府和各民族没有从历史方面学到什么，也没有依据历史上演绎出来的法则行事。每个时代都有它特殊的环境，具有一种个别的情况，使它的举动形式不得不由自己来考虑，自己来决定。当重大事件纷扰不定时，一般的笼统的法则毫无裨益，回忆过去的同样情形也是徒劳无功的。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>今日中国出版社1998年）但“他既有十分高远的想象，又有丰富的历史素养，独独缺少对人类（原文按，主要是西方资本主义）经济发展普遍规律的了解，其中有为马克思所总结过的，也有马克思以后100多年尤其是二次大战后新发展的，他都不熟悉，或者茫然无知；同时又违背革命年代自己的经验，急于求成，不是脚踏中国实际，用科学的实事求是的态度探索落后国家社会主义建设规律，终于造成了晚年的悲剧。”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>现在对历史最糟糕的一种态度就是实用主义，为现行政策寻找历史依据，这是非常危险的。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>君王南面之术</p>
+</blockquote>
+</blockquote>
+<p>◆ 9 从历史看未来</p>
+<blockquote>
+<blockquote>
+<p>一个人一生所能看到的时代、地域毕竟是有限的，但历史向我们提供了长时段、大尺度的视角，可以让我们神游万里，驰骋古今，由此再来看未来，至少可以多一点把握。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>教条式</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>承认存在规律，规律也并非一定呈现周期性，即便有周期，也可能是很长的周期，也许自人类有文字以来连一个周期都还没完成，</p>
+</blockquote>
+</blockquote>
+<p>◆ 1 有没有真实的历史</p>
+<blockquote>
+<blockquote>
+<p>“胜者王侯败者寇”，对胜利者极尽美化、对失败者肆意诋毁比比皆是，似乎已成了中国历史千古不易的规律。</p>
+</blockquote>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%86%E5%8F%B2%E5%AD%A6%E6%98%AF%E4%BB%80%E4%B9%88/" data-id="cld1buvv0004ybjop2pyg42sd" data-title="历史学是什么" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书/原則" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%9F%E5%89%87/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%9F%E5%89%87/">原則</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>节约时间，提供读一本书的新思路1</p>
+<p>理达推荐</p>
+<p>面对选择 或者人生路口能够有所底气不在慌慌恐恐 患得患失</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<p>粗读 摘抄</p>
+<h3 id="出处，作者"><a href="#出处，作者" class="headerlink" title="出处，作者"></a>出处，作者</h3><p>微信阅读</p>
+<p>瑞.达利欧 ，桥水创始人</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>作者是个乔布斯一样的人，他写下自己的人生经历，帮助人们更好的理解 桥水，总结自己成就和自己的人生经验，做事的一些原则，有些偏执，感兴趣 想了解这样的人的思考方式可以不连续的读一读，有些很受启发。</p>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><ul>
+<li>童年</li>
+<li>炒股</li>
+<li>母亲早逝，父亲是音乐家</li>
+<li>充实原则</li>
+<li>发现心理测试</li>
+<li>创建棒球卡</li>
+<li>让桥水坚如磐石，锋利如刀</li>
+<li>2008年金融与经济危机</li>
+<li>帮助决策者</li>
+<li>获得优异回报</li>
+<li>从幕后走到台前</li>
+<li>未雨绸缪，让没有我的桥水继续保持成功</li>
+<li>认识塑造者</li>
+<li>把我们的创意择优系统化</li>
+<li>预见欧洲债务危机</li>
+<li>做一个超级现实的人</li>
+<li>1.1 做一个超级现实的人</li>
+<li>1.2 真相（或者更精确地说，对现实的准确理解）是任何良好结果的根本依据</li>
+<li>1.3 做到头脑极度开放、极度透明</li>
+<li>a．对于快速学习和有效改变而言，头脑极度开放、极度透明是价值无限的。</li>
+<li>b．不要担心其他人的看法，使之成为你的障碍。你必须以自己认为最好的独特的方式行事，这样做肯定会有反馈，你必须开明地思考这些反馈。</li>
+<li>c．拥抱极度求真和极度透明将带来更有意义的工作和更有意义的人际关系。</li>
+<li>1.4 观察自然，学习现实规律</li>
+<li>d．意识到你既是一切又什么都不是，并决定你想成为什么样子</li>
+<li>！！！！你的未来取决于你的视角</li>
+</ul>
+<h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><ul>
+<li>随和，欢快的气质</li>
+<li>钦佩</li>
+<li>变得迟钝</li>
+<li>叛逆，抗拒</li>
+<li>情绪是豪情万丈 ，鼓舞人心</li>
+<li>聪明，魅力超凡的人</li>
+<li>有条不紊</li>
+<li>对乏味和平庸的恐惧</li>
+<li>清晰，创造性的思考</li>
+<li>获得优异回报</li>
+<li>瑞差距</li>
+<li>“塑造”和“塑造者”</li>
+<li>我的目标是确定桥水未来的塑造者，</li>
+<li>！！！！超觉冥想</li>
+<li></li>
+</ul>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ul>
+<li>在一生中，我们会做出无数的决定，这些决定实质上都是赌博，一些是大赌，一些是小赌。思考我们如何做出决定是有好处的，因为这将最终决定我们的生活质量。</li>
+<li>如果一个人和同伴的步调不一致，也许因为他听到的是不同的鼓点。让他跟着他听到的音乐前行吧，不管节奏是迟缓还是激越。</li>
+<li>理论上……假如有这么一台计算机，能存储世界上所有的事实，同时拥有完美的程序，能以数学方式表达世界所有不同部分之间的所有关系，我们就能完美地预见未来</li>
+<li>靠水晶球谋生的人注定要吃碎在地上的玻璃。</li>
+<li>把生活想象为一场游戏，我在游戏过程中会产生各种情绪，这些情绪可能帮助我也可能伤害我。如果我能调和我的情绪与逻辑，只有在二者相符时才行动，我就能做出更好的决策。</li>
+<li>这是一个草稿，但我写出来是为了让大家提建议。</li>
+<li>我要求对几乎所有的会议都录音</li>
+<li>投资者独立思考，预测尚未发生的事情，使用真金白银冒险投资。而决策者所处的环境鼓励形成共识而非表达分歧，培养他们针对已经发生的事情做出反应，训练他们的谈判能力而非冒险投资能力。</li>
+<li>因此每当建立一支团队，我们都努力“设计”合理的人员和个性组合，以实现我们的目标。</li>
+<li>在我看来，生命中最美好的事情就是实现梦想。追求梦想让生活有了韵味。</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3><ul>
+<li><p>炒股的人可能更有感触</p>
+</li>
+<li><p>ai炒股 赚钱太容易</p>
+</li>
+<li><p>你的头脑越开放，你就越不会自欺</p>
+</li>
+<li><p>a．对于快速学习和有效改变而言，头脑极度开放、极度透明是价值无限的。</p>
+</li>
+<li><p>b．不要担心其他人的看法，使之成为你的障碍。你必须以自己认为最好的独特的方式行事，这样做肯定会有反馈，你必须开明地思考这些反馈。</p>
+</li>
+<li><p>他们想得到我的帮助，是因为我作为投资者的全球宏观经济视角与他们作为决策者的视角大为不同。我们都是自身所处环境的产物。投资者独立思考，预测尚未发生的事情，使用真金白银冒险投资。而决策者所处的环境鼓励形成共识而非表达分歧，培养他们针对已经发生的事情做出反应，训练他们的谈判能力而非冒险投资能力。关于自身决策的质量，投资者能得到持续的反馈，而决策者无法得到这种反馈，所以难以区分好的和不好的决策者。他们还要扮演政治家的角色。即使最精明能干的决策者也必须不断地把注意力从他们眼前正在处理的问题上转移，以对抗其他决策者提出的反对意见，而且他们面对的政治体系经常功能失调。</p>
+</li>
+<li><p>从年少时起，我就开始边做边学。我热切地追求我想要的东西，并努力在尽量长的时间里存活下来，以便从我的错误中学习并改进。如果我的改进速度够快，使我做的任何事情都能持续平稳发展，我就能在此基础上进一步使之尽善尽美。我对自己查明真相的能力一直很有信心，而且随着时间的推移，这样做的必要性使我越来越善于查明真相。因此，我喜欢聘用和我类似的人：全身心地研究挑战，搞清楚如何应对挑战，然后付诸实践。我认为，如果他们有稳健的个性、常识和创造性，而且有动力争取实现我们共同的使命，那么，只要我允许他们自由地弄清楚如何做出正确的决策，他们就会发现成功的途径。我知道，对他们进行微观管理、限制他们，是行不通的，因为我和他们都不喜欢这样。如果我只发号施令的话，就不能使他们发挥自己的作用。而且，我不喜欢和那些需要我下命令的人合作。</p>
+</li>
+<li><p>但从20世纪90年代起，我开始认识到大多数人都有一定的情绪障碍，不愿坦率地面对自身的问题和弱点。他们不愿直面扑朔迷离的形势和艰难的挑战，在遇到这些情况时，人们通常会觉得不舒服。兼具常识、创造性和主动寻求改变等个性的人，简直是凤毛麟角。几乎所有人都需要他人帮助才能达到这个境界。于是我写下我的这些原则及其背后的逻辑，并与别人分享。我希望认同这些原则的人能利用它们，不认同的人能公开地争论。我估计，随着时间的推移，对于如何应对特定的情况，我们都能形成共识。</p>
+</li>
+<li><p>在我看来，人生由三个阶段组成：在第一个阶段，我们依赖其他人，我们学习；在第二个阶段，其他人依赖我们，我们工作；在第三个阶段，当其他人不再依赖我们、我们也不必再工作时，我们就可以自由地体验生活了。</p>
+</li>
+<li><p>艾萨克森的书和这篇文章指出我们在背景、目标、塑造方式等方面的其他相似之处，例如：我们都是叛逆、独立的思考者，为了创新和卓越而不懈努力；我们都是<strong>冥想者</strong>，希望“在宇宙中留下印记”；我们都以待人严苛而闻名。当然，我们也有重大的差别。我多么希望乔布斯在生前分享过他用来实现自身目标的原则。</p>
+</li>
+<li><p>我不只是对乔布斯及其原则感兴趣，我希望知道所有塑造者的品质和原则，以便更好地理解他们之间的共性与差异，总结出一个标准的塑造者的典型样貌。</p>
+</li>
+<li><p>** * ** 结果是他们有很多共性。他们都是独立的思考者，不会让任何东西或任何人妨碍自己追求大胆的目标。对于事情应该怎么做，他们在头脑里有十分坚定的规划，同时又始终愿意在现实中检验这些头脑规划、调整做法，从而使规划效果变得更好。他们都极为坚韧，因为相对于他们在追求梦想的过程中经历的痛苦而言，他们实现梦想的决心更强烈。也许最有意思的是，他们关于未来的视野要比多数人宽广，或者他们自己就有这样的视野，或者他们善于从能看到更多东西的人那里学习。他们都能同时看到大图景和小细节（以及中间的层次），并能综合在不同层次上总结的观点，而大多数人通常是见此不见彼。创造性、系统性、现实性在他们身上合而为一。他们既是坚决的又是开明的。最重要的是，他们对自己的事业充满热情，对表现一般的手下不能容忍，同时想给世界带来巨大、有益的影响。</p>
+</li>
+<li><p>每当面对是实现自己的目标还是取悦他人（或不让他人失望）时，他们都会选择实现自己的目标。</p>
+</li>
+<li><p>我还发现有些卓越的组织领导人并不是典型的塑造者，也就是说，他们没有提出原创性想法并落实，只是进入已有的组织并将其领导得很好。只有真正的塑造者才能一直从成功走向成功，并将成功保持几十年，而这正是我想让桥水引入的人。</p>
+</li>
+<li><p>我们以创意择优的理念探寻极度真相、极度透明，让问题和缺点摆上桌面，以便直截了当地应对。</p>
+</li>
+<li><p>计算机系统也没有需要克服的个性偏见和情绪障碍，所以计算机得出的由数据驱动的结论不会让分析对象觉得受到冒犯</p>
+</li>
+<li><p>算法本质上就是在连续性基础上运行的原则。</p>
+</li>
+<li><p>了解现实如何运行，构想我想要创造的东西，将其实现，是让我非常兴奋的事情。努力争取伟大的目标很容易让我失败，因而我必须不断学习并想出新的主意才能继续前进。我发现，卷入快速学习的反馈循环之中是件令人兴奋的事情，就像冲浪者热爱冲浪一样，尽管这有时会使你跌倒。不要理解错了，我至今依然害怕跌倒，依然觉得跌倒很痛苦。但我会思考这种痛苦，并明白我将克服这些挫折，而且我学到的东西将主要来自对挫折的反思。[插图]就像长跑者忍耐痛苦去体验“跑步者的愉悦感”一样，我已经基本上走出了为犯错而痛苦的阶段，而是享受从犯错中学习的愉悦。我相信通过练习你也能改变自己的习惯，体验同样的“从犯错中学习的愉悦感”。（努力追求伟大的目标确实容易失败，不如从小的一点一滴做起，就像邓亚萍说的打奥运会的心态争取去抠每一个球，制定小计划计划不合理就调整，看到自己一点点的进步）</p>
+</li>
+<li><p>追求梦想让生活有了韵味。我要强调的是，创造伟大事物的人不是空想者，而是彻底地扎根于现实。</p>
+</li>
+<li><p>．梦想+现实+决心&#x3D;成功的生活。取得成功、推动进步的人对现实背后的因果关系有着深刻的理解，并利用原则实现自己的愿望。反过来也成立：没有深深扎根于现实的理想主义者会制造问题，而不是推动进步。</p>
+</li>
+<li><p>成功的生活是什么样的？我们都有内心深处的需求，所以每个人都要决定对自己而言什么是成功。你想成为宇宙的主宰还是成天吃零食看电视，还是想要追求别的东西，我并不关心。我真的不关心。一些人想要改变世界，而另一些人只想与世无争地简单生活、享受生活。二者没有好坏之分。</p>
+</li>
+<li><p>问题不只是对这两方面你分别追求多少，而是你如何努力工作以尽量实现二者兼得。这两方面我都很想要，所以我愉悦地努力工作，以争取二者兼得，并且发现它们很可能是一回事，而且相辅相成。我逐渐明白，从生活中获取尽可能多的东西，并不只是一个要为此而工作得更辛苦的问题。这更多的是一个有效工作的问题，因为有效工作能把我的能力提升几百倍。我并不关心你想要什么，或者你愿意为此付出多少辛劳。这是你应该决定的事。我只是试图向你传授，是什么帮助我最好地利用每一小时，并从每次努力中获取最大收获。</p>
+</li>
+<li><p>** * **你的头脑越开放，你就越不会自欺，其他人也就越会给你诚实的反馈。如果他们是“可信”的人（知道什么样的人是“可信”[插图]的也很重要），你就会从他们那里受益良多。</p>
+</li>
+<li><p>学着做到极度透明，就像学习如何公开发言一样：一开始你会难堪，但你练得越多，你就越能应付自如。(公开发言，一开始很难看，联系的越多，就越能应付自如)</p>
+</li>
+<li><p>想想看，如果人们不是隐藏看法，而是公开分享看法，这将减少多少误解，世界的运转将会变得多么高效，我们将会多么接近真相。（中国人的讲话智慧，多说不如少说，少说不如不说，说别人爱听的，会讲话，别人听进去了，参与思考了，效率就不一定低，是人际交往的智慧）</p>
+</li>
+<li><p>我现在认识到，自然会走向整体的最优化，而不是个体的最优化，但多数人只是根据事物对自身的影响判断好坏。我看到的情况是正在运行的自然进程，它能有效促进整个世界的改善，比人类发明的任何程序都有效得多。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%8E%9F%E5%89%87/" data-id="cld1buvv1004zbjop9pc3bzvr" data-title="原則" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书/如何克服社交焦虑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E7%A4%BE%E4%BA%A4%E7%84%A6%E8%99%91/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E7%A4%BE%E4%BA%A4%E7%84%A6%E8%99%91/">如何克服社交焦虑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="如何克服社交焦虑"><a href="#如何克服社交焦虑" class="headerlink" title="如何克服社交焦虑"></a>如何克服社交焦虑</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>节约时间，提供读一本书的新思路</p>
+<p>克服社交焦虑，了解社交焦虑的人的心理，帮助身边的人，和他们更融洽的相处</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<p>粗读 ，摘抄</p>
+<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>微信阅读</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>带你了解社交焦虑，和社交焦虑的内在核心，用行动去改变社交焦虑，并给你指出一些陷阱，最后最好的状态是什么样的</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="/../../ImgSource/image-20211008152158539.png" alt="image-20211008152158539"></p>
 <ul>
-<li>method-服务方法</li>
-<li>dictionary-字典**</li>
+<li>行为抑制</li>
+<li>修剪社交意识</li>
+<li>回应内在评判</li>
+<li>自我同情</li>
 </ul>
-<h2 id="项目统一前缀"><a href="#项目统一前缀" class="headerlink" title="项目统一前缀"></a>项目统一前缀</h2><p><strong>devops:platform</strong></p>
-<h3 id="效能平台缓存应用位置"><a href="#效能平台缓存应用位置" class="headerlink" title="效能平台缓存应用位置"></a><strong>效能平台缓存应用位置</strong></h3><table>
-<thead>
-<tr>
-<th>添加缓存位置</th>
-<th>实施情况</th>
-<th>实施类型</th>
-<th>失效策略</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>表 全部项目&#x2F;我参与的&#x2F;企业公开的&#x2F;已归档项目&#x2F;回收站</td>
-<td>进行中</td>
-<td></td>
-<td>事件+消费者规则匹配+超时</td>
-</tr>
-<tr>
-<td>我的(需求，缺陷，任务，测试用例) 列表视图&#x2F;卡片视图 我执行的&#x2F;创建的&#x2F;删除的</td>
-<td>已添加</td>
-<td>接口缓存</td>
-<td>事件+消费者规则匹配</td>
-</tr>
-<tr>
-<td>项目内(需求，缺陷，任务，测试用例) 列表视图&#x2F;卡片视图</td>
-<td>已添加</td>
-<td>接口缓存</td>
-<td>事件+消费者规则匹配</td>
-</tr>
-<tr>
-<td>gitlab 代码库&#x2F;分组，子代码库&#x2F;子代码组</td>
-<td>已添加</td>
-<td>接口缓存</td>
-<td>事件+消费者规则匹配</td>
-</tr>
-<tr>
-<td>gitlab 全局 代码库&#x2F;分组，子代码库&#x2F;子代码组</td>
-<td>已添加</td>
-<td>接口缓存</td>
-<td>事件+消费者规则匹配</td>
-</tr>
-<tr>
-<td>用户信息</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>用户权限角色</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>chart系统鉴权信息缓存</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>gitlab token</td>
-<td>已添加</td>
-<td>内部缓存</td>
-<td>超时</td>
-</tr>
-<tr>
-<td>流水线构建历史</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>流水线已运行完构建日志</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>流水线已运行完构建日志</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>状态列表 -&gt;字典缓存</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>事务差异化字段-&gt;字典缓存</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>minio 生成的永久下载地址</td>
-<td>未添加</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="redis-缓存类型和定义"><a href="#redis-缓存类型和定义" class="headerlink" title="redis 缓存类型和定义"></a>redis 缓存类型和定义</h3><table>
-<thead>
-<tr>
-<th>内容</th>
-<th>key</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>事务导入缓存</td>
-<td>devops:platform:import:${事务类型}<em>${工号}</em>${毫秒时间戳}</td>
-<td>devops:platform:import:defect_10011069_312312432212</td>
-</tr>
-<tr>
-<td>gitlab每个人的Token缓存</td>
-<td>devops:platform:gitlabUserToken:{工号}</td>
-<td>devops:platform:import:gitlabUserToken:10011069</td>
-</tr>
-<tr>
-<td>Es报警邮件规则引擎缓存</td>
-<td>devops:platform:esMailRole:{报警类型:异常报警&#x2F;超时报警}</td>
-<td>devops:platform:esMailRole:error</td>
-</tr>
-<tr>
-<td>kafka缓存消费者业务幂等性ID缓存</td>
-<td>devops:platform:kafka:cacheTraceId:{幂等ID}</td>
-<td>devops:platform:kafka:cacheTraceId:dbadc</td>
-</tr>
-<tr>
-<td>需求列表卡片视图缓存</td>
-<td>devops:platform:demand:method:page:{参数}</td>
-<td>devops:platform:demand:method:page:{firstPage:true}</td>
-</tr>
-<tr>
-<td>需求列表缓存</td>
-<td>devops:platform:demand:method:list:{参数}</td>
-<td>devops:platform:demand:method:list:{firstPage:true}</td>
-</tr>
-<tr>
-<td>我的卡片列表  执行的&#x2F;创建得&#x2F;参与的 缓存</td>
-<td>devops:platform:demand:method:myCardList:{用户ID}_{参数}</td>
-<td>devops:platform:demand:method:myCardList:31203123123_{firstPage:true}</td>
-</tr>
-<tr>
-<td>缺陷列表卡片视图缓存</td>
-<td>devops:platform:defect:method:page:{参数}</td>
-<td>devops:platform:defect:method:page:{firstPage:true}</td>
-</tr>
-<tr>
-<td>缺陷列表视图缓存</td>
-<td>devops:platform:defect:method:list:{参数}</td>
-<td>devops:platform:defect:method:list:{firstPage:true}</td>
-</tr>
-<tr>
-<td>我的缺陷列表卡片视图缓存</td>
-<td>devops:platform:defect:method:myCardList:{用户ID}_请求体</td>
-<td>devops:platform:defect:method:myCardList:132312312321_{firstPage:true}</td>
-</tr>
-<tr>
-<td>代码库分组顶级分组列表缓存</td>
-<td>devops:platform:gitlab:group:method:groups:{项目ID}<em>{是否项目内}</em>{用户工号}</td>
-<td>devops:platform:gitlab:group:method:groups:12_true_10011069</td>
-</tr>
-<tr>
-<td>代码库列表缓存</td>
-<td>devops:platform:gitlab:code:method:getProjets:{项目ID}<em>{是否项目内}</em>{工号}</td>
-<td>devops:platform:gitlab:code:method:getProjets:12_true_10011069</td>
-</tr>
-<tr>
-<td>代码库子分组列表缓存</td>
-<td>devops:platform:gitlab:group:method:subgroups:{分组ID}<em>{项目ID}</em>{是否项目内}_{是否顶级分组}</td>
-<td>devops:platform:gitlab:group:method:subgroups:21_21_true_true</td>
-</tr>
-<tr>
-<td>代码库分组下项目列表缓存</td>
-<td>devops:platform:gitlab:code:method:getGroupProjects:{代码库ID}<em>{项目ID}</em>{是否关联项目}_{工号}</td>
-<td>devops:platform:gitlab:code:method:getGroupProjects:21_21_true_10011069</td>
-</tr>
-<tr>
-<td>代码库分组详情缓存</td>
-<td>devops:platform:gitlab:group_code:method:getGroupDetail:{分组ID}<em>{项目ID}</em>{是否关联项目}_{工号}</td>
-<td>devops:platform:gitlab:group_code:method:getGroupDetail:21_21_true_10011069</td>
-</tr>
-<tr>
-<td>任务可关联列表缓存</td>
-<td>devops:platform:task:method:connectList:{参数}</td>
-<td>devops:platform:task:method:connectList:{firstPage:true}</td>
-</tr>
-<tr>
-<td>任务卡片视图列表缓存</td>
-<td>devops:platform:task:method:cardList:{参数}</td>
-<td>devops:platform:task:method:cardList:{firstPage:true}</td>
-</tr>
-<tr>
-<td>我的任务卡片列表缓存</td>
-<td>devops:platform:task:method:myCardList:{用户ID}_{参数}</td>
-<td>devops:platform:task:method:myCardList:12313132_{firstPage:true}</td>
-</tr>
-<tr>
-<td>任务列表缓存</td>
-<td>devops:platform:task:method:list:{参数}</td>
-<td>devops:platform:task:method:list:{firstPage:true}</td>
-</tr>
-<tr>
-<td>测试用例列表缓存</td>
-<td>devops:platform:test_case:method:list:{参数}</td>
-<td>devops:platform:test_case:method:list:{firstPage:true}</td>
-</tr>
-</tbody></table>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/" data-id="cld1bs9tx002tfynhfxlbch37" data-title="每日一问0104(缓存实施情况)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/每日一问0114(Spring循环依赖)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/">每日一问0114(Spring循环依赖)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-循环依赖"><a href="#Spring-循环依赖" class="headerlink" title="Spring 循环依赖"></a>Spring 循环依赖</h1><p><strong>【1】 getSingleton(beanName)：源码如下：</strong></p>
-<p>复制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//查询缓存</span><br><span class="line">  Object sharedInstance = getSingleton(beanName);</span><br><span class="line">  //缓存中存在并且args是null</span><br><span class="line">  if (sharedInstance != null &amp;&amp; args == null) &#123;</span><br><span class="line">       //.......省略部分代码     </span><br><span class="line">       //直接获取Bean实例</span><br><span class="line">   bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> //getSingleton源码，DefaultSingletonBeanRegistry#getSingleton</span><br><span class="line">protected Object getSingleton(String beanName, boolean allowEarlyReference) &#123;</span><br><span class="line">     //先从一级缓存中获取已经实例化属性赋值完成的Bean</span><br><span class="line">  Object singletonObject = this.singletonObjects.get(beanName);</span><br><span class="line">     //一级缓存不存在，并且Bean正处于创建的过程中</span><br><span class="line">  if (singletonObject == null &amp;&amp; isSingletonCurrentlyInCreation(beanName)) &#123;</span><br><span class="line">   synchronized (this.singletonObjects) &#123;</span><br><span class="line">                //从二级缓存中查询，获取Bean的早期引用，实例化完成但是未赋值完成的Bean</span><br><span class="line">    singletonObject = this.earlySingletonObjects.get(beanName);</span><br><span class="line">                //二级缓存中不存在，并且允许创建早期引用（二级缓存中添加）</span><br><span class="line">    if (singletonObject == null &amp;&amp; allowEarlyReference) &#123;</span><br><span class="line">                    //从三级缓存中查询，实例化完成，属性未装配完成</span><br><span class="line">     ObjectFactory&lt;?&gt; singletonFactory = this.singletonFactories.get(beanName);</span><br><span class="line">     if (singletonFactory != null) &#123;</span><br><span class="line">      singletonObject = singletonFactory.getObject();</span><br><span class="line">                         //二级缓存中添加</span><br><span class="line">      this.earlySingletonObjects.put(beanName, singletonObject);</span><br><span class="line">                        //从三级缓存中移除</span><br><span class="line">      this.singletonFactories.remove(beanName);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return singletonObject;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><ul>
+<li>尖酸 </li>
+<li>强硬</li>
+<li>内心舒适</li>
+<li>尴尬窘迫</li>
+<li>高度紧张</li>
+<li>汲取</li>
+</ul>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3><ul>
+<li><p>！！！！就像河豚一样，你的刺只是因为你恐惧。（可以用作座右铭，让你勇敢去接近有刺的人）</p>
+</li>
+<li><p>不是我什么都不想说，而是不知道该怎么说。别人说话时似乎都很坦然、很自信，等我好不容易鼓起勇气张开嘴时，却发现话题已经变了。一直都是这样。</p>
+</li>
+<li><p>片刻沉默很容易被打破，但要打破数小时的沉默，几乎是不可能的。要是真的打破了，一定会有人转过头来惊呼：“呀，我忘了你也在！”</p>
+</li>
+<li><p>后来有一次开会前，我提前在手机里记了些笔记，我想先写出来再说会容易些，但还是没能做到</p>
+</li>
+<li><p>我要参加个朋友聚餐，于是准备试着说个祝酒词。我在脑子里一遍又一遍地排练过，之前我还编了个笑话，但起身后，说第一句话时就卡住了，大脑一片空白，根本说不出话来了。我说了句‘谢谢’，就坐了下来。我当时想，天哪，我真是个白痴！</p>
+</li>
+</ul>
+<ol>
+<li>人（老师、老板等）对话时，我就会紧张。</li>
+<li>和别人进行眼神接触对我来说有困难。</li>
+<li>必须谈论自己或者自己的感受时，我会紧张。</li>
+<li>我发现很难和同事融洽相处。</li>
+<li>和别人单独相处时，我会紧张。</li>
+<li>我担心表达自己的观点会让自己显得很愚蠢。</li>
+<li>到店里退货让我感到焦虑。</li>
+<li>我发现自己很难对别人的观点提出异议。</li>
+<li>我总是担心自己在社交场合不知道该说什么。</li>
+<li>我和不熟悉的人交往时会很紧张。</li>
+<li>我觉得自己在和他人沟通时会说一些令人尴尬的话。</li>
+<li>在一群人中，我会担心被忽视。</li>
+<li>我不确定是否要和一个仅仅算得上认识的人打招呼。</li>
+<li>如果别人能听到我打电话，我就会不自在。</li>
+<li>在公共场所吃饭或喝酒，我会感到尴尬或焦虑。</li>
+<li>在公众面前表演、演奏或演讲让我感到焦虑。</li>
+<li>当别人看着我做事时，我会感到不自在。</li>
+<li>打电话、发邮件或发短信给不太熟悉的人时，我会焦虑。</li>
+<li>我在课堂上或会议上发言时有困难。</li>
+<li>上公共厕所让我感到焦虑和害羞。</li>
+<li>我很难与吸引我的人自如地交谈。</li>
+<li>考试让我焦虑。</li>
+<li>我在主持聚会或活动时，会感到有压力，会焦虑。</li>
+<li>我发现自己很难拒绝推销员或律师。</li>
+<li>我不喜欢成为大家关注的焦点。</li>
+</ol>
 <ul>
-<li>从源码可以得知，doGetBean最初是查询缓存，一二三级缓存全部查询，如果三级缓存存在则将Bean早期引用存放在二级缓存中并移除三级缓存。（升级为二级缓存）</li>
+<li><p>请记住：基因不是命运。大脑的确通过基因编程和进化来影响我们的行为，但这种影响是双向的——行为同样会影响大脑。</p>
+</li>
+<li><p>当杏仁核发出警报时，没有焦虑的大脑立刻派了一辆“消防车”赶往现场，而社交焦虑大脑则派了一个人提着一桶水骑着自行车去扑火。（没有社会焦虑的人也会紧张， 不安，只不过他能够用更快的方式平静下来）</p>
+</li>
+<li><p>第一个工具叫替换。我们要反驳内在评判（至少是有礼貌的坚持，对抗也不是我的风格），目标是改变评判造成的威胁。之后，我会介绍第二个不同类型的工具：拥抱。我们要与内在评判讲和，而不是争辩，我们要给自己一些从不吝惜给予别人的同情。</p>
+</li>
+<li><p>“5—4—3—2—”法。这种方法随处可练，可以帮你摆脱烦恼、立足现实。方法如下：利用你的5种感官。首先，环顾四周，说出你能看到的5样东西。比如，我看到的是笔记本电脑、一杯格雷伯爵茶、一台不好使的打印机、一叠蓝色便利贴和一本阿尔伯特·艾利斯的传记。然后，说出你能听到的4种声音：外面的汽车声、鸟鸣声、邻居家的空调声和某处的流水声。接下来，说出你可以触碰到的3样东西：穿着鞋的脚，椅子后背，键盘上的按键。之后说出你可以闻到的两样东西：茶的香气和传记书的霉味。最后，说出你可以尝的一样东西：我会啜一口格雷伯爵茶。但如果你手头没有什么东西，可以感受一下嘴里的味道（通常很恶心），或者，说一件关于你自己的好事（这个绝不会恶心）。</p>
+</li>
+<li><p>不仅待人如待己，也要待己如待人。</p>
+</li>
 </ul>
-<p><strong>【2】addSingletonFactory：源码如下</strong></p>
-<p>复制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//中间省略部分代码。。。。。</span><br><span class="line">  //创建Bean的源码，在AbstractAutowireCapableBeanFactory#doCreateBean方法中</span><br><span class="line">  if (instanceWrapper == null) &#123;</span><br><span class="line">            //实例化Bean</span><br><span class="line">   instanceWrapper = createBeanInstance(beanName, mbd, args);</span><br><span class="line">  &#125;</span><br><span class="line">  //允许提前暴露</span><br><span class="line">  if (earlySingletonExposure) &#123;</span><br><span class="line">            //添加到三级缓存中</span><br><span class="line">   addSingletonFactory(beanName, () -&gt; getEarlyBeanReference(beanName, mbd, bean));</span><br><span class="line">  &#125;</span><br><span class="line">  try &#123;</span><br><span class="line">            //属性装配，属性赋值的时候，如果有发现属性引用了另外一个Bean，则调用getBean方法</span><br><span class="line">   populateBean(beanName, mbd, instanceWrapper);</span><br><span class="line">            //初始化Bean，调用init-method，afterproperties方法等操作</span><br><span class="line">   exposedObject = initializeBean(beanName, exposedObject, mbd);</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">//添加到三级缓存的源码，在DefaultSingletonBeanRegistry#addSingletonFactory</span><br><span class="line">protected void addSingletonFactory(String beanName, ObjectFactory&lt;?&gt; singletonFactory) &#123;</span><br><span class="line">  synchronized (this.singletonObjects) &#123;</span><br><span class="line">            //一级缓存中不存在</span><br><span class="line">   if (!this.singletonObjects.containsKey(beanName)) &#123;</span><br><span class="line">                //放入三级缓存</span><br><span class="line">    this.singletonFactories.put(beanName, singletonFactory);</span><br><span class="line">                //从二级缓存中移除，</span><br><span class="line">    this.earlySingletonObjects.remove(beanName);</span><br><span class="line">    this.registeredSingletons.add(beanName);</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E7%A4%BE%E4%BA%A4%E7%84%A6%E8%99%91/" data-id="cld1buvv20050bjop5xbt97jo" data-title="如何克服社交焦虑" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-读书/影响你一生的清华演讲" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BD%B1%E5%93%8D%E4%BD%A0%E4%B8%80%E7%94%9F%E7%9A%84%E6%B8%85%E5%8D%8E%E6%BC%94%E8%AE%B2/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BD%B1%E5%93%8D%E4%BD%A0%E4%B8%80%E7%94%9F%E7%9A%84%E6%B8%85%E5%8D%8E%E6%BC%94%E8%AE%B2/">影响你一生的清华演讲</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="读书架构"><a href="#读书架构" class="headerlink" title="读书架构"></a>读书架构</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>节约时间，提供读一本书的新思路</p>
+<p>提高演讲表达能力</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>微信读书</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>高管 高官的演讲，有些官方，偏政治，每一篇不连续，适合偶尔看一眼</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>一、中德两国在世界上的作用</p>
 <ul>
-<li>从源码得知，Bean在实例化完成之后会直接将未装配的Bean工厂存放在<strong>「三级缓存」</strong>中，并且<strong>「移除二级缓存」</strong></li>
+<li>感谢热情接待，很开心来</li>
+<li>第三次来中国，1988年到现在，发生了很大变化，可想而知我的期待</li>
+<li>中国的发展，做的努力，成果，遇到的挑战，中国有巨大潜力</li>
+<li></li>
 </ul>
-<p><strong>【3】addSingleton：源码如下：</strong></p>
-<p>复制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//获取单例对象的方法，DefaultSingletonBeanRegistry#getSingleton</span><br><span class="line">//调用createBean实例化Bean</span><br><span class="line">singletonObject = singletonFactory.getObject();</span><br><span class="line"></span><br><span class="line">//。。。。中间省略部分代码 </span><br><span class="line"></span><br><span class="line">//doCreateBean之后才调用，实例化，属性赋值完成的Bean装入一级缓存，可以直接使用的Bean</span><br><span class="line">addSingleton(beanName, singletonObject);</span><br><span class="line"></span><br><span class="line">//addSingleton源码，在DefaultSingletonBeanRegistry#addSingleton方法中</span><br><span class="line">protected void addSingleton(String beanName, Object singletonObject) &#123;</span><br><span class="line">  synchronized (this.singletonObjects) &#123;</span><br><span class="line">            //一级缓存中添加</span><br><span class="line">   this.singletonObjects.put(beanName, singletonObject);</span><br><span class="line">            //移除三级缓存</span><br><span class="line">   this.singletonFactories.remove(beanName);</span><br><span class="line">            //移除二级缓存</span><br><span class="line">   this.earlySingletonObjects.remove(beanName);</span><br><span class="line">   this.registeredSingletons.add(beanName);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="spring-我是如何解决循环依赖的？"><a href="#spring-我是如何解决循环依赖的？" class="headerlink" title="spring: 我是如何解决循环依赖的？"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wjxzs/p/14239052.html">spring: 我是如何解决循环依赖的？</a></h1><p><a target="_blank" rel="noopener" href="https://hellojava.com/a/88587.html">Spring如何解决循环依赖，你真的懂了？</a></p>
-
+<h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><ul>
+<li>艺术的绝唱</li>
+<li>历史的音符</li>
+<li>轻松诙谐的顿悟哲理</li>
+<li>针砭时弊的政治言论</li>
+<li>稀缺品</li>
+</ul>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ul>
+<li>演讲是历史的音符、时代的记录、艺术的绝唱、文化的结晶</li>
+<li>在这个浮躁的时代，沉静与优雅在某种程序上甚至已经成为了一种稀缺品</li>
+<li>你们一定可以想象，我是带着怎样好奇与向往的心情期待这次访问的</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/" data-id="cld1bs9ty002ufynhaj1fca49" data-title="每日一问0114(Spring循环依赖)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BD%B1%E5%93%8D%E4%BD%A0%E4%B8%80%E7%94%9F%E7%9A%84%E6%B8%85%E5%8D%8E%E6%BC%94%E8%AE%B2/" data-id="cld1buvv30051bjop2fq438mq" data-title="影响你一生的清华演讲" class="article-share-link">Share</a>
       
       
       
@@ -592,14 +1302,14 @@
 
 
   
-    <article id="post-2021/每日一问0303(Spring亮眼代码技巧)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-读书/心理动机-激发行动力的底层逻辑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BF%83%E7%90%86%E5%8A%A8%E6%9C%BA-%E6%BF%80%E5%8F%91%E8%A1%8C%E5%8A%A8%E5%8A%9B%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.738Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
   </div>
 
   </div>
@@ -610,7 +1320,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
+      <a class="p-name article-title" href="/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BF%83%E7%90%86%E5%8A%A8%E6%9C%BA-%E6%BF%80%E5%8F%91%E8%A1%8C%E5%8A%A8%E5%8A%9B%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/">心理动机-激发行动力的底层逻辑</a>
     </h1>
   
 
@@ -618,213 +1328,61 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Spring-亮眼代码技巧"><a href="#Spring-亮眼代码技巧" class="headerlink" title="Spring 亮眼代码技巧"></a>Spring 亮眼代码技巧</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6935056621156597796?utm_source=gold_browser_extension">spring中让你眼前一亮的代码技巧</a></p>
+        <h1 id="心理动机-激发行动力的底层逻辑"><a href="#心理动机-激发行动力的底层逻辑" class="headerlink" title="# 心理动机:激发行动力的底层逻辑"></a># 心理动机:激发行动力的底层逻辑</h1><h2 id="始愿"><a href="#始愿" class="headerlink" title="始愿"></a>始愿</h2><p>提高行动力，了解 人类所有行为的动机，然后利用这一原理充分调动自身行动力</p>
+<p>好处：</p>
+<ol>
+<li>驱使身边家人有动力做更好的事</li>
+<li>管理上使团队更加有活力，调动大家工作积极性</li>
+</ol>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>以下内容直接copy 到一本新书阅读记录中</p>
+<h3 id="出处，作者"><a href="#出处，作者" class="headerlink" title="出处，作者"></a>出处，作者</h3><p>微信阅读</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>所有行为的原始动机</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><ul>
+<li><p>动机一：对稳定关系的追求</p>
+</li>
+<li><p>动机二：对地位的渴望</p>
+</li>
+</ul>
+<p>1） 社会上各种表现 体现了对地位渴望，说明这种动机确实存在</p>
+<p>2） 这种动机每个人都不一样，它能给我们带来快乐</p>
+<p>3） 这种动机也会让我们做一些不愿意做的事</p>
+<p>4） 社会地位的意义</p>
+<p>试想一下，若我们完全没有任何影响力，那么我们的话便会被当作耳旁风。我们无法找到理想的工作，在职场上、朋友之间、家里的餐桌上，可能得不到关注。</p>
+<ul>
+<li>动机三：对新知识的探索</li>
+</ul>
+<h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>* </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="有感触"><a href="#有感触" class="headerlink" title="有感触"></a>有感触</h3><ul>
+<li><p>人们的行为可以轻易地影响他人催产素的分泌情况，进而影响人际关系。哪些 行为会抑制：压力、缺乏信任和缺乏同理心</p>
+</li>
+<li><p>仅仅是因为害怕孤独，人们便不得不在一段恶性关系中拉扯，或者过分纠结于某些人的行为，于是凭空臆测、怀疑他人并且对他人说三道四。</p>
+</li>
+<li><p>当事事顺利，感觉自己更有影响力时，人们的情绪便比较积极；而当诸事不顺或发现别人过得比自己好很多时，人们的情绪较为消极</p>
+</li>
+<li><p>阶层意味着秩序和稳定，也能促进合作</p>
+</li>
+<li><p>为了和“成功者”站在同一阵营，我们的投入严重超支。</p>
+</li>
+<li><p>人们追求地位，因自己过度工作而忽略了重要的人际关系，把更多的时间用于无法让自己快乐的事情。</p>
+</li>
+<li><p>当事事顺利，感觉自己更有影响力时，人们的情绪便比较积极；而当诸事不顺或发现别人过得比自己好很多时，人们的情绪较为消极</p>
+</li>
+<li><p>*** 亚里士多德的适度原则（moderate mean）是指：人的特质和需求都有一个“合理的程度”，比如获得适度的地位，建立适度的人际关系，拥有恰到好处的知识储备</p>
+</li>
+<li><p>人类的行为完全是可塑的。在特定环境下，人们的行为可以被人为地设计。</p>
+</li>
+<li><p>除了环境因素，从我们每个人特有的基因组成中寻求真相。</p>
+</li>
+<li><p>激素，童年，基因，环境</p>
+</li>
+<li><p>如果给予内心满足感的这类神经化学物质持续不断地分泌，那么人类的祖先就会终日躺在树下——无所事事、毫不积极、安于现状。人们如果过于依赖这类神经化学物质，那么即便一事无成也会心满意足。但如果是这样，人类的祖先就不会寻找更多的营养物质，不会警惕掠食者，更不会有寻求配偶的欲望，人类也不可能在自然界中存活并成功地延续基因，人类这个物种可能会直接灭绝。（从自然地角度俯视人类的动机，以及动机所带来的的各种快乐与不快，就很渺小）</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/" data-id="cld1bs9ty002vfynh2czj9t1j" data-title="每日一问0303(Spring亮眼代码技巧)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/每日一问0323(gateway)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="GateWay"><a href="#GateWay" class="headerlink" title="GateWay"></a>GateWay</h1><h2 id="gateway-做啥"><a href="#gateway-做啥" class="headerlink" title="gateway 做啥"></a>gateway 做啥</h2><h2 id="GateWay-第一次使用-遇到问题"><a href="#GateWay-第一次使用-遇到问题" class="headerlink" title="GateWay 第一次使用 遇到问题"></a>GateWay 第一次使用 遇到问题</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/" data-id="cld1bs9tz002wfynh33uy35xl" data-title="每日一问0323(gateway)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/每日一问0326(链路追踪)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="链路追踪"><a href="#链路追踪" class="headerlink" title="链路追踪"></a>链路追踪</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><table>
-<thead>
-<tr>
-<th>zipkin</th>
-<th>pinpoint</th>
-<th>skywalking</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="为啥选-skywalking"><a href="#为啥选-skywalking" class="headerlink" title="为啥选 skywalking"></a>为啥选 skywalking</h2><h2 id="zipkin-怎么接入"><a href="#zipkin-怎么接入" class="headerlink" title="zipkin 怎么接入"></a>zipkin 怎么接入</h2><p>参考 <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039743861">基于docker部署的项目如何和skywalking agent进行整合</a></p>
-<h2 id="skywalking-docker-install"><a href="#skywalking-docker-install" class="headerlink" title="skywalking docker install"></a>skywalking docker install</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>***** <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1588637">分布式服务链路追踪技术分析及对比</a></p>
-<p>(docker hub  apache&#x2F;skywalking-oap-server)[<a target="_blank" rel="noopener" href="https://hub.docker.com/r/apache/skywalking-oap-server]">https://hub.docker.com/r/apache/skywalking-oap-server]</a></p>
-<p>()[<a target="_blank" rel="noopener" href="https://github.com/apache/skywalking-docker]">https://github.com/apache/skywalking-docker]</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.itmuch.com/books/skywalking/">Skywalking 6.2.0中文文档</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.itmuch.com/books/skywalking/setup/service-agent/java-agent/">接入</a></p>
-<h1 id="基于docker部署的项目如何和skywalking-agent进行整合"><a href="#基于docker部署的项目如何和skywalking-agent进行整合" class="headerlink" title="基于docker部署的项目如何和skywalking agent进行整合"></a><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039743861">基于docker部署的项目如何和skywalking agent进行整合</a></h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/" data-id="cld1bs9tz002xfynh690w3cas" data-title="每日一问0326(链路追踪)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/每日一问0328(PorlarDB)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="PorlarDB"><a href="#PorlarDB" class="headerlink" title="PorlarDB"></a>PorlarDB</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/" data-id="cld1bs9u0002yfynh6u7sdw07" data-title="每日一问0328(PorlarDB)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2021/每日一问0329(传输协议)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.360Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2021/">2021</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h1><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>Rpc ,GRpc,http区别</p>
-<p>gRPC是一个高性能、开源、通用的RPC框架。基于HTTP&#x2F;2协议标准设计开发，默认采用Protocol Buffers数据序列化协议Protocol Buffers基本语法，支持多种开发语言。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.codercto.com/a/106475.html">理解 gRPC——以及REST和RPC架构的区别</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/" data-id="cld1bs9u0002zfynh6z4ph5uv" data-title="每日一问0329(传输协议)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/%E8%AF%BB%E4%B9%A6/%E5%BF%83%E7%90%86%E5%8A%A8%E6%9C%BA-%E6%BF%80%E5%8F%91%E8%A1%8C%E5%8A%A8%E5%8A%9B%E7%9A%84%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/" data-id="cld1buvv30052bjop50ef26s8" data-title="心理动机-激发行动力的底层逻辑" class="article-share-link">Share</a>
       
       
       
@@ -879,23 +1437,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
           </li>
         
       </ul>

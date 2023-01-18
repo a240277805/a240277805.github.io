@@ -71,14 +71,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2020/每日一问0925(k8s)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2019/每日一问0827(JAVA基本数据类型)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0827(JAVA%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.730Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2019/">2019</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/">每日一问0925(k8s)</a>
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0827(JAVA%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)/">每日一问0827(JAVA基本数据类型)</a>
     </h1>
   
 
@@ -97,356 +97,53 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h1><h2 id="如何搭建-k8s"><a href="#如何搭建-k8s" class="headerlink" title="如何搭建 k8s"></a>如何搭建 k8s</h2><h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>pv PersistentVolume（PV）</p>
-<p>PV是对底层网络共享存储的抽象，将共享存储定义为一种“资源”，比如Node也是一种容器应用可以“消费”的资源。PV由管理员创建和配置，它与共享存储的具体实现直接相关，例如GlusterFS、iSCSI、RBD或GCE或AWS公有云提供的共享存储，通过插件式的机制完成与共享存储的对接，以供应用访问和使用。</p>
-<p>PVC PersistentVolumeClaim（PVC）</p>
-<p>PVC则是用户对存储资源的一个“申请”。就像Pod“消费”Node的资源一样，PVC能够“消费”PV资源。PVC可以申请特定的存储空间和访问模式。</p>
-<p>SVC</p>
-<p>pod</p>
-<p>node</p>
-<h2 id="CSI"><a href="#CSI" class="headerlink" title="CSI"></a>CSI</h2><p>引入容器存储接口Container Storage Interface（CSI）机制，用于在Kubernetes和外部存储系统之间建立一套标准的存储管理接口，通过该接口为容器提供存储服务。</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>我们通过设置kube-apiserver服务的启动参数–enable-swagger-ui&#x3D;true来启用Swagger UI页面，其访问地址为http:&#x2F;&#x2F;<master-ip>:<master-port>&#x2F;swagger-ui&#x2F;</p>
-<h2 id="Master的组件"><a href="#Master的组件" class="headerlink" title="Master的组件"></a>Master的组件</h2><ul>
-<li>（1）kube-apiserver</li>
-<li>（2）etcd</li>
-<li>（3）kube-scheduler</li>
-<li>（4）kube-controller-manager</li>
-<li>（5）cloud-controller-manager</li>
+        <h1 id="JAVA-基本数据类型"><a href="#JAVA-基本数据类型" class="headerlink" title="JAVA 基本数据类型"></a>JAVA 基本数据类型</h1><h4 id="最小数据类型-字节-byte-B"><a href="#最小数据类型-字节-byte-B" class="headerlink" title="最小数据类型 字节 byte B"></a>最小数据类型 字节 byte B</h4><ul>
+<li>8个位构成一个字节；即：1 byte (字节)&#x3D; 8 bit(位)；  1 KB &#x3D; 1024 B(字节)；<br>byte 数据类型是八位 、有符号的，以二进制补码形式表示整数。（256个数） 占一个字节</li>
+<li>最小是 -128(-2^7);</li>
+<li>最大是 127（2^7-1）</li>
+<li>默认是0</li>
+<li>byte 用在大型数组中 用来节约空间，因为 byte 占用大小只有int 的四分之一</li>
 </ul>
-<p>Pod有两种类型：普通的Pod和静态Pod（Static Pod）</p>
-<p>Service在Kubernetes中是一个抽象的概念，定义了一组逻辑上的Pod和一个访问它们的策略（通常称为微服务）。</p>
-<p>，在Kubernetes中，Volume是Pod中能够被多个容器访问的共享目录。</p>
-<h4 id="3．卷（Volume）"><a href="#3．卷（Volume）" class="headerlink" title="3．卷（Volume）"></a>3．卷（Volume）</h4><ul>
-<li>local 本地存储 ，使用Local Storage可以由Kubernetes自动对Pod进行调度，而使用HostPath只能人工手动调度Pod，因为Kubernetes已经知道了每个节点上kube-reserved和system-reserved设置的本地存储限制。</li>
-<li>NFS（Network File System，网络文件系统） 使用NFS数据卷适用于多读多写的持久化存储，适用于大数据分析、媒体处理、内容管理等场景。</li>
-<li>projected Volume projected Volume将多个Volume源映射到同一个目录，可以支持以下类型的卷源：secret、downwardAPI、configMap、serviceAccounttoken。 所有源都需要与Pod在同一名称空间中。</li>
-<li>secret volume用于将敏感信息（如密码）传递给Pod。 ，因此它们永远不会写入非易失性存储。</li>
-</ul>
-<h4 id="复制控制器（Replication-Controller-RC）"><a href="#复制控制器（Replication-Controller-RC）" class="headerlink" title="复制控制器（Replication Controller, RC）"></a>复制控制器（Replication Controller, RC）</h4><p>● 重新规划，比如重新设置Pod数量。</p>
-<p>● 缩放。</p>
-<p>● 滚动更新。</p>
-<p>● RC支持滚动更新，允许我们在更新服务时逐个替换Pod。</p>
-<ul>
-<li>除了在程序更新过程中同时可以运行多个版本的程序外，也可以在更新完成之后的一段时间内或者持续的同时运行多个版本（新旧），需要通过标签选择器来完成。</li>
-</ul>
-<h4 id="Replica-Set"><a href="#Replica-Set" class="headerlink" title="Replica Set"></a>Replica Set</h4><p>Replica Set 是下一代复制控制器。Replica Set和Replication Controller之间的&#x3D;&#x3D;唯一区别&#x3D;&#x3D;是选择器的支持——Replica Set支持基于集合的Label selector（Set-based selector），而RC只支持基于等式的Label selector（equality-basedselector），所以Replica Set的功能更强大。</p>
-<h4 id="7．部署控制器（Deployment）"><a href="#7．部署控制器（Deployment）" class="headerlink" title="7．部署控制器（Deployment）"></a>7．部署控制器（Deployment）</h4><h4 id="8．StatefulSet"><a href="#8．StatefulSet" class="headerlink" title="8．StatefulSet"></a>8．StatefulSet</h4><p>StatefulSet用于管理有状态应用程序，比如MySQL集群、MongoDB集群、ZooKeeper集群等。</p>
-<h4 id="9．后台支撑服务集（DaemonSet）"><a href="#9．后台支撑服务集（DaemonSet）" class="headerlink" title="9．后台支撑服务集（DaemonSet）"></a>9．后台支撑服务集（DaemonSet）</h4><p>DaemonSet保证在每个Node上都运行一个容器副本，常用来部署一些集群的日志、监控或者其他系统管理应用。典型的应用包括：</p>
-<p>● 日志收集守护程序，比如fluentd、logstash等。</p>
-<p>● 系统监控，比如Prometheus Node Exporter、collectd、New Relicagent、Ganglia gmond等。</p>
-<p>● 集群存储后台进程，比如glusterd、ceph等。</p>
-<p>● 系统程序，比如kube-proxy、kube-dns、glusterd、ceph等。</p>
-<h4 id="10-JOB"><a href="#10-JOB" class="headerlink" title="10. JOB"></a>10. JOB</h4><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p> journalctl -u docker</p>
-<p>journalctl -u kuberlet -f</p>
-<p>&#x2F;&#x2F;查看指定文件描述的所有资源</p>
-<p>kuberctl describe -f **.yaml</p>
-<p>kubectl-debug是一个简单的开源kubectl插件，可以帮助我们便捷地进行Kubernetes上的Pod排障诊断，背后做的事情很简单：在运行中的Pod上额外起一个新容器，并将新容器加入目标容器的pid、network、user以及ipc namespace中。这时我们就可以在新容器中直接用netstat、tcpdump这些熟悉的工具来诊断和解决问题了，而旧容器可以保持最小化，不需要预装任何额外的排障工具。</p>
-<p>（1）Pod一直处于Pending状态Pending一般情况下表示这个Pod没有被调度到一个节点上，通常使用“kubectldescribe”命令来查看Pod事件以得到具体原因。通常情况下，这是因为资源不足引起的。如果是资源不足，那么解决方案有：● 添加工作节点。● 移除部分Pod以释放资源。● 降低当前Pod的资源限制。</p>
-<p>（2）如果一个Pod卡在Waiting状态，</p>
-<p>就表示这个Pod已经调试到节点上，但是没有运行起来。解决方案有：</p>
-<p>● 检查网络问题。若是网络问题，则保障网络通畅，可以考虑使用代理或国际网络（部分域名在国内网络无法访问，比如“k8s.gcr.io”）。</p>
-<p>● 如果是拉取超时，可以考虑使用镜像加速器（比如使用阿里云或腾讯云提供的镜像加速地址），也可以考虑适当调整超时时间。</p>
-<p>● 尝试使用docker pull <image>来验证镜像是否可以正常拉取。（</p>
-<p>（3）Pod一直处于CrashLoopBackOff状态，经检查判为健康检查启动超时而退出CrashLoopBackOff状态说明容器曾经启动但又异常退出了，通常此Pod的重启次数是大于0的。解决方案有：● 重新设置合适的健康检查阈值。● 优化容器性能，提高启动速度。● 关闭健康检查。</p>
-<p>（4）出现大量状态为“Evicted”的PodEvicted即驱赶的意思，当节点NotReady（节点宕机或失联）或资源不足时就会将Pod驱逐到其他节点。解决方案有：● 排查节点异常。● 排查资源问题，扩充资源或释放其他资源。● 可使用以下命令批量删除已有的“Evicted”状态的Pod：</p>
-<p>Azure中国镜像源地址：<a target="_blank" rel="noopener" href="http://mirror.azure.cn/%E3%80%82">http://mirror.azure.cn/。</a></p>
-<p>中科大镜像源地址：<a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/%E3%80%82">http://mirrors.ustc.edu.cn/。</a></p>
-<p>网络组件flannel安装完成后，通过命令查看时一直在初始化状态，并且通过日志输出的内容如下所示：</p>
-<p><img src="/../../ImgSource/image-20211112162530870.png" alt="image-20211112162530870"></p>
-<p><img src="/../../ImgSource/image-20211112162721959.png" alt="image-20211112162721959"></p>
-<p>通常推荐使用“kubectl apply”命令替代“kubectl create”，因为“kubectl apply”既能创建Kubernetes资源，也能对资源进行更新，属于声明式对象配置管理，比命令式对象配置管理更易于理解和使用。</p>
-<h3 id="使用“kubectl-scale”命令来伸缩应用"><a href="#使用“kubectl-scale”命令来伸缩应用" class="headerlink" title="使用“kubectl scale”命令来伸缩应用"></a>使用“kubectl scale”命令来伸缩应用</h3><h4 id="9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用"><a href="#9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用" class="headerlink" title="9.2.2 使用“kubectl autoscale”命令来自动伸缩应用"></a>9.2.2 使用“kubectl autoscale”命令来自动伸缩应用</h4><h4 id="9-2-4-使用“kubectl-set”命令更新应用"><a href="#9-2-4-使用“kubectl-set”命令更新应用" class="headerlink" title="9.2.4 使用“kubectl set”命令更新应用"></a>9.2.4 使用“kubectl set”命令更新应用</h4><h4 id="9-2-5-使用“kubectl-rollout”命令回滚应用"><a href="#9-2-5-使用“kubectl-rollout”命令回滚应用" class="headerlink" title="9.2.5 使用“kubectl rollout”命令回滚应用"></a>9.2.5 使用“kubectl rollout”命令回滚应用</h4><p><img src="/../../ImgSource/image-20211112163203163.png" alt="image-20211112163203163"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yan234280533/article/details/72567261?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">Kubernetes中pod创建流程</a></p>
+<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><p>a、A、中、+、*、の……均表示一个字符；</p>
+<pre><code> 一般 utf-8 编码下，一个汉字 字符 占用 3 个 字节；
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/" data-id="cld1bs9t5001mfynha27p4rnf" data-title="每日一问0925(k8s)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问0925(maven)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/">每日一问0925(maven)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/" data-id="cld1bs9t6001nfynhay742nu2" data-title="每日一问0925(maven)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1009(mongodb)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">每日一问1009(mongodb)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
-<li>show collections 查看集合</li>
-<li>db.dbName.find({“a”:”b”}) 查找</li>
-<li>创建&#x2F;切换仓库: use DATABASE_NAME</li>
-<li>查看当前仓库: db</li>
-<li>查看所有仓库: show dbs</li>
-<li>普通库增加用户: (1)use  dbName (2) db.createUser({“user”:”ctfo”,”pwd”:”pipelineCTFO!2020”,roles:[“dbOwner”]})</li>
-<li>查看用户: show users   ;     db.dbName.users.find().pretty()</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/" data-id="cld1bs9t6001ofynh7aq914oc" data-title="每日一问1009(mongodb)" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020/每日一问1015(docker)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">每日一问1015(docker)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>每一个指令都会创建一层，并构成新的镜像。当运行多个指令时，会产生一些非常臃肿、非常多层的镜像，既增加了构建部署的时间，也很容易出错。因此，在很多情况下，可以合并指令并运行</p>
-<h2 id="镜像存储方式"><a href="#镜像存储方式" class="headerlink" title="镜像存储方式"></a>镜像存储方式</h2><p><img src="https://pic2.zhimg.com/80/v2-f3109ae2689c869b28f5033e2dff9669_720w.jpg" alt="avator"></p>
+ 一般 gbk 编码下，一个汉字  字符  占用 2 个 字节；
+</code></pre>
 <ol>
-<li>镜像中心域名 </li>
-<li>命名空间</li>
-<li>仓库名称</li>
-<li>标签</li>
+<li>标准ASCii字符集：有96个打印字符，和32个控制字符组成；一共96+32&#x3D;128个；</li>
+<li>扩展ASCii字符集：将标准的ASCii最高位1，得到十进制代码128—255（1 000 0000—-1 111 1111）；所以字符集一共有0—255,  256个字符； </li>
+<li>gb2312字符集: 所有<code>汉字字符</code>在计算机内部采用2个字节来表示，每个字节的最高位规定为1【正好与标准ASCii字符（最高位是0）不重叠，并兼容】，不支持繁体字；</li>
+<li>gbk字符集：gb2312的扩充，兼容gb2312，除了收录gb2312所有的字符外，还收录了其他不常见的汉字、繁体字等；</li>
 </ol>
-<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><h3 id="docker-compose-yml-属性"><a href="#docker-compose-yml-属性" class="headerlink" title="docker-compose.yml 属性"></a>docker-compose.yml 属性</h3><ul>
-<li><strong>version</strong>：指定 docker-compose.yml 文件的写法格式</li>
-<li><strong>services</strong>：多个容器集合</li>
-<li><strong>build</strong>：配置构建时，Compose 会利用它自动构建镜像，该值可以是一个路径，也可以是一个对象，用于指定 Dockerfile 参数</li>
+<h4 id="short-是-byte-的二倍"><a href="#short-是-byte-的二倍" class="headerlink" title="short 是 byte 的二倍"></a>short 是 byte 的二倍</h4><ul>
+<li>hort数据类型是16位、有符号的以二进制补码表示的整数，占2字节</li>
+<li>最小值是-32768（-2^15）；</li>
+<li>最大值是32767（2^15 - 1）；</li>
+<li>Short数据类型也可以像byte那样节省空间。一个short变量是int型变量所占空间的二分之一；</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">build: ./dir</span><br><span class="line">---------------</span><br><span class="line">build:</span><br><span class="line">    context: ./dir</span><br><span class="line">    dockerfile: Dockerfile</span><br><span class="line">    args:</span><br><span class="line">        buildno: 1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>command</strong>：覆盖容器启动后默认执行的命令</li>
+<h4 id="int"><a href="#int" class="headerlink" title="int"></a>int</h4><ul>
+<li>int数据类型是32位、有符号的以二进制补码表示的整数；占4字节</li>
+<li>最小值是-2,147,483,648（-2^31）；</li>
+<li>最大值是2,147,485,647（2^31 - 1）；</li>
+<li>一般地整型变量默认为int类型；</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">command: bundle exec thin -p 3000</span><br><span class="line">----------------------------------</span><br><span class="line">command: [bundle,exec,thin,-p,3000]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>dns</strong>：配置 dns 服务器，可以是一个值或列表</li>
+<h4 id="long"><a href="#long" class="headerlink" title="long"></a>long</h4><ul>
+<li>long数据类型是64位、有符号的以二进制补码表示的整数；占8字节</li>
+<li>最小值是-9,223,372,036,854,775,808（-2^63）；</li>
+<li>最大值是9,223,372,036,854,775,807（2^63 -1）；(不超过18位长度的数 都没问题)</li>
+<li>这种类型主要使用在需要比较大整数的系统上；<br>默认值是0L；</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dns: 8.8.8.8</span><br><span class="line">------------</span><br><span class="line">dns:</span><br><span class="line">    - 8.8.8.8</span><br><span class="line">    - 9.9.9.9</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>dns_search</strong>：配置 DNS 搜索域，可以是一个值或列表</li>
+<h4 id="float："><a href="#float：" class="headerlink" title="float："></a>float：</h4><ul>
+<li>float数据类型是单精度、32位、符合IEEE 754标准的浮点数；占4字节    -3.4<em>E38- 3.4</em>E38。。。浮点数是有舍入误差的 （单精度和双精度就是长度不同这个说法正确嘛？）</li>
+<li>float在储存大型浮点数组的时候可节省内存空间；</li>
+<li>默认值是0.0f；</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dns_search: example.com</span><br><span class="line">------------------------</span><br><span class="line">dns_search:</span><br><span class="line">    - dc1.example.com</span><br><span class="line">    - dc2.example.com</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>environment</strong>：环境变量配置，可以用数组或字典两种方式</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">    RACK_ENV: development</span><br><span class="line">    SHOW: &#x27;ture&#x27;</span><br><span class="line">-------------------------</span><br><span class="line">environment:</span><br><span class="line">    - RACK_ENV=development</span><br><span class="line">    - SHOW=ture</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>env_file</strong>：从文件中获取环境变量，可以指定一个文件路径或路径列表，其优先级低于 environment 指定的环境变量</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env_file: .env</span><br><span class="line">---------------</span><br><span class="line">env_file:</span><br><span class="line">    - ./common.env</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>expose</strong>：暴露端口，只将端口暴露给连接的服务，而不暴露给主机</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expose:</span><br><span class="line">    - &quot;3000&quot;</span><br><span class="line">    - &quot;8000&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>image</strong>：指定服务所使用的镜像</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image: java</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>network_mode</strong>：设置网络模式</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">network_mode: &quot;bridge&quot;</span><br><span class="line">network_mode: &quot;host&quot;</span><br><span class="line">network_mode: &quot;none&quot;</span><br><span class="line">network_mode: &quot;service:[service name]&quot;</span><br><span class="line">network_mode: &quot;container:[container name/id]&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>ports</strong>：对外暴露的端口定义，和 expose 对应</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ports:   # 暴露端口信息  - &quot;宿主机端口:容器暴露端口&quot;</span><br><span class="line">- &quot;8763:8763&quot;</span><br><span class="line">- &quot;8763:8763&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>links</strong>：将指定容器连接到当前连接，可以设置别名，避免ip方式导致的容器重启动态改变的无法连接情况</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">links:    # 指定服务名称:别名 </span><br><span class="line">    - docker-compose-eureka-server:compose-eureka</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>volumes</strong>：卷挂载路径</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  - /lib</span><br><span class="line">  - /var</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>logs</strong>：日志输出信息</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--no-color          单色输出，不显示其他颜.</span><br><span class="line">-f, --follow        跟踪日志输出，就是可以实时查看日志</span><br><span class="line">-t, --timestamps    显示时间戳</span><br><span class="line">--tail              从日志的结尾显示，--tail=200</span><br></pre></td></tr></table></figure>
-
-<h3 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h3><ul>
-<li><strong>ps</strong>：列出所有运行容器</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose ps</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>logs</strong>：查看服务日志输出</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose logs</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>port</strong>：打印绑定的公共端口，下面命令可以输出 eureka 服务 8761 端口所绑定的公共端口</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose port eureka 8761</span><br></pre></td></tr></table></figure>
-
-
-<ul>
-<li><strong>kill</strong>：通过发送 SIGKILL 信号来停止指定服务的容器</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill eureka</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>pull</strong>：下载服务镜像</li>
-<li><strong>scale</strong>：设置指定服务运气容器的个数，以 service&#x3D;num 形式指定</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose scale user=3 movie=3</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>run</strong>：在一个服务上执行一个命令</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose run web bash</span><br></pre></td></tr></table></figure>
-
-<h2 id="dockerFile"><a href="#dockerFile" class="headerlink" title="dockerFile"></a>dockerFile</h2><ul>
-<li>ENTRYPOINT是配置容器启动后执行的指令，并且不可被docker run提供的参数覆盖。每个Dockerfile中只能有一个ENTRYPOINT，当指定多个时，只有最后一个生效。</li>
-<li>ADD指令与COPY指令非常类似，但它包含了更多的功能。除了将文件从主机复制到容器镜像外，ADD指令还可以使用URL规范从远程位置复制文件。</li>
-<li>如果Dockerfile中指定了多个CMD指令，就只会执行最后一个指令。</li>
-<li>转义字符, Dockerfile指令需要跨多行进行编写，以提高脚本命令的可读性。这可以通过转义字符完成，默认Dockerfile转义字符是反斜杠“\”</li>
-</ul>
-<h3 id="dockerfile-优化"><a href="#dockerfile-优化" class="headerlink" title="dockerfile 优化"></a>dockerfile 优化</h3><p>（1）尽量选择官方镜像。</p>
-<p>（2）选择合适的基础镜像。<br>需要特别说明的是，标签中包含“alpine”的镜像是基于体积更小的Alpine Linux发行版制作的，一般情况下可以优先考虑。标签中包含“sdk”的镜像是包含完整的框架SDK的，往往体积比较大，如果仅用于运行托管，尽量选择带“runtime”的镜像<br>（3）优化指令顺序。Docker会缓存Dockerfile中尚未更改的所有步骤，但是不管更改什么指令，都将重做其后的所有步骤。也就是说，如果指令3有变动，那么4、5、6就会重做。因此，需要将最不可能产生更改的指令放在前面，按照这个顺序来编写Dockerfile指令。这样，在构建过程中就可以节省很多时间。比如，可以把WORKDIR、ENV等放在前面，把COPY、ADD放在后面。总的来说，就是把不需要经常更改的指令放到前面，将最频繁更改的指令放到最后面。</p>
-<p>（4）只复制需要的文件，切忌复制所有内容。</p>
-<p>（5）最小化可缓存的执行层。	<br>每一个RUN指令都会被看作是可缓存的执行单元。太多的RUN指令会增加镜像的层数，增大镜像体积，而将所有的命令都放到同一个RUN指令中又会破坏缓存，从而延缓构建周期。当使用包管理器安装软件时，一般都会先更新软件索引信息再安装软件。推荐将更新索引和安装软件放在同一个RUN指令中，这样可以形成一个可缓存的执行单元，否则可能会安装旧的软件包。</p>
-<p>（6）使用多阶段构建。</p>
-<p>多阶段构建可以由多个FROM指令组成，每一个FROM语句表示一个新的构建阶段，阶段名称可以用AS参数指定。例如，在下面的示例中，指定第一阶段的名称为builder，可以被第二阶段直接引用。两个阶段环境一致，并且第一阶段包含所有构建依赖项。第二阶段是构建最终镜像的最后阶段，包括应用运行时的所有必要条件。</p>
-<p><img src="/../../ImgSource/image-20211112111906126.png" alt="image-20211112111906126"></p>
-<p>（7）根据情况合并指令。</p>
-<p>（8）删除多余文件和清理没用的中间结果。	</p>
-<p>（9）使用.dockerignore。</p>
-<h2 id="快捷键方式"><a href="#快捷键方式" class="headerlink" title="快捷键方式"></a>快捷键方式</h2><ul>
-<li>拉取镜像: docker pull {imageName}</li>
-<li>查看镜像: docker images 查看镜像</li>
-<li>在容器中执行命令: docker exec -it {containerName} &#x2F;bin&#x2F;bash   ? &#x2F;bin&#x2F;sh</li>
-<li>查看基本信息: docker inspect {containerName}</li>
-<li>查看内存: docker stats </li>
-<li>查看日志： docker logs</li>
-<li>查看镜像的历史版本可以执行以下命令：docker history &lt;image_name&gt; </li>
-<li>将容器的状态保存为镜像： docker commit $sample_job job1 </li>
-<li>在registry中的镜像可以使用以下命令查找到： docker search &lt;image-name&gt; </li>
-<li>docker 查看挂载目录 docker inspect container_name | grep Mounts -A 20</li>
-<li>查看docker 镜像仓库地址:   cat &#x2F;etc&#x2F;docker&#x2F;daemon.json</li>
-<li>docker run 长久运行: docker run centos ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> &#x2F; sleep 50s 就是运行结束后重新运行</li>
-<li>修改镜像名称 docker tag source target</li>
-</ul>
-<p><img src="/../../ImgSource/image-20211111144335309.png" alt="image-20211111144335309"></p>
-<p><img src="/../../ImgSource/image-20211111144405420.png" alt="image-20211111144405420"></p>
-<p><img src="/../../ImgSource/image-20211111144434027.png" alt="image-20211111144434027"></p>
-<p><img src="/../../ImgSource/image-20211111144524928.png" alt="image-20211111144524928"></p>
-<p><img src="/../../ImgSource/image-20211111144553999.png" alt="image-20211111144553999"></p>
-<p><img src="/../../ImgSource/image-20211111144720541.png" alt="image-20211111144720541"></p>
-<p>定时清理不用镜像脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_42_centos opt]# cat clean.sh </span><br><span class="line">sh /opt/docker/lock.sh -t clean -a lock</span><br><span class="line">docker image prune -a -f</span><br><span class="line">docker container prune -f</span><br><span class="line">sh /opt/docker/lock.sh -t clean -a unlock </span><br><span class="line">dt=$(date)</span><br><span class="line">echo time is $dt</span><br></pre></td></tr></table></figure>
-
-<p><img src="/../../ImgSource/image-20211111150440975.png" alt="image-20211111150440975"></p>
-<p><img src="/../../ImgSource/image-20211112105933891.png" alt="image-20211112105933891"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="docker-compose-启动容器"><a href="#docker-compose-启动容器" class="headerlink" title="docker-compose 启动容器"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liaokui/p/11380590.html">docker-compose 启动容器</a></h1><p><a target="_blank" rel="noopener" href="https://weread.qq.com/web/reader/13b32c4071cc8f0613bd197kc1632f5021fc16a5320f3dc">微信读书-</a></p>
+<h4 id="char："><a href="#char：" class="headerlink" title="char："></a>char：</h4><p>char类型是一个单一的16位Unicode字符；用 ‘’表示一个字符。。java 内部使用Unicode字符集。。他有一些转义字符  ，2字节<br>最小值是’\u0000’（即为0）；<br>最大值是’\uffff’（即为65,535）；可以当整数来用，它的每一个字符都对应一个数字</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/" data-id="cld1bs9t7001pfynh5ucnb0nh" data-title="每日一问1015(docker)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0827(JAVA%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)/" data-id="cld1buvuk0045bjophe9p99ow" data-title="每日一问0827(JAVA基本数据类型)" class="article-share-link">Share</a>
       
       
       
@@ -458,14 +155,14 @@
 
 
   
-    <article id="post-2020/每日一问1024(docsify)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2019/每日一问0828(讲解 提纲)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/" class="article-date">
-  <time class="dt-published" datetime="2023-01-18T07:11:12.356Z" itemprop="datePublished">2023-01-18</time>
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0828(%E8%AE%B2%E8%A7%A3%20%E6%8F%90%E7%BA%B2)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.730Z" itemprop="datePublished">2023-01-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2020/">2020</a>
+    <a class="article-category-link" href="/categories/2019/">2019</a>
   </div>
 
   </div>
@@ -476,7 +173,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/">每日一问1024(docsify)</a>
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0828(%E8%AE%B2%E8%A7%A3%20%E6%8F%90%E7%BA%B2)/">每日一问0828(讲解 提纲)</a>
     </h1>
   
 
@@ -484,15 +181,374 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h1><p>一个神奇的文档网站生成工具</p>
-<p>docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会将 .md 转成 .html 文件，所有转换工作都是在运行时进行。这将非常实用，如果只是需要快速的搭建一个小型的文档网站，或者不想因为生成的一堆 .html 文件“污染” commit 记录，只需要创建一个 index.html 就可以开始写文档而且直接部署在GitHub Pages。</p>
-<p>参考地址：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4883e95aa903">有了docsify神器，从此爱上看文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">快速开始</a></p>
+        <h1 id="讲解-提纲"><a href="#讲解-提纲" class="headerlink" title="讲解 提纲"></a>讲解 提纲</h1><h3 id="1-时间序列存储查询-维度聚合"><a href="#1-时间序列存储查询-维度聚合" class="headerlink" title="1. 时间序列存储查询 维度聚合"></a>1. 时间序列存储查询 维度聚合</h3><h3 id="2-数据库选型"><a href="#2-数据库选型" class="headerlink" title="2. 数据库选型"></a>2. 数据库选型</h3><p>mysql ,pg,mongodb,es ,hbase 区别 ，优点</p>
+<h3 id="3-es-原理"><a href="#3-es-原理" class="headerlink" title="3. es 原理"></a>3. es 原理</h3><h3 id="4-es-适用场景，"><a href="#4-es-适用场景，" class="headerlink" title="4. es 适用场景，"></a>4. es 适用场景，</h3><h3 id="5-es-调优"><a href="#5-es-调优" class="headerlink" title="5. es 调优"></a>5. es 调优</h3><h3 id="6-日志系统选型-（ELK-pinpoint）"><a href="#6-日志系统选型-（ELK-pinpoint）" class="headerlink" title="6. 日志系统选型 （ELK,pinpoint）"></a>6. 日志系统选型 （ELK,pinpoint）</h3><h6 id="6-1-ELK选型-（EBLK，EBKLK-fluence）"><a href="#6-1-ELK选型-（EBLK，EBKLK-fluence）" class="headerlink" title="6.1 ELK选型 （EBLK，EBKLK,fluence）"></a>6.1 ELK选型 （EBLK，EBKLK,fluence）</h6><h3 id="7-ELK-安装部署-分布式部署"><a href="#7-ELK-安装部署-分布式部署" class="headerlink" title="7. ELK 安装部署(分布式部署)"></a>7. ELK 安装部署(分布式部署)</h3><h6 id="7-1-ELK-部署方案"><a href="#7-1-ELK-部署方案" class="headerlink" title="7.1 ELK 部署方案"></a>7.1 ELK 部署方案</h6><h3 id="8-生产环境调优"><a href="#8-生产环境调优" class="headerlink" title="8. 生产环境调优"></a>8. 生产环境调优</h3><h1 id="二、mysql-事务讲解"><a href="#二、mysql-事务讲解" class="headerlink" title="二、mysql 事务讲解"></a>二、mysql 事务讲解</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>谈谈对 事务 隔离级别的理解</li>
+<li>事务会带来的问题，</li>
+<li>事务隔离级别 是怎么解决这些问题的</li>
+<li>讲讲mysql 的锁</li>
+<li>根据一条 Update 在事务中加锁情况做分析</li>
+</ol>
+<ol>
+<li>不加锁:  RU 模式下 ，可以</li>
+</ol>
+<p>2）主键索引排它锁</p>
+<p>3）加记录锁</p>
+<p>4）加 间隙锁</p>
+<ol start="5">
+<li><p>加 next-key(后码锁)</p>
+</li>
+<li><p>加 表锁</p>
+</li>
+</ol>
+<ol start="5">
+<li>死锁 怎么出现 和如何避免</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="演示死锁"><a href="#演示死锁" class="headerlink" title="演示死锁"></a>演示死锁</h3><ol>
+<li>显式加锁栗子</li>
+</ol>
+<ul>
+<li>A<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line">select * from tao where id = 1 FOR UPDATE;</span><br><span class="line">update tao set col2 = 2019 where id = 2</span><br><span class="line">select * from tao;</span><br><span class="line">rollback;</span><br><span class="line">commit;</span><br><span class="line">start transaction;</span><br></pre></td></tr></table></figure></li>
+<li>B<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select * from tao where id = 2 for update;</span><br><span class="line">update tao set col2 = 2022 where id = 1</span><br><span class="line">select * from tao</span><br><span class="line">where id = 1 FOR UPDATE;</span><br><span class="line">rollback;</span><br><span class="line">commit;</span><br></pre></td></tr></table></figure>
+2.隐式加锁栗子</li>
+<li>A<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">start transaction ;</span><br><span class="line">select * from tao</span><br><span class="line">delete from tao where id=14</span><br><span class="line">insert into tao (id, col2, col3) values (13,1000,2000);</span><br><span class="line">select *from tao;</span><br><span class="line">commit ;</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from information_schema.innodb_trx;</span><br></pre></td></tr></table></figure></li>
+<li>B<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">start transaction ;</span><br><span class="line">select * from tao</span><br><span class="line">delete from tao where id=16</span><br><span class="line">insert into tao (id, col2, col3) values (14,1000,2000);</span><br><span class="line">select *from tao;</span><br><span class="line">commit ;</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from information_schema.innodb_trx;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://a240277805.github.io/2023/01/18/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1024(docsify)/" data-id="cld1bs9t7001qfynh8gvicop6" data-title="每日一问1024(docsify)" class="article-share-link">Share</a>
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0828(%E8%AE%B2%E8%A7%A3%20%E6%8F%90%E7%BA%B2)/" data-id="cld1buvuk0046bjop5jz572g8" data-title="每日一问0828(讲解 提纲)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0829(ELK安装)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0829(ELK%E5%AE%89%E8%A3%85)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.730Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0829(ELK%E5%AE%89%E8%A3%85)/">每日一问0829(ELK安装)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="ELK-安装"><a href="#ELK-安装" class="headerlink" title="ELK 安装"></a>ELK 安装</h1><p>流程  <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38098312/article/details/80181415">栗子</a><br><img src="https://operimgci.zhidaohulian.com/test/image/2019-08-29/531be1f901294a979b9d0c4811761a0b.png" alt="avatar"></p>
+<p><img src="https://img2018.cnblogs.com/blog/130857/201812/130857-20181203122611122-2121636116.png" alt="avatar"></p>
+<h2 id="1-elastic-search"><a href="#1-elastic-search" class="headerlink" title="1. elastic search"></a>1. elastic search</h2><p>es 启动需要切换用户 ，所以我本地没启用的测试环境的。</p>
+<p>es  端口号 9200<br>es-head 端口9100 用来监控</p>
+<h2 id="2-logstash-用来数据采集-加上数据格式转化"><a href="#2-logstash-用来数据采集-加上数据格式转化" class="headerlink" title="2. logstash   用来数据采集 加上数据格式转化"></a>2. logstash   用来数据采集 加上数据格式转化</h2><p> 采集性能上存在问题 ，所以一般采用 beats 采集，或者是用其他采集组件 比如 fluence?</p>
+<p> 数据来源可以使 kafka ,文件 ,beats ，标准输入 等</p>
+<p> 还可以自己编码 自定义 tag ,根据tag 发送到不同的es,或者先发送到 kafka ，再用kafka 发到 logstash ，logstash 再发到 es;</p>
+<p> 发到es 可匹配 模板，es 有自带的 logstash 模板</p>
+<h3 id="从每台应用服务器运行Logstash进程并将数据直接发送到Elasticsearch里，显然不是第一选择，原因"><a href="#从每台应用服务器运行Logstash进程并将数据直接发送到Elasticsearch里，显然不是第一选择，原因" class="headerlink" title="从每台应用服务器运行Logstash进程并将数据直接发送到Elasticsearch里，显然不是第一选择，原因"></a>从每台应用服务器运行Logstash进程并将数据直接发送到Elasticsearch里，显然不是第一选择，原因</h3><p> 有三：第一，过多的客户端连接对Elasticsearch是一种额外的压力；第二，网络抖动会影响到Logstash进程，进而影响生产应用；第三，运维人员未必愿意在生产服务器上部署Java，或者让Logstash跟业务代码争夺Java资源。所以，在实际运用中，Logstash进程会被分为两个不同的角色。运行在应用服务器上的尽量减轻运行压力，只做读取和转发，这个角色叫做Shipper；运行在独立服务器上的完成数据解析处理，负责写入Elasticsearch的角色，叫Indexer。</p>
+<h3 id="logstash-配置"><a href="#logstash-配置" class="headerlink" title="logstash 配置"></a>logstash 配置</h3><p>参见  ..&#x2F;markdown&#x2F;otherSource&#x2F;logstash.conf</p>
+<p>通过filebeats 写入 logstash</p>
+<p>默认在 message ，需要将message 拆分成分词;</p>
+<p>在filter 中定义</p>
+<p>用了四种方式 </p>
+<ul>
+<li>mutate {split}  性能最好，最推荐使用的方式</li>
+<li>ruby { code&#x3D;&gt;}   编写 ruby 脚本进行分词</li>
+<li>json{} 将 json字符串自动分词，会有类型问题（target 必须是 obj）</li>
+<li>mutate {convert} 类型转换  原因:  想用es 的wildcard 进行模糊搜索，这要求映射的字段必须是string</li>
+</ul>
+<p>output 定义 输出 </p>
+<ul>
+<li>可以有多个</li>
+<li>index 自动创建索引，按天索引（再再kibana做聚合）</li>
+<li>还可以定义自己写的映射，指定映射文件，这里没有使用</li>
+</ul>
+<h3 id="source-CODE"><a href="#source-CODE" class="headerlink" title="source CODE"></a>source CODE</h3><p><img src="/../../ImgSource/logstashSourceCode.png" alt="avator"></p>
+<h2 id="5-xpack-警告监控-好像是自带"><a href="#5-xpack-警告监控-好像是自带" class="headerlink" title="5.xpack  警告监控  好像是自带"></a>5.xpack  警告监控  好像是自带</h2><h2 id="4-beats-轻量级组件-数据采集-filebeats-metricbeat-收集文件日志-收集系统日志"><a href="#4-beats-轻量级组件-数据采集-filebeats-metricbeat-收集文件日志-收集系统日志" class="headerlink" title="4.beats 轻量级组件 数据采集 (filebeats ,metricbeat) 收集文件日志 收集系统日志"></a>4.beats 轻量级组件 数据采集 (filebeats ,metricbeat) 收集文件日志 收集系统日志</h2><p> 配置 正则 匹配相关文件夹，就可以收集 ，还要配置要发送的机器<br> 采用 channel 管道的形式 采集数据 性能比较好。</p>
+<h2 id="3-kibana"><a href="#3-kibana" class="headerlink" title="3. kibana"></a>3. kibana</h2><h2 id="es-安装"><a href="#es-安装" class="headerlink" title="es 安装"></a>es 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:7.6.2</span><br><span class="line"></span><br><span class="line">docker run --name elasticsearch -d -e ES_JAVA_OPTS=&quot;-Xms512m -Xmx512m&quot; -v /data/elk/esconfig/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:7.6.2</span><br></pre></td></tr></table></figure>
+
+<p>浏览器输入：<a target="_blank" rel="noopener" href="http://127.0.0.1:9200/">http://127.0.0.1:9200/</a> 你的服务器ip 端口号</p>
+<p>安装elasticsearch head插件监控管理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull mobz/elasticsearch-head:5</span><br><span class="line"></span><br><span class="line">docker run --name es-head -d -p 9100:9100 -v /data/elk/esconfig/es-head/vendor.js:/usr/src/app/_site/vendor.js docker.io/mobz/elasticsearch-head:5</span><br></pre></td></tr></table></figure>
+
+<p>挂载配置文件内容</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment"># 访问ID限定，0.0.0.0为不限制，生产环境请设置为固定IP</span></span><br><span class="line"><span class="attr">transport.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # 下面的配置是关闭跨域验证</span></span><br><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="es-数据迁移"><a href="#es-数据迁移" class="headerlink" title="es 数据迁移"></a>es 数据迁移</h3><p>elasticsearch-dump</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/270174202">你头疼的ELK难题，本文几乎都解决了</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/afeige/p/10771140.html"> Docker 拉取ElasticSearch镜像</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/csdn_chenhao/article/details/108983272">docker安装elasticsearch，head插件</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0829(ELK%E5%AE%89%E8%A3%85)/" data-id="cld1buvul0047bjop1tpyglxx" data-title="每日一问0829(ELK安装)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0830(数据库选型)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0830(%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%89%E5%9E%8B)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.730Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0830(%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%89%E5%9E%8B)/">每日一问0830(数据库选型)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="数据库概念"><a href="#数据库概念" class="headerlink" title="数据库概念"></a>数据库概念</h2><p>图灵机指出了数据的3个核心需求：1、数据存储；2、数据写入；3、数据读取。</p>
+<p>一个标准的数据库大概主要会包含以下几个大的模块。<a target="_blank" rel="noopener" href="https://juejin.im/post/578bbd5e6be3ff006cdfe0f9">出处</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 底层的`存储层`，这个是必不可少的，他是整个数据库的核心数据结构，也就是数据是如何保存的，一般提供最简单的原子增删改查。</span><br><span class="line">2. 存储层上面就是`引擎层`了，这里会对底层的存储层进行各种组合型的操作用来满足查询的需求之类的，而且数据库的事务支持也在这一层，我们熟悉的`innoDB`就是一个数据库的存储引擎，`他其实包含的就是这个引擎层和存储层`了，引擎层提供对数据层的操作方法集合。</span><br><span class="line">3. 在引擎层之上还有个`SQL的解析层`，主要用来对SQL语句进行解析，分析，优化了，然后把SQL语句转化成引擎层的接口，进行具体的数据操作。</span><br><span class="line">4. 最上面就是对外的UI了，也就是用户`交互层`了，一般我们熟悉的就是网络交互了。</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么用数据库呢？"><a href="#为什么用数据库呢？" class="headerlink" title="为什么用数据库呢？"></a>为什么用数据库呢？</h3><p>其实要保存数据，搜索系统也能保存数据，而且检索起来更快，并且两者的底层数据结构其实差别不是很大，<code>但为什么用数据库呢？</code>因为数据库的核心是<code>可靠</code>，这个可靠就是考数据库的引擎层来保证的，完整的<code>binlog</code>记录，<code>崩溃后完整的重放机制</code>，<code>数据双写</code>，<code>内存数据定时刷新到磁盘</code>，所有的这些都是为了保证数据的可靠，不会丢失数据。</p>
+<p>另一个就是<code>性能</code>，为了避免全表扫描，就得创建索引， 为了建立索引，关系型数据库 一般是 实现<code>B+树</code>来存储索引，用<code>逆波兰表达式</code>来对WHERE之后的语句进行解析;时序数据库 实现 <code>LSM tree</code> <code>核心思想</code>就是通过内存写和后续磁盘的顺序写入获得更高的写入性能，避免了随机写入。但同时也牺牲了读取性能</p>
+<p> 参考<a target="_blank" rel="noopener" href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a> 和<a href="%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(%E6%A0%91).md">每日一问0801</a></p>
+<h2 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h2><p>根据存储模型划分，数据库类型主要可分为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">网状数据库(Network Database)、(淘汰或者咱们用不到)</span><br><span class="line">关系数据库(Relational Database)、(mysql,pg,oricle)</span><br><span class="line">层次(树形)数据库(Hierarchical Database)、(淘汰或者咱们用不到)</span><br><span class="line">面向对象数据库(Object-oriented Database)(非关系型数据库？)(nosql,mongledb)。</span><br></pre></td></tr></table></figure>
+
+<p>非关系型数据库的优势：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 性能高：NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</span><br><span class="line">2. 可扩展性好：同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</span><br></pre></td></tr></table></figure>
+
+<p>关系型数据库的优势：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 可以复杂查询：可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</span><br><span class="line">2. 事务支持良好：使得对于安全性能很高的数据访问要求得以实现。</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据库的应用类型"><a href="#数据库的应用类型" class="headerlink" title="数据库的应用类型"></a>数据库的应用类型</h3><p>  数据库的应用类型分为 OLTP（Online Transaction Processing ，即联机事务处理）和 OLAP（Online Analysis Processing，即联机分析处理）两种。</p>
+<ul>
+<li><p>OLTP 是传统关系型数据库的主要应用，其主要面向基本的、日常的事务处理，例如在线交易。它的基本特征是可以立即将客户端的原始数据传送到计算中心进行处理，并且在很短的时间内给出处理结果。衡量 OLTP 系统的一个重要性能指标是系统性能，具体体现为实时响应时间（Response Time），即从用户在终端输入数据到计算机对这个请求做出回复所需的时间。</p>
+</li>
+<li><p>OLAP 是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。OLAP 专门用于支持复杂的分析操作，侧重对决策人员和高层管理人员的决策支持，可以根据分析人员的要求快速、灵活地进行大数据量的复杂查询处理，并且以一种直观易懂的形式将查询结果提供给决策人员。为了让用户从多个角度切换或者进行多角度综合分析，OLAP 数据库通常使用一个或多个多维数据集（Multi Dimensional Dataset），并且使用 MDX（Multi Dimensional Expressions，即多维表达式）进行数据定义和操作。</p>
+</li>
+</ul>
+<p>一个是反馈，一个是显示结果，帮助分析。</p>
+<h6 id="SQL-中包括3类语言："><a href="#SQL-中包括3类语言：" class="headerlink" title="SQL 中包括3类语言："></a>SQL 中包括3类语言：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DML（Data Manipulation Language，即数据操纵语言） 增删改查</span><br><span class="line">DDL（Data Definition Language，即数据定义语言）主要的命令有 CREATE、ALTER、DROP 等。</span><br><span class="line">DCL（Data Control Language，即数据控制语言）权限相关 包括 Grant、Deny、Revoke 等语句。</span><br></pre></td></tr></table></figure>
+
+<p><a href="./%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0825(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93).md">时序数据库？</a></p>
+<h2 id="mysql-pg-mongodb-es-hbase-区别-，优点"><a href="#mysql-pg-mongodb-es-hbase-区别-，优点" class="headerlink" title="mysql ,pg,mongodb,es ,hbase 区别 ，优点"></a>mysql ,pg,mongodb,es ,hbase 区别 ，优点</h2><p>参考 </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.oschina.net/translate/showdown-mysql-8-vs-postgresql-10">“王者对战”之 MySQL 8 vs PostgreSQL 10</a></li>
+<li><a target="_blank" rel="noopener" href="http://wiki.postgresql.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E6%AF%94">数据库对比</a></li>
+</ul>
+<p>对比mysql 和 pg<br>一个多进程堆索引,一个多线程聚簇索引</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>mysql</th>
+<th>pg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>背后和协议</td>
+<td>oracle 这样成熟商业公司 (BSD&#x2F;MIT )</td>
+<td>强大开源志愿者 (GPL或Commercial License)</td>
+</tr>
+<tr>
+<td>SQL标准的支持</td>
+<td>只支持部分SQL标准</td>
+<td>几乎支持所有的SQL标准</td>
+</tr>
+<tr>
+<td>数据流转优势</td>
+<td>所有的高可用方案都是基于binlog做的同步，以及基于MySQL的分布式数据也是基于MySQL的binlog实现  (<code>异步</code>)</td>
+<td><code>可以做到同步，异步</code>，半同步复制，以及基于日志逻辑复制，可以实现表级别的订阅和发布。</td>
+</tr>
+<tr>
+<td>ACID支持方面</td>
+<td>MySQL只有innodb引擎支持事务，事务一致性保证上可根据实际需求调整，为了最大限度的保护数据，MySQL可配置双一模式，对ACID的支持上比PG稍弱弱。</td>
+<td>支持事务的强一致性，事务保证性好，完全支持ACID特性。</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>① MySQL是广泛选择的基于Web的项目，需要数据库只是为了简单的数据事务。 但是，当遇到重负载或尝试完成复杂查询时，MySQL通常会表现不佳。<br>② MySQL的读取速度，在OLTP系统中表现良好。<br>③ MySQL + InnoDB为OLTP场景提供了非常好的读&#x2F;写速度。总体而言，MySQL在高并发场景下表现良好。<br>            ④ MySQL是可靠的，并且与商业智能应用程序配合良好，因为商业智能应用程序通常读取很多。<br></td>
+<td>①PostgreSQL广泛用于读写速度高和数据一致性高的大型系统。此外，它还支持各种性能优化，<br>当然这些优化仅在商业解决方案中可用，例如地理空间数据支持，没有读锁定的并发性等等。 <br> ② PostgreSQL性能最适用于需要执行复杂查询的系统。<br>  ③ PostgreSQL在OLTP&#x2F; OLAP系统中表现良好，读写速度以及大数据分析方面表现良好，基于PG的GP数据库，在数据仓库领域表现良好。<br>  ④ PostgreSQL也适用于商业智能应用程序，但更适合需要快速读&#x2F;写速度的数据仓库和数据分析应用程序。</td>
+</tr>
+<tr>
+<td>数据存储和数据类型</td>
+<td>MySQL采用索引组织表，MySQL必须有主键索引，所有的数据访问都是通过主键实现，<br>二级索引访问时，需要扫描两遍索引（主键和二级索引）</td>
+<td>PG主表采用堆表存放，存放的数据量较大，数据访问方式类似于Oracle的堆表。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>MySQL 8</th>
+<th>PostgreSQL 10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>架构</td>
+<td>单进程</td>
+<td>多进程</td>
+</tr>
+<tr>
+<td>并发</td>
+<td>多线程</td>
+<td>fork(2)</td>
+</tr>
+<tr>
+<td>表结构</td>
+<td>聚簇索引</td>
+<td>堆</td>
+</tr>
+<tr>
+<td>页压缩</td>
+<td>Transparent</td>
+<td>TOAST</td>
+</tr>
+<tr>
+<td>更新</td>
+<td>In-Place &#x2F; Rollback Segments</td>
+<td>Append Only &#x2F; HOT</td>
+</tr>
+<tr>
+<td>垃圾回收</td>
+<td>清除线程</td>
+<td>自动清空进程</td>
+</tr>
+<tr>
+<td>事务日志</td>
+<td>REDO Log (WAL)</td>
+<td>WAL</td>
+</tr>
+<tr>
+<td>复制日志</td>
+<td>Separate (Binlog)</td>
+<td>WAL</td>
+</tr>
+</tbody></table>
+<p>补充一下协议类型说明: <img src="http://5b0988e595225.cdn.sohucs.com/images/20180912/1fae01494506483785a820a1464f6163.jpeg" alt="avatar"></p>
+<h4 id="PostgreSQL与MySQL优劣对比总结"><a href="#PostgreSQL与MySQL优劣对比总结" class="headerlink" title="PostgreSQL与MySQL优劣对比总结"></a>PostgreSQL与MySQL优劣对比总结</h4><p>PostgreSQL相对于MySQL的优势</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1、在SQL的标准实现上要比MySQL完善，而且功能实现比较严谨；</span><br><span class="line">2、存储过程的功能支持要比MySQL好，具备本地缓存执行计划的能力；</span><br><span class="line">3、对表连接支持较完整，优化器的功能较完整，支持的索引类型很多，复杂查询能力较强；</span><br><span class="line">4、PG主表采用堆表存放，MySQL采用索引组织表，能够支持比MySQL更大的数据量。</span><br><span class="line">5、PG的主备复制属于物理复制，相对于MySQL基于binlog的逻辑复制，数据的一致性更加可靠，复制性能更高，对主机性能的影响也更小。</span><br><span class="line">6、MySQL的存储引擎插件化机制，存在锁机制复杂影响并发的问题，而PG不存在。</span><br><span class="line">7、PG对可以实现外部数据源查询，数据源的支持类型丰富。</span><br><span class="line">8、PG原生的逻辑复制可以实现表级别的订阅发布，可以实现数据通过kafka流转，而不需要其他的组件。</span><br><span class="line">9、PG支持三种表连接方式，嵌套循环，哈希连接，排序合并，而MySQL只支持嵌套循环。</span><br><span class="line">10、 PostgreSQL源代码写的很清晰，易读性比MySQL强太多了。</span><br><span class="line">11、 PostgreSQL通过PostGIS扩展支持地理空间数据。 地理空间数据有专用的类型和功能，可直接在数据库级别使用，使开发人员更容易进行分析和编码。</span><br><span class="line">12、可扩展型系统，有丰富可扩展组件，作为contribute发布。</span><br><span class="line">13、 PostgreSQL支持JSON和其他NoSQL功能，如本机XML支持和使用HSTORE的键值对。 它还支持索引JSON数据以加快访问速度，特别是10版本JSONB更是强大。</span><br><span class="line">14、 PostgreSQL完全免费，而且是BSD协议，如果你把PostgreSQL改一改，然后再拿去卖钱，也没有人管你，这一点很重要，这表明了PostgreSQL数据库不会被其它公司控制。 相反，MySQL现在主要是被Oracle公司控制。</span><br></pre></td></tr></table></figure>
+
+
+<p>MySQL相对于PG的优势</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、innodb的基于回滚段实现的MVCC机制，相对PG新老数据一起存放的基于XID的MVCC机制，是占优的。新老数据一起存放，需要定时触 发VACUUM，会带来多余的IO和数据库对象加锁开销，引起数据库整体的并发能力下降。而且VACUUM清理不及时，还可能会引发数据膨胀；</span><br><span class="line">2、MySQL采用索引组织表，这种存储方式非常适合基于主键匹配的查询、删改操作，但是对表结构设计存在约束；</span><br><span class="line">3、MySQL的优化器较简单，系统表、运算符、数据类型的实现都很精简，非常适合简单的查询操作；</span><br><span class="line">4、MySQL相对于PG在国内的流行度更高，PG在国内显得就有些落寞了。</span><br><span class="line">5、MySQL的存储引擎插件化机制，使得它的应用场景更加广泛，比如除了innodb适合事务处理场景外，myisam适合静态数据的查询场景。</span><br></pre></td></tr></table></figure>
+
+<p>总结: 数据量大这俩差不多</p>
+<p>mysql 和 mongodb 对比<br>这基本上是关系型和菲关系型对比</p>
+<p>表格待出</p>
+<p>总结 ：</p>
+<p>MongoDB的应用场景</p>
+<ol>
+<li><code>表结构不明确</code>且数据不断变大 MongoDB是非结构化文档数据库，扩展字段很容易且不会影响原有数据。内容管理或者博客平台等，例如<code>圈子系统，存储用户评论</code>之类的。 </li>
+<li><code>更高的写入负载</code> MongoDB侧重<code>高数据写入的性能</code>，而非事务安全，适合业务系统中有大量“<code>低价值</code>”数据的场景。本身存的就是json格式数据。例如做<code>日志系统</code>。 </li>
+<li>数据量很大或者将来会变得很大<br>Mysql单表数据量达到5-10G时会出现明细的性能降级，需要做数据的水平和垂直拆分、库的拆分完成扩展，<code>MongoDB内建了sharding</code>、很多数据分片的特性，容易水平扩展，比较好的适应大数据量增长的需求。 </li>
+<li>高可用性<br>自带高可用，自动主从切换（副本集)</li>
+</ol>
+<p>不适用的场景 </p>
+<ol>
+<li>MongoDB<code>不支持事务操作</code>，需要用到事务的应用建议不用MongoDB。 </li>
+<li>MongoDB目前<code>不支持join</code>操作，需要复杂查询的应用也不建议使用MongoDB。</li>
+</ol>
+<h4 id="ES对比Mysql"><a href="#ES对比Mysql" class="headerlink" title="ES对比Mysql"></a>ES对比Mysql</h4><p><img src="https://img-blog.csdnimg.cn/20190415104445378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Jvc2h5,size_16,color_FFFFFF,t_70" alt="avatar"></p>
+<h3 id="为啥选-es"><a href="#为啥选-es" class="headerlink" title="为啥选 es"></a>为啥选 es</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0830(%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%89%E5%9E%8B)/" data-id="cld1buvul0048bjopcg733w4z" data-title="每日一问0830(数据库选型)" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2019/每日一问0831(时序数据库)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T07:13:14.730Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2019/">2019</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/">每日一问0831(时序数据库)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="时序数据库"><a href="#时序数据库" class="headerlink" title="时序数据库"></a>时序数据库</h1><ul>
+<li>栗子 Informix TimeSeries<a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1625857888377870075&wfr=spider&for=pc">工业互联网时代，我们为什么需要时序数据库之：适合的就是最好的</a></li>
+<li>参考 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486232&amp;idx=1&amp;sn=6563cfb8a316cddc7a8e56f58d173305&source=41#wechat_redirect">百度无人车和天工物联网都使用了时序数据库，但是你有多了解时序数据库？</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 有效处理庞大数据</span><br><span class="line">* 对重复的部分，Informix TimeSeries只保持一份数据</span><br><span class="line">* 节省空间50%，有效降低I/O</span><br><span class="line">* 主键索引更有效</span><br><span class="line">* 时间序列表头分离的特性不浪费空间;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>可以说，目前所有数据库、文件系统等等，都是为了以最佳性价比来满足数据的这三个核心需求。对时序数据而言，其三个核心需求特征十分明显：</p>
+<p>数据写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 时间是一个主坐标轴，数据通常按照时间顺序抵达</span><br><span class="line">* 大多数测量是在观察后的几秒或几分钟内写入的，抵达的数据几乎总是作为新条目被记录</span><br><span class="line">* 95％到99％的操作是写入，有时更高</span><br><span class="line">* 更新几乎没有</span><br></pre></td></tr></table></figure>
+<p>数据读取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 随机位置的单个测量读取、删除操作几乎没有</span><br><span class="line">* 读取和删除是批量的，从某时间点开始的一段时间内</span><br><span class="line">* 时间段内读取的数据有可能非常巨大</span><br></pre></td></tr></table></figure>
+
+<p>数据存储</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 数据结构简单，价值随时间推移迅速降低</span><br><span class="line">* 通过压缩、移动、删除等手段降低存储成本</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a240277805.github.io/2023/01/18/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0831(%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93)/" data-id="cld1buvum0049bjop3g1qfc94" data-title="每日一问0831(时序数据库)" class="article-share-link">Share</a>
       
       
       
@@ -547,23 +603,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/18/2022/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0922(%E6%9E%B6%E6%9E%84)/">每日一问0922(架构)</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">每日一问0303(Spring亮眼代码技巧)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/2022/%E8%BF%B0%E8%81%8C%E6%A8%A1%E6%9D%BF/">述职模板</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">每日一问0323(gateway)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/">英文单词积累</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">每日一问0326(链路追踪)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93/%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E5%9D%80/">好玩的地址</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">每日一问0328(PorlarDB)</a>
           </li>
         
           <li>
-            <a href="/2023/01/18/%E6%91%84%E5%BD%B1/%E6%91%84%E5%BD%B1%E5%90%8E%E6%9C%9F/">摄影后期</a>
+            <a href="/2023/01/18/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">每日一问0329(传输协议)</a>
           </li>
         
       </ul>

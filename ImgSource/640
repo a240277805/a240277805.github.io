@@ -1,0 +1,84 @@
+# 数据仓库(数仓)
+
+## 数仓概念
+
+ods：原始数据，存储业务数据和日志数据
+dwd：根据数据对象为单位进行分流，如订单，页面访问
+dim：维度数据
+dwm：对部分数据对象进一步加工，和维表进行关联，形成宽表，如独立访问，跳出行为
+dws：根据某个主题将多个事实数据轻度聚合，形成主题宽表
+ads：根据数据进行可视化筛选聚合
+
+## 数仓建模
+
+- 范式建模
+  Inmon提出的集线器的自上而下（EDW-DM）的[数据仓库](https://so.csdn.net/so/search?q=数据仓库&spm=1001.2101.3001.7020)架构。
+- 维度建模
+  Kimball提出的总线式的自下而上（DM-DW）的数据仓库架构。
+
+星型模型、雪花模型，星型模型做OLAP分析
+
+Data Vault模型、Anchor模型
+
+## 数仓分层
+
+![img](../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101136097.png)
+
+![img](../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101356483.png)
+
+
+
+
+
+![在这里插入图片描述](../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101340159.png)
+
+
+
+## 应用
+
+![img](../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101429642.png)
+
+
+
+![在这里插入图片描述](../../ImgSource/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JlaWlzQmVp,size_1,color_FFFFFF,t_70-20220222101842773.png)
+
+
+
+## 数仓数据采集方案
+
+1. 数据双写
+2. 数据库触发器
+3. 业务事件埋点
+4. 第三方中间件 （sqoop，Flume+kafka,flink）
+
+## ODS 层搭建方案
+
+ODS层再细分两层：
+
+**STG**：数据缓冲层，存原始数据；
+
+**ODS**：对STG层简单清洗后的数据。
+
+1. ODS层 数据表设计
+2. 创建前后端埋点日志ods_log表
+
+3. 埋点数据收集
+4. HDFS文件对应hive表结构关系
+5. 加载数据
+
+
+
+
+
+## 参考
+
+[数仓分层的意义价值及如何设计数据分层](https://blog.csdn.net/BeiisBei/article/details/105723188)
+
+[数仓业务数据采集模块](https://blog.csdn.net/weixin_45417821/article/details/120874532)
+
+[真正了解sqoop的一切](https://www.jianshu.com/p/ec9003d8918c)
+
+[大数据项目之Flink实时数仓(数据采集/ODS层)](https://blog.csdn.net/weixin_45462732/article/details/122682484)
+
+
+
