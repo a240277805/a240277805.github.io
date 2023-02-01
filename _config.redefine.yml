@@ -81,8 +81,8 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
     icon: fa-regular fa-house # can be empty
   Categorie:
     path: /categories
-  Archives: 
-    path: /archives 
+  每天都是爱你的形状❥(^_-): 
+    path: /love 
     icon: fa-regular fa-archive # can be empty
   # Status: 
   #   path: https://status.evanluo.top/
