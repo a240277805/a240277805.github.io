@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/02/01/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0804(MDL%E9%94%81)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问0804(MDL锁) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        CATEGORIE
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                CATEGORIE
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0804(MDL锁)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-01 03:07:06</span>
+        <span class="mobile">2023-02-01 03:07</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2021/">2021</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="MDL-锁"><a href="#MDL-锁" class="headerlink" title="MDL 锁"></a>MDL 锁</h1><p> MYSQL中MDL锁一直是一个比较让人比较头疼的问题，我们谈起锁一般更加倾向于INNODB下层的gap lock、next key lock、row lock等，<br>因为它很好理解，也很好观察，而对于MDL LOCK却了解得很少，因为它实在不好观察，只有出现问题查看 <strong>show processlist</strong> 勉强可以看到<br>简单的所谓的 **Waiting for table metadata lock ** 之类的状态，其实MDL LOCK是MYSQL上层一个非常复杂的子系统，有自己的死锁检测机制<br>(<strong>无向图</strong>?)而大家一般口中的是不是 <strong>锁表了</strong> 其实就是指的它，可见的它的关键性和严重性，笔者也是根据自己的需求学习了一些(冰山一角)，<br>而没有能力阅读全部的代码，但是笔者通过增加一个TICKET的打印函数让语句的MDL LOCK加锁流程全部打印出来方便学习研究，下面从<br>一些基础说起然后告诉大家修改了哪些东西，最后对每种MDL TYPE进行测试和分析,如果大家对基本概念和增加打印函数不感兴趣可<br>直接参考第五部分加锁测试,但是如果不了解基础知识可能看起来有点困难。 </p>
+<p>二 分类<br>  1 MDL读锁 MDL读锁是相互兼容的 SHARED_READ<br>  2 MDL 写锁 MDL写锁是互斥的 EXCLUSIVE</p>
+<p>三 针对目标<br>  1 目标 MDL锁是针对语句级别的,并非事务本身,是mysql_server层面的锁<br>  2 目的 当事务本身执行的时候理论上是不能容忍表结构在中途发生改变的</p>
+<p>五 经典的元数据锁问题<br>  问题 当我们执行DDL或者innobackup备份时,会出现waiting for table meta lock的问题,而且会导致后续session的等待,我们该如何处理呢<br>  分析 执行上述操作需要申请MDL锁,就证明有操作在把持着MDL锁没有释放,大概会有几种<br>  1 针对此表的慢查询操作(select),没有释放MDL锁<br>  2 针对此表的未提交事物,可能是由于程序原因导致的<br>  3 针对此表的 其他DDL操作<br>  4 执行 flush table with read lock,常见innobackup<br>  解决问题<br>  1 通过show processlist 观察是否有 slow query,DDL,FTWRL操作,如果有进行处理<br>  2 通过innodb_trx 观察是否有未提交事物,如果有进行处理<br>  3 对于mysql5.7版本 可以通过 performance_schema.metadata_lock 进行观察,关键字 SHARED_READ；</p>
+<p>六 补充<br>  1 MDL锁等待时间也是通过lock_wait_timeout 设置的<br>  2 mysql5.7对MDL锁的相关特性进行了优化<br>  3 读写事物语句,都是先申请 MDL_EXCLUSIVE,再降级成 READ WRITE锁,所以我上面没有标 注<br> 4 由于队列设计,所以一旦出现MDL锁,一定要及时进行处理</p>
+<h3 id="MDL锁的性能与并发改进"><a href="#MDL锁的性能与并发改进" class="headerlink" title="MDL锁的性能与并发改进"></a>MDL锁的性能与并发改进</h3><p>讲到这同学们会发现MDL锁的开销并不比InnoDB层的行锁要小，而且这可能是一个更为密集的并发瓶颈。MySQL 5.6和5.5版本通常通过调整如下两个参数来进行并发调优:</p>
+<ul>
+<li>metadata_locks_cache_size: MDL锁的缓存大小</li>
+<li>metadata_locks_hash_instances：通过分片来提高并发度，与InnoDB AHI类似</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="http://www.innomysql.com/article/25689.html" >MySQL 5.7 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> MDL锁的最大改进之处在于将MDL锁的机制通过lock free算法来实现，从而提高了在多核并发下数据库的整体性能提升。</p>
+<h3 id="MDL锁的诊断"><a href="#MDL锁的诊断" class="headerlink" title="MDL锁的诊断"></a>MDL锁的诊断</h3><p>MySQL 5.7版本之前并没有提供一个方便的途径来查看MDL锁，<a class="link"   target="_blank" rel="noopener" href="https://github.com/" >github <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>上有一名为mysql-plugin-mdl-info的项目，通过插件的方式来查看，非常有想法的实现，大赞。好在官方也意识到了这个问题，于是在MySQL 5.7中的performance_schea库下新增了一张表metadata_locks，用其来查看MDL锁那是相当的方便:</p>
+<p>不过默认PS并没有打开此功能，需要手工将wait&#x2F;lock&#x2F;metadata&#x2F;sql&#x2F;mdl监控给打开:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM performance_schema.setup_instruments;</span><br><span class="line"></span><br><span class="line">  UPDATE performance_schema.setup_consumers SET ENABLED = &#x27;YES&#x27; WHERE NAME =&#x27;global_instrumentation&#x27;;</span><br><span class="line">  UPDATE performance_schema.setup_instruments SET ENABLED = &#x27;YES&#x27; WHERE NAME =&#x27;wait/lock/metadata/sql/mdl&#x27;;</span><br><span class="line">  select * from performance_schema.metadata_locks\G</span><br></pre></td></tr></table></figure></div>
+
+<p>##参考</p>
+<p><a class="link"   target="_blank" rel="noopener" href="http://blog.itpub.net/7728585/viewspace-2143093/" >MYSQL METADATA LOCK(MDL LOCK)学习(1) 理论知识和加锁类型测试 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="社区投稿-MySQL：FTWRL一个奇怪的堵塞现象和其堵塞总结"><a href="#社区投稿-MySQL：FTWRL一个奇怪的堵塞现象和其堵塞总结" class="headerlink" title="***** 社区投稿 | MySQL：FTWRL一个奇怪的堵塞现象和其堵塞总结"></a>***** <a class="link"   target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020468179" >社区投稿 | MySQL：FTWRL一个奇怪的堵塞现象和其堵塞总结 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><h1 id="深入理解MYSQL的MDL元数据锁"><a href="#深入理解MYSQL的MDL元数据锁" class="headerlink" title="深入理解MYSQL的MDL元数据锁"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/zengkefu/p/5690385.html" >深入理解MYSQL的MDL元数据锁 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0804(MDL锁)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-02-01 03:07:06</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/02/01/2021/每日一问0804(MDL锁)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/01/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(awk)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0801(awk)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/01/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0804(mysql%E4%B8%BB%E4%BB%8E)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0804(mysql主从)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MDL-%E9%94%81"><span class="nav-text">MDL 锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MDL%E9%94%81%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8E%E5%B9%B6%E5%8F%91%E6%94%B9%E8%BF%9B"><span class="nav-text">MDL锁的性能与并发改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MDL%E9%94%81%E7%9A%84%E8%AF%8A%E6%96%AD"><span class="nav-text">MDL锁的诊断</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E5%8C%BA%E6%8A%95%E7%A8%BF-MySQL%EF%BC%9AFTWRL%E4%B8%80%E4%B8%AA%E5%A5%87%E6%80%AA%E7%9A%84%E5%A0%B5%E5%A1%9E%E7%8E%B0%E8%B1%A1%E5%92%8C%E5%85%B6%E5%A0%B5%E5%A1%9E%E6%80%BB%E7%BB%93"><span class="nav-text">***** 社区投稿 | MySQL：FTWRL一个奇怪的堵塞现象和其堵塞总结 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3MYSQL%E7%9A%84MDL%E5%85%83%E6%95%B0%E6%8D%AE%E9%94%81"><span class="nav-text">深入理解MYSQL的MDL元数据锁 </span></a></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
