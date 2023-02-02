@@ -251,22 +251,22 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0528(java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B)/">
-                        每日一问0528(java内存模型)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(RocketMQ)/">
+                        每日一问0716(RocketMQ)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Java 内存模型 JMM
-java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），用于屏蔽掉各种硬件和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的并发效果，JMM规范了Java虚拟机与计算...
+                        RocketMQ延迟队列优点：设计简单，把所有相同延迟时间的消息都先放到一个队列中，定时扫描，可以保证消息消费的有序性
+缺点：定时器采用了timer，timer是单线程运行，如果延迟消息数量很大的情况下，可能单线程处理不过来，造成消息到期后也没有发送...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -278,7 +278,7 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -288,7 +288,7 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0528(java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B)/">Read more<span class="seo-reader-text">每日一问0528(java内存模型)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0716(RocketMQ)/">Read more<span class="seo-reader-text">每日一问0716(RocketMQ)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -300,21 +300,30 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0601(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)/">
-                        每日一问0601(数据结构)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91)/">
+                        每日一问0719(开发遇到的坑)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        数据结构树前缀树
+                        开发过程中遇到的坑坑
+mybatis 一级缓存，查出的do如果被修改，那同一个线程第二次查询会查到修改后的值，
+
+​     怎么解决：
+
+hystrix 默认 线程池默认10个线程,并发高了,就会报熔断的异常
+解决: 调整核心线程数
+
+
+
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -326,7 +335,7 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -336,7 +345,7 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0601(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)/">Read more<span class="seo-reader-text">每日一问0601(数据结构)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0719(%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91)/">Read more<span class="seo-reader-text">每日一问0719(开发遇到的坑)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -348,28 +357,22 @@ java虚拟机规范中定义了Java内存模型（Java Memory Model，JMM），�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0620(%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84)/">
-                        每日一问0620(服务架构)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0720(mysql%E5%AD%97%E7%AC%A6%E9%9B%86)/">
+                        每日一问0720(mysql字符集)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        服务架构进化微服务kubernetes云原生云原生主要包括四个部分:
-
-微服务
-容器
-持续集成和交付
-DevOps
-
-Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立进程代理，蚂蚁金服已经有了自己的一套完整的 Se...
+                        mysql 字符集UTF-8  汉字3字节GBK 汉字2，英文1uf8mb4 4字节 支持emojvarchar 最大长度为啥是65535？？
+答：总结一下，原来mysql的vachar字段的类型虽然最大长度是65535，但是并不是能存这么多数据，最...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -381,7 +384,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -391,7 +394,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0620(%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84)/">Read more<span class="seo-reader-text">每日一问0620(服务架构)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0720(mysql%E5%AD%97%E7%AC%A6%E9%9B%86)/">Read more<span class="seo-reader-text">每日一问0720(mysql字符集)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -403,24 +406,26 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0701(%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8)/">
-                        每日一问0701(布隆过滤器)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0722(%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1DDD)/">
+                        每日一问0722(领域驱动设计DDD)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        布隆过滤器(Bloom Filter)你好，我叫孟康。
- 晚上和朋友开黑，他用的布隆，操作carry全场，不过我说的这个布隆的格挡技术不亚于这个英雄。
- 先来讲一个香皂盒的故事。
- 联合利华引进了一条香皂包装生产线，结果发现这条生产线有个缺陷：常常会...
+                        领域驱动设计 （DDD）理论一. 方式 
+   战略设计 ，战术设计两种方式
+二. DDD 使用记分卡
+
+当我们在复杂性问题上犯错时，我们很难轻易地扭转颓势。这意味着我们应该在项目计划早期便对简单性和复杂性做出判断，
+这将为我们节约很多时间和开销，并...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -432,7 +437,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -442,7 +447,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0701(%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8)/">Read more<span class="seo-reader-text">每日一问0701(布隆过滤器)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0722(%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1DDD)/">Read more<span class="seo-reader-text">每日一问0722(领域驱动设计DDD)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -454,22 +459,22 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0710(%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E)/">
-                        每日一问0710(规则引擎)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(Mysql%E4%B8%AD%E7%9A%84Page%E9%A1%B5)/">
+                        每日一问0723(Mysql中的Page页)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        规则引擎我们接到一个折扣策略需求，针对于某些应用使用更低的折扣。而且总会有类似的需求，比如某些应用不能使用该折扣，某范围内的应用可以使用，或者是多重条件某些应用 和某些服务商可以应用特定折扣等等。
-123456when 条件A then       ...
+                        mysql 中的page页
+
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -481,7 +486,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -491,7 +496,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0710(%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E)/">Read more<span class="seo-reader-text">每日一问0710(规则引擎)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0723(Mysql%E4%B8%AD%E7%9A%84Page%E9%A1%B5)/">Read more<span class="seo-reader-text">每日一问0723(Mysql中的Page页)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -503,22 +508,27 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0713(easy-rule)/">
-                        每日一问0713(easy-rule)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0726(http2.0)/">
+                        每日一问0726(http2
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Easy Rule使用方式几种通用的ruleActivationRuleGroup多个rule 只有一个 rule匹配则 action
-1234567891011121314151617@Overridepublic boolean evaluate...
+                        http2.0HTTP协议HTTP1.0HTTP1.1HTTP&#x2F;1.1相较于 HTTP&#x2F;1.0 协议的区别主要体现在：
+1 缓存处理
+2 带宽优化及网络连接的使用
+3 错误通知的管理
+4 消息在网络中的发送
+5 互联网地址的维护
+...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -530,7 +540,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -540,7 +550,7 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0713(easy-rule)/">Read more<span class="seo-reader-text">每日一问0713(easy-rule)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0726(http2.0)/">Read more<span class="seo-reader-text">每日一问0726(http2</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -552,22 +562,26 @@ Service meshSevice Mesh 是云原生下的微服务治理方案。主机独立�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/">
-                        每日一问0925(k8s)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(SOA)/">
+                        每日一问0728(SOA)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        k8s如何搭建 k8s词汇pv PersistentVolume（PV）
-PV是对底层网络共享存储的抽象，将共享存储定义为一种“资源”，比如Node也是一种容器应用可以“消费”的资源。PV由管理员创建和配置，它与共享存储的具体实现直接相关，例如Glu...
+                        SOASOA（Service-Oriented Architecture)
+人们将互联网协议从不同维度分为OSI七层、TCP&#x2F;IP五层或TCP&#x2F;IP四层
+
+
+
+单一应用架构 当网站流量很小时，只需一个应用，将所有功能都部署在一起，...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -579,7 +593,7 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -589,7 +603,7 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/">Read more<span class="seo-reader-text">每日一问0925(k8s)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(SOA)/">Read more<span class="seo-reader-text">每日一问0728(SOA)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -601,21 +615,21 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/">
-                        每日一问0925(maven)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(es%E5%88%86%E9%A1%B5)/">
+                        每日一问0728(es分页)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        maven 配置配置
+                        es 分页参考Elasticsearch 三种分页方式 
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -627,7 +641,7 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -637,7 +651,7 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/">Read more<span class="seo-reader-text">每日一问0925(maven)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0728(es%E5%88%86%E9%A1%B5)/">Read more<span class="seo-reader-text">每日一问0728(es分页)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -649,27 +663,21 @@ PV是对底层网络共享存储的抽象，将共享存储定义为一种“资
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">
-                        每日一问1009(mongodb)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(awk)/">
+                        每日一问0801(awk)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        mongodb命令
-show collections 查看集合
-db.dbName.find({“a”:”b”}) 查找
-创建&#x2F;切换仓库: use DATABASE_NAME
-查看当前仓库: db
-查看所有仓库: show dbs
-普通库增...
+                        
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -681,7 +689,7 @@ db.dbName.find({“a”:”b”}) 查找
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -691,7 +699,7 @@ db.dbName.find({“a”:”b”}) 查找
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1009(mongodb)/">Read more<span class="seo-reader-text">每日一问1009(mongodb)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0801(awk)/">Read more<span class="seo-reader-text">每日一问0801(awk)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -703,29 +711,21 @@ db.dbName.find({“a”:”b”}) 查找
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">
-                        每日一问1015(docker)
+                    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0804(MDL%E9%94%81)/">
+                        每日一问0804(MDL锁)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        docker每一个指令都会创建一层，并构成新的镜像。当运行多个指令时，会产生一些非常臃肿、非常多层的镜像，既增加了构建部署的时间，也很容易出错。因此，在很多情况下，可以合并指令并运行
-镜像存储方式
-
-镜像中心域名 
-命名空间
-仓库名称
-标签
-
-doc...
+                        MDL 锁 MYSQL中MDL锁一直是一个比较让人比较头疼的问题，我们谈起锁一般更加倾向于INNODB下层的gap lock、next key lock、row lock等，因为它很好理解，也很好观察，而对于MDL LOCK却了解得很少，因为它实在不...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Feb 02 2023 05:44:57 GMT+0000">
+            <span class="home-article-date" data-date="Thu Feb 02 2023 06:07:38 GMT+0000">
                 
                     2023/02/02
                 
@@ -737,7 +737,7 @@ doc...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -747,7 +747,7 @@ doc...
         
     </div>
 
-    <a href="/2023/02/02/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1015(docker)/">Read more<span class="seo-reader-text">每日一问1015(docker)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/02/02/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0804(MDL%E9%94%81)/">Read more<span class="seo-reader-text">每日一问0804(MDL锁)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
