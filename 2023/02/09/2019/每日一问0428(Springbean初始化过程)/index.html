@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/02/09/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0428(Springbean%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问0428(Springbean初始化过程) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0428(Springbean初始化过程)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-09 13:24:14</span>
+        <span class="mobile">2023-02-09 13:24</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2019/">2019</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h1 id="Spring-bean-初始化过程"><a href="#Spring-bean-初始化过程" class="headerlink" title="Spring bean 初始化过程"></a>Spring bean 初始化过程</h1><p>问题</p>
+<ul>
+<li>1.bean 是如何被初始化 在 IOC容器中的</li>
+<li>2.bean 是如何销毁的</li>
+<li>3.bean 初始化后保存在哪</li>
+<li>4.bean bean 怎么延迟初始化的</li>
+<li>5.通过main 方法怎么实现一个 bean</li>
+</ul>
+<p>在理解任何技术之前，我都会问自己一个问题：它的产生是为了解决什么样的问题，以及如何解决这些问题？希望你能在本篇文章中找到答案……</p>
+<h3 id="怎么将自己的对象注入Spring"><a href="#怎么将自己的对象注入Spring" class="headerlink" title="怎么将自己的对象注入Spring"></a>怎么将自己的对象注入Spring</h3><ul>
+<li>@bean</li>
+<li>ApplicationContext.beanFactory.register…</li>
+<li>FactoryBean 注入对象 生成defination 放入 map（BeanDefinationMap里增加自己对象的class）</li>
+</ul>
+<p><code>classLoader 加载有注解的类 ，生成 define,放入BeanDefinationMap,当用到的时候，从define 查找，拿出来初始化。</code></p>
+<p>知识点收集：</br><br>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#160;上面的生命周期流程图，时候的时候注意调用先后顺序，避免属性被覆盖的现象。</p>
+<ul>
+<li>BeanFactoryPostProcessor 主要是在Spring刚加载完配置文件，还没来得及初始化Bean的时候做一些操作。比如篡改某个Bean在配置文件中配置的内容。</li>
+<li>InstantiationAwareBeanPostProcessorAdapter 基本没什么鸟用，Bean初始化后，还没有设置属性值时调用，和BeanFactoryPostProcessor一样，可以篡改配置文件加载到内存中的信息。 </li>
+<li>ApplicationContextAware:用处很大，注入了ApplicationContext到Bean中。</li>
+<li>InitializingBean:有用处，可以在Bean属性全部改完之后，再做一些定制化操作。</li>
+<li>BeanPostProcessor：没什么用，Spring框架内部使用的比较猛，像什么AOP，动态代理，都是在这搞事。后期有时间和大家分析。</li>
+<li>其他的像什么init-method，destroy方法，基本都是个摆设。。我是没怎么用过，只知道有这么回事。</li>
+</ul>
+<p><strong>问：?ApplicationContextAware:用处很大，注入了ApplicationContext到Bean中。   ApplicationContext 是啥</strong></p>
+<p>  【Spring】BeanFactory 解析 bean 详解 <a class="link"   target="_blank" rel="noopener" href="https://juejin.im/post/5b9f707ce51d450e3f6b8244" >https://juejin.im/post/5b9f707ce51d450e3f6b8244 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>    1.XmlBeanFactory 加载 bean  这是初级操作， 在企业开发中一般是使用功能更完善的 ApplicationContext</p>
+<p>XmlBeanFactory 的实现 ：<br>  实现了 DefaultListableBeanFactory 	，他是注册加载bean 的默认实现，是bean加载的核心部分。<br>  XmlBeanFactory 不同的是 替换了自定义的 xml 读取器</p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://juejin.im/post/593386ca2f301e00584f8036" >https://juejin.im/post/593386ca2f301e00584f8036 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>顺便增加了 对IOC的理解，<strong>就是叫你不用去管对象的生命周期，而关注到对象的使用上</strong></br><br>IOC 常用的有两种方式：</p>
+<blockquote>
+<p>构造方法注入和setter注入</p>
+</blockquote>
+<p>ApplicationContext 容器 ，可以认为是BeanFactory的一种扩展。</p>
+<ul>
+<li>BeanFactory 默认采用延迟 初始化策略( lazy-load)  ?还有啥初始化策略，</li>
+<li>BeanDefinition Bean生成 Bean定义的地方  （读取配置 reader 读取 ，property 读取 ，然后生成对象相关的定义，并未真正初始化）</li>
+<li>BeanDefinitionRegistry bean的注册中心 （将对象的定义 注册上）（注册的时候 会生成一个注册码）</li>
+<li>BeanFactory 可以取到任意定义过的Bean  （对象的出口，有就拿走，没有就生成）</li>
+</ul>
+<h2 id="对象的初始化"><a href="#对象的初始化" class="headerlink" title="对象的初始化"></a>对象的初始化</h2><p>初始是通过 beanFactory的 getBean()时才进行的。</p>
+<ul>
+<li>对象不是new出来的 其实这里用到了AOP机制，生成了其代理对象，通过 反射机制 生成接口对象，或者是通过CGLIB生成子对象</li>
+<li>beanWrapper 实现了bean 具体装载过程（它继承了PropertyAccessor （可以对属性进行访问）、PropertyEditorRegistry 和TypeConverter接口 （实现类型转换））</li>
+<li>BeanPostprocessor 可以帮助 初始化之前和之后的完成一些必要工作 ，比如 参数解密。</li>
+<li>在完成postProcessor 之后，则会看对象是否定义了InitializingBean 接口  或者 spring还提供了另外一种指定初始化的方式，即在bean定义中指定init-method 。</li>
+</ul>
+<h2 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h2><p>ApplicationContext 拥有BeanFactory的所有功能，但应用方法略有不同</p>
+<ul>
+<li><p>bean的加载方式</p>
+</li>
+<li><p>BeanFactory提供BeanReader来从配置文件中读取bean配置。相应的ApplicationContext也提供几个读取配置文件的方式 xxxxxxreader.xml</p>
+</li>
+<li><p>ApplicationContext采用的非懒加载方式 	它会在启动阶段完成所有的初始化，并不会等到getBean()才执行。</p>
+</li>
+</ul>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0428(Springbean初始化过程)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-02-09 13:24:14</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/02/09/2019/每日一问0428(Springbean初始化过程)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/09/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0427(Redis)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0427(Redis)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/09/2019/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0430(Spring%20boot%20%E5%90%AF%E5%8A%A8%E7%AF%87)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0430(Spring boot 启动篇)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-bean-%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="nav-text">Spring bean 初始化过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B3%A8%E5%85%A5Spring"><span class="nav-text">怎么将自己的对象注入Spring</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">对象的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ApplicationContext"><span class="nav-text">ApplicationContext</span></a></li></ol></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
