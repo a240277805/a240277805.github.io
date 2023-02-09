@@ -24,6 +24,11 @@ title:
 4. Typora 中如果插入图片，可直接复制粘贴，也可拖拽
 5. Typora 中如果有 表格形势的内容可插入表格
 6. Typora 中树形结构  可用数字 或者 ==*==号
+7. 如果想要查看 markdown 其他快捷键  在目录中右击 选择 *搜索* 'markdown ',选择 *markdown语法*
+
+
+
+
 
 ## 上传
 
@@ -34,10 +39,10 @@ title:
 cd /Users/root-admin/zmk-workspace/GitWorkSpace/node/a240277805.github.io
 ```
 
-3. 输入命令 
+3. 输入命令 提交git 上传服务器
 
 ```
-git add .;git commit -i ./ -m 'update'; git push origin main;
+git add .;git commit -i ./ -m 'update';git pull origin main; git push origin main;
 ```
 
  
