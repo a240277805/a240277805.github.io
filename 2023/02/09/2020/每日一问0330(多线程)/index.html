@@ -266,8 +266,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-02-09 13:24:14</span>
-        <span class="mobile">2023-02-09 13:24</span>
+        <span class="pc">2023-02-09 13:37:12</span>
+        <span class="mobile">2023-02-09 13:37</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -382,8 +382,7 @@
 </ul>
 <h3 id="addWaiter"><a href="#addWaiter" class="headerlink" title="addWaiter"></a>addWaiter</h3><p>当tryAcquire方法获取锁失败以后，则会先调用addWaiter将当前线程封装成Node，然后添加到AQS队列</p>
 <h2 id="公平锁和非公平锁"><a href="#公平锁和非公平锁" class="headerlink" title="公平锁和非公平锁"></a>公平锁和非公平锁</h2><p>公平锁：</p>
-<p>公平和非公平锁的队列都基于锁内部维护的一个双向链表，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。<br>锁的实现方式是基于如下几点：<br>表结点Node和状态state的volatile关</p>
-<p>键字。<br>sum.misc.Unsafe.compareAndSet的原子操作(见附录)。</p>
+<p>公平和非公平锁的队列都基于锁内部维护的一个双向链表，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。<br>锁的实现方式是基于如下几点：<br>表结点Node和状态state的volatile关键字。<br>sum.misc.Unsafe.compareAndSet的原子操作(见附录)。</p>
 <p>非公平锁：</p>
 <p>在等待锁的过程中， 如果有任意新的线程妄图获取锁，都是有很大的几率直接获取到锁的。</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReentrantLock锁都不会使得线程中断，除非开发者自己设置了中断位。</span><br><span class="line">ReentrantLock获取锁里面有看似自旋的代码，但是它不是自旋锁。</span><br><span class="line">ReentrantLock公平与非公平锁都是属于排它锁。</span><br></pre></td></tr></table></figure></div>
@@ -403,7 +402,7 @@
     <ul>
         <li>Post title：每日一问0330(多线程)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-02-09 13:24:14</li>
+        <li>Create time：2023-02-09 13:37:12</li>
         <li>
             Post link：https://a240277805.github.io/2023/02/09/2020/每日一问0330(多线程)/
         </li>
