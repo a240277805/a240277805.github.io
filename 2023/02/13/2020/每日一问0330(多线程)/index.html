@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0330(%E5%A4%9A%E7%BA%BF%E7%A8%8B)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问0330(多线程) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0330(多线程)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-13 10:14:43</span>
+        <span class="mobile">2023-02-13 10:14</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2020/">2020</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ul>
+<li>Thread</li>
+<li>runnable</li>
+<li>callable 和 Feature</li>
+</ul>
+<p>前两种都存在以下问题</p>
+<ul>
+<li>无法获取子线程的返回值</li>
+<li>run方法不可以抛出异常</li>
+</ul>
+<h2 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h2><p>在任意时间点，一个线程只有一种状态<br>* 新建(New)：创建后尚未启动<br>* 运行(Runable)：正在执行或正在等待CPU为它分配执行时间<br>* 等待(Waiting)：<br>* 无限等待(Waiting)：线程不会被分配CPU执行时间，等待被其他线程显式地唤醒。<br>* 期限等待(Timed Waiting)：线程不会被分配CPU执行时间，无须等待被其他线程显式地唤醒，在一定时间后它们会由系统自动唤醒。<br>* 阻塞(Blocked)：被阻塞<br>* 阻塞和等待的区别：<code>阻塞状态</code>在等待着获取到一个排他锁，这个事件将在另外一个线程放弃这个锁的时候发生；而<code>等待状态</code>则是在等待一段时间，或者唤醒动作的发生。在程序等待进入同步区域的时候，线程将进入这种状态。</p>
+<p>t.interrupted（）的精确含义是“唤醒轻量级阻塞”，而不是字面意思“中断一个线程”。</p>
+<p>synchronized关键字其实是“给某个对象加了把锁”，</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20220211111707313.png"
+                      alt="image-20220211111707313"
+                ></p>
+<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><ul>
+<li>可见性  （任何进程在读取的时候，都会清空本进程里面持有的共享变量的值，强制从主存里面获取；<br>任何进程在写入完毕的时候，都会强制将共享变量的值写会主存。）</li>
+<li>指令重排 （增加内存屏障）</li>
+</ul>
+<h3 id="实现Runnable接口和Callable接口的区别"><a href="#实现Runnable接口和Callable接口的区别" class="headerlink" title="实现Runnable接口和Callable接口的区别"></a>实现Runnable接口和Callable接口的区别</h3><p>如果想让线程池执行任务的话需要实现的Runnable接口或Callable接口。 Runnable接口或Callable接口实现类都可以被ThreadPoolExecutor或ScheduledThreadPoolExecutor执行。<br>两者的区别</p>
+<ul>
+<li>方法签名不同，void Runnable.run(), V Callable.call() throws Exception</li>
+<li>是否允许有返回值，Callable允许有返回值（回调）</li>
+<li>是否允许抛出异常，Callable允许抛出异常。</li>
+</ul>
+<h3 id="sleep-和wait-区别"><a href="#sleep-和wait-区别" class="headerlink" title="sleep 和wait 区别"></a>sleep 和wait 区别</h3><ul>
+<li>sleep 没有释放锁 ，wait释放锁</li>
+<li>wait 用于线程间通讯 ,sleep 用于暂停执行</li>
+<li>wait 调用后线程不会自动苏醒，需要notify ,sleep 执行完成后线程会自动苏醒。</li>
+</ul>
+<h3 id="Thread-和-Runnable-区别"><a href="#Thread-和-Runnable-区别" class="headerlink" title="Thread 和 Runnable 区别"></a>Thread 和 Runnable 区别</h3><p>实际上 Thread 类和 Runnable 接口之间在使用上也是有区别的，如果一个类继承 Thread类，则不适合于多个线程共享资源，而实现了 Runnable 接口，就可以方便的实现资源的共享。</p>
+<h3 id="为什么我们调用start-会执行run-而不能直接调用run"><a href="#为什么我们调用start-会执行run-而不能直接调用run" class="headerlink" title="为什么我们调用start() 会执行run() ,而不能直接调用run()"></a>为什么我们调用start() 会执行run() ,而不能直接调用run()</h3><p> 调用start() 会执行线程的相应的准备工作，然后其中的线程自动执行run();而直接调用run() 会把她当成main()下的普通方法，并不是多线程工作。</p>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p>线程私有</p>
+<p>每个THread 中都具备一个ThreadLocalMap ，而 ThreadLocalMap可以存储以ThreadLocal为Key的键值对。</p>
+<h4 id="ThreadLocal-内存泄露问题"><a href="#ThreadLocal-内存泄露问题" class="headerlink" title="ThreadLocal 内存泄露问题"></a>ThreadLocal 内存泄露问题</h4><p>使用的 key 为 ThreadLocal 的弱引用,而value是强引用。所以如果ThreadLocal没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而value 不会被清理掉。这样一来,ThreadLocalMap 中出现了key 为null 的Entry。加入没有任何措施的话，value 永远不会被GC回收，这个时候会产生内存泄露。<br>最好使用完ThreadLocal后手动调用remove()方法。</p>
+<h2 id="如何创建线程池"><a href="#如何创建线程池" class="headerlink" title="如何创建线程池"></a>如何创建线程池</h2><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>方法名	功能<br>newFixedThreadPool(int nThreads)	创建固定大小的线程池<br>newSingleThreadExecutor()	创建只有一个线程的线程池<br>newCachedThreadPool()	创建一个不限线程数上限的线程池，任何提交的任务都将立即执行</p>
+<p>阿里开发手册中强制线程池不允许使用 Executors去创建,而是通过 ThreadPoolExecutor 的方式，避免资源耗尽的风险。<br>Executors线程池对象弊端如下：</p>
+<ul>
+<li>FixedThreadPool 和SingleThreadPool 允许队列的长度为Integer.Max_value ，可能堆积大量的请求，导致OOM。</li>
+<li>CachedThreadPool 和 ScheduledThreadPool 允许创建的线程数量为 Integer.Max_value 可能创建大量线程 ，导致OOM 。</li>
+</ul>
+<h3 id="如何正确使用线程池"><a href="#如何正确使用线程池" class="headerlink" title="如何正确使用线程池"></a>如何正确使用线程池</h3><h3 id="ThreadPoolExecutor-重要参数"><a href="#ThreadPoolExecutor-重要参数" class="headerlink" title="ThreadPoolExecutor 重要参数"></a>ThreadPoolExecutor 重要参数</h3><ul>
+<li>corePoolSize :核心线程数</li>
+<li>maximumPoolSize: 最大线程数</li>
+<li>workQueue: 达到最大线程数，会放到队列中</li>
+</ul>
+<p>常见参数：</p>
+<ul>
+<li><p>keepAliveTime: 大于核心线程数 又没有新任务 等待时间，线程空闲了多久会被回收</p>
+</li>
+<li><p>unit：等待时间单位</p>
+</li>
+<li><p>threadFactory </p>
+</li>
+<li><p>handler: 饱和策略</p>
+</li>
+</ul>
+<h3 id="饱和策略"><a href="#饱和策略" class="headerlink" title="饱和策略"></a>饱和策略</h3><ul>
+<li>AbortPolicy： 抛异常</li>
+<li>CallerRUnsPolicy: 调用执行自己的线程运行任务,会降低新任务提交速度，影响性能，适合不能丢任务的请求。</li>
+<li>DiscardPolicy： 不处理新任务</li>
+<li>DiscardOldestPolicy: 丢弃最早的未处理的任务。</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Demo &#123;</span><br><span class="line"> executor</span><br><span class="line"> </span><br><span class="line"> class runner&#123;&#125;</span><br><span class="line"> </span><br><span class="line"> executor.execute(runner)</span><br><span class="line"> executor.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="核心参数设置"><a href="#核心参数设置" class="headerlink" title="核心参数设置"></a>核心参数设置</h2><h3 id="核心线程数"><a href="#核心线程数" class="headerlink" title="核心线程数"></a>核心线程数</h3><p>CPU密集型：核心线程数 &#x3D; CPU核数 + 1 (计算比较多)(这里核心线程数不是等于CPU核心数，是因为考虑CPU密集型任务由于某些原因而暂停，此时有额外的线程能确保CPU这个时刻不会浪费。但同时也会增加一个CPU上下文切换，因此核心线程数是等于CPU核心数？还是CPU核心数+1？可以根据实际情况来确定)</p>
+<p>IO密集型：核心线程数 &#x3D; CPU核数 * 2  （硬盘内存 读写 操作比较多）</p>
+<p>注：IO密集型（某大厂实践经验）<br>       核心线程数 &#x3D; CPU核数 &#x2F; （1-阻塞系数）     例如阻塞系数 0.8，CPU核数为4<br>       则核心线程数为20</p>
+<h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>AQS的实现依赖内部的同步队列,也就是FIFO的双向队列，如果当前线程竞争锁失败，那么AQS会把当前线程以及等待状态信息构造成一个Node加入到同步队列中，同时再阻塞该线程。当获取锁的线程释放锁以后，会从队列中唤醒一个阻塞的节点(线程)。</p>
+<h3 id="Sync"><a href="#Sync" class="headerlink" title="Sync"></a>Sync</h3><p>sync是一个静态内部类，它继承了AQS这个抽象类，前面说过AQS是一个同步工具，主要用来实现同步控制。我们在利用这个工具的时候，会继承它来实现同步控制功能。<br>通过进一步分析，发现Sync这个类有两个具体的实现，分别是NofairSync(非公平锁),FailSync(公平锁).</p>
+<h3 id="acquire"><a href="#acquire" class="headerlink" title="acquire"></a>acquire</h3><h3 id="年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。"><a href="#年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。" class="headerlink" title="年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。"></a>年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final void acquire(int arg) &#123;</span><br><span class="line">        if (!tryAcquire(arg) &amp;&amp;</span><br><span class="line">            acquireQueued(addWaiter(Node.EXCLUSIVE), arg))</span><br><span class="line">            selfInterrupt();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<p>这个方法的主要逻辑是</p>
+<ul>
+<li>通过tryAcquire尝试获取独占锁，如果成功返回true，失败返回false</li>
+<li>如果tryAcquire失败，则会通过addWaiter方法将当前线程封装成Node添加到AQS队列尾部</li>
+<li>acquireQueued，将Node作为参数，通过自旋去尝试获取锁。</li>
+</ul>
+<h3 id="addWaiter"><a href="#addWaiter" class="headerlink" title="addWaiter"></a>addWaiter</h3><p>当tryAcquire方法获取锁失败以后，则会先调用addWaiter将当前线程封装成Node，然后添加到AQS队列</p>
+<h2 id="公平锁和非公平锁"><a href="#公平锁和非公平锁" class="headerlink" title="公平锁和非公平锁"></a>公平锁和非公平锁</h2><p>公平锁：</p>
+<p>公平和非公平锁的队列都基于锁内部维护的一个双向链表，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。<br>锁的实现方式是基于如下几点：<br>表结点Node和状态state的volatile关键字。<br>sum.misc.Unsafe.compareAndSet的原子操作(见附录)。</p>
+<p>非公平锁：</p>
+<p>在等待锁的过程中， 如果有任意新的线程妄图获取锁，都是有很大的几率直接获取到锁的。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReentrantLock锁都不会使得线程中断，除非开发者自己设置了中断位。</span><br><span class="line">ReentrantLock获取锁里面有看似自旋的代码，但是它不是自旋锁。</span><br><span class="line">ReentrantLock公平与非公平锁都是属于排它锁。</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/CarpenterLee/p/9558026.html" >Java线程池详解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44777693/article/details/95246059" >java线程池如何合理配置核心线程数？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017372067" >深入分析AQS实现原理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/little-fly/p/10365109.html" >Java中的公平锁和非公平锁实现详解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0330(多线程)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-02-13 10:14:43</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/02/13/2020/每日一问0330(多线程)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0325(JVM)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0325(JVM)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0331(synchronized)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0331(synchronized)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile"><span class="nav-text">volatile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Runnable%E6%8E%A5%E5%8F%A3%E5%92%8CCallable%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">实现Runnable接口和Callable接口的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sleep-%E5%92%8Cwait-%E5%8C%BA%E5%88%AB"><span class="nav-text">sleep 和wait 区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-%E5%92%8C-Runnable-%E5%8C%BA%E5%88%AB"><span class="nav-text">Thread 和 Runnable 区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%B0%83%E7%94%A8start-%E4%BC%9A%E6%89%A7%E8%A1%8Crun-%E8%80%8C%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8run"><span class="nav-text">为什么我们调用start() 会执行run() ,而不能直接调用run()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadLocal"><span class="nav-text">ThreadLocal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ThreadLocal-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98"><span class="nav-text">ThreadLocal 内存泄露问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-text">如何创建线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-text">如何正确使用线程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor-%E9%87%8D%E8%A6%81%E5%8F%82%E6%95%B0"><span class="nav-text">ThreadPoolExecutor 重要参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A5%B1%E5%92%8C%E7%AD%96%E7%95%A5"><span class="nav-text">饱和策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="nav-text">核心参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%BA%BF%E7%A8%8B%E6%95%B0"><span class="nav-text">核心线程数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AQS"><span class="nav-text">AQS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sync"><span class="nav-text">Sync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#acquire"><span class="nav-text">acquire</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B4%EF%BC%8C%E8%A1%A8%E7%BB%93%E7%82%B9Node%E7%9A%84%E5%80%BC%E5%B0%B1%E6%98%AF%E6%AF%8F%E4%B8%80%E4%B8%AA%E8%AF%B7%E6%B1%82%E5%BD%93%E5%89%8D%E9%94%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E3%80%82%E5%85%AC%E5%B9%B3%E9%94%81%E5%88%99%E5%9C%A8%E4%BA%8E%E6%AF%8F%E6%AC%A1%E9%83%BD%E6%98%AF%E4%BE%9D%E6%AC%A1%E4%BB%8E%E9%98%9F%E9%A6%96%E5%8F%96%E5%80%BC%E3%80%82"><span class="nav-text">年，表结点Node的值就是每一个请求当前锁的线程。公平锁则在于每次都是依次从队首取值。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addWaiter"><span class="nav-text">addWaiter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%B9%B3%E9%94%81%E5%92%8C%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81"><span class="nav-text">公平锁和非公平锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

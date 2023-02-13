@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(k8s)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问0925(k8s) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0925(k8s)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-13 10:14:43</span>
+        <span class="mobile">2023-02-13 10:14</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2020/">2020</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="k8s"><a href="#k8s" class="headerlink" title="k8s"></a>k8s</h1><h2 id="如何搭建-k8s"><a href="#如何搭建-k8s" class="headerlink" title="如何搭建 k8s"></a>如何搭建 k8s</h2><h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><p>pv PersistentVolume（PV）</p>
+<p>PV是对底层网络共享存储的抽象，将共享存储定义为一种“资源”，比如Node也是一种容器应用可以“消费”的资源。PV由管理员创建和配置，它与共享存储的具体实现直接相关，例如GlusterFS、iSCSI、RBD或GCE或AWS公有云提供的共享存储，通过插件式的机制完成与共享存储的对接，以供应用访问和使用。</p>
+<p>PVC PersistentVolumeClaim（PVC）</p>
+<p>PVC则是用户对存储资源的一个“申请”。就像Pod“消费”Node的资源一样，PVC能够“消费”PV资源。PVC可以申请特定的存储空间和访问模式。</p>
+<p>SVC</p>
+<p>pod</p>
+<p>node</p>
+<h2 id="CSI"><a href="#CSI" class="headerlink" title="CSI"></a>CSI</h2><p>引入容器存储接口Container Storage Interface（CSI）机制，用于在Kubernetes和外部存储系统之间建立一套标准的存储管理接口，通过该接口为容器提供存储服务。</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>我们通过设置kube-apiserver服务的启动参数–enable-swagger-ui&#x3D;true来启用Swagger UI页面，其访问地址为http:&#x2F;&#x2F;<master-ip>:<master-port>&#x2F;swagger-ui&#x2F;</p>
+<h2 id="Master的组件"><a href="#Master的组件" class="headerlink" title="Master的组件"></a>Master的组件</h2><ul>
+<li>（1）kube-apiserver</li>
+<li>（2）etcd</li>
+<li>（3）kube-scheduler</li>
+<li>（4）kube-controller-manager</li>
+<li>（5）cloud-controller-manager</li>
+</ul>
+<p>Pod有两种类型：普通的Pod和静态Pod（Static Pod）</p>
+<p>Service在Kubernetes中是一个抽象的概念，定义了一组逻辑上的Pod和一个访问它们的策略（通常称为微服务）。</p>
+<p>，在Kubernetes中，Volume是Pod中能够被多个容器访问的共享目录。</p>
+<h4 id="3．卷（Volume）"><a href="#3．卷（Volume）" class="headerlink" title="3．卷（Volume）"></a>3．卷（Volume）</h4><ul>
+<li>local 本地存储 ，使用Local Storage可以由Kubernetes自动对Pod进行调度，而使用HostPath只能人工手动调度Pod，因为Kubernetes已经知道了每个节点上kube-reserved和system-reserved设置的本地存储限制。</li>
+<li>NFS（Network File System，网络文件系统） 使用NFS数据卷适用于多读多写的持久化存储，适用于大数据分析、媒体处理、内容管理等场景。</li>
+<li>projected Volume projected Volume将多个Volume源映射到同一个目录，可以支持以下类型的卷源：secret、downwardAPI、configMap、serviceAccounttoken。 所有源都需要与Pod在同一名称空间中。</li>
+<li>secret volume用于将敏感信息（如密码）传递给Pod。 ，因此它们永远不会写入非易失性存储。</li>
+</ul>
+<h4 id="复制控制器（Replication-Controller-RC）"><a href="#复制控制器（Replication-Controller-RC）" class="headerlink" title="复制控制器（Replication Controller, RC）"></a>复制控制器（Replication Controller, RC）</h4><p>● 重新规划，比如重新设置Pod数量。</p>
+<p>● 缩放。</p>
+<p>● 滚动更新。</p>
+<p>● RC支持滚动更新，允许我们在更新服务时逐个替换Pod。</p>
+<ul>
+<li>除了在程序更新过程中同时可以运行多个版本的程序外，也可以在更新完成之后的一段时间内或者持续的同时运行多个版本（新旧），需要通过标签选择器来完成。</li>
+</ul>
+<h4 id="Replica-Set"><a href="#Replica-Set" class="headerlink" title="Replica Set"></a>Replica Set</h4><p>Replica Set 是下一代复制控制器。Replica Set和Replication Controller之间的&#x3D;&#x3D;唯一区别&#x3D;&#x3D;是选择器的支持——Replica Set支持基于集合的Label selector（Set-based selector），而RC只支持基于等式的Label selector（equality-basedselector），所以Replica Set的功能更强大。</p>
+<h4 id="7．部署控制器（Deployment）"><a href="#7．部署控制器（Deployment）" class="headerlink" title="7．部署控制器（Deployment）"></a>7．部署控制器（Deployment）</h4><h4 id="8．StatefulSet"><a href="#8．StatefulSet" class="headerlink" title="8．StatefulSet"></a>8．StatefulSet</h4><p>StatefulSet用于管理有状态应用程序，比如MySQL集群、MongoDB集群、ZooKeeper集群等。</p>
+<h4 id="9．后台支撑服务集（DaemonSet）"><a href="#9．后台支撑服务集（DaemonSet）" class="headerlink" title="9．后台支撑服务集（DaemonSet）"></a>9．后台支撑服务集（DaemonSet）</h4><p>DaemonSet保证在每个Node上都运行一个容器副本，常用来部署一些集群的日志、监控或者其他系统管理应用。典型的应用包括：</p>
+<p>● 日志收集守护程序，比如fluentd、logstash等。</p>
+<p>● 系统监控，比如Prometheus Node Exporter、collectd、New Relicagent、Ganglia gmond等。</p>
+<p>● 集群存储后台进程，比如glusterd、ceph等。</p>
+<p>● 系统程序，比如kube-proxy、kube-dns、glusterd、ceph等。</p>
+<h4 id="10-JOB"><a href="#10-JOB" class="headerlink" title="10. JOB"></a>10. JOB</h4><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p> journalctl -u docker</p>
+<p>journalctl -u kuberlet -f</p>
+<p>&#x2F;&#x2F;查看指定文件描述的所有资源</p>
+<p>kuberctl describe -f **.yaml</p>
+<p>kubectl-debug是一个简单的开源kubectl插件，可以帮助我们便捷地进行Kubernetes上的Pod排障诊断，背后做的事情很简单：在运行中的Pod上额外起一个新容器，并将新容器加入目标容器的pid、network、user以及ipc namespace中。这时我们就可以在新容器中直接用netstat、tcpdump这些熟悉的工具来诊断和解决问题了，而旧容器可以保持最小化，不需要预装任何额外的排障工具。</p>
+<p>（1）Pod一直处于Pending状态Pending一般情况下表示这个Pod没有被调度到一个节点上，通常使用“kubectldescribe”命令来查看Pod事件以得到具体原因。通常情况下，这是因为资源不足引起的。如果是资源不足，那么解决方案有：● 添加工作节点。● 移除部分Pod以释放资源。● 降低当前Pod的资源限制。</p>
+<p>（2）如果一个Pod卡在Waiting状态，</p>
+<p>就表示这个Pod已经调试到节点上，但是没有运行起来。解决方案有：</p>
+<p>● 检查网络问题。若是网络问题，则保障网络通畅，可以考虑使用代理或国际网络（部分域名在国内网络无法访问，比如“k8s.gcr.io”）。</p>
+<p>● 如果是拉取超时，可以考虑使用镜像加速器（比如使用阿里云或腾讯云提供的镜像加速地址），也可以考虑适当调整超时时间。</p>
+<p>● 尝试使用docker pull <image>来验证镜像是否可以正常拉取。（</p>
+<p>（3）Pod一直处于CrashLoopBackOff状态，经检查判为健康检查启动超时而退出CrashLoopBackOff状态说明容器曾经启动但又异常退出了，通常此Pod的重启次数是大于0的。解决方案有：● 重新设置合适的健康检查阈值。● 优化容器性能，提高启动速度。● 关闭健康检查。</p>
+<p>（4）出现大量状态为“Evicted”的PodEvicted即驱赶的意思，当节点NotReady（节点宕机或失联）或资源不足时就会将Pod驱逐到其他节点。解决方案有：● 排查节点异常。● 排查资源问题，扩充资源或释放其他资源。● 可使用以下命令批量删除已有的“Evicted”状态的Pod：</p>
+<p>Azure中国镜像源地址：<a class="link"   target="_blank" rel="noopener" href="http://mirror.azure.cn/%E3%80%82" >http://mirror.azure.cn/。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>中科大镜像源地址：<a class="link"   target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/%E3%80%82" >http://mirrors.ustc.edu.cn/。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>网络组件flannel安装完成后，通过命令查看时一直在初始化状态，并且通过日志输出的内容如下所示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20211112162530870.png"
+                      alt="image-20211112162530870"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20211112162721959.png"
+                      alt="image-20211112162721959"
+                ></p>
+<p>通常推荐使用“kubectl apply”命令替代“kubectl create”，因为“kubectl apply”既能创建Kubernetes资源，也能对资源进行更新，属于声明式对象配置管理，比命令式对象配置管理更易于理解和使用。</p>
+<h3 id="使用“kubectl-scale”命令来伸缩应用"><a href="#使用“kubectl-scale”命令来伸缩应用" class="headerlink" title="使用“kubectl scale”命令来伸缩应用"></a>使用“kubectl scale”命令来伸缩应用</h3><h4 id="9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用"><a href="#9-2-2-使用“kubectl-autoscale”命令来自动伸缩应用" class="headerlink" title="9.2.2 使用“kubectl autoscale”命令来自动伸缩应用"></a>9.2.2 使用“kubectl autoscale”命令来自动伸缩应用</h4><h4 id="9-2-4-使用“kubectl-set”命令更新应用"><a href="#9-2-4-使用“kubectl-set”命令更新应用" class="headerlink" title="9.2.4 使用“kubectl set”命令更新应用"></a>9.2.4 使用“kubectl set”命令更新应用</h4><h4 id="9-2-5-使用“kubectl-rollout”命令回滚应用"><a href="#9-2-5-使用“kubectl-rollout”命令回滚应用" class="headerlink" title="9.2.5 使用“kubectl rollout”命令回滚应用"></a>9.2.5 使用“kubectl rollout”命令回滚应用</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/image-20211112163203163.png"
+                      alt="image-20211112163203163"
+                ></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/yan234280533/article/details/72567261?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" >Kubernetes中pod创建流程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0925(k8s)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-02-13 10:14:43</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/02/13/2020/每日一问0925(k8s)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0713(easy-rule)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0713(easy-rule)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/02/13/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0925(maven)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0925(maven)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k8s"><span class="nav-text">k8s</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA-k8s"><span class="nav-text">如何搭建 k8s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87"><span class="nav-text">词汇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSI"><span class="nav-text">CSI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Master%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="nav-text">Master的组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%8E%E5%8D%B7%EF%BC%88Volume%EF%BC%89"><span class="nav-text">3．卷（Volume）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Replication-Controller-RC%EF%BC%89"><span class="nav-text">复制控制器（Replication Controller, RC）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Replica-Set"><span class="nav-text">Replica Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7%EF%BC%8E%E9%83%A8%E7%BD%B2%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88Deployment%EF%BC%89"><span class="nav-text">7．部署控制器（Deployment）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8%EF%BC%8EStatefulSet"><span class="nav-text">8．StatefulSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9%EF%BC%8E%E5%90%8E%E5%8F%B0%E6%94%AF%E6%92%91%E6%9C%8D%E5%8A%A1%E9%9B%86%EF%BC%88DaemonSet%EF%BC%89"><span class="nav-text">9．后台支撑服务集（DaemonSet）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-JOB"><span class="nav-text">10. JOB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="nav-text">查看日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E2%80%9Ckubectl-scale%E2%80%9D%E5%91%BD%E4%BB%A4%E6%9D%A5%E4%BC%B8%E7%BC%A9%E5%BA%94%E7%94%A8"><span class="nav-text">使用“kubectl scale”命令来伸缩应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-2-%E4%BD%BF%E7%94%A8%E2%80%9Ckubectl-autoscale%E2%80%9D%E5%91%BD%E4%BB%A4%E6%9D%A5%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9%E5%BA%94%E7%94%A8"><span class="nav-text">9.2.2 使用“kubectl autoscale”命令来自动伸缩应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-4-%E4%BD%BF%E7%94%A8%E2%80%9Ckubectl-set%E2%80%9D%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8"><span class="nav-text">9.2.4 使用“kubectl set”命令更新应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-5-%E4%BD%BF%E7%94%A8%E2%80%9Ckubectl-rollout%E2%80%9D%E5%91%BD%E4%BB%A4%E5%9B%9E%E6%BB%9A%E5%BA%94%E7%94%A8"><span class="nav-text">9.2.5 使用“kubectl rollout”命令回滚应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
