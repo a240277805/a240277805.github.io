@@ -54,6 +54,14 @@ Tab键：命令、文件名等自动补全功能。
 
 ## awk 命令
 
+
+
+## 其他命令
+
+远程执行 文件
+
+cat 本地sh |ssh root@远程ip ：远程执行本地文件，在本地输出
+
 ## 参考
 
 # [Linux三剑客之awk命令](https://www.cnblogs.com/ginvip/p/6352157.html)
