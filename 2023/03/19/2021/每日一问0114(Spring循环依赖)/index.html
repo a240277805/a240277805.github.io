@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/03/19/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问0114(Spring循环依赖) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问0114(Spring循环依赖)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-03-19 04:37:38</span>
+        <span class="mobile">2023-03-19 04:37</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2021/">2021</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="Spring-循环依赖"><a href="#Spring-循环依赖" class="headerlink" title="Spring 循环依赖"></a>Spring 循环依赖</h1><p><strong>【1】 getSingleton(beanName)：源码如下：</strong></p>
+<p>复制</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//查询缓存</span><br><span class="line">  Object sharedInstance = getSingleton(beanName);</span><br><span class="line">  //缓存中存在并且args是null</span><br><span class="line">  if (sharedInstance != null &amp;&amp; args == null) &#123;</span><br><span class="line">       //.......省略部分代码     </span><br><span class="line">       //直接获取Bean实例</span><br><span class="line">   bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> //getSingleton源码，DefaultSingletonBeanRegistry#getSingleton</span><br><span class="line">protected Object getSingleton(String beanName, boolean allowEarlyReference) &#123;</span><br><span class="line">     //先从一级缓存中获取已经实例化属性赋值完成的Bean</span><br><span class="line">  Object singletonObject = this.singletonObjects.get(beanName);</span><br><span class="line">     //一级缓存不存在，并且Bean正处于创建的过程中</span><br><span class="line">  if (singletonObject == null &amp;&amp; isSingletonCurrentlyInCreation(beanName)) &#123;</span><br><span class="line">   synchronized (this.singletonObjects) &#123;</span><br><span class="line">                //从二级缓存中查询，获取Bean的早期引用，实例化完成但是未赋值完成的Bean</span><br><span class="line">    singletonObject = this.earlySingletonObjects.get(beanName);</span><br><span class="line">                //二级缓存中不存在，并且允许创建早期引用（二级缓存中添加）</span><br><span class="line">    if (singletonObject == null &amp;&amp; allowEarlyReference) &#123;</span><br><span class="line">                    //从三级缓存中查询，实例化完成，属性未装配完成</span><br><span class="line">     ObjectFactory&lt;?&gt; singletonFactory = this.singletonFactories.get(beanName);</span><br><span class="line">     if (singletonFactory != null) &#123;</span><br><span class="line">      singletonObject = singletonFactory.getObject();</span><br><span class="line">                         //二级缓存中添加</span><br><span class="line">      this.earlySingletonObjects.put(beanName, singletonObject);</span><br><span class="line">                        //从三级缓存中移除</span><br><span class="line">      this.singletonFactories.remove(beanName);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return singletonObject;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>从源码可以得知，doGetBean最初是查询缓存，一二三级缓存全部查询，如果三级缓存存在则将Bean早期引用存放在二级缓存中并移除三级缓存。（升级为二级缓存）</li>
+</ul>
+<p><strong>【2】addSingletonFactory：源码如下</strong></p>
+<p>复制</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//中间省略部分代码。。。。。</span><br><span class="line">  //创建Bean的源码，在AbstractAutowireCapableBeanFactory#doCreateBean方法中</span><br><span class="line">  if (instanceWrapper == null) &#123;</span><br><span class="line">            //实例化Bean</span><br><span class="line">   instanceWrapper = createBeanInstance(beanName, mbd, args);</span><br><span class="line">  &#125;</span><br><span class="line">  //允许提前暴露</span><br><span class="line">  if (earlySingletonExposure) &#123;</span><br><span class="line">            //添加到三级缓存中</span><br><span class="line">   addSingletonFactory(beanName, () -&gt; getEarlyBeanReference(beanName, mbd, bean));</span><br><span class="line">  &#125;</span><br><span class="line">  try &#123;</span><br><span class="line">            //属性装配，属性赋值的时候，如果有发现属性引用了另外一个Bean，则调用getBean方法</span><br><span class="line">   populateBean(beanName, mbd, instanceWrapper);</span><br><span class="line">            //初始化Bean，调用init-method，afterproperties方法等操作</span><br><span class="line">   exposedObject = initializeBean(beanName, exposedObject, mbd);</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">//添加到三级缓存的源码，在DefaultSingletonBeanRegistry#addSingletonFactory</span><br><span class="line">protected void addSingletonFactory(String beanName, ObjectFactory&lt;?&gt; singletonFactory) &#123;</span><br><span class="line">  synchronized (this.singletonObjects) &#123;</span><br><span class="line">            //一级缓存中不存在</span><br><span class="line">   if (!this.singletonObjects.containsKey(beanName)) &#123;</span><br><span class="line">                //放入三级缓存</span><br><span class="line">    this.singletonFactories.put(beanName, singletonFactory);</span><br><span class="line">                //从二级缓存中移除，</span><br><span class="line">    this.earlySingletonObjects.remove(beanName);</span><br><span class="line">    this.registeredSingletons.add(beanName);</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>从源码得知，Bean在实例化完成之后会直接将未装配的Bean工厂存放在<strong>「三级缓存」</strong>中，并且<strong>「移除二级缓存」</strong></li>
+</ul>
+<p><strong>【3】addSingleton：源码如下：</strong></p>
+<p>复制</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//获取单例对象的方法，DefaultSingletonBeanRegistry#getSingleton</span><br><span class="line">//调用createBean实例化Bean</span><br><span class="line">singletonObject = singletonFactory.getObject();</span><br><span class="line"></span><br><span class="line">//。。。。中间省略部分代码 </span><br><span class="line"></span><br><span class="line">//doCreateBean之后才调用，实例化，属性赋值完成的Bean装入一级缓存，可以直接使用的Bean</span><br><span class="line">addSingleton(beanName, singletonObject);</span><br><span class="line"></span><br><span class="line">//addSingleton源码，在DefaultSingletonBeanRegistry#addSingleton方法中</span><br><span class="line">protected void addSingleton(String beanName, Object singletonObject) &#123;</span><br><span class="line">  synchronized (this.singletonObjects) &#123;</span><br><span class="line">            //一级缓存中添加</span><br><span class="line">   this.singletonObjects.put(beanName, singletonObject);</span><br><span class="line">            //移除三级缓存</span><br><span class="line">   this.singletonFactories.remove(beanName);</span><br><span class="line">            //移除二级缓存</span><br><span class="line">   this.earlySingletonObjects.remove(beanName);</span><br><span class="line">   this.registeredSingletons.add(beanName);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="spring-我是如何解决循环依赖的？"><a href="#spring-我是如何解决循环依赖的？" class="headerlink" title="spring: 我是如何解决循环依赖的？"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/wjxzs/p/14239052.html" >spring: 我是如何解决循环依赖的？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><p><a class="link"   target="_blank" rel="noopener" href="https://hellojava.com/a/88587.html" >Spring如何解决循环依赖，你真的懂了？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问0114(Spring循环依赖)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-03-19 04:37:38</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/03/19/2021/每日一问0114(Spring循环依赖)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/03/19/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0104(缓存实施情况)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/03/19/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问0303(Spring亮眼代码技巧)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96"><span class="nav-text">Spring 循环依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E7%9A%84%EF%BC%9F"><span class="nav-text">spring: 我是如何解决循环依赖的？ </span></a></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
