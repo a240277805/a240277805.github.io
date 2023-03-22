@@ -8,3 +8,18 @@ title:
 - ip_hash：每个请求按照发起客户端ip的hash结果进行匹配，这样的算法每一个固定的ip地址的客户端总会访问到同一个后端服务器，这也在一定程度上解决了集群部署环境下session共享的问题。
 - fair：智能调整调度算法，动态的根据后端服务器的请求处理器的请求处理响应的时间来进行均衡分配，响应时间短，处理效率高的服务器分配到请求的概率高，响应时间长，处理效率低的服务器分配到的请求少；结合了前两者的优点的一种调度算法。但是需要注意的是nginx默认不支持fair算法，如果要使用这种算法，需要安装upstream_fair模块。
 - url_hash：按照访问的url的hash结果分配请求，每个请求的url会指向后端固定的某个服务器，可以在nginx作为静态服务器的情况下提高缓存效率。同样要注意Nginx默认不支持这种调度算法，要使用的话需要安装nginx的hash软件包。
+
+## 命令
+
+nginx -t  检查语法
+
+nginx -s reload 重启
+
+ 配置文件默认路径 /etc/nginx/nginx.conf
+
+日志 ： access.log     error.log    格式  看 main(format) 可自定义
+
+路径中 location  /a/{ upproxy   http://localhost:3000/b/ } 则取消前缀 a  ，    
+
+
+
