@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/04/10/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1214(logback)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问1214(logback) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问1214(logback)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-04-10 09:15:29</span>
+        <span class="mobile">2023-04-10 09:15</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2020/">2020</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="Logback"><a href="#Logback" class="headerlink" title="Logback"></a>Logback</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Logback 构建在三个主要的类上：Logger，Appender 和 Layouts。</p>
+<p><code>Logger</code> 类作为 logback-classic 模块的一部分。<code>Appender</code> 与 <code>Layouts</code> 接口作为 logback-core 的一部分。作为一个通用的模块，logback-core 没有 logger 的概念。</p>
+<h3 id="Logger-上下文"><a href="#Logger-上下文" class="headerlink" title="Logger 上下文"></a>Logger 上下文</h3><p>任何日志 API 的优势在于它能够禁止某些日志的输出，但是又不会妨碍另一些日志的输出。通过假定一个日志空间，这个空间包含所有可能的日志语句，这些日志语句根据开发人员设定的标准来进行分类。在 logback-classic 中，分类是 logger 的一部分，每一个 logger 都依附在 <code>LoggerContext</code> 上，它负责产生 logger，并且通过一个树状的层级结构来进行管理。</p>
+<p>一个 Logger 被当作为一个实体，它们的命名是大小写敏感的，并且遵循一下规则：</p>
+<blockquote>
+<p>命名层次结构</p>
+<p>如果一个 logger 的名字加上一个 <code>.</code> 作为另一个 logger 名字的前缀，那么该 logger 就是另一个 logger 的祖先。如果一个 logger 与另一个 logger 之间没有其它的 logger ，则该 logger 就是另一个 logger 的父级。</p>
+</blockquote>
+<p>例如：名为 <code>com.foo</code> 的 logger 是名为 <code>com.foo.Bar</code> 的 logger 的父级。名为 <code>java</code> 的 logger 是名为 <code>java.util</code> 的父级，是名为 <code>java.util.Vector</code> 的祖先。</p>
+<p><code>root logger 作为 logger 层次结构的最高层。</code>它是一个特殊的 logger，因为它是每一个层次结构的一部分。每一个 logger 都可以通过它的名字去获取。例：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Logger rootLogger = LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="有效等级又称为等级继承"><a href="#有效等级又称为等级继承" class="headerlink" title="有效等级又称为等级继承"></a>有效等级又称为等级继承</h3><p>Logger 能够被分成不同的等级。不同的等级（TRACE, DEBUG, INFO, WARN, ERROR）定义在 <code>ch.qos.logback.classic.Level</code> 类中。在 logback 中，类 <code>Level</code> 使用 final 修饰的，所以它不能用来被继承。一种更灵活的方式是使用 <code>Marker</code> 对象。</p>
+<p>如果一个给定的 logger 没有指定一个层级，那么它就会继承离它最近的一个祖先的层级。更正式的说法是：</p>
+<blockquote>
+<p>对于一个给定的名为 <em>L</em> 的 logger，它的有效层级为从自身一直回溯到 root logger，直到找到第一个不为空的层级作为自己的层级。</p>
+</blockquote>
+<p>为了确保所有的 logger 都有一个层级，root logger 会有一个默认层级 — DEBUG</p>
+<p>以下四个例子指定不同的层级，以及根据继承规则得到的最终有效层级</p>
+<h3 id="底层实现初探"><a href="#底层实现初探" class="headerlink" title="底层实现初探"></a>底层实现初探</h3><p>在介绍了基本的 logback 组件之后，我们准备介绍一下，当用户调用日志的打印方法时，logback 所执行的步骤。现在我们来分析一下当用户通过一个名为 <em>com.wombat</em> 的 logger 调用了 <strong>info()</strong> 方法时，logback 执行了哪些步骤。</p>
+<p><strong>第一步：获取过滤器链</strong></p>
+<p>如果存在，则 <strong>TurboFilter</strong> 过滤器会被调用，Turbo 过滤器会设置一个上下文的阀值，或者根据每一条相关的日志请求信息，例如：<strong>Marker</strong>, <strong>Level</strong>， <strong>Logger</strong>， 消息，**Throwable ** 来过滤某些事件。如果过滤器链的响应是 <em>FilterReply.DENY</em>，那么这条日志请求将会被丢弃。如果是 <em>FilterReply.NEUTRAL</em>，则会继续执行下一步，例如：第二步。如果响应是 <em>FilterRerply.ACCEPT</em>，则会直接跳到第三步。</p>
+<p><strong>第二步：应用<a class="link"   target="_blank" rel="noopener" href="https://github.com/YLongo/logback-chinese-manual/blob/0197a2d5a3820d9c1756c680c2e21e934904c6a6/02%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%9E%B6%E6%9E%84.md#%E6%96%B9%E6%B3%95%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99" >基本选择规则 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></strong></p>
+<p>在这步，logback 会比较有效级别与日志请求的级别，如果日志请求被禁止，那么 logback 将会丢弃调这条日志请求，并不会再做进一步的处理，否则的话，则进行下一步的处理。</p>
+<p>**第三步：创建一个 LoggingEvent 对象 **</p>
+<p>如果日志请求通过了之前的过滤器，logback 将会创建一个 ch.qos.logback.classic.LoggingEvent 对象，这个对象包含了日志请求所有相关的参数，请求的 logger，日志请求的级别，日志信息，与日志一同传递的异常信息，当前时间，当前线程，以及当前类的各种信息和 MDC。MDC 将会在后续章节进行讨论。</p>
+<p><strong>第四步：调用 appender</strong></p>
+<p>在创建了 LoggingEvent 对象之后，logback 会调用所有可用 appender 的 doAppend() 方法。这些 appender 继承自 logger 上下文。</p>
+<p>所有的 appender 都继承了 AppenderBase 这个抽象类，并实现了 doAppend() 这个方法，该方法是线程安全的。AppenderBase 的 doAppend() 也会调用附加到 appender 上的自定义过滤器。自定义过滤器能动态的动态的添加到 appender 上，在过滤器章节会详细讨论。</p>
+<p><strong>第五步：格式化输出</strong></p>
+<p>被调用的 appender 负责格式化日志时间。但是，有些 appender 将格式化日志事件的任务委托给 layout。layout 格式化 LoggingEvent 实例并返回一个字符串。对于其它的一些 appender，例如 SocketAppender，并不会把日志事件转变为一个字符串，而是进行序列化，因为，它们就不需要一个 layout。</p>
+<p><strong>第六步：发送 LoggingEvent</strong></p>
+<p>当日志事件被完全格式化之后将会通过每个 appender 发送到具体的目的地。</p>
+<p>下图是 logback 执行步骤的 UML 图：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/YLongo/logback-chinese-manual/blob/0197a2d5a3820d9c1756c680c2e21e934904c6a6/images/underTheHoodSequence2.gif"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://github.com/YLongo/logback-chinese-manual/raw/0197a2d5a3820d9c1756c680c2e21e934904c6a6/images/underTheHoodSequence2.gif"
+                      alt="点击查看大图"
+                ></a></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="root-和-logger-优先级"><a href="#root-和-logger-优先级" class="headerlink" title="root  和 logger 优先级"></a>root  和 logger 优先级</h3><h3 id="为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API"><a href="#为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API" class="headerlink" title="为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API"></a>为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API</h3><p>门面模式</p>
+<h3 id="为何root配置的INFO，logger特殊指定的包-x2F-类日志DEBUG级别，最后也能打印出来？"><a href="#为何root配置的INFO，logger特殊指定的包-x2F-类日志DEBUG级别，最后也能打印出来？" class="headerlink" title="为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？"></a>为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</h3><p>因为没有设置addtivity&#x3D;”false” ，如下图即可。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;logger name=&quot;包名/类名&quot; level=&quot;DEBUG&quot; addtivity=&quot;false&quot; /&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>logger有一个配置addtivity&#x3D;”true” 默认就是true,标识向上级传递日志（INFO是DEBUG的上级）。只有显示指定为false时，才不会向上级输出。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h1 id="为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API-1"><a href="#为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API-1" class="headerlink" title="为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API"></a><a class="link"   target="_blank" rel="noopener" href="https://www.hollischuang.com/archives/3000" >为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问1214(logback)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-04-10 09:15:29</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/04/10/2020/每日一问1214(logback)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/04/10/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1211(%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0kafka%E6%96%B9%E6%A1%88)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1211(效能平台kafka方案)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/10/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1214(%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0%E7%BB%9F%E8%AE%A1%E8%AE%BE%E8%AE%A1)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1214(效能平台统计设计)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Logback"><span class="nav-text">Logback</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logger-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-text">Logger 上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%AD%89%E7%BA%A7%E5%8F%88%E7%A7%B0%E4%B8%BA%E7%AD%89%E7%BA%A7%E7%BB%A7%E6%89%BF"><span class="nav-text">有效等级又称为等级继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2"><span class="nav-text">底层实现初探</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#root-%E5%92%8C-logger-%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">root  和 logger 优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95root%E9%85%8D%E7%BD%AE%E7%9A%84INFO%EF%BC%8Clogger%E7%89%B9%E6%AE%8A%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8C%85-x2F-%E7%B1%BB%E6%97%A5%E5%BF%97DEBUG%E7%BA%A7%E5%88%AB%EF%BC%8C%E6%9C%80%E5%90%8E%E4%B9%9F%E8%83%BD%E6%89%93%E5%8D%B0%E5%87%BA%E6%9D%A5%EF%BC%9F"><span class="nav-text">为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API-1"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API </span></a></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
