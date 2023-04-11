@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2023/04/11/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1130(shell%E5%91%BD%E4%BB%A4)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问1130(shell命令) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问1130(shell命令)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-04-11 08:29:56</span>
+        <span class="mobile">2023-04-11 08:29</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2020/">2020</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="shell-命令"><a href="#shell-命令" class="headerlink" title="shell 命令"></a>shell 命令</h1><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>linux中有三种标准输入输出，分别是 STDIN，STDOUT，STDERR，对应的数字是 0，1，2。</p>
+<p><em>STDIN 是标准输入，默认从键盘读取信息；<br>STDOUT 是标准输出，默认将输出结果输出至终端，也就是显示器之类的东西；<br>STDERR 是标准的错误信息，默认也会显示在终端上。</em></p>
+<p> &amp;表示全部输出，0,1,2</p>
+<p>&amp;&gt;  以覆盖的方式，写入文件</p>
+<p>&amp;&gt;&gt; 将输出追加到文件</p>
+<h2 id="shell-中的转义"><a href="#shell-中的转义" class="headerlink" title="shell 中的转义"></a>shell 中的转义</h2><p><strong>在shell中,特殊字符的转义有三种办法</strong></p>
+<ol>
+<li>用\转义: 把\字符放在特殊字符的前面   cat test*</li>
+<li>用单引号’’转义: 用单引号把参数括起来  cat ‘test*’</li>
+<li>用双引号””转义: 用双引号把参数括起来  cat “test*”</li>
+</ol>
+<p><strong>三种转义方法的范围</strong><br>在shell中,特殊字符是非常多的,而以上提到的三种转义方法的范围也不尽相同,</p>
+<ul>
+<li>其中第一种方法的范围是最广的,几乎可以对所有的特殊字符进行转义,常见的用法是把\放在一个命令行的最后,这样一个很长的命令就可以分为两行或者更多行写. 比如</li>
+</ul>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo this is a \</span><br><span class="line">very long \</span><br><span class="line">line</span><br></pre></td></tr></table></figure></div>
+
+<p>将显示成  this is a very long line，在这里,其实就是\把换行符转义了,让它失去了换行的意思,同时阻止命令立刻执行.</p>
+<ul>
+<li><p>第二种转义(单引号)的范围比第一种小,它可以阻止命令行立刻执行,但是它不能让换行符失去换行的意思</p>
+</li>
+<li><p>第三种转义(双引号)的范围又比第二种小,单引号可以转义”<code>&quot;, 而双引号不行. 在shell中, &quot;</code>“中间的东西将被视为命令替换. shell对参数进行预先处理时,将把两个”&#96;”中间的东西当做shell命令进行执行,再将执行结果替换掉他们本身.</p>
+</li>
+</ul>
+<p><strong>常见的一些特殊字符</strong></p>
+<ol>
+<li><p><code>*</code> 任意个任意字符</p>
+</li>
+<li><p><code>?</code> 一个任意字符</p>
+</li>
+<li><p><code>[..] []</code>中的任意一个字符,这里也类似于正则表达式,中括号内可以是具体的一些字符,如[abcd]也可以是用-指定的一个范围,如<code>[a-d]</code></p>
+</li>
+<li><p><code># </code>注释</p>
+</li>
+<li><p>(空格) 参数分隔符</p>
+</li>
+<li><p><code>cmd</code> 命令替换</p>
+</li>
+<li><p><code>|</code> 管道 分析前边命令的输出, 并将输出作为后边命令的输入</p>
+</li>
+<li><p><code>&amp;</code> 后台执行</p>
+</li>
+<li><p><code>;</code> 命令分隔符(可以在同一行执行两个命令,用;分割)</p>
+</li>
+<li><p><code>~ </code>用户home目录</p>
+</li>
+<li><p>&#96;  后置引用, 命令替换 相当于$()–命令替换</p>
+</li>
+<li><p>: 空命令, 等价于 “NOP”<br>也可被认为是 shell 内建命令 true 作用相同, 例如: 死循环</p>
+</li>
+<li><p>$</p>
+<p>变量符号<br>正则表达式中 行结束符<br>${} 参数替换<br>$*,$@ 位置参数<br>$? 退出状态<br>$$ 进程ID</p>
+</li>
+<li><p><strong>;;</strong>  终止 case 选项</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">case “$variable” in</span><br><span class="line">abc) echo “\$variable = abc”;;</span><br><span class="line">xyz) echo “\$variable = xyz”;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>{xxx,yyy,zzz}</strong>  </p>
+<p>大括号扩展<br>cat {file1,file2,file3} &gt; combined_file, 将file1,file2,file3合并在一起并重定向到commbined_file中. 大括号中不能有空格</p>
+</li>
+<li><p>{} 代码块. 事实上, 这个结构创建了一个匿名的函数. 但是与函数不同的是, 在其中声明的变量, 对于脚本的其他部分的代码来说还是可见的.</p>
+</li>
+<li><p><strong>{};</strong> 路径名, 一般都是在 find 命令中使用, 注意; 用来结束find 命令序列的 –exec</p>
+</li>
+<li><p>read <code>read</code> 命令是一个一个词组地接收输入的参数，每个词组需要使用空格进行分隔；如果输入的词组个数大于需要的参数个数，则多出的词组将被作为整体为最后一个参数接收。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read firstStr secondStr</span><br><span class="line">echo &quot;第一个参数:$firstStr; 第二个参数:$secondStr&quot;</span><br></pre></td></tr></table></figure></div>
+
+
+</li>
+<li><p>. 或者 source文件包含</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">. filename # 注意点号(.)和文件名中间有一空格</span><br><span class="line">source filename # 这样也可以		</span><br></pre></td></tr></table></figure></div>
+
+<p>例如 test.sh  : name&#x3D;”afei”</p>
+<p>然后test2.sh  source test.sh  ;echo “name is ${name}”  输出 ： name is  afei</p>
+<p>20.<br>21. </p>
+<h3 id="Shell脚本中的位置变量参数（特殊字符）实例讲解"><a href="#Shell脚本中的位置变量参数（特殊字符）实例讲解" class="headerlink" title="Shell脚本中的位置变量参数（特殊字符）实例讲解"></a>Shell脚本中的位置变量参数（特殊字符）实例讲解</h3><p>$# ： 传递到脚本的参数个数<br>$* ： 以一个单字符串显示所有向脚本传递的参数。与位置变量不同,此选项参数可超过 9个<br>$$ ： 脚本运行的当前进程 ID号<br>$! ： 后台运行的最后一个进程的进程 ID号<br>$@ ： 与$#相同,但是使用时加引号,并在引号中返回每个参数<br>$- ： 显示shell使用的当前选项,与 set命令功能相同<br>$? ： 显示最后命令的退出状态。 0表示没有错误,其他任何值表明有错误。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">param.sh</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$0</span>:文件完整路径名</span></span><br><span class="line">echo &quot;path of script : $0&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">利用<span class="built_in">basename</span>命令文件路径获取文件名</span></span><br><span class="line">echo &quot;name of script : $(basename $0)&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$1</span>：参数1</span></span><br><span class="line">echo &quot;parameter 1 : $1&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$2</span>：参数2</span></span><br><span class="line">echo &quot;parameter 2 : $2&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$3</span>：参数3</span></span><br><span class="line">echo &quot;parameter 3 : $3&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$4</span>：参数4</span></span><br><span class="line">echo &quot;parameter 4 : $4&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$5</span>：参数5</span></span><br><span class="line">echo &quot;parameter 5 : $5&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="variable">$#</span>:传递到脚本的参数个数</span></span><br><span class="line">echo &quot;The number of arguments passed : $#&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$*:显示所有参数内容i</span></span><br><span class="line">echo &quot;Show all arguments : $*&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$:脚本当前运行的ID号</span></span><br><span class="line">echo &quot;Process ID : $&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$?:回传码</span></span><br><span class="line">echo &quot;errors : $?&quot;</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问1130(shell命令)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-04-11 08:29:56</li>
+        <li>
+            Post link：https://a240277805.github.io/2023/04/11/2020/每日一问1130(shell命令)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/04/11/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1128(groovy%E8%AF%AD%E6%B3%95)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1128(groovy语法)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/11/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1202(minio)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1202(minio)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell-%E5%91%BD%E4%BB%A4"><span class="nav-text">shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-%E4%B8%AD%E7%9A%84%E8%BD%AC%E4%B9%89"><span class="nav-text">shell 中的转义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%8F%98%E9%87%8F%E5%8F%82%E6%95%B0%EF%BC%88%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%EF%BC%89%E5%AE%9E%E4%BE%8B%E8%AE%B2%E8%A7%A3"><span class="nav-text">Shell脚本中的位置变量参数（特殊字符）实例讲解</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
