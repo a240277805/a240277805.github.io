@@ -110,3 +110,5 @@ deploy:
   branch: master
 theme: redefine
 
+encrypt:
+    enable: true
