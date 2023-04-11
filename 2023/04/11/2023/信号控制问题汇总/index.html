@@ -140,6 +140,20 @@
                             <li class="menu-item">
                                 <!-- Menu -->
                                 <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                        标签~TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
                                     href="/love"  >
                                     
                                         
@@ -215,6 +229,19 @@
                 
                     <li class="drawer-menu-item flex-center">
                         <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                标签~TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
                         href="/love"  >
                              
                                 
@@ -266,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-11 09:33:14</span>
-        <span class="mobile">2023-04-11 09:33</span>
+        <span class="pc">2023-04-11 10:13:29</span>
+        <span class="mobile">2023-04-11 10:13</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -281,6 +308,17 @@
             </ul>
         </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%8D%83%E6%96%B9/">千方</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -299,34 +337,22 @@
             
 
             <div class="article-content markdown-body">
-                <h1 id="信号控制问题汇总"><a href="#信号控制问题汇总" class="headerlink" title="信号控制问题汇总"></a>信号控制问题汇总</h1><ol>
-<li>用户权限问题，项目没有分外部路由和内部路由，会导致鉴权不易拆分</li>
-<li>业务复杂 逻辑不清晰 ，中间件使用不合理 新旧需求混杂，缺乏注释，文档</li>
-<li>链路问题<br>3.1 前端 nginx 包含前端路由和后端路由，前端路由合理，后端路由可以省去，重构方案可以再加一层路由<br>3.2 traffic 使用不合理，traffic 应该区分业务线 不应区分模块， 可将请求区分为 北斗二期业务线，云控平台业务线等 然后流量统一打到各个业务线的网关，由网关统一分发到各个微服务，微服务间共享应使用服务注册发现（nacos）protocal 协议调用更快捷另外可加熔断，重试，限流策略。</li>
-<li>项目无基础后端服务框架，比如 统一异常处理，监控，链路追踪， 等</li>
-<li>信控平台后端 拆分，梳理依赖，云控相关的统一部署k8s 云环境，便于统一管控</li>
-<li>信号优化 以及信号控制 公共部分抽离，做到信号优化彻底与信控解耦 ，模块可独立部署</li>
-<li>对接第三方组件 （比如 信号机）应抽离公共模块 提供 规范api 包括文档，做到通用化</li>
-<li>业务合理归属， 将从属信控从属优化的分别到各自的项目中。 数据做到合理拆分，（静态数据从系统配置来，优化方案相关从信号优化，控制特有从属信号控制，下发从属下发模块）</li>
-<li>开发规范严格按照阿里开发文档规范。 数据库设计，接口设计，代码分层设计，命名规则，等</li>
-<li>新旧需求叠加开发，废弃需求的代码依然在正常需求的代码中夹杂在跑，维护困难。</li>
-<li>需求设计不合理，条理混乱，1）在改问题时在未定位到根本问题时随意在问题处追加补丁代码，不考虑设计的合理性 2）查询接口混杂着非本接口业务的插入操作。 3）不合理运用内存缓存 以及过渡使用redis 总线 </li>
-<li>业务缺少事务性，功能设计不全无完整闭环，导致时间久了以后，出现多处复杂混乱的脏数据，无法定位。</li>
-<li>功能缺乏复用性，导致相同功能方法存在多处，时间久了以后，方法功能有修改，却修改不全，造成隐蔽bug。</li>
-<li>业务分层不明确，需求写在各个分层处，定位问题困难。</li>
-<li>数据库表缺少注释，不知道字段含义</li>
-<li>数据库表字段废弃 依然保留，同一个功能 设计了多个表多个字段，定位问题困难</li>
-<li>内存存储 未做持久化，内存存储结构 无文档，无从排查问题</li>
-<li>redis 缓存 结构和文档未保持完全一致，有的大部分无说明无文档，存在脏字段，脏数据。</li>
-<li>第三方模块对接 没有做好封装，分散在业务代码里各个位置，无法后期整体维护，架构混乱</li>
-<li>redis 推送消息解耦业务后，用sleep方式等待  用来判断其他业务执行完</li>
-</ol>
-<p>讨论遇到的问题汇总</p>
-<ol>
-<li>信号优化与信号控制功能划分边界的问题</li>
-<li>信号控制 新老需求拆分的问题。<br>讨论点1： 老需求功能设计谁了解？ 代码设计 ，使用RestAPI 还是 消息队列，数据持久化方式是内存还是缓存 还是数据库 ，数据库选型，技术选型 等 是否由后端负责人负责。<br>讨论点2： 新加需求需求分析与设计，功能拆分，交互方式，使用技术栈，完成产品设计到代码设计的初步框架，以及考虑到新老版本的兼容以及功能后期的扩展，是否由后端负责人负责。<br>讨论点3： 组件功能是否需要多人开发，工作量拆分，多人分担开发内容<br>讨论点4： 孟康可以分担组件开发工作量，甚至负责其中的某些组件。<br>讨论点5： 业务开发完后，谁来把控这块业务以及功能。<br>讨论点6： java-server服务是否正常运行谁来负责，signal_optimize_control 服务 谁来负责<br>讨论点7： 组件开发方式 1） 由一人负责以及开发 2）由一人设计以及拆分工作量，多人进行开发 3）组件按人划分负责人。<br>讨论点8： 开发规范谁来指定。 1） 模块负责人指定 2）按各自开发习惯 3） 按项目原有风格<br>讨论点9： 工作量拆分由谁来做。<br>讨论点10： 工作量拆分 按平均原则。<br>讨论点11：后期的业务维护 谁来做</li>
-</ol>
-
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="60f66ab95c72cc3d4d766b741d40d3225f95b32129583db92770b6620245a0e9">f3005ab3846f78f1c285337b525d9529afc85128a8209deef9d89180fce1d894cba6b5460f3125a85be872b718f7a61c72ae9ecbc2c134149fa09de87e5ed5de05d84a70e9a419a6562b793626abce030ca33164879b6fbdc7ff6797bd93f965d59bebda5287f6d16c34aee5d39dcf6680fdd5970d510a5ee9a17f14007074f380bc27535d9e571b5227c484d0a5b156d73b6cfcef566947c7439c02496cab950ca810bc64dc93d63de541cc7a0b4efd6ee6bb2a052795280359d893e2bf5f0a47f03def29195e8d15e5bf26b3ca2e27233e7db72632d44211eaccc2caa29d46f81d661a6324d5f2f2aab0e90fc59409ac3d366651e5aafed17687cbda82b03d6813b076667772cfde58066f5b351104706a9bacbce3e8753ce0668009965e676ed7f28d3e8d8882a0cbd27d8609b8e36e86b4ccc26cc07214ba3d673e10f04a32c6b751936f3dca4de7934d6cbcdf889a007dda3a3f0a00860df58dbd5f5ad3d4410e532bdd36b352bf2420ba67d0b9c6fb9b74201a620ffd6b5f0fb73c2b7010d8539d2f6568332a2f26eaf1eb0c790de72460ce13adcb075bb4f3853b5d95d9fa5bf698e64e90cdbcbe105667f956a5463986c544cb33ddf988cd684722d0fa5366120669f4ba5a93ae68fd1653662c02ab257e15db587f965e348362978e7e66a6fb0c2a3d9d87eb31e4bc2dae48cfcbb292ecbf2dc04e19f242766212a36f0e4b2f6a206ef193f6dfe4287e16c8bb84bfbb95e6ac1d8d212c634a08bb65f0dd9a952fc1f1ec202e9fd11b98a907c9d9520630ff6bbc4014d46cfc2a19546fdb3fc423369c6c37694ccbf963abfb151961dacdbf699b653c66fd649efdabee97316b5a56f8044650cca07c1dbacdc0aefe67042e470edbc73b86ced43814d7adb591004fdad17cba45d9b7bd9274ee032e84c8e1c3a995aca7b18e9ad9f4b08434cedca79a63db26037758d2370559fe9668bdc192e7dae97b923ba9a15ccfbb3ffd07dba2d998d0713b8c680db68fbb203c90040de882a0a161e90b2ee5dcff18f2122522fe2e8fcf21c8dbd633574429beb6d92e9f9a5f38ee6ed073b26287964d45aa746858e830bc7a400cc5bd31c5a4033dd74191f88d326b649fc555464af8a147512b1ff58f3f5cb4f7edf46252bc61246da242f76b97ae22f9ea15d7e104e47261c6037d3be2a2894a57d4aec9f6d5b6f2bb019b035428ae74cd79cbc301d09d7749ed88928aab3117240c7458e2bc006836c0bd1481e202dd928abf4156f8057b5b52047601cc9b819f48abdf534bb69b5d748cfa246885a774eb494b55c426320460b85401c39564c5ef3c42b0aae76edb54c5cddf832a8102fc7ecfd36167653033165ccd1ab6d4fcb6c235ea0a8fde63bd6ea490df50c50fb8f1eac9dd9fb2af3f4864a6dfd3d8239d6b59fff0bb31a96266f420c570a01940ac247a25bc6c4e56ac353be81d2bdb2051b4bf268b55165d6804bfffa684d311be3c3daa0242fb9ad9f769fe75af710646d9ea420d8a91ff4a078283de67714f84e5dad4911c3e7a2fac4b011373a7aa02c0375fbaaea479bc938416f3cdb88424a42e278875db1fe6093ea7a0169255682c47cc131f6623e6c9acfdade67f965204796e9a3ff3454288b242a80c8fdb3b88e9055bf44de52c156abeb8cc7ad31869e8ff08406a4354539d7681c9298900aac5082a2141e00c41f06728ffbf3ab74841321f6ddaa3eab0bbf51162cd948f237d5b7c6fab5d2ff1002f394dcd4d31ce592608a7e30f242307938d62eeec1dc3c1a13cf7ceb02ecfa1405aaf228eedd6a73c1649ebf2ef391f6be59faa78b9ede79afde97913f61e5278b4f960d63116cb8a53a3a53f806a8e18a979f1913855af99024f53e51b7829ae3c151ed680e28bb1de5e3c476b0d09ca90869f69173faa1055c4f2de86daa70d189d5b54367f64b536a3610305532eb64af0499c36a9a0a472bfd5c9b4571cc5616c9dacc03a6f0ddaeb9e0a601ac25eb140d6de92a42a8476919aadc8a7ae481fc5dc00c6c2da94c99c079e7d5d8d08c76813f0683ed5740e35f5267240514a1a520c44dfff47154da68ccd286ff8b8951716b5731d997631bf7c353e099c51df9eca1ec0bce6967051c038b9cd14beefec7310567ea3058c918507379817568ca1bee5b4a3bb8e274b5c0245bce4db96987ba11d520242353f8813854741080ff7adaddae517fc5ad81a15501a42eb0026e6b4cc8a345db289d4b1d5de6b268fa88e9123722815fc8d0bcc6fefbe6e4d6b5fef0715432187d140d519e1394eaf5f467af512d6a370a407e312eb11f05f1f82b0ae7b9419a6626ec848df44875bc57874d2508b9ee9b438d550608ab13c4dbc06b11e4511ab7af7344a40794a0cc2e41dca8427e21f93187728342340981209ab876568fbace535a46991a778d132f34a4d325f824d2f4f1f6501c8319c484ca5852fae7c35cd89840496d4cd0985fb481a2f838a26454e50d85d7428d7f8bd7e350909eb030b964d89a4717f1c58b4b032ae8ffaf73fe489cd714aaa2066bcf33e4fa3a0a6f9c6269343d29bed5381142d6c6d5fa066377ddaaeb3d13e0d720e12500708ff5af72692405dbc14235ec5cc0548643f3017224274c37dc00c1d5cb7bbe81123a70b606aca17e37170dc0bcb67918324aa3c110a8fa2f2977ff43cfdb6c60878e9653f4c7ff9d0090db280ae6f4ff5e5b6aa519515749d25e75f4870a872e64836556c91ea35b29630308a6ed92d93c09bfdf28092f7073ff41e4c3f4d563fde58ec203b6dc19601b8913e6666958704e5cb7da165a75ca31be20b534103803a4ef19dfc2a79a3dd8ea49513c1bbc3b20303b4ee4cdb5531971d42799229a260671706843ee948976c3be78b439e4ae26e520b4ff306d16738239acbdfbfd56c8575c63ae2511fb8f6ac1a2ca10b1be4c1f7bfa74de637d3fad9838df4a0af0662b0efc40ba37ba9bc55a7709ce4d519a40c8998f578754473255ca41031cec322e303611f8d5cd9921baa4b17816b63e22eb81f08e0fb469d1f29df28b1dd20228282a154c9325b7763583b4a7521615a0e27d6bd1f4f79644fdd1c88c5a3a1bbef8a88f57c4260c393a0f149c2c1c267756d0b6c71a35cd5aaa8d4d412043d866bc2423ebc20af756b0df6d39a14e160f0a99d110c3ce996d6208832b23ac984f7ed457ffbeb9ac4341e69f094f2d9440c0fef5ecf015752e7079de7ecbccb42017b152a4282bd185aedff016a397dfcd80578bdfe24b22b52daba7fddb3c149a43d834302bdc7abdcca54535eb8c9f84c20f8358caa65ea2b77fb390923c25c2ba30bcb107df0640ae152795a621ca2043b178f53f779c46bdfeceface09d3c2c74a122fe4c3fff4ff9ba6e8a78da748de00340d62485d2628b3f81855271b67491cd3cfe8939d78886b207ebcdf7dd668f9c8f4d7ad833bbc81b76a38faac0eb1abe2bb475fb17c35a80bf62284c887597697cbd14706a7ef9b06f91d3c5dc33e4bda429eb58542d45bff4723622b92ee3b0cb3bcadc7ccd6661130338afd237a898b4e577ed1f77089049bba6463c2b1fc7d573820fa960c16de88c5744d2c0b5dcf3fb99bb46b3e265ed7f6c313eeca909843d3026f875e8dff12b4ebc4137c9fb8d37f69b6b010593b8059bc95c67472e9eaa988255287422738a40ec41fb6254e107f0fae930e6e878a255e71d12268d819016db4e35a64c53f3d187477fcb6b5ee8cc9e2a186b74ecdc5848c2f3a718b061da5dda8cceabb6e23350ddb5e532328dc777cf7ac3823ff631b7d9293cb9146985494cf77c5ade3f9ae23b1cabde5b93a2bfe464803c6977d59557786dd84da8bf5e054e9149b7ffb44d902f2e0cf4f7d0632ead52dd65a7e7887e6b2133bf37dc2240cd03b53e46f8235492b7ab949fc041a33563a5ac2a9c11c940734cdca96ccb00e8b0e5270a12e8d8c0f96e412b39217f6e67d624a3bdd1bfdeb8a70b050a91e332ab4c8e36f1b835bf3ebb75bfc065032c501a06da78c18d12ba4008707621ad5c2c0fdce8e0ce6b0c2a71cd21740fa3cdbd0a0b37bf6220770db10d0065b5b8827276f2685c5ff6f7508934483a727ccb356516905858507f2b8b8912ffca9d7fd1286a5b6a983bf95012a21fc76387a8b6eb6b57baef2470dc98b8377ccfa7f1237819955fefb6bf2ff2f3c278761be8b9cddeb982929a6cd70eda9e2f98f7b587b75ff01bf527fc5429df318d9422b43800f072122af19dfd42a7f296ad5a3f06594e5032410657cc58ddaef440c426c26ba4c3cdc073506840faa7b6b2cb34aeb1b0ad001d60d86d0b99eaf9345990d66d18c6b9b62d235da9a541e00d1c194ed48fdb0f28828a5200eda26ed6852dcc1efba9e68f59a21de72bc76f4388a8bf7e8085aa2c2e743932c54a25e85b1d10d0756309b8a11779def9411a32c703367387236f2521654d3f11cd804cf5b437cc11956dc7886b3f43d79b86f9b2c0b59ebbff4b06d7e1f1cd767240a97524ce1101a6665ef3f493777646869a7b776935e99644fb5f51a599dab70c78c5a51a9bd2af702f7a6ac0696111d7fc3c421e0762716131367e5357b5313c4255919362af6678c01ecf64aaea54c258799645d02853699da20bd4f8649224a6672a2d518ca06fb3f181071bae8feccf23a551fde1ce398db307549b8cf5cac46d18c29ac70dd52984b1f84bddeaca023cf116a98cebcb48251084e715722424a0f07442a910b776ff7cb65d1684f551c78fa340f354db85016af0cdef46b46b922b95f8280022eabdda23cf11ff781fdabea3f43211a5106f38f999f637347c3b8eadc703cfca2452db6fb30fe91aa039d871ab0b62c7023ca091c59e23c09d8c0487475d7b9b52fc6905de3a6dfc482b032a693fa1b0ce32b0f895da42a12b1928567172862cdb64cf4ed301b155d0d7aff7ec16d416a04a3eb6e06398be1385628404bff1b79473b4a827096369c185e3022ea136eb64ea5dc1e6a1ba5da6e7b07b53a744cb1f16aed84811733cca3c1d8602a123da05c9865389dcd7388fcca7fe28e4f24c780b3276b4bbddec8d1c1ca247bac1ddd73463fef511ff67e065fd90d219abe29493e58d9822bffbf3d97ab4376ba3e4eff46e0eb1024d0705f5e91cf09e3bed336053bc430b28d61ba59efade2ff138069a41497adc17a87bc7ffec383a8371b7d14d9b1019514b6301c06b7e71cd14f00999d00b4b70de877c2157e47ea23b2fe6c649734cf338364a896328e3e7269f0aa3ceaef57781a109ad3baaf2b814c446470d020b1f7795eaf64f39a9c488f66b856bf7d915a51b2b6253542bf04178959ea82eff11ed600dff1cc44f89c3cf29e4b3033ee4620c2e582969a75b495ce515585455a77645b4a1f841120ce164eebad544c7ba2cb5484ead3929cfe0053986a3aa0825616ce6e9c1f48184293886b26d0089410e649fce1d2b6d3be7655682b114655d053dff43c01771a034ff135baf04f5def03dbbf876e6fb4a54b5fdef9258cb8d1d4cf2e5463015c1d4a70e5f5cc5a0109bcf4314940cebef1595933e1c99ea213e2c447103bc32b263199e16afe9883aa1c657759e8deb2ec29e0b9c58db25204597122c0aaa60cf285f5909ae70cafd512b6f72b884f026ca4910cf0878d0d1d2e6ac0286a56ef136659b00ec7a1a3f99f57bb11bacc2782ab4e8d1987a0ba9a584984bf40bc25e452d6d71946698506b7b1f24908447526ce8ca25a54860ca99c0341fecf5833350a354182e8d5e36ba1555373ae0333c37cdc7babbaab386aeca415b5f6afd2a37d2508cebede1f217babb9615e4ce175c3e97dfc4082b806f537c8e39ca45dca1ebe9149d3c789c90cb263f7bf96a56305624f24b87305dbbeb241389b093e0b73bdaff3ca720eeb7064fc5b38326e47897e412ef8dd401b0e858bab06e9bd73cc70d4583596d365266e00c70494f87c8a07ecc581ff345de58bdf7e434c2159e63b62cd980c0a34bd1b675cf5899e66eaa63a9687ca1918506b4ee9aa44acfe4e3725a3e945c59e265ba0e9d4b01575be6fb3eefe1fae052db14a499b8cf8c963c76946a509af857c29eccc919580d12d9b5cdc3f7e16472257322ccbb3bc0f3bccfbe9530d4e3beea1fcf49d2a7b1456621a39d4fc34b286eb25c619c00afc72132a53ec5a5aebc0d0a32f4f7966b930b4476020762c4218ac4fad9eee3ae6d320fbc6146fc6e345ae56eecd16d5ff8989c2f6be1d7959c6cf68e73bd93e973164e4f93775a0304a1a88186d04f9c04ac7d5aa5d6528cf31ae8175b64ed21a8c2c6c7290191f0672fd4e6337efa31cfa7148ac2b22c7727c8e23240ca28ec0dbb3f696a63fcba6f41d1075710bf7d12b9b3e8f9f088a73504a846f383091bcf56965dfe405cfe80ea554d1e060d9cefb02a10e7d9ffed63e8e22598fb2e96758358eef43bfa710fa6f9afb77938eccdda96f8352272dcecd1152b8533dc550f47a3c8a9aca210e09eb9b606cdaf99fb5cbcbc99908531cffded956ad5789123a7f723dcef96b5361241fa7a5226f3ea88f0e0067090035255049a41141ab31596193a437b1abb893e9fa29900ddfa2ffad02f26743a85bd2d58bbb6299fc5e227c51d5aad0d42e24c9c48</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
             </div>
 
             
@@ -335,7 +361,7 @@
     <ul>
         <li>Post title：信号控制问题汇总</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-11 09:33:14</li>
+        <li>Create time：2023-04-11 10:13:29</li>
         <li>
             Post link：https://a240277805.github.io/2023/04/11/2023/信号控制问题汇总/
         </li>
@@ -348,6 +374,14 @@
                 </div>
             
 
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%8D%83%E6%96%B9/">#千方</a>&nbsp;
+                        </li>
+                    
+                </ul>
             
 
             
@@ -395,7 +429,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="nav-text">信号控制问题汇总</span></a></li></ol>
+        
     </div>
 </div>
             </div>

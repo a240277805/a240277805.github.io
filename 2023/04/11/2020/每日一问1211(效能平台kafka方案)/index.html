@@ -140,6 +140,20 @@
                             <li class="menu-item">
                                 <!-- Menu -->
                                 <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                        标签~TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
                                     href="/love"  >
                                     
                                         
@@ -215,6 +229,19 @@
                 
                     <li class="drawer-menu-item flex-center">
                         <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                标签~TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
                         href="/love"  >
                              
                                 
@@ -266,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-11 09:33:14</span>
-        <span class="mobile">2023-04-11 09:33</span>
+        <span class="pc">2023-04-11 10:13:29</span>
+        <span class="mobile">2023-04-11 10:13</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -281,6 +308,17 @@
             </ul>
         </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%8D%83%E6%96%B9/">千方</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -299,31 +337,22 @@
             
 
             <div class="article-content markdown-body">
-                <h1 id="效能平台-kafka-方案"><a href="#效能平台-kafka-方案" class="headerlink" title="效能平台 kafka 方案"></a>效能平台 kafka 方案</h1><h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><h3 id="订阅发布的形式："><a href="#订阅发布的形式：" class="headerlink" title="订阅发布的形式："></a>订阅发布的形式：</h3><p>1.多消费者组的形式 </p>
-<p>2.消费者接收消息后做消息总线分发。</p>
-<h3 id="topic-定义"><a href="#topic-定义" class="headerlink" title="topic 定义"></a>topic 定义</h3><p>1.DEVOPS_CACHE_TOPIC  </p>
-<p>2.DEVOPS_AFFAIR_EVENT_TOPIC</p>
-<h3 id="key-定义"><a href="#key-定义" class="headerlink" title="key 定义"></a>key 定义</h3><p>1.delete_event  update_event </p>
-<p>2.task_delete_event,defect_update_event</p>
-<h3 id="消息消费成功的定义："><a href="#消息消费成功的定义：" class="headerlink" title="消息消费成功的定义："></a>消息消费成功的定义：</h3><p>1.消费者成功接收消息，抛给下游做处理，</p>
-<p>2.消费者下游业务处理成功。</p>
-<h3 id="消息幂等如何处理："><a href="#消息幂等如何处理：" class="headerlink" title="消息幂等如何处理："></a>消息幂等如何处理：</h3><ol>
-<li>生产者幂等 1）配置参数</li>
-<li>消费者幂等 1）offset ,2) 业务幂等</li>
-</ol>
-<h3 id="顺序性消息消费需求"><a href="#顺序性消息消费需求" class="headerlink" title="顺序性消息消费需求"></a>顺序性消息消费需求</h3><p>1.需求来源 </p>
-<p>2.实现形式</p>
-<h2 id="下游消费失败如何处理"><a href="#下游消费失败如何处理" class="headerlink" title="下游消费失败如何处理"></a>下游消费失败如何处理</h2><ol>
-<li>定时补偿</li>
-<li>补偿方案如何实现</li>
-<li>消息重试</li>
-<li>对账发邮件提醒</li>
-</ol>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/wwwwww33/article/details/105671038/" >如何保证Kafka消息不被重复消费?(如何保证消息消费时的幂等性) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u011439839/article/details/90115573" >kafka消费消息时的幂等性 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="http://matt33.com/2018/10/24/kafka-idempotent/" >Kafka 事务性之幂等性实现 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.processon.com/view/5f8ee94763768906e67d835e#map" >kafka 知识整理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c6ed46c2cf424d8d89b9e4de0fe8b8599ee77542f7ab9bbe467cf71e69ec315a">f3005ab3846f78f1c285337b525d9529afc85128a8209deef9d89180fce1d894d30a9055630df2a3f9583ca86822ef8ec86ca91c42f3d5fc81d72dceb7efad1aa22bcc2d868e93bdfad973c4109a0ec0d656a9c56c2987e6a7711c3a6ec4876c0e7fc502f0aeb4f387b74c0ce5633f2ef5d7cbb40688a66abf7708d19c8e68b3b030a9c86463a9d912e281cd17e071137ea3a20dc7ae7074a404e66a68a1521488b8b1597361cf9680958f67fd3852ec69879fd0cef3f95cd5ebde9e42168eb72975ee3a821b8aec319f26a3e9839dc71a957a548887a031b9c734c8d6e15c7d853ade80eabee4cdbef1843cd5bf57baa88271368aa3302a74e2ccf3d105cf29a9dfbdd8f766e27313ba5cf3f0f86d82a4d162e46d1ffefe078343ec9511f3ae7bdbd6ec50b7179a7a756f07873fbbc55e798c154ba8b20bb217caa4db94fc434d41106948e4221614e802d7def49adf82b5cc6536542ffd51c2ebc1de204a992c75201fbffa13f49dcbea494afcc2281826f3bb9a8efd2b6449aeea5fba0f8fe7a4f2a6e13cf4158ccf4d10e265eb44a58c454dc87b0aaad5ec28680db1d9768af66ded294b0d4b2ebac182c2532dda1c81ee6a5b8f853bcfeba74cd1481c126e7a88cb77954fdf8d2a24934e8948a59923f4e21d3faf0ee06f9f0c775b93919bb3c58099804df51a5b4f783c5f4d4770fccf48b1af710e457eeea957723b843b04cc53a32c6a202efe4ebdcedab4c1b3b9486495b306828d584d9d8e96aadc3b078860beb65a67c2f6fe9faed5cc0ef63e35ec7b70f43d076ea682b73150098519b997f18f112cf83ac8e2ff4fa073c4d322e6128bb8c4444fe630efe6116c7ad9d44f41e1cc77a5864f92e370d179c48dec75ffb179765b5c9a0116e297d6af951db1817b1547939d95b3b10643115a729abf31e9ec4ad4f6a646a2be9e9245426879d9caefd2adca9df577ffd26f4d659ff8f1c3541c47795ee75bfe328d33595c00ac47d8d40a75654ee3cffb5ab7856e8333612754a9668f2aa3ab6c5e8f42ca73a030cd7afe2b15f419a46e22238a5033d5d2cd3f10fa13c91497380b33de032348b09fea651cac5a78fa7d60109e5d4d77c69675b57f9f852d2705db63ceb35317bf286ee714f5fc958c49fabfbb8cb6261bf23492cca4163d6534c3706500b7a6bdaf9b1a39d6243a5eff64e21149a6448efaf16c5e32ceaf078d1f74577b2924db5ae8bdf8e1a07d933eb945499f4de408f77a741ed6ae8f93907ee1662004675bb2135180373926f53dce1c8da62ec97b57a044832fbeb5892447bc61d0512926e602c10a5bf3199b6fedd9df010380b74b75c774e3d0f7ed6cd43867cee2fc7d84ec33196e742974c4479d72cb6920e56be517a0580f00e31fcb311b9806e22a54479c1c16fba7cb5244d5629d41c20446dc14d1199d950c805ddf4294db78bb4278636a0c755fbe76968f98302e326afaab9728fa41c0962814f819736521d137698d45029a504e3684d2dc349ce58c89763f072bc74cb58f8ca4f15f325a876ab14dca33d22cb453ba9397b432672633077f49e7c534225caab0dbaf759f0d45ae446518c79a9afc5752aeffedabafe8d8af1d00e3b51417b0f055bc262b21ce0a5a989105a5cd079bda8c672671f2251f7829781fd87fb039c3b2f097aad87c9c5520c8e471793d7d8922eede9bd921ee8a2b7d5f068359859c8cabf95c5aff695ae3b582e0bfda27d1f9d9816f51324e60a614abbd7ba9ad11cd610a23e2672ed478499a57b351a539a413b1edd23d0463c1956058e99562fe7044ce45f07e03cdd9ce362dba7e404b3da0dfbf14a323158a058abb852ba72912dd5e48bc82da6149dc51b2aa7cf4f71f93d4d24877c5b82af3ed7f485597cbb80293d11dcc43eb6b0aec98e45ea1aeb063841b694768c7ebd3e8c8374a1e0709139320e9681bf21a3104e57a7e879e5adfa8f9fc43c5fa0a4106a5400265393b0b561bb68665193ed013fdda1cd4310cdc99d7902133592009d3d4bccdc140f3436f22983743ad1bc2f5a2ae0bf478adf0442aebb0176465ea937a1895dbb053f1bde3c1c5556d629d568073800e20d6017b8acbdcc106bf7335dc00a3d910eef2293624bd60f3d32ade65f492dc6a407f5b016461ccf88eb3c70afc675a05c7f2604eacc0d8f939323d52bf610013b1913986da9fef2744d185af7a39d47a2e41161809d11c8aa2fac6c5272dc469d947bcb00a5ef525d7e647151c2df57aaf1fea9143c31c24558b41568a1e75e7a4a207d4cba889a6d2c240c80d7797ff5bd0e475c55d88083c5aff68a815f05642d117f675041936dd88796cd2885ac992ca770e0989477c679546a563c02eb76e3d5545b964692793201152a0a9c77581f2207dd9c50e33630257dd805d5be7b619de6210e475cab5e4a1ad8b3eb7799d76fa1c4cf29117aee4f0e9752aa5031aefb780ee1d3dacc4bd3fc9b62bc8e1e0d398d395792104227c20f30ad19fb6a2baed2620755ab2cce44c230c5e85dddba1afe52758714904d16179cd2dd32e37b74ace2c5fb2ef00b585558f6910c65b4a55508f1ef9c8e3f0a577e69121ea6c44cdfbe5b94980e6e4acd35f7356418ffc249eeade13c2665fe2d481594c8cbf295e46f93eb80b72799a2dc16eeca8f3bddb0f3f4def26f0bb76a66dc7d0427b2edb187298a23c1bf9c71717001a1cfbd1ed496c4ce5ac50f5703c62fc65eb07adfe24dd3bbf7e6e3e6c5bf715f1354045c4d21f9d7300adbb6e57a609547ee08ee8db5f19af14faee7f87af881a09ad8ad3cc8647f1d3f115a9749a3ede2f78b3a441c4826882a3e3ac2eb72cf6e4595ab3df12e56d0207b2ceed6f15c43e87229bd1ee0b80a5bc3edf3ec56340217cf704cb778e9b79a011b0c7659f6a1b334ef48539ac722000a1182d909282fd07fb55ad5d9171224f4e3d669cab4e50795c44b906fc2383dde2ad444c4123c0873fbcdcb34b819e8a9dc9df45f7a0f7089bc7c4fcd4041feed43ed452249726449ea9d5b3c1e31fefedad5fc50d75bc98d549650b1abab7edfb0d2e20fc341c140ec225792de61a008660297f6e47c5932f6fa1dca97573ae83aa6831c4c79ef27a5abfad8387f7aff00d17b706d3d11ea0321d7da7695f29ec508fbf27b47e79601fefa080f1dc34139f6e38f036d52ba7a2138be943de159dfac79a7e9b0c1e5aa46e0d6d84fa4b24d4ead72790ff3b24cea724075f91acf577d7ef8e73cf3721f0bbae4043235bf54fdc7c7de414de95b34f2fef912a2518b59b29c45dc7ae2840c706a193c59d523a6ad2b029b1eadb9bd99d5e7fb5e7be9d73a86febda7694f691b963cb0adb0bd352e3637dddeb636e40216c0c179e5450159b065f3ccb867a934a875a760a78cdb892001393a446a208251594179f0b9075872cc40bfb5d062c7bc50fbb65607ac508111753d48b895d40a7ebccd3747293a287a8cfb36d00eb79950e9fc12600d5022d2fef38d0507c04027a04f252ee1390fc0cea20471e659f94dffa6bec5aae0e9c20fe54cd6ba0d97f220e117ddc09fffb2b3dcb5ab628ad7d6ff38aaebd636528cd1eaa8d874be4e48368b23e28f756ce7c682da5573753671a7c7adcb849aaefd414a625a08bbe36ce40a20fd85aef9f5dccd76b8f845e96b7f79bfaf66ab90ac510087ea42ec2ee6ccbf17b052001cd51b1cbc11761fe8419e0f352fc4839b4b290504d3a3d6586f89905cb281cba305b0fc2baa48e0baa8e90e23b73eaa8bc56553c6dce5e1b7433476c5f216522d713a97fb7dd393c9f87ca8f10ffea5bf0ffc4d1b096f5a7aac664a90d34e576be8e00f378f38e60a41f2204a9bd22780e99eb5517e7835c4bec446e21b49d7533d966943916daa471c68bd28a7227d3c34e8e5daba2bc7074ebdf72d7384cfd6a119ee9a4cd6f071718317e1c4968d6ad794ebd6fe70ad7cbb1effdcff521aab5a41a3d48747d8cfd5c2eddba5d85edf67d4f53bf673dd610a93a2910a1df8d170e</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
             </div>
 
             
@@ -332,7 +361,7 @@
     <ul>
         <li>Post title：每日一问1211(效能平台kafka方案)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-11 09:33:14</li>
+        <li>Create time：2023-04-11 10:13:29</li>
         <li>
             Post link：https://a240277805.github.io/2023/04/11/2020/每日一问1211(效能平台kafka方案)/
         </li>
@@ -345,6 +374,14 @@
                 </div>
             
 
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%8D%83%E6%96%B9/">#千方</a>&nbsp;
+                        </li>
+                    
+                </ul>
             
 
             
@@ -392,7 +429,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0-kafka-%E6%96%B9%E6%A1%88"><span class="nav-text">效能平台 kafka 方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="nav-text">问题汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E9%98%85%E5%8F%91%E5%B8%83%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%9A"><span class="nav-text">订阅发布的形式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#topic-%E5%AE%9A%E4%B9%89"><span class="nav-text">topic 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key-%E5%AE%9A%E4%B9%89"><span class="nav-text">key 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E6%88%90%E5%8A%9F%E7%9A%84%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-text">消息消费成功的定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E5%B9%82%E7%AD%89%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%EF%BC%9A"><span class="nav-text">消息幂等如何处理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%80%A7%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%9C%80%E6%B1%82"><span class="nav-text">顺序性消息消费需求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%B8%B8%E6%B6%88%E8%B4%B9%E5%A4%B1%E8%B4%A5%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86"><span class="nav-text">下游消费失败如何处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
+        
     </div>
 </div>
             </div>
