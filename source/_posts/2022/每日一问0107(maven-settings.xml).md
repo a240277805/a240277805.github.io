@@ -1,5 +1,7 @@
 ---
 title:
+tags:
+  - 千方
 ---
 # maven-settings.xml
 

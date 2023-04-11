@@ -110,5 +110,18 @@ deploy:
   branch: master
 theme: redefine
 
-encrypt:
-    enable: true
+# Security
+encrypt: # hexo-blog-encrypt
+  abstract: 有东西被加密了, 请输入密码查看.
+  message: 您好, 这里需要密码.
+  tags:
+  - {name: "简历", password: "911204"}
+  - {name: 千方, password: 10011069}
+  - {name: 千方, password: 10011069}
+  - {name: 小程序自研, password: 123456}
+  - {name: 消费, password: 911204}
+  - {name: 私人, password: 5717167}
+  theme: xray
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+  enable: true
