@@ -111,7 +111,7 @@ plugins:
     enable: true # enable mermaid or not
     version: "9.3.0" # default v9.3.0
 # 资源压缩
-all_minifier: true
+all_minifier: false
 # 部署相关
 deploy:
   type: git
