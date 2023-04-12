@@ -12,3 +12,5 @@ windows 用 gitbash执行：`hexo server`
         ```
         npm install --save hexo-blog-encrypt
         ```
+2. 修改主题
+https://redefine-docs.ohevan.com/home
