@@ -1,1 +1,670 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="description" content="Hexo Theme Redefine"><meta name="author" content="张孟康"><link rel="canonical" href="http://example.com/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1211(%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0kafka%E6%96%B9%E6%A1%88)/"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png"><link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg"><link rel="shortcut icon" href="/images/redefine-logo.svg"><title>每日一问1211(效能平台kafka方案) | 孟康的个人博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/fonts.css"><link rel="preconnect" href="https://evan.beee.top" crossorigin><script id="hexo-configurations">let REDEFINE=window.REDEFINE||{};REDEFINE.hexo_config={hostname:"example.com",root:"/",language:"en"},REDEFINE.theme_config={toc:{enable:!0,number:!1,expand_all:!0,init_open:!0},style:{primary_color:"#005080",avatar:"/images/redefine-avatar.svg",favicon:"/images/redefine-logo.svg",article_img_align:"center",right_side_width:"210px",content_max_width:"1000px",nav_color:{left:"#f78736",right:"#367df7",transparency:35},hover:{shadow:!0,scale:!1},first_screen:{enable:!0,background_image:{light:"https://evan.beee.top/img/wallhaven-wqery6-light.webp",dark:"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},title_color:{light:"#fff",dark:"#d1d1b6"},description:"孟康的个人工作生活记录空间"},scroll:{progress_bar:{enable:!0},percent:{enable:!1}}},local_search:{enable:!1,preload:!0},code_block:{copy:!0,style:"mac"},pjax:{enable:!0},lazyload:{enable:!0},version:"0.5.2",friend_links:{columns:2}},REDEFINE.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"}</script><link rel="stylesheet" href="/css/fontawesome.min.css"><link rel="stylesheet" href="/css/brands.min.css"><link rel="stylesheet" href="/css/solid.min.css"><link rel="stylesheet" href="/css/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span> <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper"><div class="header-content"><div class="left"><a class="logo-title" href="/">孟康的个人博客</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="menu-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="menu-item"><a href="/categories">目录~PRESS</a></li><li class="menu-item"><a href="/tags">标签~TAGS</a></li><li class="menu-item"><a href="/love"><i class="fa-regular fa-archive"></i> 每天都是爱你的形状❥(^_-)</a></li></ul></div><div class="mobile"><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-menu-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-menu-item flex-center"><a href="/categories">目录~PRESS</a></li><li class="drawer-menu-item flex-center"><a href="/tags">标签~TAGS</a></li><li class="drawer-menu-item flex-center"><a href="/love"><i class="fa-regular fa-archive"></i> 每天都是爱你的形状❥(^_-)</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation"><h1 style="font-size:2rem;font-weight:700;margin:10px 0">每日一问1211(效能平台kafka方案)</h1></span></div><div class="article-header"><div class="avatar"><img src="/images/redefine-avatar.svg"></div><div class="info"><div class="author"><span class="name">张孟康</span> <span class="author-label">lol</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="pc">2023-04-12 10:00:43</span> <span class="mobile">2023-04-12 10:00</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/2020/">2020</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/%E5%8D%83%E6%96%B9/">千方</a>&nbsp;</li></ul></span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容."><script id="hbeData" type="hbeData" data-hmacdigest="c6ed46c2cf424d8d89b9e4de0fe8b8599ee77542f7ab9bbe467cf71e69ec315a">f3005ab3846f78f1c285337b525d9529afc85128a8209deef9d89180fce1d894d30a9055630df2a3f9583ca86822ef8ec86ca91c42f3d5fc81d72dceb7efad1aa22bcc2d868e93bdfad973c4109a0ec0d656a9c56c2987e6a7711c3a6ec4876c0e7fc502f0aeb4f387b74c0ce5633f2ef5d7cbb40688a66abf7708d19c8e68b3b030a9c86463a9d912e281cd17e071137ea3a20dc7ae7074a404e66a68a1521488b8b1597361cf9680958f67fd3852ec69879fd0cef3f95cd5ebde9e42168eb72975ee3a821b8aec319f26a3e9839dc71a957a548887a031b9c734c8d6e15c7d853ade80eabee4cdbef1843cd5bf57baa88271368aa3302a74e2ccf3d105cf29a9dfbdd8f766e27313ba5cf3f0f86d82a4d162e46d1ffefe078343ec9511f3ae7bdbd6ec50b7179a7a756f07873fbbc55e798c154ba8b20bb217caa4db94fc434d41106948e4221614e802d7def49adf82b5cc6536542ffd51c2ebc1de204a992c75201fbffa13f49dcbea494afcc2281826f3bb9a8efd2b6449aeea5fba0f8fe7a4f2a6e13cf4158ccf4d10e265eb44a58c454dc87b0aaad5ec28680db1d9768af66ded294b0d4b2ebac182c2532dda1c81ee6a5b8f853bcfeba74cd1481c126e7a88cb77954fdf8d2a24934e8948a59923f4e21d3faf0ee06f9f0c775b93919bb3c58099804df51a5b4f783c5f4d4770fccf48b1af710e457eeea957723b843b04cc53a32c6a202efe4ebdcedab4c1b3b9486495b306828d584d9d8e96aadc3b078860beb65a67c2f6fe9faed5cc0ef63e35ec7b70f43d076ea682b73150098519b997f18f112cf83ac8e2ff4fa073c4d322e6128bb8c4444fe630efe6116c7ad9d44f41e1cc77a5864f92e370d179c48dec75ffb179765b5c9a0116e297d6af951db1817b1547939d95b3b10643115a729abf31e9ec4ad4f6a646a2be9e9245426879d9caefd2adca9df577ffd26f4d659ff8f1c3541c47795ee75bfe328d33595c00ac47d8d40a75654ee3cffb5ab7856e8333612754a9668f2aa3ab6c5e8f42ca73a030cd7afe2b15f419a46e22238a5033d5d2cd3f10fa13c91497380b33de032348b09fea651cac5a78fa7d60109e5d4d77c69675b57f9f852d2705db63ceb35317bf286ee714f5fc958c49fabfbb8cb6261bf23492cca4163d6534c3706500b7a6bdaf9b1a39d6243a5eff64e21149a6448efaf16c5e32ceaf078d1f74577b2924db5ae8bdf8e1a07d933eb945499f4de408f77a741ed6ae8f93907ee1662004675bb2135180373926f53dce1c8da62ec97b57a044832fbeb5892447bc61d0512926e602c10a5bf3199b6fedd9df010380b74b75c774e3d0f7ed6cd43867cee2fc7d84ec33196e742974c4479d72cb6920e56be517a0580f00e31fcb311b9806e22a54479c1c16fba7cb5244d5629d41c20446dc14d1199d950c805ddf4294db78bb4278636a0c755fbe76968f98302e326afaab9728fa41c0962814f819736521d137698d45029a504e3684d2dc349ce58c89763f072bc74cb58f8ca4f15f325a876ab14dca33d22cb453ba9397b432672633077f49e7c534225caab0dbaf759f0d45ae446518c79a9afc5752aeffedabafe8d8af1d00e3b51417b0f055bc262b21ce0a5a989105a5cd079bda8c672671f2251f7829781fd87fb039c3b2f097aad87c9c5520c8e471793d7d8922eede9bd921ee8a2b7d5f068359859c8cabf95c5aff695ae3b582e0bfda27d1f9d9816f51324e60a614abbd7ba9ad11cd610a23e2672ed478499a57b351a539a413b1edd23d0463c1956058e99562fe7044ce45f07e03cdd9ce362dba7e404b3da0dfbf14a323158a058abb852ba72912dd5e48bc82da6149dc51b2aa7cf4f71f93d4d24877c5b82af3ed7f485597cbb80293d11dcc43eb6b0aec98e45ea1aeb063841b694768c7ebd3e8c8374a1e0709139320e9681bf21a3104e57a7e879e5adfa8f9fc43c5fa0a4106a5400265393b0b561bb68665193ed013fdda1cd4310cdc99d7902133592009d3d4bccdc140f3436f22983743ad1bc2f5a2ae0bf478adf0442aebb0176465ea937a1895dbb053f1bde3c1c5556d629d568073800e20d6017b8acbdcc106bf7335dc00a3d910eef2293624bd60f3d32ade65f492dc6a407f5b016461ccf88eb3c70afc675a05c7f2604eacc0d8f939323d52bf610013b1913986da9fef2744d185af7a39d47a2e41161809d11c8aa2fac6c5272dc469d947bcb00a5ef525d7e647151c2df57aaf1fea9143c31c24558b41568a1e75e7a4a207d4cba889a6d2c240c80d7797ff5bd0e475c55d88083c5aff68a815f05642d117f675041936dd88796cd2885ac992ca770e0989477c679546a563c02eb76e3d5545b964692793201152a0a9c77581f2207dd9c50e33630257dd805d5be7b619de6210e475cab5e4a1ad8b3eb7799d76fa1c4cf29117aee4f0e9752aa5031aefb780ee1d3dacc4bd3fc9b62bc8e1e0d398d395792104227c20f30ad19fb6a2baed2620755ab2cce44c230c5e85dddba1afe52758714904d16179cd2dd32e37b74ace2c5fb2ef00b585558f6910c65b4a55508f1ef9c8e3f0a577e69121ea6c44cdfbe5b94980e6e4acd35f7356418ffc249eeade13c2665fe2d481594c8cbf295e46f93eb80b72799a2dc16eeca8f3bddb0f3f4def26f0bb76a66dc7d0427b2edb187298a23c1bf9c71717001a1cfbd1ed496c4ce5ac50f5703c62fc65eb07adfe24dd3bbf7e6e3e6c5bf715f1354045c4d21f9d7300adbb6e57a609547ee08ee8db5f19af14faee7f87af881a09ad8ad3cc8647f1d3f115a9749a3ede2f78b3a441c4826882a3e3ac2eb72cf6e4595ab3df12e56d0207b2ceed6f15c43e87229bd1ee0b80a5bc3edf3ec56340217cf704cb778e9b79a011b0c7659f6a1b334ef48539ac722000a1182d909282fd07fb55ad5d9171224f4e3d669cab4e50795c44b906fc2383dde2ad444c4123c0873fbcdcb34b819e8a9dc9df45f7a0f7089bc7c4fcd4041feed43ed452249726449ea9d5b3c1e31fefedad5fc50d75bc98d549650b1abab7edfb0d2e20fc341c140ec225792de61a008660297f6e47c5932f6fa1dca97573ae83aa6831c4c79ef27a5abfad8387f7aff00d17b706d3d11ea0321d7da7695f29ec508fbf27b47e79601fefa080f1dc34139f6e38f036d52ba7a2138be943de159dfac79a7e9b0c1e5aa46e0d6d84fa4b24d4ead72790ff3b24cea724075f91acf577d7ef8e73cf3721f0bbae4043235bf54fdc7c7de414de95b34f2fef912a2518b59b29c45dc7ae2840c706a193c59d523a6ad2b029b1eadb9bd99d5e7fb5e7be9d73a86febda7694f691b963cb0adb0bd352e3637dddeb636e40216c0c179e5450159b065f3ccb867a934a875a760a78cdb892001393a446a208251594179f0b9075872cc40bfb5d062c7bc50fbb65607ac508111753d48b895d40a7ebccd3747293a287a8cfb36d00eb79950e9fc12600d5022d2fef38d0507c04027a04f252ee1390fc0cea20471e659f94dffa6bec5aae0e9c20fe54cd6ba0d97f220e117ddc09fffb2b3dcb5ab628ad7d6ff38aaebd636528cd1eaa8d874be4e48368b23e28f756ce7c682da5573753671a7c7adcb849aaefd414a625a08bbe36ce40a20fd85aef9f5dccd76b8f845e96b7f79bfaf66ab90ac510087ea42ec2ee6ccbf17b052001cd51b1cbc11761fe8419e0f352fc4839b4b290504d3a3d6586f89905cb281cba305b0fc2baa48e0baa8e90e23b73eaa8bc56553c6dce5e1b7433476c5f216522d713a97fb7dd393c9f87ca8f10ffea5bf0ffc4d1b096f5a7aac664a90d34e576be8e00f378f38e60a41f2204a9bd22780e99eb5517e7835c4bec446e21b49d7533d966943916daa471c68bd28a7227d3c34e8e5daba2bc7074ebdf72d7384cfd6a119ee9a4cd6f071718317e1c4968d6ad794ebd6fe70ad7cbb1effdcff521aab5a41a3d48747d8cfd5c2eddba5d85edf67d4f53bf673dd610a93a2910a1df8d170e</script><div class="hbe hbe-content"><div class="hbe hbe-input hbe-input-xray"><input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass"> <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass"><span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span></label> <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path><path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path></svg></div></div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li>Post title：每日一问1211(效能平台kafka方案)</li><li>Post author：张孟康</li><li>Create time：2023-04-12 10:00:43</li><li>Post link：https://a240277805.github.io/2020/每日一问1211(效能平台kafka方案)/</li><li>Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/%E5%8D%83%E6%96%B9/">#千方</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1208(tair)/"><span class="left arrow-icon flex-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">每日一问1208(tair)</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1214(logback)/"><span class="title flex-center"><span class="post-nav-title-item">每日一问1214(logback)</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div style="font-size:1.3rem;margin-top:0;margin-bottom:.8rem;transition-duration:.1s"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div></div></div></div></div></div></div></div><div class="page-main-content-bottom"><footer class="footer"><div class="info-container"><div class="copyright-info info-item">&copy; <span>2018</span> - 2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv">Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp; </span><span id="busuanzi_container_site_pv">Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item">Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a></div><script async data-pjax defer>function odometer_init(){let e=document.getElementsByClassName("odometer");for(i=0;i<e.length;i++)od=new Odometer({el:e[i],format:"( ddd).dd",duration:200})}odometer_init()</script><div id="start_time_div" style="display:none">2018/8/17 11:45:14</div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="tools-list"><li class="tools-item page-aside-toggle"><i class="fa-regular fa-outdent"></i></li></ul></div></div><div class="right-bottom-side-tools"><div class="side-tools-container"><ul class="side-tools-list"><li class="tools-item tool-font-adjust-plus flex-center"><i class="fa-solid fa-magnifying-glass-plus"></i></li><li class="tools-item tool-font-adjust-minus flex-center"><i class="fa-solid fa-magnifying-glass-minus"></i></li><li class="tools-item tool-expand-width flex-center"><i class="fa-solid fa-left-right"></i></li><li class="tools-item tool-dark-light-toggle flex-center"><i class="fa-solid fa-moon"></i></li><li class="tools-item tool-scroll-to-top flex-center"><i class="fa-solid fa-arrow-up"></i></li><li class="tools-item tool-scroll-to-bottom flex-center"><i class="fa-solid fa-arrow-down"></i></li></ul><ul class="exposed-tools-list"><li class="tools-item tool-toggle-show flex-center"><i class="fa-solid fa-cog fa-spin"></i></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script><script src="/js/code-copy.js"></script><script src="/js/lazyload.js"></script><script src="/js/runtime.js"></script><script src="/js/odometer.min.js"></script><link rel="stylesheet" href="/css/odometer-theme-minimal.css"><div class="post-scripts pjax"><script src="/js/toc-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script></div><script src="/js/libs/pjax.min.js"></script><script>window.addEventListener("DOMContentLoaded",()=>{window.pjax=new Pjax({selectors:["head title",".page-container",".pjax"],history:!0,debug:!1,cacheBust:!1,timeout:0,analytics:!1,currentUrlFullReload:!1,scrollRestoration:!1}),document.addEventListener("pjax:send",()=>{REDEFINE.utils.pjaxProgressBarStart()}),document.addEventListener("pjax:complete",()=>{REDEFINE.utils.pjaxProgressBarEnd(),window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")),REDEFINE.refresh()})})</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="张孟康">
+    <link rel="canonical" href="http://example.com/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1211(%E6%95%88%E8%83%BD%E5%B9%B3%E5%8F%B0kafka%E6%96%B9%E6%A1%88)/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <link rel="icon" type="image/png" href="/images/redefine-logo.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.svg">
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+    <title>
+        
+            每日一问1211(效能平台kafka方案) |
+        
+        孟康的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+    
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"孟康的个人工作生活记录空间"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.5.2","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                孟康的个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                        目录~PRESS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                        标签~TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/love"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        每天都是爱你的形状❥(^_-)
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                目录~PRESS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                标签~TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/love"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                每天都是爱你的形状❥(^_-)
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">每日一问1211(效能平台kafka方案)</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">张孟康</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-04-12 12:53:48</span>
+        <span class="mobile">2023-04-12 12:53</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/2020/">2020</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%8D%83%E6%96%B9/">千方</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c6ed46c2cf424d8d89b9e4de0fe8b8599ee77542f7ab9bbe467cf71e69ec315a">f3005ab3846f78f1c285337b525d9529afc85128a8209deef9d89180fce1d894d30a9055630df2a3f9583ca86822ef8ec86ca91c42f3d5fc81d72dceb7efad1aa22bcc2d868e93bdfad973c4109a0ec0d656a9c56c2987e6a7711c3a6ec4876c0e7fc502f0aeb4f387b74c0ce5633f2ef5d7cbb40688a66abf7708d19c8e68b3b030a9c86463a9d912e281cd17e071137ea3a20dc7ae7074a404e66a68a1521488b8b1597361cf9680958f67fd3852ec69879fd0cef3f95cd5ebde9e42168eb72975ee3a821b8aec319f26a3e9839dc71a957a548887a031b9c734c8d6e15c7d853ade80eabee4cdbef1843cd5bf57baa88271368aa3302a74e2ccf3d105cf29a9dfbdd8f766e27313ba5cf3f0f86d82a4d162e46d1ffefe078343ec9511f3ae7bdbd6ec50b7179a7a756f07873fbbc55e798c154ba8b20bb217caa4db94fc434d41106948e4221614e802d7def49adf82b5cc6536542ffd51c2ebc1de204a992c75201fbffa13f49dcbea494afcc2281826f3bb9a8efd2b6449aeea5fba0f8fe7a4f2a6e13cf4158ccf4d10e265eb44a58c454dc87b0aaad5ec28680db1d9768af66ded294b0d4b2ebac182c2532dda1c81ee6a5b8f853bcfeba74cd1481c126e7a88cb77954fdf8d2a24934e8948a59923f4e21d3faf0ee06f9f0c775b93919bb3c58099804df51a5b4f783c5f4d4770fccf48b1af710e457eeea957723b843b04cc53a32c6a202efe4ebdcedab4c1b3b9486495b306828d584d9d8e96aadc3b078860beb65a67c2f6fe9faed5cc0ef63e35ec7b70f43d076ea682b73150098519b997f18f112cf83ac8e2ff4fa073c4d322e6128bb8c4444fe630efe6116c7ad9d44f41e1cc77a5864f92e370d179c48dec75ffb179765b5c9a0116e297d6af951db1817b1547939d95b3b10643115a729abf31e9ec4ad4f6a646a2be9e9245426879d9caefd2adca9df577ffd26f4d659ff8f1c3541c47795ee75bfe328d33595c00ac47d8d40a75654ee3cffb5ab7856e8333612754a9668f2aa3ab6c5e8f42ca73a030cd7afe2b15f419a46e22238a5033d5d2cd3f10fa13c91497380b33de032348b09fea651cac5a78fa7d60109e5d4d77c69675b57f9f852d2705db63ceb35317bf286ee714f5fc958c49fabfbb8cb6261bf23492cca4163d6534c3706500b7a6bdaf9b1a39d6243a5eff64e21149a6448efaf16c5e32ceaf078d1f74577b2924db5ae8bdf8e1a07d933eb945499f4de408f77a741ed6ae8f93907ee1662004675bb2135180373926f53dce1c8da62ec97b57a044832fbeb5892447bc61d0512926e602c10a5bf3199b6fedd9df010380b74b75c774e3d0f7ed6cd43867cee2fc7d84ec33196e742974c4479d72cb6920e56be517a0580f00e31fcb311b9806e22a54479c1c16fba7cb5244d5629d41c20446dc14d1199d950c805ddf4294db78bb4278636a0c755fbe76968f98302e326afaab9728fa41c0962814f819736521d137698d45029a504e3684d2dc349ce58c89763f072bc74cb58f8ca4f15f325a876ab14dca33d22cb453ba9397b432672633077f49e7c534225caab0dbaf759f0d45ae446518c79a9afc5752aeffedabafe8d8af1d00e3b51417b0f055bc262b21ce0a5a989105a5cd079bda8c672671f2251f7829781fd87fb039c3b2f097aad87c9c5520c8e471793d7d8922eede9bd921ee8a2b7d5f068359859c8cabf95c5aff695ae3b582e0bfda27d1f9d9816f51324e60a614abbd7ba9ad11cd610a23e2672ed478499a57b351a539a413b1edd23d0463c1956058e99562fe7044ce45f07e03cdd9ce362dba7e404b3da0dfbf14a323158a058abb852ba72912dd5e48bc82da6149dc51b2aa7cf4f71f93d4d24877c5b82af3ed7f485597cbb80293d11dcc43eb6b0aec98e45ea1aeb063841b694768c7ebd3e8c8374a1e0709139320e9681bf21a3104e57a7e879e5adfa8f9fc43c5fa0a4106a5400265393b0b561bb68665193ed013fdda1cd4310cdc99d7902133592009d3d4bccdc140f3436f22983743ad1bc2f5a2ae0bf478adf0442aebb0176465ea937a1895dbb053f1bde3c1c5556d629d568073800e20d6017b8acbdcc106bf7335dc00a3d910eef2293624bd60f3d32ade65f492dc6a407f5b016461ccf88eb3c70afc675a05c7f2604eacc0d8f939323d52bf610013b1913986da9fef2744d185af7a39d47a2e41161809d11c8aa2fac6c5272dc469d947bcb00a5ef525d7e647151c2df57aaf1fea9143c31c24558b41568a1e75e7a4a207d4cba889a6d2c240c80d7797ff5bd0e475c55d88083c5aff68a815f05642d117f675041936dd88796cd2885ac992ca770e0989477c679546a563c02eb76e3d5545b964692793201152a0a9c77581f2207dd9c50e33630257dd805d5be7b619de6210e475cab5e4a1ad8b3eb7799d76fa1c4cf29117aee4f0e9752aa5031aefb780ee1d3dacc4bd3fc9b62bc8e1e0d398d395792104227c20f30ad19fb6a2baed2620755ab2cce44c230c5e85dddba1afe52758714904d16179cd2dd32e37b74ace2c5fb2ef00b585558f6910c65b4a55508f1ef9c8e3f0a577e69121ea6c44cdfbe5b94980e6e4acd35f7356418ffc249eeade13c2665fe2d481594c8cbf295e46f93eb80b72799a2dc16eeca8f3bddb0f3f4def26f0bb76a66dc7d0427b2edb187298a23c1bf9c71717001a1cfbd1ed496c4ce5ac50f5703c62fc65eb07adfe24dd3bbf7e6e3e6c5bf715f1354045c4d21f9d7300adbb6e57a609547ee08ee8db5f19af14faee7f87af881a09ad8ad3cc8647f1d3f115a9749a3ede2f78b3a441c4826882a3e3ac2eb72cf6e4595ab3df12e56d0207b2ceed6f15c43e87229bd1ee0b80a5bc3edf3ec56340217cf704cb778e9b79a011b0c7659f6a1b334ef48539ac722000a1182d909282fd07fb55ad5d9171224f4e3d669cab4e50795c44b906fc2383dde2ad444c4123c0873fbcdcb34b819e8a9dc9df45f7a0f7089bc7c4fcd4041feed43ed452249726449ea9d5b3c1e31fefedad5fc50d75bc98d549650b1abab7edfb0d2e20fc341c140ec225792de61a008660297f6e47c5932f6fa1dca97573ae83aa6831c4c79ef27a5abfad8387f7aff00d17b706d3d11ea0321d7da7695f29ec508fbf27b47e79601fefa080f1dc34139f6e38f036d52ba7a2138be943de159dfac79a7e9b0c1e5aa46e0d6d84fa4b24d4ead72790ff3b24cea724075f91acf577d7ef8e73cf3721f0bbae4043235bf54fdc7c7de414de95b34f2fef912a2518b59b29c45dc7ae2840c706a193c59d523a6ad2b029b1eadb9bd99d5e7fb5e7be9d73a86febda7694f691b963cb0adb0bd352e3637dddeb636e40216c0c179e5450159b065f3ccb867a934a875a760a78cdb892001393a446a208251594179f0b9075872cc40bfb5d062c7bc50fbb65607ac508111753d48b895d40a7ebccd3747293a287a8cfb36d00eb79950e9fc12600d5022d2fef38d0507c04027a04f252ee1390fc0cea20471e659f94dffa6bec5aae0e9c20fe54cd6ba0d97f220e117ddc09fffb2b3dcb5ab628ad7d6ff38aaebd636528cd1eaa8d874be4e48368b23e28f756ce7c682da5573753671a7c7adcb849aaefd414a625a08bbe36ce40a20fd85aef9f5dccd76b8f845e96b7f79bfaf66ab90ac510087ea42ec2ee6ccbf17b052001cd51b1cbc11761fe8419e0f352fc4839b4b290504d3a3d6586f89905cb281cba305b0fc2baa48e0baa8e90e23b73eaa8bc56553c6dce5e1b7433476c5f216522d713a97fb7dd393c9f87ca8f10ffea5bf0ffc4d1b096f5a7aac664a90d34e576be8e00f378f38e60a41f2204a9bd22780e99eb5517e7835c4bec446e21b49d7533d966943916daa471c68bd28a7227d3c34e8e5daba2bc7074ebdf72d7384cfd6a119ee9a4cd6f071718317e1c4968d6ad794ebd6fe70ad7cbb1effdcff521aab5a41a3d48747d8cfd5c2eddba5d85edf67d4f53bf673dd610a93a2910a1df8d170e</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：每日一问1211(效能平台kafka方案)</li>
+        <li>Post author：张孟康</li>
+        <li>Create time：2023-04-12 12:53:48</li>
+        <li>
+            Post link：https://a240277805.github.io/2020/每日一问1211(效能平台kafka方案)/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%8D%83%E6%96%B9/">#千方</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1208(tair)/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1208(tair)</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1214(logback)/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">每日一问1214(logback)</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">张孟康. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.5.2</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2018/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
