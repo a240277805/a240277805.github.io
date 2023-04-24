@@ -1,0 +1,35 @@
+---
+title:
+
+---
+
+# Reddit Wants to Get Paid for Helping to Teach Big A.I. Systems
+
+## 始愿
+
+节约时间，提供读一本书的新思路
+
+## 做法
+
+以下内容直接copy 到一本新书阅读记录中
+
+###  出处，作者
+
+https://archive.is/UqhfS#selection-377.0-377.62
+
+###  概述
+
+读完书 最后做一个大概的总结，使人一眼就能了解到书的大概内容和能从中得到些什么。
+
+### 架构
+
+### 词汇
+
+### 语句
+
+### 思路
+
+
+
+### 有感触
+
