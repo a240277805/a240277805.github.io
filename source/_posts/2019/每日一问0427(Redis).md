@@ -142,6 +142,43 @@ redis-cli  -a redis@2020  keys "ctfo:devplatform:gitlabUserToken*" | xargs redis
 
 redis-cli  -a devops-redis  keys "ctfo:devplatform:gitlabUserToken*" | xargs redis-cli -a devops-redis del
 
+
+
+config get maxclients : 查詢最大連接数
+
+CONFIG set maxclients 10 ： 设置最大连接数 10 
+
+info : 查看當前鏈接
+
+CLIENT LIST 获取客户端列表
+
+CLIENT SETNAME 设置当前连接点redis的名称
+
+CLIENT GETNAME 查看当前连接的名称
+
+CLIENT KILL ip:port 杀死指定连接
+
+释放超时链接配置
+
+查看超时配置
+config get timeout
+
+设置超时配置
+config set timeout 600
+
+
+
+**排查redis 订阅过一段时间收不到消息经验**
+查看redis配置tcp-keepalive，是否要发送心跳包
+
+publish channel message 查看是否有订阅者
+client list 查看redis连接的客户端 确认是不是omem过大耗尽内存导致客户端无法接收消息 https://tcspecial.iteye.com/blog/2316033.
+pubsub channels查看活动的通道 确认是否还有活动通道
+pubsub numsub [channel-1]… 返回这些频道订阅者的数量
+pubsub numpat 返回当前服务器被订阅的模式数量。
+
+原文链接：https://blog.csdn.net/eileencsdn/article/details/89511144
+
 ## 参考
 
 [压缩列表](https://www.cnblogs.com/hunternet/p/11306690.html)
