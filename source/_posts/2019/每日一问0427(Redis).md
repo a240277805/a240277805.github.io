@@ -13,7 +13,6 @@ tags:
 
 ### redis 的线程模型
          redis 内部使用 文件事件处理器 file event handler ，这个处理器是单线程的，所以叫单线程模型。采用 IO多路复用机制同时监听多个socket ，根据socket 事件选择对应的事件处理器。
-         test11
          文件事件处理器包括4部分:
          - 多个socket
          - IO多路复用程序
