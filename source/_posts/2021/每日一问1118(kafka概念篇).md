@@ -16,9 +16,7 @@ title:
 
 ### 为什么分区(Partition)能保证并行消费
 
-![avatar](../../ImgSource/640)
 如果有两个分区，最多两个消费者同时消费，消费的速度肯定会更快。分区的设计大大的提升了kafka的吞吐量！！
-![avatar](../../ImgSource/640)
 
 从这个图可以看出什么？
 
@@ -37,7 +35,7 @@ title:
 ### "如果不同partition的leader replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。" 怎么理解这句话？
 
 先看下图
-![avatar](../../ImgSource/640)
+
 
 - broker 注册在  zk 上，是最小的工作单元
 - 每个broker 上可以有多个 分区，
@@ -62,8 +60,6 @@ kafka通过轮询算法保证leader replica是均匀分布在多个broker上。
 kafka 会定时触发分区加平衡操作，也可以主动触发；触发后重新通过选举 ，然后 PR里的有优先选举权，之前的replica又恢复了leader ,平衡操作就是让leader副本归位。
 
 ### Partition的读和写
-
-![avatar](../../ImgSource/640)
 
 - producer 采用round-robin算法 ，轮训往 partition里写入
 - 每个 consumer 都维护了自己的 offset ，就是消费到了 patition什么位置，一个patition最多可被同组内的一个consumer 消费，
