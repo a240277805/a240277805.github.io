@@ -9,7 +9,7 @@ title:
 
 从图上可以看出
 
-- Producer 是单独的多个
+- Producer 是单独的多个 
 - 多了zookeeper 集群，用来收发消息
 - kafka 的工作单元是 broker ，它会在 zk上注册
 - 消费者可以有 组 group,group 内的消费者可以并行消费，但不会重复消费
@@ -20,7 +20,7 @@ title:
 
 从这个图可以看出什么？
 
-- 一个partition只能被同组的一个consumer消费（图中只会有一个箭头指向一个partition）
+- 一个partition只能被同组的1一个consumer消费（图中只会有一个箭头指向一个partition）
 - 同一个组里的一个consumer可以消费多个partition（图中第一个consumer消费Partition 0和3）
 - 消费效率最高的情况是partition和consumer数量相同。这样确保每个consumer专职负责一个partition。
 - consumer数量不能大于partition数量。由于第一点的限制，当consumer多于partition时，就会有consumer闲置。
