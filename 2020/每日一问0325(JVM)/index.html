@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-17 02:55:09</span>
-        <span class="mobile">2023-04-17 02:55</span>
+        <span class="pc">2023-07-28 01:56:27</span>
+        <span class="mobile">2023-07-28 01:56</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -355,7 +355,7 @@
 <p> JDK1.8 已经去除 永久代 而用 元空间代替，元空间存储在物理内存，受到本机物理内存限制</p>
 <h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>  共享 </p>
 <h4 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h4><p> NIO 流  堆外内存， 避免 Java堆和NATIVE堆 复制数据。</p>
-<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><p> 1） 类加载检查</p>
+<h3 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h3><p> 1） 类加载检查</p>
 <p> 2）内存分配 两种方式 ：</p>
 <ul>
 <li>指针碰撞</li>
@@ -365,6 +365,48 @@
 <p> 4）设置对象头</p>
 <ol start="5">
 <li>执行 init 方法  执行前只是虚拟机新的对象产生了 ，执行完 Java代码才认</li>
+</ol>
+<h3 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h3><ul>
+<li><p>启动类加载器(Bootstrap Class loader)  </p>
+<ul>
+<li>:负责加载<JAVA_HOME>\lib 目录，或者被 -Xbootclasspath 参数制定的路径，例如 jre&#x2F;lib&#x2F;rt.jar 里所有的class文件。由C++实现，不是ClassLoader子类。</li>
+<li>由于安全考虑只加载 包名 java、javax、sun开头的类。</li>
+</ul>
+</li>
+<li><p>扩展类加载器(Extension Class loader): </p>
+<ul>
+<li><p>负责加载Java平台中扩展功能的一些jar包，包括<JAVA_HOME>\lib\ext 目录中 或 java.ext.dirs 指定目录下的jar包</p>
+</li>
+<li><p>全类名:<code>sum.misc.Launch$ExtClassLoader</code>，Java语言实现。</p>
+<p>扩展类加载器的父加载器是<code>Bootstrap启动类加载器</code> (注:不是继承关系)</p>
+</li>
+</ul>
+</li>
+<li><p>应用程序类加载器(Application Class loader)</p>
+<ul>
+<li>我们自己开发的应用程序，就是由它进行加载的，负责加载ClassPath路径下所有jar包。</li>
+<li>全类名: <code>sun.misc.Launcher$AppClassLoader</code></li>
+<li>系统类加载器负责加载 <code>classpath环境变量</code>所指定的类库，是用户自定义类的默认类加载器。</li>
+</ul>
+</li>
+<li><p>用户自定义的类加载器,负责的加载目录自己决定。</p>
+</li>
+</ul>
+<p>自定义类加载过程</p>
+<ol>
+<li>首先使用AppClassLoader类加载器尝试加载，AppClassLoader加载器会先检查它的缓存，查看该类是否已经被加载，有则不加载，没有则向上交给ExtClassLoader加载器。</li>
+<li>ExtClassLoader加载器同样会先检查它的缓存，查看该类是否已经被加载，有则不加载，没有则向上交给Bootstrap加载器。</li>
+<li>Bootstrap加载器同样会先检查它的缓存，查看该类是否已经被加载。有则不加载，没有则尝试从它负责的目录中加载，</li>
+<li>Bootstrap加载器加载失败(不在它负责的目录范围)则向下交给ExtClassLoader加载器。</li>
+<li>ExtClassLoader加载器会从它负责的目录中尝试加载，加载失败则向下交给AppClassLoader加载器</li>
+<li>AppClassLoader加载器从它负责的classpath尝试加载，加载完成。</li>
+</ol>
+<h3 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h3><p>双亲委派模式其实一句话就可以说清楚：任何一个类加载器在接到一个类的加载请求时，都会先让其父类进行加载，只有父类无法加载（或者没有父类）的情况下，才尝试自己加载。</p>
+<p>双亲委派机制的实现其实就是在loadClass方法中实现的。 直接调用findClass方法就可以跳过双亲委派机制,这样就可以直接加载,而不用向上委托了。</p>
+<p>好处：</p>
+<ol>
+<li>避免类的重复加载：当父加载器已经加载该类时，就没有必要子加载器再加载一遍，保证被加载类的唯一性。</li>
+<li>同时Java有沙箱安全机制：自定义类的包名以 <code>java.</code>开头被禁止， 防止核心API被篡改，判断逻辑在defineClass方法中。</li>
 </ol>
 <h3 id="对象内存布局"><a href="#对象内存布局" class="headerlink" title="对象内存布局"></a>对象内存布局</h3><p> 对象头，实例数据和对齐填充</p>
 <p> 对象头 有两部分数据:</p>
@@ -498,22 +540,8 @@
 </ul>
 <h3 id="JVM参数调优"><a href="#JVM参数调优" class="headerlink" title="JVM参数调优"></a>JVM参数调优</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p> <a class="link"   target="_blank" rel="noopener" href="https://xiaochengxinyizhan.blog.csdn.net/article/details/92385172" >Java代码的执行篇 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br> <a class="link"   target="_blank" rel="noopener" href="https://github.com/Homiss/Java-interview-questions/blob/master/JVM/JVM%E9%9D%A2%E8%AF%95%E9%A2%98.md" >JVM面试题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="http://www.liuzk.com/294.html" >一次JVM_OLD区占用过高、频繁Full GC的解决过程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h1 id="字符串常量池和运行时常量池是在堆还是在方法区？"><a href="#字符串常量池和运行时常量池是在堆还是在方法区？" class="headerlink" title="字符串常量池和运行时常量池是在堆还是在方法区？"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/cosmos-wong/p/12925299.html" >字符串常量池和运行时常量池是在堆还是在方法区？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45112292/article/details/118732695?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.control&spm=1001.2101.3001.4242" >class文常量池、运行时常量池、字符串常量池的区别 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/P8s3kuceBNovUP5adXpFCQ" >线上服务的FGC问题排查，看这篇就够了！ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>8e426fdc9f06283135745f7def3811ac6a2aa3f7</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/P8s3kuceBNovUP5adXpFCQ" >线上服务的FGC问题排查，看这篇就够了！ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25228545" >Java类加载机制 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/ZHHX666/article/details/124484199" >Java - 类加载器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
             </div>
 
@@ -523,7 +551,7 @@
     <ul>
         <li>Post title：每日一问0325(JVM)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-17 02:55:09</li>
+        <li>Create time：2023-07-28 01:56:27</li>
         <li>
             Post link：https://a240277805.github.io/2020/每日一问0325(JVM)/
         </li>
@@ -583,7 +611,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM"><span class="nav-text">JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-Java-%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%EF%BC%89"><span class="nav-text">介绍下 Java 内存区域	运行时数据区）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88"><span class="nav-text">Java虚拟机栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A0%86"><span class="nav-text">堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%86%85%E5%AD%98"><span class="nav-text">直接内存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">对象的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="nav-text">对象内存布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D"><span class="nav-text">对象的访问定位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-%E7%B1%BB%E5%92%8C%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-text">String 类和常量池</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%B1%A0%EF%BC%88string-pool%E4%B9%9F%E6%9C%89%E5%8F%AB%E5%81%9Astring-literal-pool%EF%BC%89"><span class="nav-text">全局字符串池（string pool也有叫做string literal pool）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-text">8种基本类型的包装类和常量池</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minor-GC-%E5%92%8C-Full-GC-%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C"><span class="nav-text">Minor GC 和 Full GC  有什么不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%AD%BB%E4%BA%A1"><span class="nav-text">如何判断一个对象死亡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="nav-text">垃圾回收算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8"><span class="nav-text">垃圾回收器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E8%B0%83%E4%BC%98"><span class="nav-text">JVM 调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7%EF%BC%88java-tools%EF%BC%89"><span class="nav-text">JVM 调优工具（java-tools）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E4%B8%AD%E7%9A%84%E9%94%81"><span class="nav-text">JVM 中的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E4%BA%8EJVM%E4%B8%AD%E7%9A%84%E8%8E%B7%E5%8F%96%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E5%92%8C%E8%8E%B7%E5%8F%96%E9%94%81%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-text">内置于JVM中的获取锁的优化方法和获取锁的步骤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98"><span class="nav-text">JVM参数调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0%E6%98%AF%E5%9C%A8%E5%A0%86%E8%BF%98%E6%98%AF%E5%9C%A8%E6%96%B9%E6%B3%95%E5%8C%BA%EF%BC%9F"><span class="nav-text">字符串常量池和运行时常量池是在堆还是在方法区？ </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM"><span class="nav-text">JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-Java-%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%EF%BC%89"><span class="nav-text">介绍下 Java 内存区域	运行时数据区）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88"><span class="nav-text">Java虚拟机栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A0%86"><span class="nav-text">堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%86%85%E5%AD%98"><span class="nav-text">直接内存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="nav-text">对象创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-text">类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B"><span class="nav-text">双亲委派模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="nav-text">对象内存布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D"><span class="nav-text">对象的访问定位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-%E7%B1%BB%E5%92%8C%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-text">String 类和常量池</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%B1%A0%EF%BC%88string-pool%E4%B9%9F%E6%9C%89%E5%8F%AB%E5%81%9Astring-literal-pool%EF%BC%89"><span class="nav-text">全局字符串池（string pool也有叫做string literal pool）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-text">8种基本类型的包装类和常量池</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minor-GC-%E5%92%8C-Full-GC-%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C"><span class="nav-text">Minor GC 和 Full GC  有什么不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%AD%BB%E4%BA%A1"><span class="nav-text">如何判断一个对象死亡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="nav-text">垃圾回收算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8"><span class="nav-text">垃圾回收器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E8%B0%83%E4%BC%98"><span class="nav-text">JVM 调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7%EF%BC%88java-tools%EF%BC%89"><span class="nav-text">JVM 调优工具（java-tools）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-%E4%B8%AD%E7%9A%84%E9%94%81"><span class="nav-text">JVM 中的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E4%BA%8EJVM%E4%B8%AD%E7%9A%84%E8%8E%B7%E5%8F%96%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E5%92%8C%E8%8E%B7%E5%8F%96%E9%94%81%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-text">内置于JVM中的获取锁的优化方法和获取锁的步骤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98"><span class="nav-text">JVM参数调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0%E6%98%AF%E5%9C%A8%E5%A0%86%E8%BF%98%E6%98%AF%E5%9C%A8%E6%96%B9%E6%B3%95%E5%8C%BA%EF%BC%9F"><span class="nav-text">字符串常量池和运行时常量池是在堆还是在方法区？ </span></a></li></ol>
     </div>
 </div>
             </div>

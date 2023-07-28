@@ -278,35 +278,26 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">
-                        每日一问0407(消息队列)
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1102(kubernetes)/">
+                        每日一问1102(kubernetes)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        消息队列好处
-削峰填谷
-业务解耦
-
-带来问题
-系统复杂性 重复消费
-数据一致性
-
-关于消息队列其他一些常见的问题展望
-引入消息队列之后如何保证高可用性
-如何保证消息不被重复消费呢？
-如何保证消息的可靠性传输（如何处理消息丢失的问题）？
-我该怎么保证从...
+                        kubernetes 基本概念和术语kubernates 架构控制平面
+API服务器
+etcd 元数据存储 ： 为了保证冗余性，通常由三个或五个etcd实例组成一个集群。如果你丢失了etcd存储中的数据，那么你会丢掉整个集群。
+调度器  它实现了一种...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Apr 17 2023 02:55:09 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/04/17
+                    2023/07/28
                 
             </span>
         </span>
@@ -326,7 +317,7 @@
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97)/">Read more<span class="seo-reader-text">每日一问0407(消息队列)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1102(kubernetes)/">Read more<span class="seo-reader-text">每日一问1102(kubernetes)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -338,23 +329,27 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0414(kafka)/">
-                        每日一问0414(kafka)
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(netstat%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95)/">
+                        每日一问1103(netstat命令用法)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        kafka部署123456789101112131415161718192021222324252627282930version: &#x27;2&#x27;services:  zookeeper:    image: wurstmeister/...
+                        netstat 命令用法参考地址
+
+*** [Linux下netstat命令详解] (https://blog.csdn.net/dongl890426/article/details/86981901 )
+
+
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Apr 17 2023 02:55:09 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/04/17
+                    2023/07/28
                 
             </span>
         </span>
@@ -374,7 +369,7 @@
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0414(kafka)/">Read more<span class="seo-reader-text">每日一问0414(kafka)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(netstat%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95)/">Read more<span class="seo-reader-text">每日一问1103(netstat命令用法)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -386,25 +381,26 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1)/">
-                        每日一问0421(分布式事务)
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(systemctl%20%E5%91%BD%E4%BB%A4)/">
+                        每日一问1103(systemctl 命令)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        分布式事务2pc,3pc,tcc
-第三方TX-LCN执行步骤
-有A，B，C 。A是发起方，BC两个业务方 ，另外还有协调器 TM，A-&gt;加入协调器TM，-&gt;执行任务-&gt;调用业务B -&gt;业务B执行业务-&gt;执行结束 -&gt...
+                        systemctl  命令参考地址
+
+
+
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Apr 17 2023 02:55:09 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/04/17
+                    2023/07/28
                 
             </span>
         </span>
@@ -424,7 +420,7 @@
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1)/">Read more<span class="seo-reader-text">每日一问0421(分布式事务)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1103(systemctl%20%E5%91%BD%E4%BB%A4)/">Read more<span class="seo-reader-text">每日一问1103(systemctl 命令)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -436,29 +432,26 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0425(%E6%B5%81)/">
-                        每日一问0425(流)
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/">
+                        每日一问1104(es搜索)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        流
-Java面向对象三大特性：封装，继承，多态
-String ,StringBuffer,Stringbuilder 区别
-
-
-String 是final 每次都会实例化，频繁操作字符串避免用String
-StringBuffer 和Stringbu...
+                        ES 搜索1.多索引参数例如+test*，-test3表示查询所有test开头的索引，排除test3
+2. 日期搜索
+3 通用参数
+pretty参数 格式化 JSON  ，?format&#x3D;yaml，YAML格式，这将导致返回的结果具有可读的...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Apr 17 2023 02:55:09 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/04/17
+                    2023/07/28
                 
             </span>
         </span>
@@ -478,7 +471,7 @@ StringBuffer 和Stringbu...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0425(%E6%B5%81)/">Read more<span class="seo-reader-text">每日一问0425(流)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1104(es%E6%90%9C%E7%B4%A2)/">Read more<span class="seo-reader-text">每日一问1104(es搜索)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -490,24 +483,26 @@ StringBuffer 和Stringbu...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0426(Spring)/">
-                        每日一问0426(Spring)
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/">
+                        每日一问1105(git命令)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Spring Cloud基础框架结构图
-● Spring核心容器（Core）：提供Spring框架的基本功能。核心容器的主要组件是BeanFactory，它是工厂模式的实现。BeanFactory使用控制反转（IoC）模式将应用程序的配置和依赖性规范...
+                        GIT命令
+查看当前仓库地址：git remote show origin
+添加远程仓库地址：  git remote add origin “xxx.git”
+修改仓库地址： git remote set-url origin &#103;&#10...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Apr 17 2023 02:55:09 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/04/17
+                    2023/07/28
                 
             </span>
         </span>
@@ -527,7 +522,7 @@ StringBuffer 和Stringbu...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0426(Spring)/">Read more<span class="seo-reader-text">每日一问0426(Spring)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1105(git%E5%91%BD%E4%BB%A4)/">Read more<span class="seo-reader-text">每日一问1105(git命令)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -539,23 +534,27 @@ StringBuffer 和Stringbu...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E7%A0%94/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/20230322/">
-                        
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1106(linux%E5%91%BD%E4%BB%A4)/">
+                        每日一问1106(linux命令)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        有东西被加密了, 请输入密码查看.
+                        Linux 命令服务器
+Linux 查看磁盘或文件夹及文件大小 
+
+Esc+b 移动到当前单词的开头
+Esc+f 移动到当前单词的结尾Esc+t 颠倒光标所在处及其相邻单词的位置ESC-c 使下一个单词首字母大写, 同时光标前进一个单词, 如光标停留...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Mar 22 2023 00:00:00 GMT+0000">
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
                 
-                    2023/03/22
+                    2023/07/28
                 
             </span>
         </span>
@@ -565,13 +564,7 @@ StringBuffer 和Stringbu...
                     
                         <li>
                             
-                            <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E7%A0%94/">小程序自研</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E7%A0%94/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/">小程序开发日记</a>&nbsp;
+                            <a href="/categories/2020/">2020</a>&nbsp;
                         </li>
                     
                     
@@ -579,26 +572,222 @@ StringBuffer 和Stringbu...
             </span>
         
         
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
+    </div>
+
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1106(linux%E5%91%BD%E4%BB%A4)/">Read more<span class="seo-reader-text">每日一问1106(linux命令)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1107(nacos)/">
+                        每日一问1107(nacos)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        nacos
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+                
+                    2023/07/28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/tags/%E4%B9%92%E4%B9%93/">乒乓</a>&nbsp;
+                            <a href="/categories/2020/">2020</a>&nbsp;
                         </li>
                     
-                        <li>
-                            | 
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E7%A0%94/">小程序自研</a>&nbsp;
-                        </li>
                     
                 </ul>
             </span>
         
+        
     </div>
 
-    <a href="/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E7%A0%94/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/20230322/">Read more<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1107(nacos)/">Read more<span class="seo-reader-text">每日一问1107(nacos)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(eureka)/">
+                        每日一问1109(eureka)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Eureka高可用
+服务治理服务治理中的3个角色：
+
+服务治理服务器
+服务提供者
+服务消费者。
+
+问题怎么理解高可用
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+                
+                    2023/07/28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2020/">2020</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(eureka)/">Read more<span class="seo-reader-text">每日一问1109(eureka)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86)/">
+                        每日一问1109(git分支管理)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        git分支管理 我们采用目前的保留的分支体系 
+
+master 生产环境分支 
+pre  预发布环境分支
+test 测试环境分支
+dev 开发环境分支
+
+git 新需求提交流程
+步骤描述
+新版本开始 ，从master 拉取 dev,test 分支
+新...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+                
+                    2023/07/28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2020/">2020</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86)/">Read more<span class="seo-reader-text">每日一问1109(git分支管理)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(nacos)/">
+                        每日一问1109(nacos)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        nacos3.添加接口读取配置信息并添加动态刷新配置的注解@RefreshScope
+1@RefreshScope
+
+4.打开nacos管理控制台添加配置
+1DATA-ID :  $&#123;prefix&#125;-$&#123;spring.p...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+                
+                    2023/07/28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/2020/">2020</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE1109(nacos)/">Read more<span class="seo-reader-text">每日一问1109(nacos)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -613,6 +802,10 @@ StringBuffer 和Stringbu...
         >Prev</a>
     
 
+    
+        <a class="next btn"
+           href="/page/24/"
+        >Next</a>
     
 </div>
 

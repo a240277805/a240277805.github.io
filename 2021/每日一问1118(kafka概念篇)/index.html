@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-17 02:55:09</span>
-        <span class="mobile">2023-04-17 02:55</span>
+        <span class="pc">2023-07-28 01:56:27</span>
+        <span class="mobile">2023-07-28 01:56</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -334,37 +334,22 @@
                 ></p>
 <p>从图上可以看出</p>
 <ul>
-<li>Producer 是单独的多个</li>
+<li>Producer 是单独的多个 </li>
 <li>多了zookeeper 集群，用来收发消息</li>
 <li>kafka 的工作单元是 broker ，它会在 zk上注册</li>
 <li>消费者可以有 组 group,group 内的消费者可以并行消费，但不会重复消费</li>
 </ul>
-<h3 id="为什么分区-Partition-能保证并行消费"><a href="#为什么分区-Partition-能保证并行消费" class="headerlink" title="为什么分区(Partition)能保证并行消费"></a>为什么分区(Partition)能保证并行消费</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../ImgSource/640"
-                      alt="avatar"
-                ><br>如果有两个分区，最多两个消费者同时消费，消费的速度肯定会更快。分区的设计大大的提升了kafka的吞吐量！！<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../ImgSource/640"
-                      alt="avatar"
-                ></p>
+<h3 id="为什么分区-Partition-能保证并行消费"><a href="#为什么分区-Partition-能保证并行消费" class="headerlink" title="为什么分区(Partition)能保证并行消费"></a>为什么分区(Partition)能保证并行消费</h3><p>如果有两个分区，最多两个消费者同时消费，消费的速度肯定会更快。分区的设计大大的提升了kafka的吞吐量！！</p>
 <p>从这个图可以看出什么？</p>
 <ul>
-<li>一个partition只能被同组的一个consumer消费（图中只会有一个箭头指向一个partition）</li>
+<li>一个partition只能被同组的1一个consumer消费（图中只会有一个箭头指向一个partition）</li>
 <li>同一个组里的一个consumer可以消费多个partition（图中第一个consumer消费Partition 0和3）</li>
 <li>消费效率最高的情况是partition和consumer数量相同。这样确保每个consumer专职负责一个partition。</li>
 <li>consumer数量不能大于partition数量。由于第一点的限制，当consumer多于partition时，就会有consumer闲置。</li>
 </ul>
 <p>5、consumer group可以认为是一个订阅者的集群，其中的每个consumer负责自己所消费的分区</p>
 <h3 id="副本怎么高可用"><a href="#副本怎么高可用" class="headerlink" title="副本怎么高可用"></a>副本怎么高可用</h3><p>一个topic 下有多个分区 ，每个分区可以有多个副本 ，分区下都是副本 ，但只有一个leader 其他的是 follower，<br>工作流程:小心进来 先进入leader replica,然后从leader 复制到 follower。<code>只有复制完成时，consumer 才可以消费此消息</code>，这是为了确保意外发生，数据可以恢复</p>
-<h3 id="“如果不同partition的leader-replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。”-怎么理解这句话？"><a href="#“如果不同partition的leader-replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。”-怎么理解这句话？" class="headerlink" title="“如果不同partition的leader replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。” 怎么理解这句话？"></a>“如果不同partition的leader replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。” 怎么理解这句话？</h3><p>先看下图<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../ImgSource/640"
-                      alt="avatar"
-                ></p>
+<h3 id="“如果不同partition的leader-replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。”-怎么理解这句话？"><a href="#“如果不同partition的leader-replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。”-怎么理解这句话？" class="headerlink" title="“如果不同partition的leader replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。” 怎么理解这句话？"></a>“如果不同partition的leader replica在kafka集群的broker上分布不均匀，就会造成负载不均衡。” 怎么理解这句话？</h3><p>先看下图</p>
 <ul>
 <li>broker 注册在  zk 上，是最小的工作单元</li>
 <li>每个broker 上可以有多个 分区，</li>
@@ -382,15 +367,9 @@
 <li>ISR 同步最新的副本情况。每个patition 都有自己的 ISR ;所有与leader副本保持一定程度同步的副本（包括leader副本在内）组成ISR（In-Sync Replicas）</li>
 </ul>
 <p>分区平衡步骤：<br>当一开始进行分区选举 是平衡的；过一段时间 leader 宕机，follower 当上了leader ，此时应该是不平衡的；一会原来的replica 恢复了，但此时只能做小弟；<br>kafka 会定时触发分区加平衡操作，也可以主动触发；触发后重新通过选举 ，然后 PR里的有优先选举权，之前的replica又恢复了leader ,平衡操作就是让leader副本归位。</p>
-<h3 id="Partition的读和写"><a href="#Partition的读和写" class="headerlink" title="Partition的读和写"></a>Partition的读和写</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../ImgSource/640"
-                      alt="avatar"
-                ></p>
-<ul>
+<h3 id="Partition的读和写"><a href="#Partition的读和写" class="headerlink" title="Partition的读和写"></a>Partition的读和写</h3><ul>
 <li>producer 采用round-robin算法 ，轮训往 partition里写入</li>
-<li>每个 consumer 都维护了自己的 offset ，就是消费到了 patition什么位置，一个patition可以供多个consumer 消费，</li>
+<li>每个 consumer 都维护了自己的 offset ，就是消费到了 patition什么位置，一个patition最多可被同组内的一个consumer 消费，</li>
 </ul>
 <ol>
 <li><p>每个分区是由多个Segment组成，当Kafka要写数据到一个partition时，它会写入到状态为active的segment中。如果该segment被写满，则一个新的segment将会被新建，然后变成新的“active” segment。</p>
@@ -464,7 +443,7 @@
     <ul>
         <li>Post title：每日一问1118(kafka概念篇)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-17 02:55:09</li>
+        <li>Create time：2023-07-28 01:56:27</li>
         <li>
             Post link：https://a240277805.github.io/2021/每日一问1118(kafka概念篇)/
         </li>

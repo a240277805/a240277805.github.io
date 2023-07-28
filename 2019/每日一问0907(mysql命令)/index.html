@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-17 02:55:09</span>
-        <span class="mobile">2023-04-17 02:55</span>
+        <span class="pc">2023-07-28 01:56:27</span>
+        <span class="mobile">2023-07-28 01:56</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -331,7 +331,7 @@
 <li>连接:mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p </li>
 <li>查看Mysql服务器上的版本  select version();</li>
 </ul>
-<h2 id="库-x2F-表操作"><a href="#库-x2F-表操作" class="headerlink" title="库&#x2F;表操作"></a>库&#x2F;表操作</h2><ul>
+<h2 id="库-表操作"><a href="#库-表操作" class="headerlink" title="库&#x2F;表操作"></a>库&#x2F;表操作</h2><ul>
 <li>查看所有的数据库 show databases; ，</li>
 <li>查看当前所在数据库  select database(); </li>
 <li>选择数据库 use 库名;</li>
@@ -498,7 +498,7 @@
     <ul>
         <li>Post title：每日一问0907(mysql命令)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-17 02:55:09</li>
+        <li>Create time：2023-07-28 01:56:27</li>
         <li>
             Post link：https://a240277805.github.io/2019/每日一问0907(mysql命令)/
         </li>
@@ -558,7 +558,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-%E5%91%BD%E4%BB%A4"><span class="nav-text">mysql 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3"><span class="nav-text">mysql 软件相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93-x2F-%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">库&#x2F;表操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3"><span class="nav-text">缓存相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C"><span class="nav-text">优化操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E6%93%8D%E4%BD%9C"><span class="nav-text">监控操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E6%93%8E%E6%93%8D%E4%BD%9C"><span class="nav-text">引擎操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binlog%E6%97%A5%E5%BF%97%E7%9B%B8%E5%85%B3"><span class="nav-text">binlog日志相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-text">字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-%E9%87%8D%E8%A6%81%E5%8F%82%E6%95%B0-innodb-flush-log-at-trx-commit-%E5%92%8C-sync-binlog"><span class="nav-text">MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-%E5%91%BD%E4%BB%A4"><span class="nav-text">mysql 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3"><span class="nav-text">mysql 软件相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93-%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">库&#x2F;表操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3"><span class="nav-text">缓存相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C"><span class="nav-text">优化操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E6%93%8D%E4%BD%9C"><span class="nav-text">监控操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E6%93%8E%E6%93%8D%E4%BD%9C"><span class="nav-text">引擎操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binlog%E6%97%A5%E5%BF%97%E7%9B%B8%E5%85%B3"><span class="nav-text">binlog日志相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-text">字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-%E9%87%8D%E8%A6%81%E5%8F%82%E6%95%B0-innodb-flush-log-at-trx-commit-%E5%92%8C-sync-binlog"><span class="nav-text">MySQL 重要参数 innodb_flush_log_at_trx_commit 和 sync_binlog </span></a></li></ol>
     </div>
 </div>
             </div>

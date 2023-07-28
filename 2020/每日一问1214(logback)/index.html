@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-04-17 02:55:09</span>
-        <span class="mobile">2023-04-17 02:55</span>
+        <span class="pc">2023-07-28 01:56:27</span>
+        <span class="mobile">2023-07-28 01:56</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -369,7 +369,7 @@
                       alt="点击查看大图"
                 ></a></p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="root-和-logger-优先级"><a href="#root-和-logger-优先级" class="headerlink" title="root  和 logger 优先级"></a>root  和 logger 优先级</h3><h3 id="为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API"><a href="#为什么阿里巴巴禁止工程师直接使用日志系统-Log4j、Logback-中的-API" class="headerlink" title="为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API"></a>为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API</h3><p>门面模式</p>
-<h3 id="为何root配置的INFO，logger特殊指定的包-x2F-类日志DEBUG级别，最后也能打印出来？"><a href="#为何root配置的INFO，logger特殊指定的包-x2F-类日志DEBUG级别，最后也能打印出来？" class="headerlink" title="为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？"></a>为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</h3><p>因为没有设置addtivity&#x3D;”false” ，如下图即可。</p>
+<h3 id="为何root配置的INFO，logger特殊指定的包-类日志DEBUG级别，最后也能打印出来？"><a href="#为何root配置的INFO，logger特殊指定的包-类日志DEBUG级别，最后也能打印出来？" class="headerlink" title="为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？"></a>为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</h3><p>因为没有设置addtivity&#x3D;”false” ，如下图即可。</p>
 <div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;logger name=&quot;包名/类名&quot; level=&quot;DEBUG&quot; addtivity=&quot;false&quot; /&gt;</span><br></pre></td></tr></table></figure></div>
 
 <p>logger有一个配置addtivity&#x3D;”true” 默认就是true,标识向上级传递日志（INFO是DEBUG的上级）。只有显示指定为false时，才不会向上级输出。</p>
@@ -382,7 +382,7 @@
     <ul>
         <li>Post title：每日一问1214(logback)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-04-17 02:55:09</li>
+        <li>Create time：2023-07-28 01:56:27</li>
         <li>
             Post link：https://a240277805.github.io/2020/每日一问1214(logback)/
         </li>
@@ -442,7 +442,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Logback"><span class="nav-text">Logback</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logger-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-text">Logger 上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%AD%89%E7%BA%A7%E5%8F%88%E7%A7%B0%E4%B8%BA%E7%AD%89%E7%BA%A7%E7%BB%A7%E6%89%BF"><span class="nav-text">有效等级又称为等级继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2"><span class="nav-text">底层实现初探</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#root-%E5%92%8C-logger-%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">root  和 logger 优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95root%E9%85%8D%E7%BD%AE%E7%9A%84INFO%EF%BC%8Clogger%E7%89%B9%E6%AE%8A%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8C%85-x2F-%E7%B1%BB%E6%97%A5%E5%BF%97DEBUG%E7%BA%A7%E5%88%AB%EF%BC%8C%E6%9C%80%E5%90%8E%E4%B9%9F%E8%83%BD%E6%89%93%E5%8D%B0%E5%87%BA%E6%9D%A5%EF%BC%9F"><span class="nav-text">为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API-1"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API </span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Logback"><span class="nav-text">Logback</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logger-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-text">Logger 上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%AD%89%E7%BA%A7%E5%8F%88%E7%A7%B0%E4%B8%BA%E7%AD%89%E7%BA%A7%E7%BB%A7%E6%89%BF"><span class="nav-text">有效等级又称为等级继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%88%9D%E6%8E%A2"><span class="nav-text">底层实现初探</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#root-%E5%92%8C-logger-%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">root  和 logger 优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95root%E9%85%8D%E7%BD%AE%E7%9A%84INFO%EF%BC%8Clogger%E7%89%B9%E6%AE%8A%E6%8C%87%E5%AE%9A%E7%9A%84%E5%8C%85-%E7%B1%BB%E6%97%A5%E5%BF%97DEBUG%E7%BA%A7%E5%88%AB%EF%BC%8C%E6%9C%80%E5%90%8E%E4%B9%9F%E8%83%BD%E6%89%93%E5%8D%B0%E5%87%BA%E6%9D%A5%EF%BC%9F"><span class="nav-text">为何root配置的INFO，logger特殊指定的包&#x2F;类日志DEBUG级别，最后也能打印出来？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E7%A6%81%E6%AD%A2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F-Log4j%E3%80%81Logback-%E4%B8%AD%E7%9A%84-API-1"><span class="nav-text">为什么阿里巴巴禁止工程师直接使用日志系统(Log4j、Logback)中的 API </span></a></li></ol>
     </div>
 </div>
             </div>
