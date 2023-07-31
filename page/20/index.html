@@ -278,23 +278,28 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0414(kafka)/">
-                        每日一问0414(kafka)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/">
+                        每日一问0104(缓存实施情况)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        kafka部署123456789101112131415161718192021222324252627282930version: &#x27;2&#x27;services:  zookeeper:    image: wurstmeister/...
+                        缓存实施情况redis key 规则定义
+定义redis key 规则方便 定位，拆分 或 附加的业务逻辑处理 。
+比如： mq 聚合 缓存操作时统一处理
+规则:{项目}:{服务名}:{业务模块}:{type}:{缓存接口}
+ **type: **
+...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -304,7 +309,7 @@
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -314,7 +319,7 @@
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0414(kafka)/">Read more<span class="seo-reader-text">每日一问0414(kafka)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0104(%E7%BC%93%E5%AD%98%E5%AE%9E%E6%96%BD%E6%83%85%E5%86%B5)/">Read more<span class="seo-reader-text">每日一问0104(缓存实施情况)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -326,25 +331,25 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1)/">
-                        每日一问0421(分布式事务)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/">
+                        每日一问0114(Spring循环依赖)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        分布式事务2pc,3pc,tcc
-第三方TX-LCN执行步骤
-有A，B，C 。A是发起方，BC两个业务方 ，另外还有协调器 TM，A-&gt;加入协调器TM，-&gt;执行任务-&gt;调用业务B -&gt;业务B执行业务-&gt;执行结束 -&gt...
+                        Spring 循环依赖【1】 getSingleton(beanName)：源码如下：
+复制
+12345678910111213141516171819202122232425262728293031323334//查询缓存  Object shar...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -354,7 +359,7 @@
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -364,7 +369,7 @@
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0421(%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1)/">Read more<span class="seo-reader-text">每日一问0421(分布式事务)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0114(Spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96)/">Read more<span class="seo-reader-text">每日一问0114(Spring循环依赖)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -376,29 +381,24 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0425(%E6%B5%81)/">
-                        每日一问0425(流)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">
+                        每日一问0303(Spring亮眼代码技巧)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        流
-Java面向对象三大特性：封装，继承，多态
-String ,StringBuffer,Stringbuilder 区别
+                        Spring 亮眼代码技巧参考spring中让你眼前一亮的代码技巧 
 
-
-String 是final 每次都会实例化，频繁操作字符串避免用String
-StringBuffer 和Stringbu...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -408,7 +408,7 @@ StringBuffer 和Stringbu...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -418,7 +418,7 @@ StringBuffer 和Stringbu...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0425(%E6%B5%81)/">Read more<span class="seo-reader-text">每日一问0425(流)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0303(Spring%E4%BA%AE%E7%9C%BC%E4%BB%A3%E7%A0%81%E6%8A%80%E5%B7%A7)/">Read more<span class="seo-reader-text">每日一问0303(Spring亮眼代码技巧)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -430,24 +430,23 @@ StringBuffer 和Stringbu...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0426(Spring)/">
-                        每日一问0426(Spring)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">
+                        每日一问0323(gateway)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Spring Cloud基础框架结构图
-● Spring核心容器（Core）：提供Spring框架的基本功能。核心容器的主要组件是BeanFactory，它是工厂模式的实现。BeanFactory使用控制反转（IoC）模式将应用程序的配置和依赖性规范...
+                        GateWaygateway 做啥GateWay 第一次使用 遇到问题
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -457,7 +456,7 @@ StringBuffer 和Stringbu...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -467,7 +466,7 @@ StringBuffer 和Stringbu...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0426(Spring)/">Read more<span class="seo-reader-text">每日一问0426(Spring)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0323(gateway)/">Read more<span class="seo-reader-text">每日一问0323(gateway)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -479,36 +478,48 @@ StringBuffer 和Stringbu...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0427(redis%E5%8E%9F%E7%90%86%E7%AF%87)/">
-                        每日一问0427(redis原理篇)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">
+                        每日一问0326(链路追踪)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        redis 原理(Redis 设计与实现)概念篇SDS结构 ：
+                        链路追踪技术选型
 
-字符长度，
-未使用空间
-字节数组
 
-优点:
+zipkin
+pinpoint
+skywalking
 
-常数复杂度获取字符串长度
-杜绝缓冲区溢出
-减少修改字符串长度时，所需的内存重分配次数
-兼容部分C字符串函数
 
-SDS 内存预分配策略为了防...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+为啥选 skywalkingzipkin 怎么接入参考 基于docker部署的项目如何和skywalking agent进行整合 
+sky...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -518,7 +529,7 @@ SDS 内存预分配策略为了防...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -528,7 +539,7 @@ SDS 内存预分配策略为了防...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0427(redis%E5%8E%9F%E7%90%86%E7%AF%87)/">Read more<span class="seo-reader-text">每日一问0427(redis原理篇)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0326(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA)/">Read more<span class="seo-reader-text">每日一问0326(链路追踪)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -540,32 +551,23 @@ SDS 内存预分配策略为了防...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0428(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/">
-                        每日一问0428(负载均衡)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">
+                        每日一问0328(PorlarDB)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        负载均衡常见负载均衡算法
-简单轮训法
-源地址哈希法
-随机法
-加权轮训法
-加权随机法
-最小连接数法
-
-常见负载均衡算法 
-
+                        PorlarDB
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -575,7 +577,7 @@ SDS 内存预分配策略为了防...
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -585,7 +587,7 @@ SDS 内存预分配策略为了防...
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0428(%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)/">Read more<span class="seo-reader-text">每日一问0428(负载均衡)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0328(PorlarDB)/">Read more<span class="seo-reader-text">每日一问0328(PorlarDB)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -597,29 +599,24 @@ SDS 内存预分配策略为了防...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0430(Mybatis)/">
-                        每日一问0430(Mybatis)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">
+                        每日一问0329(传输协议)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        MyBatis常用工具类
-SQL  
-ScriptRunner
-SqlRunner
-MetaObject
-
-SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别为Mapper接口和Mapper SQL配置。M...
+                        通信协议类型Rpc ,GRpc,http区别
+gRPC是一个高性能、开源、通用的RPC框架。基于HTTP&#x2F;2协议标准设计开发，默认采用Protocol Buffers数据序列化协议Protocol Buffers基本语法，支持多种开发语言。...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -629,7 +626,7 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -639,7 +636,7 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0430(Mybatis)/">Read more<span class="seo-reader-text">每日一问0430(Mybatis)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0329(%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)/">Read more<span class="seo-reader-text">每日一问0329(传输协议)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -651,30 +648,23 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/">
-                        每日一问0501(算法)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0401(dockerfile)/">
+                        每日一问0401(dockerfile)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        算法LRU 最少使用算法堆排序特性
-左子节点：2i+1
-右子节点：2i+2
-父节点：(i-1)&#x2F;2
-最后一个非叶子节点:(arr.length-1-1)&#x2F;2&#x3D;arr.length&#x2F;2-1
-
-步骤
-构建大顶堆，从...
+                        dockerfile
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -684,7 +674,7 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -694,7 +684,7 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0501(%E7%AE%97%E6%B3%95)/">Read more<span class="seo-reader-text">每日一问0501(算法)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0401(dockerfile)/">Read more<span class="seo-reader-text">每日一问0401(dockerfile)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -706,24 +696,23 @@ SqlSession执行 Mapper 过程MyBatis中Mapper的配置分为两部分，分别�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86)/">
-                        每日一问0506(动态代理)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0406(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B)/">
+                        每日一问0406(链路追踪技术选型)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        动态代理FmyJava 语言常用动态代理方式JDK内置动态代理Java SDK代理面向的是一组接口
-CGLIB动态代理Java SDK动态代理的局限在于，它只能为接口创建代理，返回的代理对象也只能转换到某个接口类型，如果一个类没有接口，或者希望代理非...
+                        链路追踪技术选型为什么选skywalkingskywalking概念skywalking 优势后期优化点参考
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -733,7 +722,7 @@ CGLIB动态代理Java SDK动态代理的局限在于，它只能为接口创建�
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -743,7 +732,7 @@ CGLIB动态代理Java SDK动态代理的局限在于，它只能为接口创建�
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0506(%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86)/">Read more<span class="seo-reader-text">每日一问0506(动态代理)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0406(%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B)/">Read more<span class="seo-reader-text">每日一问0406(链路追踪技术选型)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -755,35 +744,24 @@ CGLIB动态代理Java SDK动态代理的局限在于，它只能为接口创建�
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0509(java%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D)/">
-                        每日一问0509(java性能问题定位)
+                    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(EDAS)/">
+                        每日一问0407(EDAS)
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        java 性能问题定位常用命令
-top
-vmstat
-pidstat
-jstack
-jstat
-jmap
-mat内存工具
-
-模拟环境准备CPU 高方式: 
-
-top 或者其他方式获取进程ID
-进程ID获取 下边的线程列表信息 （top -Hp 328...
+                        EDAS 调研企业级分布式应用服务 EDAS（Enterprise Distributed Application Service）是应用全生命周期管理和监控的一站式 PaaS 平台
+随着Node.js、Go和Python等语言的快速发展，多语言微服...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 01:56:27 GMT+0000">
+            <span class="home-article-date" data-date="Mon Jul 31 2023 01:42:00 GMT+0000">
                 
-                    2023/07/28
+                    2023/07/31
                 
             </span>
         </span>
@@ -793,7 +771,7 @@ top 或者其他方式获取进程ID
                     
                         <li>
                             
-                            <a href="/categories/2020/">2020</a>&nbsp;
+                            <a href="/categories/2021/">2021</a>&nbsp;
                         </li>
                     
                     
@@ -803,7 +781,7 @@ top 或者其他方式获取进程ID
         
     </div>
 
-    <a href="/2020/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0509(java%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D)/">Read more<span class="seo-reader-text">每日一问0509(java性能问题定位)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2021/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE0407(EDAS)/">Read more<span class="seo-reader-text">每日一问0407(EDAS)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
