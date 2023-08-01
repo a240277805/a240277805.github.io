@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-07-31 01:42:00</span>
-        <span class="mobile">2023-07-31 01:42</span>
+        <span class="pc">2023-08-01 09:52:47</span>
+        <span class="mobile">2023-08-01 09:52</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -363,13 +363,87 @@
 <h4 id="行锁-读锁、写锁"><a href="#行锁-读锁、写锁" class="headerlink" title="行锁(读锁、写锁)"></a>行锁(读锁、写锁)</h4><p>RC级别，提供了读锁和写锁，解决了赃读问题。</p>
 <h4 id="间隙锁"><a href="#间隙锁" class="headerlink" title="间隙锁"></a>间隙锁</h4><p>RR级别，在已有读锁和写锁的基础上，增加了gap锁，即间隙锁，解决了幻读的问题</p>
 <p>对<code>批量操作较多</code>，且操作结果有要求的系统，需要使用RR级别，如果都是按主健单条处理数据，完全不需要这个级别。</p>
-<h4 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h4><p>为了查询一些正在被另一个事务更新的行，并且可以看到它们被更新之前的值。</p>
-<h5 id="MVCC原理"><a href="#MVCC原理" class="headerlink" title="MVCC原理"></a>MVCC原理</h5><p>InnoDB会给数据库中的每一行增加三个字段，它们分别是DB_TRX_ID、DB_ROLL_PTR、DB_ROW_ID。<br>读取创建版本小于或等于当前事务版本号，并且删除版本为空或大于当前事务版本号的记录。<br>增,删,改 时 更新其版本号</p>
-<h3 id="快照读和当前读"><a href="#快照读和当前读" class="headerlink" title="快照读和当前读"></a>快照读和当前读</h3><ul>
+<h3 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h3><p>mvcc的实现原理主要依赖于记录中的三个隐藏字段，undolog，read view来实现的。</p>
+<p><strong>MVCC原理</strong><br>InnoDB会给数据库中的每一行增加三个字段，它们分别是DB_TRX_ID、DB_ROLL_PTR、DB_ROW_ID。<br>读取创建版本小于或等于当前事务版本号，并且删除版本为空或大于当前事务版本号的记录。<br>增,删,改 时 更新其版本号</p>
+<p>快照读和当前读</p>
+<ul>
 <li>快照读：读取的是快照版本，也就是历史版本</li>
 <li>当前读：读取的是最新版本</li>
 </ul>
 <p>普通的SELECT就是快照读，而UPDATE、DELETE、INSERT、SELECT …  LOCK IN SHARE MODE、SELECT … FOR UPDATE是当前读。</p>
+<h4 id="三个隐藏字段"><a href="#三个隐藏字段" class="headerlink" title="三个隐藏字段"></a>三个隐藏字段</h4><ul>
+<li>DB_TRX_ID: 当前最近修改的事务ID</li>
+<li>DB_ROLL_PTR：用于回滚的 undolog 的回滚指针</li>
+<li>DB_ROW_ID：隐藏的主键ID</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/b5943b269f5b4dfe958470b174f22ee0.png"
+                      alt="img"
+                ></p>
+<h4 id="undoLog"><a href="#undoLog" class="headerlink" title="undoLog"></a>undoLog</h4><p>ndolog被称之为回滚日志，表示在进行insert，delete，update操作的时候产生的方便回滚的日志</p>
+<p> 当进行insert操作的时候，产生的undolog只在事务回滚的时候需要，并且在事务提交之后可以被立刻丢弃</p>
+<p> 当进行update和delete操作的时候，产生的undolog不仅仅在事务回滚的时候需要，在快照读的时候也需要，所以不能随便删除，只有在快照读或事务回滚不涉及该日志时，对应的日志才会被purge线程统一清除（当数据发生更新和删除操作的时候都只是设置一下老记录的deletedbit，并不是真正的将过时的记录删除，因为为了节省磁盘空间，innodb有专门的purge线程来清除deletedbit为true的记录，如果某个记录的deletedid为true，并且DBTRX_ID相对于purge线程的read view 可见，那么这条记录一定时可以被清除的）</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/7b4e7763cdac48c1b27ac4c8eadb19ca.png"
+                      alt="img"
+                ></p>
+<h4 id="read-view"><a href="#read-view" class="headerlink" title="read view"></a>read view</h4><p>Read View的最大作用是用来做可见性判断的，也就是说当某个事务在执行快照读的时候，对该记录创建一个Read View的视图，把它当作条件去判断当前事务能够看到哪个版本的数据，有可能读取到的是最新的数据，也有可能读取的是当前行记录的undolog中某个版本的数据</p>
+<h5 id="read-view-构成"><a href="#read-view-构成" class="headerlink" title="read view 构成"></a>read view 构成</h5><ul>
+<li>trx_list: 记录了当前活动的事务列表，其中每个事务包含一个事务ID和一个读视图。</li>
+<li>up_limit_id: <strong>活跃的事务中最小的事务 ID。</strong></li>
+<li>low_limit_id: <strong>表示生成ReadView时系统中应该分配给下一个事务的 id 值。low_limit_id 是系 统最大的事务id值，这里要注意是系统中的事务id，需要区别于正在活跃的事务ID。</strong></li>
+<li>creator_trx_id: 创建这个 Read View 的事务 ID。</li>
+</ul>
+<p><em><strong>注意：low_limit_id并不是trx_ids中的最大值，事务id是递增分配的。比如，现在有id为1，2，3这三个事务，之后id为3的事务提交了。那么一个新的读事务在生成ReadView时，trx_ids就包括1和2，up_limit_id的值就是1，low_limit_id的值就是4。</strong></em></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/20221110-db0f1292-3ab3-4011-9bf1-ef89ae3cf31a.png"
+                      alt="image.png"
+                ></p>
+<h5 id="read-view-可见性规则："><a href="#read-view-可见性规则：" class="headerlink" title="read view 可见性规则："></a>read view 可见性规则：</h5><ol>
+<li>如果被访问版本的trx_id属性值与ReadView中的 creator_trx_id 值相同，意味着当前事务在访问 它自己修改过的记录，所以该版本可以被当前事务访问。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果 行里面的XID 是我本家事务的, 那就选择这行数据了</span><br><span class="line">if ( DB_TRX_ID == creator_trx_id)</span><br><span class="line">&#123;</span><br><span class="line">  return this-&gt;rows;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<ol start="2">
+<li>如果被访问版本的trx_id属性值小于ReadView中的 up_limit_id 值，表明生成该版本的事务在当前 事务生成ReadView前已经提交，所以该版本可以被当前事务访问。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果 行里面的XID 小于 最小的事务ID, 说明行里的事务已经提交了</span><br><span class="line">if ( DB_TRX_ID &lt; min_trx_id)</span><br><span class="line">&#123;</span><br><span class="line">  return this-&gt;rows;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<ol start="3">
+<li>如果被访问版本的trx_id属性值大于或等于ReadView中的 low_limit_id 值，表明生成该版本的事 务在当前事务生成ReadView后才开启，所以该版本不可以被当前事务访问。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果 行里面的XID 大于等于,最大事务ID,这里的最大要+1,表示将来的事务</span><br><span class="line">if ( DB_TRX_ID &gt;= max_trx_id)</span><br><span class="line">&#123;</span><br><span class="line">  通过 DB_ROLL_PTR 指针去寻找;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<ol start="4">
+<li>如果被访问版本的trx_id属性值在ReadView的 up_limit_id 和 low_limit_id 之间，那就需要判 断一下trx_id属性值是不是在 trx_ids 列表中。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果 行里面的XID 介于最小和最大事务ID中间呢? 同样就行从UNDO 找</span><br><span class="line"></span><br><span class="line">if ( DB_TRX_ID &lt; max_trx_id) &amp;&amp; ( DB_TRX_ID &gt;=min_trx_id)</span><br><span class="line">&#123;</span><br><span class="line">  通过 DB_ROLL_PTR 指针去寻找;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果在，说明创建ReadView时生成该版本的事务还是活跃的，该版本不可以被访问。</span><br><span class="line"></span><br><span class="line">如果不在，说明创建ReadView时生成该版本的事务已经被提交，该版本可以被访问。</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="RC-RR-关于-readview-区别"><a href="#RC-RR-关于-readview-区别" class="headerlink" title="RC ,RR 关于 readview 区别"></a>RC ,RR 关于 readview 区别</h5><p>RC隔离级别 读提交级别, 基本上每个语句重新构造自己的READVIEW.也就是获得当前语句开始运行时候的活跃事务数组.<br>那怕你开启了事务语句,把10个语句包裹在一起,它们也是各自构造自己的活跃事务数组. 事务只是完成一致性撤销而已,要么提交,要么滚回去. 就没有其他啥了</p>
+<p>RR级别,叫可重复读. 其实命名也难以理解. 难道行可以读很多次,本来行就可以读很多次的嘛! 为啥呢,多此一举呢.</p>
+<p>应该叫 读开始 ! 读取事务开始时候的数据. 事务开始的时候就构造出活跃事务数组. 事务后面的SELECT 都以这个事务数组为标准,大家使用同一个事务数组.<br>这样我们事务里面所有的SELECT语句读取的数据是一样的,那怕在其中有其他事务提交了数据,我们都视而不见!</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../ImgSource/20221110-3de30d98-f839-400e-a532-b8fe7ef394fd.png"
+                      alt="image.png"
+                ></p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="ACID问题："><a href="#ACID问题：" class="headerlink" title="ACID问题："></a>ACID问题：</h3><ul>
 <li>为什么InnoDB能够保证原子性？用的什么方式？</li>
 <li>为什么InnoDB能够保证一致性？用的什么方式？</li>
@@ -389,6 +463,7 @@
 <li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/chen77716/article/details/6742128" >Mysql中的MVCC <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><code>*****</code><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/cjsblog/p/8365921.html" >MySQL事务隔离级别的实现原理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><code>*****</code><a class="link"   target="_blank" rel="noopener" href="http://hedengcheng.com/?p=771#_Toc374698312" >MySQL 加锁处理分析 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>***** 【】</li>
 </ul>
 
             </div>
@@ -399,7 +474,7 @@
     <ul>
         <li>Post title：每日一问0906(mysql事务管理)</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-07-31 01:42:00</li>
+        <li>Create time：2023-08-01 09:52:47</li>
         <li>
             Post link：https://a240277805.github.io/2019/每日一问0906(mysql事务管理)/
         </li>
@@ -459,7 +534,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">mysql 事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACID%E6%98%AF%E8%A1%A1%E9%87%8F%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="nav-text">ACID是衡量事务的四个特性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-%E6%97%A5%E5%BF%97"><span class="nav-text">mysql 日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-text">事务的执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E4%B8%A2%E5%A4%B1"><span class="nav-text">更新丢失</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%8F%E8%AF%BB"><span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%BB%E8%AF%BB"><span class="nav-text">幻读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-text">事务隔离级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF"><span class="nav-text">用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%90%E8%A7%82%E9%94%81"><span class="nav-text">乐观锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E9%94%81-%E8%AF%BB%E9%94%81%E3%80%81%E5%86%99%E9%94%81"><span class="nav-text">行锁(读锁、写锁)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%B4%E9%9A%99%E9%94%81"><span class="nav-text">间隙锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MVCC"><span class="nav-text">MVCC</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MVCC%E5%8E%9F%E7%90%86"><span class="nav-text">MVCC原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E7%85%A7%E8%AF%BB%E5%92%8C%E5%BD%93%E5%89%8D%E8%AF%BB"><span class="nav-text">快照读和当前读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACID%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-text">ACID问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E6%80%A7%E9%87%8C%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-text">隔离性里隔离级别的问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql-%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">mysql 事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACID%E6%98%AF%E8%A1%A1%E9%87%8F%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="nav-text">ACID是衡量事务的四个特性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-%E6%97%A5%E5%BF%97"><span class="nav-text">mysql 日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-text">事务的执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E4%B8%A2%E5%A4%B1"><span class="nav-text">更新丢失</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%8F%E8%AF%BB"><span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%BB%E8%AF%BB"><span class="nav-text">幻读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="nav-text">不可重复读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-text">事务隔离级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF"><span class="nav-text">用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%90%E8%A7%82%E9%94%81"><span class="nav-text">乐观锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E9%94%81-%E8%AF%BB%E9%94%81%E3%80%81%E5%86%99%E9%94%81"><span class="nav-text">行锁(读锁、写锁)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%B4%E9%9A%99%E9%94%81"><span class="nav-text">间隙锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVCC"><span class="nav-text">MVCC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E9%9A%90%E8%97%8F%E5%AD%97%E6%AE%B5"><span class="nav-text">三个隐藏字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undoLog"><span class="nav-text">undoLog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read-view"><span class="nav-text">read view</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#read-view-%E6%9E%84%E6%88%90"><span class="nav-text">read view 构成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#read-view-%E5%8F%AF%E8%A7%81%E6%80%A7%E8%A7%84%E5%88%99%EF%BC%9A"><span class="nav-text">read view 可见性规则：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RC-RR-%E5%85%B3%E4%BA%8E-readview-%E5%8C%BA%E5%88%AB"><span class="nav-text">RC ,RR 关于 readview 区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACID%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-text">ACID问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%94%E7%A6%BB%E6%80%A7%E9%87%8C%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-text">隔离性里隔离级别的问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
     </div>
 </div>
             </div>
