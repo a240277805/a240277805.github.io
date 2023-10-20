@@ -293,8 +293,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-10-07 08:27:50</span>
-        <span class="mobile">2023-10-07 08:27</span>
+        <span class="pc">2023-10-20 10:18:34</span>
+        <span class="mobile">2023-10-20 10:18</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -338,11 +338,12 @@
                      data-src="/../../ImgSource/image-20231007114731529.png"
                       alt="image-20231007114731529"
                 ></p>
+<p>​				流水线发布周期</p>
 <h4 id="制品库"><a href="#制品库" class="headerlink" title="制品库"></a>制品库</h4><p>外部软件包库，正式软件包库</p>
 <p>临时镜像库，正式镜像库，外部镜像库</p>
 <p>制品都有唯一标识，并且连同其来源，组成部件以及用途等一起保存为该制品的元信息，</p>
 <p>如果制品库中的制品本身被删除或丢失，那么企业可以根据其保留在制品库中的元信息描述，通过原有的步数流水线再次生成原来的相同制品。</p>
-<h4 id="多组件步数流水线"><a href="#多组件步数流水线" class="headerlink" title="多组件步数流水线"></a>多组件步数流水线</h4><p>如果一个软件产品由多个组件构建而成，每个组件均有独自的代码仓库，并且每个组件由一个单独的团队负责开发与维护，那么，整个产品的部署流水线的设计通常与图7-13相似。每个组件的部署流水线成功以后，都能触发下游的产品集成部署流水线。</p>
+<h4 id="多组件部署流水线"><a href="#多组件部署流水线" class="headerlink" title="多组件部署流水线"></a>多组件部署流水线</h4><p>如果一个软件产品由多个组件构建而成，每个组件均有独自的代码仓库，并且每个组件由一个单独的团队负责开发与维护，那么，整个产品的部署流水线的设计通常与图7-13相似。每个组件的部署流水线成功以后，都能触发下游的产品集成部署流水线。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -350,7 +351,7 @@
                       alt="image-20231007110532633"
                 ></p>
 <ul>
-<li><p>个人步数流水线</p>
+<li><p>个人部署流水线</p>
 <p>每名工程师都创建了自己专属的部署流水线，用于个人在未推送代码到团队仓库之前的快速质量反馈。个人部署流水线并不会部署到团队共同拥有的环境中，而是仅覆盖个人开发环环境</p>
 </li>
 </ul>
@@ -366,7 +367,7 @@
 <p>（1）该部署流水线与团队部署流水线共享构建和测试集群环境。由于这些环境是统一管理的，因此能够确保任何时刻，每个人的构建与自动化测试环境均与团队所属的环境一致。</p>
 <p>（2）保证每名工程师都能利用更强大的测试资源，加快个人验证的速度。</p>
 <p>（3）个人部署流水线运行的测试用例与团队部署流水线前两个阶段的验证集合相同，假如团队部署流水线出现构建失败，则容易定位问题，例如工程师遗漏文件未提交。</p>
-<p><strong>UAT测试 是测试工程师在已经通过的刺激构建阶段中选择一个被测版本，根据需求完成情况手工触发。向UAT环境部署软件包，用于手工验收测试。 如果该版本通过了手工验收测试，则标记版本为已测试通过版本。 第五个阶段的性能测试也是手工触发</strong></p>
+<p><strong>UAT测试 是测试工程师在已经通过的次级构建阶段中选择一个被测版本，根据需求完成情况手工触发。向UAT环境部署软件包，用于手工验收测试。 如果该版本通过了手工验收测试，则标记版本为已测试通过版本。 第五个阶段的性能测试也是手工触发</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -381,6 +382,7 @@
                      data-src="/../../ImgSource/image-20231007151957769.png"
                       alt="image-20231007151957769"
                 ></p>
+<p>GoCD在2008年的部署流水线2</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -440,6 +442,7 @@
                      data-src="/../../ImgSource/image-20231007141235334.png"
                       alt="image-20231007141235334"
                 ></p>
+<p>（1）开发人员将代码提交到代码仓库。（2）持续集成服务器按一定的时间间隔（如每隔1分钟）对代码仓库进行轮询，发现有代码变更。（3）持续集成服务器自动将最新代码检出到已准备好的专用服务器上（如果应用规模不大，可以与持续集成服务器是同一台机器）。</p>
 <p>（4）在专用服务器上运行由持续集成服务器指定的构建脚本或命令，对最新代码进行检查（如代码动静态扫描、编译打包、运行单元测试、部署并运行功能测试等）。（5）运行结束后，将验证结果（成功或者失败）反馈给开发团队。为了能够做到“省时省力”，可以通过自动化方式运行大量的质量检验项（包括自动化测试、代码规范检查、代码安全扫描等）。“持续集成”这一实践直接体现了快速验证环的基本工作原则，即“质量内建，快速反馈”。每当工程师完成一项开发任务后，必须通过运行一系列的自动化质量检查，验证其所写代码的质量是否达到了团队能接受的软件质量标准。</p>
 <h5 id="9-2-六步提交法"><a href="#9-2-六步提交法" class="headerlink" title="9.2 六步提交法"></a>9.2 六步提交法</h5><p><img  
                      lazyload
@@ -481,6 +484,490 @@
 <li>流水线</li>
 </ol>
 <p>制品库讲了 制品库的分类，各个类别的作用以及这样做的意义。</p>
+<table>
+<thead>
+<tr>
+<th align="left">service</th>
+<th align="left">Table Name</th>
+<th align="left">weekUp</th>
+<th align="left">MonthUp</th>
+<th align="left">halfYearUp</th>
+<th align="left">YearUP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">erp-devops-server</td>
+<td align="left">publish_server_node</td>
+<td align="left">&lt;513行&lt;22683KB</td>
+<td align="left">&lt;1025行&lt;45366KB</td>
+<td align="left">&lt;2564行&lt;113416KB</td>
+<td align="left">&lt;5127行&lt;226832KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_attachment</td>
+<td align="left">&lt;207行&lt;462KB</td>
+<td align="left">&lt;414行&lt;925KB</td>
+<td align="left">&lt;1035行&lt;2312KB</td>
+<td align="left">&lt;2070行&lt;4624KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">publish_approval_task</td>
+<td align="left">&lt;1903行&lt;258KB</td>
+<td align="left">&lt;3806行&lt;515KB</td>
+<td align="left">&lt;9516行&lt;1288KB</td>
+<td align="left">&lt;19031行&lt;2576KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">deploy_version_log</td>
+<td align="left">&lt;826行&lt;194KB</td>
+<td align="left">&lt;1653行&lt;387KB</td>
+<td align="left">&lt;4132行&lt;968KB</td>
+<td align="left">&lt;8263行&lt;1936KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_routine_log_result</td>
+<td align="left">&lt;78行&lt;166KB</td>
+<td align="left">&lt;157行&lt;333KB</td>
+<td align="left">&lt;392行&lt;832KB</td>
+<td align="left">&lt;783行&lt;1664KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">package_version</td>
+<td align="left">&lt;1行&lt;155KB</td>
+<td align="left">&lt;1行&lt;310KB</td>
+<td align="left">&lt;4行&lt;776KB</td>
+<td align="left">&lt;7行&lt;1552KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">operation_log</td>
+<td align="left">&lt;245行&lt;35KB</td>
+<td align="left">&lt;489行&lt;70KB</td>
+<td align="left">&lt;1223行&lt;176KB</td>
+<td align="left">&lt;2446行&lt;352KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">publish_approval_node</td>
+<td align="left">&lt;303行&lt;32KB</td>
+<td align="left">&lt;605行&lt;64KB</td>
+<td align="left">&lt;1514行&lt;160KB</td>
+<td align="left">&lt;3027行&lt;320KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">publish_server</td>
+<td align="left">&lt;191行&lt;24KB</td>
+<td align="left">&lt;381行&lt;48KB</td>
+<td align="left">&lt;954行&lt;120KB</td>
+<td align="left">&lt;1907行&lt;240KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_routine_result</td>
+<td align="left">&lt;13行&lt;19KB</td>
+<td align="left">&lt;25行&lt;38KB</td>
+<td align="left">&lt;63行&lt;96KB</td>
+<td align="left">&lt;126行&lt;192KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">publish</td>
+<td align="left">&lt;64行&lt;16KB</td>
+<td align="left">&lt;127行&lt;32KB</td>
+<td align="left">&lt;319行&lt;80KB</td>
+<td align="left">&lt;637行&lt;160KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">machine_info</td>
+<td align="left">&lt;33行&lt;14KB</td>
+<td align="left">&lt;66行&lt;29KB</td>
+<td align="left">&lt;166行&lt;72KB</td>
+<td align="left">&lt;331行&lt;144KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_attachment_file</td>
+<td align="left">&lt;36行&lt;8KB</td>
+<td align="left">&lt;72行&lt;16KB</td>
+<td align="left">&lt;181行&lt;40KB</td>
+<td align="left">&lt;362行&lt;80KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">mobile_package_version</td>
+<td align="left">&lt;25行&lt;8KB</td>
+<td align="left">&lt;51行&lt;16KB</td>
+<td align="left">&lt;127行&lt;40KB</td>
+<td align="left">&lt;254行&lt;80KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_conf_upstream_server</td>
+<td align="left">&lt;0行&lt;6KB</td>
+<td align="left">&lt;0行&lt;13KB</td>
+<td align="left">&lt;0行&lt;32KB</td>
+<td align="left">&lt;0行&lt;64KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">app_internal_audit_dic</td>
+<td align="left">&lt;16行&lt;6KB</td>
+<td align="left">&lt;33行&lt;13KB</td>
+<td align="left">&lt;82行&lt;32KB</td>
+<td align="left">&lt;164行&lt;64KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_conf_location</td>
+<td align="left">&lt;0行&lt;6KB</td>
+<td align="left">&lt;0行&lt;13KB</td>
+<td align="left">&lt;0行&lt;32KB</td>
+<td align="left">&lt;0行&lt;64KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_backup_log_result</td>
+<td align="left">&lt;10行&lt;6KB</td>
+<td align="left">&lt;19行&lt;13KB</td>
+<td align="left">&lt;48行&lt;32KB</td>
+<td align="left">&lt;95行&lt;64KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_node</td>
+<td align="left">&lt;1行&lt;5KB</td>
+<td align="left">&lt;1行&lt;10KB</td>
+<td align="left">&lt;3行&lt;24KB</td>
+<td align="left">&lt;6行&lt;48KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">server_node</td>
+<td align="left">&lt;27行&lt;5KB</td>
+<td align="left">&lt;54行&lt;10KB</td>
+<td align="left">&lt;136行&lt;24KB</td>
+<td align="left">&lt;271行&lt;48KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">project_leader</td>
+<td align="left">&lt;22行&lt;5KB</td>
+<td align="left">&lt;44行&lt;10KB</td>
+<td align="left">&lt;110行&lt;24KB</td>
+<td align="left">&lt;219行&lt;48KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_conf_server</td>
+<td align="left">&lt;0行&lt;5KB</td>
+<td align="left">&lt;0行&lt;10KB</td>
+<td align="left">&lt;0行&lt;24KB</td>
+<td align="left">&lt;0行&lt;48KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_conf_upstream</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;6KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+<td align="left">&lt;0行&lt;32KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">db_user</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;3行&lt;8KB</td>
+<td align="left">&lt;5行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">machine_location</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;3行&lt;3KB</td>
+<td align="left">&lt;8行&lt;8KB</td>
+<td align="left">&lt;15行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_backup</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;3行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">db_source_user</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;3行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">package_info</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;8KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">user_role</td>
+<td align="left">&lt;9行&lt;2KB</td>
+<td align="left">&lt;17行&lt;3KB</td>
+<td align="left">&lt;44行&lt;8KB</td>
+<td align="left">&lt;87行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">db_source</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;4行&lt;8KB</td>
+<td align="left">&lt;7行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">user</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;4行&lt;3KB</td>
+<td align="left">&lt;11行&lt;8KB</td>
+<td align="left">&lt;22行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">machine_brand</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;2行&lt;3KB</td>
+<td align="left">&lt;4行&lt;8KB</td>
+<td align="left">&lt;8行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">db_node</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;4行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">team_user</td>
+<td align="left">&lt;8行&lt;2KB</td>
+<td align="left">&lt;17行&lt;3KB</td>
+<td align="left">&lt;42行&lt;8KB</td>
+<td align="left">&lt;83行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_system</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;3行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">home_page_team_statistics</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;8KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">nginx_info</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;8KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">db_info</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;2行&lt;3KB</td>
+<td align="left">&lt;4行&lt;8KB</td>
+<td align="left">&lt;8行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">team</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;3行&lt;3KB</td>
+<td align="left">&lt;7行&lt;8KB</td>
+<td align="left">&lt;14行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_server_form</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;3行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">home_page_statistics</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;8KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">project_machine_pool</td>
+<td align="left">&lt;9行&lt;2KB</td>
+<td align="left">&lt;18行&lt;3KB</td>
+<td align="left">&lt;44行&lt;8KB</td>
+<td align="left">&lt;88行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">home_page_month_publish_statistics</td>
+<td align="left">&lt;5行&lt;2KB</td>
+<td align="left">&lt;10行&lt;3KB</td>
+<td align="left">&lt;24行&lt;8KB</td>
+<td align="left">&lt;48行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">app_accept_audit_result</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;0行&lt;8KB</td>
+<td align="left">&lt;0行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">server_info</td>
+<td align="left">&lt;4行&lt;2KB</td>
+<td align="left">&lt;9行&lt;3KB</td>
+<td align="left">&lt;22行&lt;8KB</td>
+<td align="left">&lt;44行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">home_page_day_publish_statistics</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;4行&lt;3KB</td>
+<td align="left">&lt;9行&lt;8KB</td>
+<td align="left">&lt;18行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_routine</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;3行&lt;3KB</td>
+<td align="left">&lt;8行&lt;8KB</td>
+<td align="left">&lt;15行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">server_domain_name</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;4行&lt;3KB</td>
+<td align="left">&lt;10行&lt;8KB</td>
+<td align="left">&lt;20行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">project_info</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;3行&lt;3KB</td>
+<td align="left">&lt;9行&lt;8KB</td>
+<td align="left">&lt;17行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">environment_info</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;0行&lt;3KB</td>
+<td align="left">&lt;1行&lt;8KB</td>
+<td align="left">&lt;2行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_result</td>
+<td align="left">&lt;0行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;2行&lt;8KB</td>
+<td align="left">&lt;3行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">server_db_source</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;4行&lt;3KB</td>
+<td align="left">&lt;11行&lt;8KB</td>
+<td align="left">&lt;22行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">project_environment</td>
+<td align="left">&lt;6行&lt;2KB</td>
+<td align="left">&lt;12行&lt;3KB</td>
+<td align="left">&lt;30行&lt;8KB</td>
+<td align="left">&lt;60行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">domain_name</td>
+<td align="left">&lt;3行&lt;2KB</td>
+<td align="left">&lt;6行&lt;3KB</td>
+<td align="left">&lt;14行&lt;8KB</td>
+<td align="left">&lt;28行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">role_permission</td>
+<td align="left">&lt;3行&lt;2KB</td>
+<td align="left">&lt;6行&lt;3KB</td>
+<td align="left">&lt;14行&lt;8KB</td>
+<td align="left">&lt;28行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">internal_audit_backup_result</td>
+<td align="left">&lt;4行&lt;2KB</td>
+<td align="left">&lt;7行&lt;3KB</td>
+<td align="left">&lt;19行&lt;8KB</td>
+<td align="left">&lt;37行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">permission</td>
+<td align="left">&lt;3行&lt;2KB</td>
+<td align="left">&lt;6行&lt;3KB</td>
+<td align="left">&lt;16行&lt;8KB</td>
+<td align="left">&lt;32行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">machine_os_version</td>
+<td align="left">&lt;2行&lt;2KB</td>
+<td align="left">&lt;4行&lt;3KB</td>
+<td align="left">&lt;11行&lt;8KB</td>
+<td align="left">&lt;22行&lt;16KB</td>
+</tr>
+<tr>
+<td align="left">erp-devops-server</td>
+<td align="left">role</td>
+<td align="left">&lt;1行&lt;2KB</td>
+<td align="left">&lt;1行&lt;3KB</td>
+<td align="left">&lt;3行&lt;8KB</td>
+<td align="left">&lt;6行&lt;16KB</td>
+</tr>
+</tbody></table>
 
             </div>
 
@@ -490,7 +977,7 @@
     <ul>
         <li>Post title：持续交付2</li>
         <li>Post author：张孟康</li>
-        <li>Create time：2023-10-07 08:27:50</li>
+        <li>Create time：2023-10-20 10:18:34</li>
         <li>
             Post link：https://a240277805.github.io/读书/持续交付2.0/
         </li>
@@ -550,7 +1037,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%982-0"><span class="nav-text">持续交付2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A7%8B%E6%84%BF"><span class="nav-text">始愿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-text">做法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E5%A4%84%EF%BC%8C%E4%BD%9C%E8%80%85"><span class="nav-text">出处，作者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GOCD-%E7%AE%80%E5%8D%95%E7%9A%84%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B"><span class="nav-text">GOCD 简单的持续交付流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%B6%E5%93%81%E5%BA%93"><span class="nav-text">制品库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%84%E4%BB%B6%E6%AD%A5%E6%95%B0%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">多组件步数流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-text">部署流水线平台的构成</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-2-%E5%85%AD%E6%AD%A5%E6%8F%90%E4%BA%A4%E6%B3%95"><span class="nav-text">9.2 六步提交法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%AD%E6%AD%A5%E6%8F%90%E4%BA%A4%E6%B3%95%E4%B8%AD%E7%9A%843%E6%AC%A1%E9%AA%8C%E8%AF%81%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-text">六步提交法中的3次验证有什么作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AF%8F%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E8%B4%A8%E9%87%8F%E9%AA%8C%E8%AF%81%E5%86%85%E5%AE%B9"><span class="nav-text">每次构建应该包含哪些质量验证内容</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87"><span class="nav-text">词汇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E5%8F%A5"><span class="nav-text">语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%84%9F%E8%A7%A6"><span class="nav-text">有感触</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E5%8E%86"><span class="nav-text">日历</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%982-0"><span class="nav-text">持续交付2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A7%8B%E6%84%BF"><span class="nav-text">始愿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-text">做法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E5%A4%84%EF%BC%8C%E4%BD%9C%E8%80%85"><span class="nav-text">出处，作者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GOCD-%E7%AE%80%E5%8D%95%E7%9A%84%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B"><span class="nav-text">GOCD 简单的持续交付流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%B6%E5%93%81%E5%BA%93"><span class="nav-text">制品库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%84%E4%BB%B6%E9%83%A8%E7%BD%B2%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">多组件部署流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-text">部署流水线平台的构成</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-2-%E5%85%AD%E6%AD%A5%E6%8F%90%E4%BA%A4%E6%B3%95"><span class="nav-text">9.2 六步提交法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%AD%E6%AD%A5%E6%8F%90%E4%BA%A4%E6%B3%95%E4%B8%AD%E7%9A%843%E6%AC%A1%E9%AA%8C%E8%AF%81%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-text">六步提交法中的3次验证有什么作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AF%8F%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E8%B4%A8%E9%87%8F%E9%AA%8C%E8%AF%81%E5%86%85%E5%AE%B9"><span class="nav-text">每次构建应该包含哪些质量验证内容</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87"><span class="nav-text">词汇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E5%8F%A5"><span class="nav-text">语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%84%9F%E8%A7%A6"><span class="nav-text">有感触</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E5%8E%86"><span class="nav-text">日历</span></a></li></ol></li></ol>
     </div>
 </div>
             </div>
