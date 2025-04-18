@@ -178,6 +178,25 @@ pubsub numpat 返回当前服务器被订阅的模式数量。
 
 原文链接：https://blog.csdn.net/eileencsdn/article/details/89511144
 
+
+
+### cluster 命令
+
+#### 集群管理命令
+
+1. **CLUSTER MEET**: 将当前节点添加到集群中，并指定其他节点的地址和端口。
+2. **CLUSTER FORGET**: 从集群中移除指定节点。
+3. **CLUSTER ADDSLOTS**: 将一个或多个槽位分配给当前节点。
+4. **CLUSTER DELSLOTS**: 从当前节点中移除一个或多个槽位的分配。
+5. **CLUSTER REPLICATE**: 将一个节点设置为另一个节点的从节点。
+6. **CLUSTER FAILOVER**: 手动触发故障转移，将一个从节点提升为主节点。
+7. **CLUSTER FLUSH SLOTS**: 清空当前节点上的所有槽位分配信息。
+8. **CLUSTER KEYSLOT**: 获取指定键被分配到的槽位。
+9. **CLUSTER COUNTKEYSINSLOT**: 获取指定槽位中的键的数量。
+10. **CLUSTER REPLICATE**: 将一个节点设置为另一个节点的从节点。
+
+
+
 ## 参考
 
 [压缩列表](https://www.cnblogs.com/hunternet/p/11306690.html)
